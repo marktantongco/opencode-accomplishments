@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Build
+dist/
+build/
+
+# Temp
+tmp/
+temp/
+*.tmp
