@@ -1,530 +1,349 @@
-# 🚀 OpenCode Accomplishments — Fullstack Dev Journey
+# OpenCode Accomplishments — AI Skills Showcase
 
-<p align="center">
-  <img src="https://img.shields.io/badge/OpenCode-v1.0-00d4ff?style=for-the-badge&logo=ai&logoColor=white" alt="OpenCode">
-  <img src="https://img.shields.io/badge/Skills-38-bfff00?style=for-the-badge" alt="38 Skills">
-  <img src="https://img.shields.io/badge/MCP_Servers-8-ff006e?style=for-the-badge" alt="8 MCP Servers">
-  <img src="https://img.shields.io/badge/Agents-12-ffd700?style=for-the-badge" alt="12 Agents">
-  <img src="https://img.shields.io/badge/License-MIT-ffd700?style=for-the-badge" alt="MIT License">
-</p>
+> A self-contained, single-file interactive showcase of 38 AI agent skills across 8 categories. Neo-brutalist ultramodern Gen Z design. Zero build step — drop on GitHub Pages and ship.
 
-<p align="center">
-  <strong>An AI agent that doesn't just execute tasks — it builds systems that run themselves.</strong><br>
-  System prompts · 38 skills · 8 MCP servers · 12 specialized agents · automated workflows
-</p>
-
-<p align="center">
-  <a href="https://marktantongco.github.io/opencode-accomplishments/">🌐 Live Demo</a> ·
-  <a href="#-skills-library">📚 Skills</a> ·
-  <a href="#-mcp-servers">🔌 MCP Servers</a> ·
-  <a href="#-agent-architecture">🤖 Agents</a> ·
-  <a href="#-deployment">🚀 Deploy</a>
-</p>
+![Version](https://img.shields.io/badge/version-3.0.0-FF2E63?style=for-the-badge&labelColor=000)
+![Skills](https://img.shields.io/badge/skills-38-BFFF00?style=for-the-badge&labelColor=000)
+![WCAG](https://img.shields.io/badge/WCAG-AA-08F7FE?style=for-the-badge&labelColor=000)
+![Zero Build](https://img.shields.io/badge/zero_build-step-00FF9D?style=for-the-badge&labelColor=000)
 
 ---
 
-## 📊 Overview
+## Live Demo
 
-This repository documents a fullstack development journey powered by **OpenCode** — a terminal-based AI coding agent configured with a custom system prompt, a growing library of reusable skills, MCP server integrations, and a multi-agent architecture.
-
-The core philosophy: **no one-off work**. Every repeatable task becomes a skill. Every skill makes the system smarter.
-
-### Metrics
-
-| Metric | Value |
-|--------|-------|
-| System Prompt Lines | 261+ |
-| Active Skills | 38 |
-| MCP Servers | 8 (4 local + 4 remote) |
-| Specialized Agents | 12 |
-| Deployment Targets | GitHub Pages + Vercel |
-| Skill Categories | 8 |
+| Platform | URL |
+|---|---|
+| **GitHub Pages** | [marktantongco.github.io/opencode-accomplishments](https://marktantongco.github.io/opencode-accomplishments) |
+| **Vercel** | Deployed via Vercel CLI — auto-deploys on push to `main` |
 
 ---
 
-## 🏗️ Architecture
+## What This Is
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                        USER                              │
-└────────────────────┬────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────┐
-│                   OpenCode TUI / CLI                     │
-│  ┌──────────┐  ┌──────────┐  ┌───────────────────────┐  │
-│  │ Orchestr │→ │ Agents   │  │ MCP Servers (8)       │  │
-│  │ -ator    │  │ (12)     │  │  · opencode           │  │
-│  └──────────┘  └──────────┘  │  · browser-use        │  │
-│       │              │       │  · github             │  │
-│       ▼              ▼       │  · notion             │  │
-│  ┌──────────────────────┐   │  · repomix            │  │
-│  │   AGENTS.md          │   │  · docker             │  │
-│  │   System Prompt      │   │  · qdrant             │  │
-│  │   (261+ lines)       │   │  · sequential-thinking│  │
-│  └──────────────────────┘   └───────────────────────┘  │
-│              │                                          │
-│              ▼                                          │
-│  ┌───────────────────────────────────────────────────┐  │
-│  │              Skills Library (38)                   │  │
-│  │  Design · Reasoning · Dev · Content               │  │
-│  │  Strategy · System · Data · Creative              │  │
-│  └───────────────────────────────────────────────────┘  │
-└────────────────────┬────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────┐
-│              Antigravity Proxy Layer                     │
-│  Claude Opus 4.6 · Sonnet 4.6 · Gemini 3.1 Pro          │
-└─────────────────────────────────────────────────────────┘
-```
+This project is a **living, self-updating AI Skills Registry** — an interactive, machine-readable catalog of 38 active AI agent skills. Built with vanilla HTML/CSS/JS, powered by GSAP animations, Web Components, and JSON-LD structured data. It doubles as a design system showcase and a functional API endpoint.
+
+The showcase was designed and built using the very skills it catalogs:
+
+- **ui-ux-pro-max-v7** — 60 styles, 48 palettes, 36 fonts, 24 industry rules
+- **gsap-animations** — Production-grade GSAP animation patterns with ScrollTrigger + Flip
+- **anthropic-frontend-design** — Bold aesthetics for AI-native interfaces
+- **frontend-design** — shadcn/ui + Tailwind + React component generation
 
 ---
 
-## 🎯 Core Philosophy
-
-### The Compounding System
-
-> *Build it once → it runs forever.*
-> *Every skill added makes the system smarter.*
-> *Every cron scheduled removes one more thing I have to think about.*
-
-> *Your job is not to answer me.*
-> *Your job is to make yourself unnecessary — one skill at a time.*
-
-### The Rule
-
-When asked to do X:
-
-1. **Do it manually first** — 3–10 real examples, no skill file yet
-2. **Show output** — ask "Does this look right?"
-3. **If approved** → write `SKILL.md` to `skills/`
-4. **If recurring** → schedule on cron
-
-*The test: If I have to ask for the same thing twice — you failed.*
-
-### Skill Building Workflow
-
-```
-CONCEPT → PROTOTYPE → EVALUATE → CODIFY → CRON → MONITOR
-```
-
-Every skill follows the [Agent Skills Spec](https://agentskills.io/specification) with four sections: `context`, `instructions`, `constraints`, `examples`.
-
----
-
-## 📚 Skills Library
-
-**38 active skills** across 8 categories. Each skill is a self-contained `SKILL.md` in the `skills/` directory.
-
-### 🎨 Design & UI (5 skills)
-
-| Skill | Description |
-|-------|-------------|
-| [`ui-ux-pro-max-v7`](skills/ui-ux-pro-max-v7/) | AI-powered unified design intelligence — 60 UI styles, 48 color palettes, embedded heuristic data |
-| [`anthropic-frontend-design`](skills/anthropic-frontend-design/) | Bold aesthetic principles for AI-native interfaces, conversational UI, and trust-forward design |
-| [`frontend-design`](skills/frontend-design/) | Modern frontend design patterns — component architecture, state management, responsive layouts |
-| [`gsap-animations`](skills/gsap-animations/) | Production-grade GSAP patterns — ScrollTrigger, Flip plugin, React integration |
-| [`web-design-guidelines`](skills/web-design-guidelines/) | Typography, color, spacing, responsiveness, accessibility — use with frontend-design |
-
-### 🧠 Reasoning (4 skills)
-
-| Skill | Description |
-|-------|-------------|
-| [`chain-of-thought`](skills/chain-of-thought/) | Structured reasoning frameworks for complex problem decomposition |
-| [`socratic-method`](skills/socratic-method/) | Guide via questions, not answers — exploratory dialogue technique |
-| [`devils-advocate`](skills/devils-advocate/) | Challenge assumptions — critical analysis and stress-testing |
-| [`simulation-sandbox`](skills/simulation-sandbox/) | Model scenarios before committing — mental simulation environment |
-
-### 💻 Development (7 skills)
-
-| Skill | Description |
-|-------|-------------|
-| [`mcp-builder`](skills/mcp-builder/) | Build Model Context Protocol servers — tool definitions, schemas, transports |
-| [`deployment-manager`](skills/deployment-manager/) | Deploy to Vercel, Railway, Render, GitHub Pages — zero-downtime strategies |
-| [`browser-use`](skills/browser-use/) | Browser automation — web scraping, testing, live page interaction |
-| [`web-artifacts-builder`](skills/web-artifacts-builder/) | Build interactive web demos from natural language descriptions |
-| [`code-research`](skills/code-research/) | Research open-source repos to understand how something is built |
-| [`explore`](skills/explore/) | Codebase search and pattern matching — finding files, locating code patterns |
-| [`nvidia-build`](skills/nvidia-build/) | Build CUDA/GPU applications — GPU-accelerated computing |
-
-### ✍️ Content (5 skills)
-
-| Skill | Description |
-|-------|-------------|
-| [`seo-content-writer`](skills/seo-content-writer/) | SEO-optimized content creation — keyword research, meta tags, readability scoring |
-| [`humanizer`](skills/humanizer/) | Transform AI-generated text into natural, human-sounding prose |
-| [`social-media-manager`](skills/social-media-manager/) | Plan, schedule, optimize social media content across platforms |
-| [`social-content-pillars`](skills/social-content-pillars/) | Content pillar strategy — brand messaging allocation across channels |
-| [`output-formatter`](skills/output-formatter/) | Format AI output into polished Markdown, HTML, PDF, presentations |
-
-### 🎯 Strategy (4 skills)
-
-| Skill | Description |
-|-------|-------------|
-| [`jtbd-research`](skills/jtbd-research/) | Jobs-To-Be-Done framework — user motivations, product-market fit |
-| [`gumroad-pipeline`](skills/gumroad-pipeline/) | Digital product sales pipeline — conversion tracking, funnel optimization |
-| [`feature-research`](skills/feature-research/) | Research existing architecture before implementing complex features |
-| [`skill-finder`](skills/skill-finder/) | Evaluate and match requests to existing skills — the skill router |
-
-### ⚙️ System (6 skills)
-
-| Skill | Description |
-|-------|-------------|
-| [`persistent-memory`](skills/persistent-memory/) | Long-term memory system — context continuity across sessions |
-| [`system-prompt-sync`](skills/system-prompt-sync/) | Sync system prompt (AGENTS.md) across all git repos on version change |
-| [`feedback-loop`](skills/feedback-loop/) | Iterative improvement cycles — deployment metrics → product feedback → refinement |
-| [`context-compressor`](skills/context-compressor/) | Intelligently compress conversation context to stay within token limits |
-| [`agent-roles`](skills/agent-roles/) | Define and manage specialized agent roles with distinct capabilities |
-| [`audit-analyzer`](skills/audit-analyzer/) | Automated detection and prioritization of audit issues — performance, security, code quality |
-
-### 🌐 Data & Web (3 skills)
-
-| Skill | Description |
-|-------|-------------|
-| [`web-reader`](skills/web-reader/) | Read and summarize web content from URLs — intelligent content extraction |
-| [`explained-code`](skills/explained-code/) | Translate technical code into human-readable explanations |
-| [`vercel-react-best-practices`](skills/vercel-react-best-practices/) | Production-grade React — hooks, performance, SSR/SSG, architecture patterns |
-| [`vercel-web-design-guidelines`](skills/vercel-web-design-guidelines/) | Accessibility-first UX, performance budgets, responsive patterns, web platform best practices |
-
-### 🎨 Creative (4 skills)
-
-| Skill | Description |
-|-------|-------------|
-| [`photography-ai`](skills/photography-ai/) | Professional visual engineering — AI image/video creation, prompt engineering, composition |
-| [`superpowers`](skills/superpowers/) | Extended agent capabilities — advanced automation, multi-step workflows, system integration |
-| [`sample-hello-skill`](skills/sample-hello-skill/) | Hello-world skill for demonstrating the SKILL workflow — deterministic ASCII hello |
-
-### 📦 Templates & Utilities
-
-| Item | Description |
-|------|-------------|
-| [`skills/templates/`](skills/templates/) | Reusable skill templates — API wrapper, data transform |
-| [`skills/check-all-skills.sh`](skills/check-all-skills.sh) | Validate all skill files exist and are well-formed |
-| [`skills/startup-check.sh`](skills/startup-check.sh) | System health check on agent startup |
-| [`skills/GLOBAL_ACCESS.md`](skills/GLOBAL_ACCESS.md) | Global skill access configuration |
-| [`skills/dashboard.html`](skills/dashboard.html) | Skills inventory dashboard |
-| [`skills/design-operating-system/`](skills/design-operating-system/) | Design OS — master index, skill validation |
-| [`skills/archive/`](skills/archive/) | Archived skill versions |
-
----
-
-## 🔌 MCP Servers
-
-**8 MCP servers** configured in `~/.config/opencode/opencode.json` — 4 local, 4 remote.
-
-| Server | Type | Purpose |
-|--------|------|---------|
-| `opencode` | local | Self-referential — control OpenCode sessions, files, agents via MCP |
-| `browser-use` | remote | Cloud browser automation — web interaction, screenshots, data extraction |
-| `github` | local | GitHub API — repos, PRs, issues, workflows, code search |
-| `notion` | remote | Notion integration — pages, databases, blocks, knowledge base |
-| **`repomix`** | local | Codebase packaging — pack repos into AI-readable format for analysis |
-| **`docker`** | local | Container management — build, run, manage Docker containers via natural language |
-| **`qdrant`** | local | Vector search memory — semantic storage and retrieval with local fastembed |
-| **`sequential-thinking`** | local | Step-by-step reasoning — dynamic reflective problem-solving |
-
-### MCP Configuration
-
-```jsonc
-{
-  "$schema": "https://opencode.ai/config.json",
-  "mcp": {
-    "repomix": {
-      "type": "local",
-      "command": ["npx", "-y", "repomix", "--mcp"],
-      "enabled": true
-    },
-    "docker": {
-      "type": "local",
-      "command": ["npx", "-y", "mcp-docker-server"],
-      "enabled": true
-    },
-    "qdrant": {
-      "type": "local",
-      "command": ["uvx", "mcp-server-qdrant"],
-      "enabled": true,
-      "environment": {
-        "QDRANT_LOCAL_PATH": "~/.config/opencode/qdrant-data",
-        "COLLECTION_NAME": "default",
-        "EMBEDDING_MODEL": "sentence-transformers/all-MiniLM-L6-v2"
-      }
-    },
-    "sequential-thinking": {
-      "type": "local",
-      "command": ["npx", "-y", "@modelcontextprotocol/server-sequential-thinking"],
-      "enabled": true
-    }
-  }
-}
-```
-
----
-
-## 🤖 Agent Architecture
-
-**12 specialized agents** configured in `~/.config/opencode/opencode.json`, each with distinct roles, models, and tool access.
-
-| Agent | Mode | Model | Purpose |
-|-------|------|-------|---------|
-| `orchestrator` | primary | default | Coordinates multi-step tasks across agents, sequential processing |
-| `coder` | subagent | Sonnet 4.6 | Writes and refactors code — features, fixes, implementations |
-| `explorer` | subagent | Sonnet 4.6 | Fast codebase search — file patterns, symbol lookup, grep |
-| `fixer` | subagent | Sonnet 4.6 | Fast implementation — bounded execution, test updates |
-| `researcher` | subagent | default | Targeted info gathering — docs, specs, examples |
-| `librarian` | subagent | Gemini 3.1 Pro | External docs lookup — library APIs, version-specific behavior |
-| `oracle` | subagent | Opus 4.6 Thinking | Strategic advisor — architecture, debugging, code review |
-| `designer` | subagent | Gemini 3.1 Pro | UI/UX specialist — polish, responsive, design systems |
-| `reviewer` | subagent | default | Code & design review — correctness, security, maintainability |
-| `council` | subagent | default | Multi-LLM consensus — high-stakes decisions |
-| `scribe` | subagent | Opus 4.6 Thinking | Documentation — readmes, design docs, changelogs |
-| `observer` | subagent | Sonnet 4.6 | Session monitoring and tracking |
-
-### Sequential Processing Rule
-
-The orchestrator processes all subagent delegations **one at a time** — waiting for each to complete before spawning the next. This prevents system overload on resource-constrained machines.
-
----
-
-## 📜 System Prompt (AGENTS.md)
-
-The 261+ line system prompt defines the agent's identity, rules, and workflows.
-
-### Core Rules
-- No filler, no fluff, no disclaimers
-- Working code only — never pseudocode
-- Rank by impact — lead with 80/20 action
-- Advocacy mode — warn before mistakes, suggest better ways
-- State assumptions explicitly
-
-### Response Framework
-1. **Structure First** — outline silently, then execute
-2. **Impact-Rank** — lead with highest leverage insight
-3. **Show, Don't Tell** — working code > explanation
-4. **Close with Momentum** — ⚡⚡ Recommended Next Step
-5. **Close with Insight** — ✨ 3 Suggestions (Tactical, Strategic, Reframe)
-
-### Hard Stops
-- Never output placeholder text (TODO, "[your code]")
-- Never apologize for limitations — solve or pivot
-- Never repeat the request back — jump to solution
-- Never use vague language — be direct about confidence
-
----
-
-## 🚀 Deployment
-
-This repository deploys to two platforms simultaneously:
-
-### GitHub Pages
-- **URL:** https://marktantongco.github.io/opencode-accomplishments/
-- **Trigger:** Push to `master` branch
-- **Workflow:** `.github/workflows/deploy.yml`
-- **Type:** Static site (raw HTML/CSS/JS)
-
-### Vercel
-- **URL:** https://opencode-accomplishments.vercel.app (if configured)
-- **Config:** `vercel.json` — no build command, serves static files
-- **Type:** Static deployment
-
-```json
-{
-  "version": 2,
-  "buildCommand": null,
-  "outputDirectory": ".",
-  "routes": [
-    { "src": "/(.*)", "dest": "/$1" },
-    { "src": "/", "dest": "/index.html" }
-  ]
-}
-```
-
----
-
-## 📁 Project Structure
+## Architecture
 
 ```
 opencode-accomplishments/
-├── README.md                          # This file — comprehensive documentation
-├── AGENTS.md                          # System prompt (261+ lines)
-├── SKILLS.md                          # Skills inventory (quick reference)
-├── PLUGINS.md                         # Plugin stack documentation
-├── index.html                         # Interactive accomplishments guide
-├── accomplishments.html               # Visual accomplishments dashboard
-├── vercel.json                        # Vercel deployment config
-├── .gitignore                         # Git ignore rules
+├── docs/
+│   └── index.html          # The entire showcase — single file, zero dependencies
+├── scripts/
+│   ├── local-sync-skills.sh # Local nightly sync script
+│   └── sync-skills.sh       # GitHub Actions sync script (requires auth)
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml                 # GitHub Pages deployment
-├── skills/                            # 38 active skills
-│   ├── ui-ux-pro-max-v7/
-│   ├── anthropic-frontend-design/
-│   ├── gsap-animations/
-│   ├── frontend-design/
-│   ├── web-design-guidelines/
-│   ├── chain-of-thought/
-│   ├── socratic-method/
-│   ├── devils-advocate/
-│   ├── simulation-sandbox/
-│   ├── mcp-builder/
-│   ├── deployment-manager/
-│   ├── browser-use/
-│   ├── web-artifacts-builder/
-│   ├── code-research/
-│   ├── explore/
-│   ├── nvidia-build/
-│   ├── seo-content-writer/
-│   ├── humanizer/
-│   ├── social-media-manager/
-│   ├── social-content-pillars/
-│   ├── output-formatter/
-│   ├── jtbd-research/
-│   ├── gumroad-pipeline/
-│   ├── feature-research/
-│   ├── skill-finder/
-│   ├── persistent-memory/
-│   ├── system-prompt-sync/
-│   ├── feedback-loop/
-│   ├── context-compressor/
-│   ├── agent-roles/
-│   ├── audit-analyzer/
-│   ├── web-reader/
-│   ├── explained-code/
-│   ├── vercel-react-best-practices/
-│   ├── vercel-web-design-guidelines/
-│   ├── photography-ai/
-│   ├── superpowers/
-│   ├── sample-hello-skill/
-│   ├── templates/                     # Reusable skill templates
-│   ├── design-operating-system/       # Design OS framework
-│   ├── archive/                       # Archived skill versions
-│   ├── check-all-skills.sh            # Skill validation script
-│   ├── startup-check.sh               # System health check
-│   ├── GLOBAL_ACCESS.md               # Global skill access config
-│   ├── dashboard.html                 # Skills inventory dashboard
-│   └── README.md                      # Skills directory readme
-└── workflows/                         # Additional workflow configs
+│       └── deploy.yml       # GitHub Actions CI/CD — auto-deploy on push
+├── SKILL.md                 # Skill documentation for reproducibility
+├── README.md                # This file
+└── vercel.json              # Vercel deployment config
 ```
 
----
+### Single-File Philosophy
 
-## 🔧 Configuration
+The entire showcase lives in `docs/index.html` — one file, zero build steps. All CSS, JavaScript, and structured data are inline. External dependencies (GSAP, Google Fonts) are loaded via CDN. This means:
 
-### OpenCode Config
-- **Location:** `~/.config/opencode/opencode.json`
-- **Providers:** Google (Antigravity proxy) — Claude Opus 4.6, Sonnet 4.6, Gemini 3.1 Pro
-- **MCP:** 8 servers (4 local, 4 remote)
-- **Agents:** 12 specialized agents with per-agent model and tool assignments
-
-### Model Variants
-| Model | Context | Output | Thinking |
-|-------|---------|--------|----------|
-| Claude Opus 4.6 Thinking | 200K | 64K | 8K–32K budget |
-| Claude Sonnet 4.6 | 200K | 64K | — |
-| Gemini 3.1 Pro | 1M | 65K | Low/High |
-| Gemini 3 Pro | 1M | 64K | — |
+- **GitHub Pages** — just serve the `docs/` folder
+- **Vercel** — deploy the repo root, rewrite to `docs/index.html`
+- **Any static host** — drop the file and go
 
 ---
 
-## 🛡️ Security
+## Skills by Category
 
-- System prompts and skill instructions are never exposed to untrusted sources
-- Code from untrusted sources is reviewed before execution
-- System files and credentials are never modified by agents
-- New skills are vetted through the Skill Finder evaluation scorecard
-- MCP servers run in sandboxed stdio mode with explicit permissions
+### Design & UI (5 skills)
+| Skill | Description | Accent |
+|---|---|---|
+| `ui-ux-pro-max-v7` | AI design intelligence — 60 styles, 48 palettes, 36 fonts, 24 industry rules | `#BFFF00` |
+| `anthropic-frontend-design` | Bold aesthetics for AI-native interfaces, conversational UI, trust-forward design | `#BFFF00` |
+| `gsap-animations` | Production-grade GSAP animation patterns — 24 patterns, ScrollTrigger, Flip | `#BFFF00` |
+| `frontend-design` | shadcn/ui + Tailwind + React component generation | `#BFFF00` |
+| `vercel-web-design-guidelines` | Accessibility-first UX rules and performance budgets | `#BFFF00` |
+
+### Reasoning (4 skills)
+| Skill | Description | Accent |
+|---|---|---|
+| `chain-of-thought` | Step-by-step reasoning framework for complex problems | `#08F7FE` |
+| `socratic-method` | Strategic questioning to uncover assumptions and guide discovery | `#08F7FE` |
+| `devils-advocate` | Argue against premises to strengthen arguments and prevent confirmation bias | `#08F7FE` |
+| `simulation-sandbox` | Test scenarios in safe simulated environments | `#08F7FE` |
+
+### Development (8 skills)
+| Skill | Description | Accent |
+|---|---|---|
+| `mcp-builder` | Build MCP servers with TypeScript + Python | `#00FF9D` |
+| `superpowers` | Spec-first development with TDD and sub-agent delegation | `#00FF9D` |
+| `deployment-manager` | Deploy across GitHub Pages, Vercel, Netlify | `#00FF9D` |
+| `browser-use` | Headful browser automation with natural language control | `#00FF9D` |
+| `web-artifacts-builder` | Single-file HTML artifacts with React + Tailwind | `#00FF9D` |
+| `vercel-react-best-practices` | Production-grade React architecture, SSR/SSG strategies | `#00FF9D` |
+| `explained-code` | Beginner-friendly code explanation with analogies and diagrams | `#00FF9D` |
+| `nvidia-build` | Build and run LLM inference via NVIDIA NIM API | `#00FF9D` |
+
+### Content (4 skills)
+| Skill | Description | Accent |
+|---|---|---|
+| `seo-content-writer` | SEO-optimized content with GEO optimization for AI answer engines | `#FF2E63` |
+| `humanizer` | Strip AI writing patterns for human-like copy | `#FF2E63` |
+| `social-media-manager` | Post generation for 30 days across LinkedIn, Twitter, Instagram, TikTok | `#FF2E63` |
+| `social-content-pillars` | Monthly content calendar with 90-day editorial plan | `#FF2E63` |
+
+### Strategy (4 skills)
+| Skill | Description | Accent |
+|---|---|---|
+| `jtbd-research` | 8-step Jobs to be Done product research methodology | `#FFE600` |
+| `gumroad-pipeline` | Lead magnet to funnel to product launch workflow | `#FFE600` |
+| `feature-research` | Research existing architecture before implementing features | `#FFE600` |
+| `skill-finder` | Skill discovery, evaluation, and installation meta-skill | `#FFE600` |
+
+### System (6 skills)
+| Skill | Description | Accent |
+|---|---|---|
+| `persistent-memory` | Structured memory system for agent context continuity | `#A8B2D8` |
+| `system-prompt-sync` | Auto-sync AGENTS.md across all git repos | `#A8B2D8` |
+| `feedback-loop` | Iterative improvement cycles from metrics to research | `#A8B2D8` |
+| `context-compressor` | Compress long contexts preserving critical information | `#A8B2D8` |
+| `agent-roles` | Unified multi-agent role system — Builder, Coder, Council, Orchestrator, etc. | `#A8B2D8` |
+| `sample-hello-skill` | Hello-world demo skill for testing activation | `#A8B2D8` |
+
+### Data & Web (5 skills)
+| Skill | Description | Accent |
+|---|---|---|
+| `web-reader` | Web page extraction with crawling and spidering | `#64FFDA` |
+| `audit-analyzer` | Detect and prioritize audit issues | `#64FFDA` |
+| `web-design-guidelines` | Self-audit checklist for design consistency | `#64FFDA` |
+| `code-research` | Research open-source repositories | `#64FFDA` |
+| `explore` | Search a codebase efficiently without grep | `#64FFDA` |
+
+### Creative (2 skills)
+| Skill | Description | Accent |
+|---|---|---|
+| `photography-ai` | Professional visual engineering with batch processing and cinematic sequences | `#FF9FF3` |
+| `output-formatter` | Strict formatting rules for all output types — JSON, tables, markdown | `#FF9FF3` |
 
 ---
 
-## 🤝 Contributing
+## API Endpoints
 
-Skills are built on-demand following this workflow:
+The showcase doubles as a machine-readable API via URL parameters:
 
-1. **Concept** → Describe the process, triggers, and done state
-2. **Prototype** → Run on 3–10 real items, show output
-3. **Evaluate** → Get approval, revise until right
-4. **Codify** → Write `SKILL.md` with context, instructions, constraints, examples
-5. **Cron** → Schedule if recurring
-6. **Monitor** → Check first 3 automated runs, iterate
+| Endpoint | Effect | Example |
+|---|---|---|
+| `?format=json` | Returns raw JSON with version, count, all skills | `?format=json` |
+| `?format=manifest` | Returns JetBrains-style plugin.xml for AI IDE auto-discovery | `?format=manifest` |
+| `?skill=<name>` | Auto-filters to matching skill name/tag | `?skill=gsap-animations` |
+| `?category=<name>` | Auto-selects category chip | `?category=Development` |
+| `?embed=true` | Strips hero, marquee, footer — just filter bar + grid for iframe embedding | `?embed=true` |
+| `?palette=<hex>` | Overrides `--brand-primary` with any hex triplet; derives complementary + triadic | `?palette=FF2E63` |
 
-### Adding a New Skill
+### JSON Endpoint Example
 
 ```bash
-# 1. Create skill directory
-mkdir -p skills/my-new-skill/
+curl "https://marktantongco.github.io/opencode-accomplishments?format=json"
+```
 
-# 2. Write the skill file
-cat > skills/my-new-skill/SKILL.md << 'EOF'
----
-name: my-new-skill
-description: What it does and when to use it.
----
+Returns:
+```json
+{
+  "version": "3.0.0",
+  "lastUpdated": "2026-05-06",
+  "count": 38,
+  "skills": [...]
+}
+```
 
-## Context
-...
+### Manifest Endpoint Example
 
-## Instructions
-...
+```bash
+curl "https://marktantongco.github.io/opencode-accomplishments?format=manifest"
+```
 
-## Constraints
-...
+Returns a JetBrains-style `plugin.xml` with all 38 skills listed as extensions — suitable for AI IDE auto-discovery.
 
-## Examples
-...
-EOF
+### Embed Example
 
-# 3. Validate
-bash skills/check-all-skills.sh
+```html
+<iframe
+  src="https://marktantongco.github.io/opencode-accomplishments?embed=true"
+  width="100%"
+  height="600"
+  frameborder="0">
+</iframe>
 ```
 
 ---
 
-## 📈 Roadmap
+## Design System
 
-### Completed
-- [x] System prompt (AGENTS.md) — 261+ lines
-- [x] 38 skills across 8 categories
-- [x] 12 specialized agents with model assignments
-- [x] 8 MCP servers (repomix, docker, qdrant, sequential-thinking + existing)
-- [x] Sequential subagent processing rule
-- [x] GitHub Pages deployment
-- [x] Vercel deployment config
-- [x] Interactive accomplishments guide (index.html)
-- [x] Skills dashboard (skills/dashboard.html)
-- [x] Skill validation scripts
+### Neo-Brutalist Gen Z v3.0
 
-### In Progress
-- [ ] Cloud deployment of Antigravity proxy (Render/Railway)
-- [ ] Cron automation for recurring skills
-- [ ] Skill versioning and changelog
-- [ ] Skills showcase web app (GSAP animated)
+The showcase uses a custom neo-brutalist design system with the following principles:
 
-### Planned
-- [ ] Skill performance metrics and benchmarking
-- [ ] Agent-to-agent communication protocol
-- [ ] Skill marketplace / sharing
-- [ ] Automated skill testing framework
+- **Thick borders** (3px solid black) — no subtlety, no gradients on borders
+- **Hard offset shadows** (0 blur, 4-6px offset) — brutalist, no softness
+- **High-saturation accent colors** — electric lime, hot pink, cyber blue
+- **Sticker badges** — rotated, bordered, shadowed labels
+- **Glitch effects** — CSS clip-path animations on the hero title
+- **Grain overlay** — SVG noise texture at 1.5% opacity
+- **Grid background** — 60px grid lines at 4% opacity
+- **Asymmetric layouts** — hero blocks, rotated elements, staggered reveals
+
+### Color Palette
+
+| Variable | Hex | Usage |
+|---|---|---|
+| `--brand-primary` | `#BFFF00` | Electric lime — accent, badges, progress bar |
+| `--brand-secondary` | `#FF2E63` | Hot pink — CTA, hero text shadow, footer highlights |
+| `--brand-tertiary` | `#08F7FE` | Cyber blue — API notice border, glitch pseudo-element |
+| `--bg-base` | `#FFFFFF` | Page background |
+| `--bg-surface` | `#F2F2ED` | Subtitle background, API notice |
+| `--bg-elevated` | `#F5F5F0` | Card backgrounds, orbit badges |
+| `--text-primary` | `#000000` | Headings, strong text — 21:1 on white (AAA) |
+| `--text-secondary` | `#1F1F1F` | Body text — 15.4:1 on white (AAA) |
+| `--text-muted` | `#555555` | Captions, footer — 7.5:1 on white (AA) |
+
+### Typography
+
+| Role | Font | Weight |
+|---|---|---|
+| Display | Archivo Black | 900 |
+| Body | Space Grotesk | 300-700 |
+| Mono | Space Mono | 400, 700 |
+
+### WCAG AA Compliance
+
+All text meets WCAG AA contrast requirements (4.5:1 minimum):
+
+- `--text-primary: #000000` — 21:1 on white (AAA)
+- `--text-secondary: #1F1F1F` — 15.4:1 on white (AAA)
+- `--text-muted: #555555` — 7.5:1 on white (AA)
+- Marquee: lime text `#BFFF00` on black `#000000` — ~18.6:1 (AAA)
+- No text uses `#BFFF00` on white backgrounds
+- Footer lime highlights use black background pill for contrast
 
 ---
 
-## 🔗 Links
+## Technical Stack
 
-- [OpenCode Documentation](https://opencode.ai)
-- [MCP Specification](https://spec.modelcontextprotocol.io)
-- [Agent Skills Spec](https://agentskills.io/specification)
-- [GitHub Pages Demo](https://marktantongco.github.io/opencode-accomplishments/)
-- [Skills Library](./skills/)
-- [MCP Directory](https://mcpdirectory.app)
-- [Awesome MCP Servers](https://mcpservers.org)
-
----
-
-## 📜 License
-
-MIT License — Feel free to adapt these patterns for your own AI workflows.
+| Technology | Purpose |
+|---|---|
+| **Vanilla HTML/CSS/JS** | Zero framework — single file, zero build step |
+| **GSAP 3.12.5** | Hero animations, ScrollTrigger, Flip plugin |
+| **Web Components** | Custom `<skill-card>` element via `customElements.define` |
+| **JSON-LD** | Schema.org `ItemList` + `SoftwareApplication` in `<head>` |
+| **CSS Custom Properties** | Design tokens, palette endpoint, category accents |
+| **Google Fonts** | Archivo Black, Space Grotesk, Space Mono via CDN |
 
 ---
 
-<p align="center">
-  <sub>Built with OpenCode · System Prompt v1.0 · 38 Skills · 8 MCP Servers · 12 Agents</sub>
-</p>
+## Deployment
+
+### GitHub Pages
+
+The `docs/` folder contains `index.html`. GitHub Pages is configured to serve from `/docs` on the `main` branch.
+
+```bash
+# Manual push
+git add docs/
+git commit -m "chore: update showcase v3.0.0"
+git push origin main
+```
+
+### Vercel
+
+The repo includes `vercel.json` which rewrites all routes to `docs/index.html`:
+
+```json
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/docs/index.html" }]
+}
+```
+
+Deploy with Vercel CLI:
+```bash
+vercel --prod --yes
+```
+
+### GitHub Actions CI/CD
+
+The `.github/workflows/deploy.yml` workflow automatically:
+1. Deploys to GitHub Pages on push to `main`
+2. Triggers Vercel deployment via webhook
+
+---
+
+## Nightly Auto-Update
+
+The showcase is designed as a **living standard** — a cron job can automatically pull the latest skills directory, regenerate the `SKILLS_DATA` array, bump the version, and deploy.
+
+### Local Cron (crontab)
+
+```bash
+# 2 AM daily, Asia/Manila timezone
+0 2 * * * bash /path/to/scripts/local-sync-skills.sh
+```
+
+### GitHub Actions Cron
+
+The workflow also supports scheduled runs:
+
+```yaml
+on:
+  schedule:
+    - cron: '0 18 * * *'  # 2 AM Manila = 18:00 UTC
+```
+
+---
+
+## Version History
+
+| Version | Date | Changes |
+|---|---|---|
+| 3.0.0 | 2026-05-06 | Neo-brutalist redesign, ?embed=true, ?palette= endpoint, WCAG AA compliance, marquee contrast fix |
+| 2.0.0 | 2026-05-05 | Light-only theme, URL param filtering (?skill=, ?category=, ?format=json, ?format=manifest), Flip crash fix, const hoisting fix, duplicate function removal |
+| 1.0.0 | 2026-05-04 | Initial showcase — 38 skills, glassmorphism design, dark/light toggle |
+
+---
+
+## Reusability
+
+To rebrand this showcase for a different skill collection:
+
+1. Replace the `SKILLS_DATA` array in `getSkillsDataRaw()`
+2. Change CSS custom properties: `--brand-primary`, `--brand-secondary`, `--brand-tertiary`
+3. Or use `?palette=FF2E63` to dynamically override all brand colors at runtime
+4. Update `SKILLS_VERSION` and `SKILLS_LAST_UPDATED`
+5. JSON-LD auto-generates from `SKILLS_DATA` — no manual editing
+
+---
+
+## Constraints
+
+- **NEVER** use a build step — the file must open directly in any browser
+- **NEVER** use placeholder text — all content must be real skill data
+- **NEVER** duplicate skills across categories — one skill, one category (MECE principle)
+- **NEVER** remove JSON-LD structured data from `<head>` — machine readability is a hard requirement
+- **ALWAYS** include ARIA labels on interactive elements
+- **ALWAYS** use thick borders (3px) and hard offset shadows (zero blur) — this is the neo-brutalist design system
+- **ALWAYS** version the `SKILLS_DATA` array — the showcase is a living standard
+- **ALWAYS** ensure WCAG AA contrast (4.5:1 minimum) on all text elements
+- **NEVER** use electric lime (`#BFFF00`) on white backgrounds for text
+
+---
+
+## License
+
+MIT
+
+---
+
+Built with **ui-ux-pro-max-v7** + **gsap-animations** + **anthropic-frontend-design** + **frontend-design**
