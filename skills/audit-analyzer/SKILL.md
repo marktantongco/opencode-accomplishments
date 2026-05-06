@@ -1,3 +1,8 @@
+---
+name: audit-analyzer
+description: Automates detection and prioritization of audit-related issues across the workspace. Scans for performance, accessibility, and monitoring signals. Use when analyzing audit errors or requesting actionable improvement patches.
+---
+
 # Audit Analyzer
 
 ## Context

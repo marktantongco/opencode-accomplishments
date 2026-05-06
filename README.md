@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/OpenCode-v1.0-00d4ff?style=for-the-badge&logo=ai&logoColor=white" alt="OpenCode">
-  <img src="https://img.shields.io/badge/Skills-19-bfff00?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Skills-38-bfff00?style=for-the-badge">
   <img src="https://img.shields.io/badge/Sessions-2+-ff006e?style=for-the-badge">
   <img src="https://img.shields.io/badge/License-MIT-ffd700?style=for-the-badge">
 </p>
@@ -23,7 +23,7 @@ This project documents the fullstack development journey powered by OpenCode —
 | Metric | Value |
 |--------|-------|
 | System Prompt Lines | 261 |
-| Skills Created | 19 |
+| Skills Created | 38 |
 | Activation Scripts | 4 |
 | Config Files | 2 |
 | Session Duration | 2 sessions |
@@ -37,7 +37,7 @@ This project documents the fullstack development journey powered by OpenCode —
 ├── AGENTS.md                    # Full system prompt (261 lines)
 ├── accomplishments.html         # Interactive accomplishments guide
 ├── SKILLS.md                    # Skills documentation
-└── skills/                      # 19 pre-installed skills
+└── skills/                      # 38 pre-installed skills
     ├── skill-finder/
     ├── mcp-builder/
     ├── deployment-manager/
@@ -192,7 +192,7 @@ Open `accomplishments.html` for a visual, interactive experience:
 
 - **Overview** — Stats, current goals, blockers
 - **Timeline** — Session-by-session breakdown
-- **Skills** — 19 skills with descriptions
+- **Skills** — 38 skills with descriptions
 - **Config** — System prompt & Claude settings
 - **Terminal** — Command execution history
 - **Agent Flow** — How the AI processes requests
@@ -258,5 +258,5 @@ MIT License — Feel free to adapt these patterns for your own AI workflows.
 ---
 
 <p align="center">
-  <sub>Built with OpenCode • System Prompt v1.0 • 19 Skills Active</sub>
+  <sub>Built with OpenCode • System Prompt v1.0 • 38 Skills Active</sub>
 </p>

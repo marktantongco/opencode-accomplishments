@@ -1,3 +1,8 @@
+---
+name: photography-ai
+description: Professional visual engineering framework for AI-powered image and video creation. Covers prompt engineering, photographic literacy, strategic negation, identity preservation, batch post-processing, and agent orchestration. Use for photorealistic generation, cinematic sequences, and visual production pipelines.
+---
+
 # Photography AI - Professional Visual Engineering Skills Framework
 
 > A comprehensive, structured reference for AI-powered visual creation, covering prompt engineering, photographic literacy, strategic negation, identity preservation, post-processing, and agent orchestration.

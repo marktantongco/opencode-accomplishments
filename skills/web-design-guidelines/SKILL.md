@@ -1,3 +1,8 @@
+---
+name: web-design-guidelines
+description: Quick self-audit checklist for Vercel best practices: typography, color, spacing, responsiveness, and accessibility. Use in tandem with frontend-design to prevent design inconsistencies. For comprehensive guidelines, see vercel-web-design-guidelines.
+---
+
 # web-design-guidelines
 
 ## context
