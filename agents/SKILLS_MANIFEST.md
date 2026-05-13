@@ -1,0 +1,2 @@
+# COMPLETE SKILLS MANIFEST
+[full content]
