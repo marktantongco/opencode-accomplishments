@@ -1,11 +1,12 @@
-# OpenCode Accomplishments — AI Skills Showcase
+# OpenCode Accomplishments — AI Skills Showcase + Agent System
 
-> A self-contained, single-file interactive showcase of 38 AI agent skills across 8 categories. Neo-brutalist ultramodern Gen Z design. Zero build step — drop on GitHub Pages and ship.
+> A self-contained, single-file interactive showcase of 38 AI agent skills across 8 categories — plus a complete production-ready Agent System with Universal Router + 4 context-loaded skills, 18 documentation files, and cross-platform deployment guides. Neo-brutalist ultramodern Gen Z design. Zero build step — drop on GitHub Pages and ship.
 
-![Version](https://img.shields.io/badge/version-3.0.0-FF2E63?style=for-the-badge&labelColor=000)
+![Version](https://img.shields.io/badge/version-4.0.0-FF2E63?style=for-the-badge&labelColor=000)
 ![Skills](https://img.shields.io/badge/skills-38-BFFF00?style=for-the-badge&labelColor=000)
-![WCAG](https://img.shields.io/badge/WCAG-AA-08F7FE?style=for-the-badge&labelColor=000)
-![Zero Build](https://img.shields.io/badge/zero_build-step-00FF9D?style=for-the-badge&labelColor=000)
+![Agent Files](https://img.shields.io/badge/agent_files-18-08F7FE?style=for-the-badge&labelColor=000)
+![WCAG](https://img.shields.io/badge/WCAG-AA-00FF9D?style=for-the-badge&labelColor=000)
+![Zero Build](https://img.shields.io/badge/zero_build-step-FFE600?style=for-the-badge&labelColor=000)
 
 ---
 
@@ -14,20 +15,35 @@
 | Platform | URL |
 |---|---|
 | **GitHub Pages** | [marktantongco.github.io/opencode-accomplishments](https://marktantongco.github.io/opencode-accomplishments) |
-| **Vercel** | Deployed via Vercel CLI — auto-deploys on push to `main` |
+| **Vercel** | Deployed via Vercel CLI — auto-deploys on push to `master` |
 
 ---
 
 ## What This Is
 
-This project is a **living, self-updating AI Skills Registry** — an interactive, machine-readable catalog of 38 active AI agent skills. Built with vanilla HTML/CSS/JS, powered by GSAP animations, Web Components, and JSON-LD structured data. It doubles as a design system showcase and a functional API endpoint.
+This project has **two complementary layers**:
+
+### Layer 1: Skills Showcase (Visual + API)
+
+A **living, self-updating AI Skills Registry** — an interactive, machine-readable catalog of 38 active AI agent skills. Built with vanilla HTML/CSS/JS, powered by GSAP animations, Web Components, and JSON-LD structured data. It doubles as a design system showcase and a functional API endpoint.
 
 The showcase was designed and built using the very skills it catalogs:
-
 - **ui-ux-pro-max-v7** — 60 styles, 48 palettes, 36 fonts, 24 industry rules
 - **gsap-animations** — Production-grade GSAP animation patterns with ScrollTrigger + Flip
 - **anthropic-frontend-design** — Bold aesthetics for AI-native interfaces
 - **frontend-design** — shadcn/ui + Tailwind + React component generation
+
+### Layer 2: Agent System (Intelligence + Operations)
+
+A **production-ready AI partner system** built on a Universal Router (3,100 tokens) + 4 context-loaded skills. Includes 18 comprehensive documentation files covering deployment, operational playbooks, monitoring, optimization, integration, and a 5-phase evolution roadmap. The system implements:
+
+- **Silent Protocol** — Invisible diagnostic that runs before every response
+- **Context Routing** — Intelligent skill switching based on conversation context
+- **CONTINUITY Protocol** — Automatic context carrying between skill switches
+- **Quality Gates** — 40+ item checklists before shipping code or design
+- **Failure Recovery** — 6 contingency scenarios with step-by-step fixes
+
+The two layers are connected through a **skill routing matrix** (documented in `AGENTS.md`) that maps each of the 38 showcase skills to its corresponding agent skill mode.
 
 ---
 
@@ -36,16 +52,36 @@ The showcase was designed and built using the very skills it catalogs:
 ```
 opencode-accomplishments/
 ├── docs/
-│   └── index.html          # The entire showcase — single file, zero dependencies
+│   └── index.html              # The entire showcase — single file, zero dependencies
+├── agents/                     # Agent System — 18 production-ready files
+│   ├── 00_START_HERE.md        # Navigation hub — read this first
+│   ├── 01_OPERATIONAL_PLAYBOOKS.md   # 6 real-world workflows
+│   ├── 02_ADVANCED_CONFIGURATIONS.md # 6 platform configs
+│   ├── 03_MONITORING_METRICS.md      # Metrics, dashboards, alerts
+│   ├── 04_POWER_USER_PLAYBOOK.md     # 10 advanced patterns
+│   ├── 05_EXTENDED_FAQ.md            # 30+ troubleshooting scenarios
+│   ├── 06_ONE_PAGE_CHEAT_SHEET.md    # One-page reference card
+│   ├── 07_INTEGRATION_GUIDE.md       # 8 integrations (Notion, GitHub, Slack, etc.)
+│   ├── 08_EVOLUTION_GUIDE.md         # 5-phase evolution roadmap
+│   ├── 09_AUTOMATION_SCRIPTS.md      # 6 production-ready scripts
+│   ├── 10_VISUAL_REFERENCE.md        # Architecture diagrams, decision trees
+│   ├── 11_COMPLETE_SYSTEM_INDEX.md    # Complete index of all files
+│   ├── MARK_SYSTEM_PROMPT_FINAL.md   # Universal Router + SKILL_01 + deployment guide
+│   ├── SKILLS_MANIFEST.md            # Routing guide, token budgets, phases
+│   ├── SKILL_02_DESIGN_BUILD.md      # Design skill spec (2,500 tokens)
+│   ├── SKILL_03_CODE_API.md          # Code skill spec (3,000 tokens)
+│   ├── SKILL_04_AGENTIC.md           # Agentic skill spec (2,800 tokens)
+│   └── SKILL_SHORTCUTS_FUNCTION_CALLS.md  # Keyboard shortcuts, API calls
 ├── scripts/
-│   ├── local-sync-skills.sh # Local nightly sync script
-│   └── sync-skills.sh       # GitHub Actions sync script (requires auth)
+│   ├── local-sync-skills.sh    # Local nightly sync script
+│   └── sync-skills.sh          # GitHub Actions sync script
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml       # GitHub Actions CI/CD — auto-deploy on push
-├── SKILL.md                 # Skill documentation for reproducibility
-├── README.md                # This file
-└── vercel.json              # Vercel deployment config
+│       └── deploy.yml          # GitHub Actions CI/CD
+├── AGENTS.md                   # Structural connection map (Showcase ↔ Agent System)
+├── SKILL.md                    # Skill documentation for reproducibility
+├── README.md                   # This file
+└── vercel.json                 # Vercel deployment config
 ```
 
 ### Single-File Philosophy
@@ -55,6 +91,38 @@ The entire showcase lives in `docs/index.html` — one file, zero build steps. A
 - **GitHub Pages** — just serve the `docs/` folder
 - **Vercel** — deploy the repo root, rewrite to `docs/index.html`
 - **Any static host** — drop the file and go
+
+---
+
+## The 4 Agent Skills
+
+| Agent Skill | Domain | Effort | Tokens | Key Behaviors |
+|-------------|--------|--------|--------|---------------|
+| **SKILL_01** Conversational | Mobile, chat, exploration | `high` | 4,400 | Silent Protocol, advocacy mode, blind spot detection, lightweight code assist |
+| **SKILL_02** Design + Build | Desktop, visual, UI/UX | `high` | 5,600 | 3 directions before building, anti-defaults (rejects Opus cream/serif), depth-seeking for design |
+| **SKILL_03** Code + API | Desktop, production code | `xhigh` | 6,100 | Algorithm-first, 40-item quality gates, caveman protocols (repeatable patterns), no pseudocode |
+| **SKILL_04** Agentic | Autonomous, orchestration | `xhigh` | 6,000 | Task decomposition, parallel subagent spawning, state tracking, failure recovery |
+
+**Universal Router** (3,100 tokens, always loaded) handles routing between skills, CONTINUITY protocol (context carrying), closing patterns, and hard stops. All skills are under the 6,500 token threshold — zero overthinking risk.
+
+---
+
+## Platform Skills → Agent Skill Mapping
+
+The 38 showcase skills map to the 4 agent skills as follows:
+
+| Showcase Category | Primary Agent Skill | Showcase Skills |
+|-------------------|---------------------|-----------------|
+| **Design & UI** (5) | SKILL_02 Design | ui-ux-pro-max, anthropic-frontend-design, gsap-animations, frontend-design, web-design-guidelines |
+| **Reasoning** (4) | SKILL_01 Conversational | chain-of-thought, socratic-method, devils-advocate, simulation-sandbox |
+| **Development** (8) | SKILL_03 Code | coding-agent, fullstack-dev, next-best-practices, react-best-practices, composition-patterns, mcp-builder, react-native-skills, web-artifacts-builder |
+| **Content** (4) | SKILL_01 + SKILL_02 | seo-content-writer, humanizer, social-media-manager, blog-writer |
+| **Strategy** (4) | SKILL_01 + SKILL_04 | deep-research, seo-geo, jobs-to-be-done, skill-router |
+| **System** (6) | SKILL_04 Agentic | skill-creator, skill-vetter, skill-scanner, find-skills, context-compressor, humanizer |
+| **Data & Web** (5) | SKILL_04 + SKILL_01 | web-search, web-reader, agent-browser, browser-use, finance |
+| **Creative** (2) | SKILL_02 + SKILL_04 | image-generation, photography-ai |
+
+See `AGENTS.md` for the complete crosswalk with rationale.
 
 ---
 
@@ -154,8 +222,8 @@ curl "https://marktantongco.github.io/opencode-accomplishments?format=json"
 Returns:
 ```json
 {
-  "version": "3.0.0",
-  "lastUpdated": "2026-05-06",
+  "version": "4.0.0",
+  "lastUpdated": "2026-05-17",
   "count": 38,
   "skills": [...]
 }
@@ -179,6 +247,42 @@ Returns a JetBrains-style `plugin.xml` with all 38 skills listed as extensions �
   frameborder="0">
 </iframe>
 ```
+
+---
+
+## Agent System Quick Start
+
+### Reading Path (75 minutes to deploy)
+
+1. **`agents/00_START_HERE.md`** (5 min) — Navigation hub
+2. **`agents/MARK_SYSTEM_PROMPT_FINAL.md`** (30 min) — Deployment procedures + Week 1 testing
+3. **`agents/SKILL_SHORTCUTS_FUNCTION_CALLS.md`** (10 min) — Set up keyboard shortcuts
+4. **`agents/06_ONE_PAGE_CHEAT_SHEET.md`** (5 min) — Print and keep at desk
+5. **`agents/03_MONITORING_METRICS.md`** (skim, 10 min) — What to track
+6. **`agents/05_EXTENDED_FAQ.md`** (skim, 5 min) — Where to get help
+
+### Agent Skill Shortcuts
+
+| Shortcut | Action |
+|----------|--------|
+| `⌘1` or `?1` | Load SKILL_01 (Conversational) |
+| `⌘2` or `?2` | Load SKILL_02 (Design + Build) |
+| `⌘3` or `?3` | Load SKILL_03 (Code + API) |
+| `⌘4` or `?4` | Load SKILL_04 (Agentic) |
+| `!status` | Show current system state |
+| `!route` | Show routing decision for message |
+| `!reset` | Load Universal only (troubleshooting) |
+
+### Deployment Timeline
+
+| Phase | Week | Action |
+|-------|------|--------|
+| Foundation | Week 1 | Deploy Universal + SKILL_01. Run 6 test conversations. |
+| Expansion | Week 2 | Build SKILL_02/03/04 based on Week 1 results. |
+| Stabilization | Week 3-4 | Lock system, gather production data, document edge cases. |
+| Optimization | Month 2 | Refine routing, optimize tokens, tune quality gates. |
+| Specialization | Month 3-4 | Build domain-specific skills (Insurance, Photography, Faith). |
+| Scale | Month 5+ | Team deployment, product integration, customer-facing features. |
 
 ---
 
@@ -249,13 +353,13 @@ All text meets WCAG AA contrast requirements (4.5:1 minimum):
 
 ### GitHub Pages
 
-The `docs/` folder contains `index.html`. GitHub Pages is configured to serve from `/docs` on the `main` branch.
+The `docs/` folder contains `index.html`. GitHub Pages is configured to serve from `/docs` on the `master` branch.
 
 ```bash
 # Manual push
-git add docs/
-git commit -m "chore: update showcase v3.0.0"
-git push origin main
+git add .
+git commit -m "chore: update showcase v4.0.0 + agent system"
+git push origin master
 ```
 
 ### Vercel
@@ -276,7 +380,7 @@ vercel --prod --yes
 ### GitHub Actions CI/CD
 
 The `.github/workflows/deploy.yml` workflow automatically:
-1. Deploys to GitHub Pages on push to `main`
+1. Deploys to GitHub Pages on push to `master`
 2. Triggers Vercel deployment via webhook
 
 ---
@@ -304,10 +408,35 @@ on:
 
 ---
 
+## Agent System Monitoring
+
+The agent system includes a comprehensive monitoring framework documented in `agents/03_MONITORING_METRICS.md`:
+
+### Core Metrics (Weekly)
+
+| Metric | Target | Alert Threshold |
+|--------|--------|-----------------|
+| Routing Accuracy | >90% | <85% (Red Alert) |
+| CONTINUITY Success | >90% | <85% (Red Alert) |
+| Error Rate | <1% | >3% (Red Alert) |
+| User Satisfaction | >80% | <80% (Red Alert) |
+| Thinking Time | Normal | 2x expected (Red Alert) |
+
+### Health Status
+
+```
+🟢 HEALTHY    → All metrics within target
+🟡 WARNING    → 1-2 metrics slightly below target (investigate)
+🔴 CRITICAL   → Any metric significantly below target (stop + debug)
+```
+
+---
+
 ## Version History
 
 | Version | Date | Changes |
 |---|---|---|
+| 4.0.0 | 2026-05-17 | Added complete Agent System (18 files), AGENTS.md structural connection map, skill routing matrix, comprehensive README update |
 | 3.0.0 | 2026-05-06 | Neo-brutalist redesign, ?embed=true, ?palette= endpoint, WCAG AA compliance, marquee contrast fix |
 | 2.0.0 | 2026-05-05 | Light-only theme, URL param filtering (?skill=, ?category=, ?format=json, ?format=manifest), Flip crash fix, const hoisting fix, duplicate function removal |
 | 1.0.0 | 2026-05-04 | Initial showcase — 38 skills, glassmorphism design, dark/light toggle |
@@ -316,6 +445,8 @@ on:
 
 ## Reusability
 
+### Rebranding the Showcase
+
 To rebrand this showcase for a different skill collection:
 
 1. Replace the `SKILLS_DATA` array in `getSkillsDataRaw()`
@@ -323,6 +454,16 @@ To rebrand this showcase for a different skill collection:
 3. Or use `?palette=FF2E63` to dynamically override all brand colors at runtime
 4. Update `SKILLS_VERSION` and `SKILLS_LAST_UPDATED`
 5. JSON-LD auto-generates from `SKILLS_DATA` — no manual editing
+
+### Adapting the Agent System
+
+To adapt the agent system for a different domain:
+
+1. Update `DOMAIN CONTEXT` in the Universal Prompt (currently AI/Dev + Photography)
+2. Modify SKILL_02 anti-defaults to match your brand (currently rejects Opus cream/serif)
+3. Add domain-specific skills (see `agents/08_EVOLUTION_GUIDE.md` Phase 4)
+4. Update routing keywords in `SKILLS_MANIFEST.md`
+5. Follow the 5-phase evolution roadmap
 
 ---
 
@@ -337,6 +478,8 @@ To rebrand this showcase for a different skill collection:
 - **ALWAYS** version the `SKILLS_DATA` array — the showcase is a living standard
 - **ALWAYS** ensure WCAG AA contrast (4.5:1 minimum) on all text elements
 - **NEVER** use electric lime (`#BFFF00`) on white backgrounds for text
+- **ALWAYS** run the Silent Protocol before every AI response — invisible diagnostic is non-negotiable
+- **ALWAYS** announce skill switches via CONTINUITY Protocol — context must carry forward visibly
 
 ---
 
@@ -347,3 +490,5 @@ MIT
 ---
 
 Built with **ui-ux-pro-max-v7** + **gsap-animations** + **anthropic-frontend-design** + **frontend-design**
+
+Powered by **Universal Router v1.0** + **SKILL_01-04** agent system
