@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MCP Stack Registry - 8 Pre-Built Stacks",
+  "description": "Curated MCP server combinations optimized for specific use cases. Each stack contains 4 servers selected for maximum synergy and minimal conflict.",
+  "version": "1.0.0",
+  "lastUpdated": "2026-05-19",
+  "curatedBy": "opencode-accomplishments",
+  "stacks": [
+    {
+      "id": "creative-studio",
+      "name": "Creative Studio",
+      "tagline": "From idea to visual - image generation meets design systems",
+      "icon": "🎨",
+      "servers": [
+        {"name": "PictoFlux AI", "package": "@anthropic/pictoflux-ai", "category": "Image Generation", "role": "Primary image generator", "url": "https://chat.mcp.so/server/pictoflux-ai", "free": true, "unlimited": true},
+        {"name": "Figma MCP", "package": "@figma/mcp-server", "category": "Design Tools", "role": "Design file access", "url": "https://github.com/figma/mcp-server", "free": true},
+        {"name": "Filesystem MCP", "package": "@modelcontextprotocol/server-filesystem", "category": "File Operations", "role": "Asset management", "url": "https://github.com/modelcontextprotocol/servers", "free": true},
+        {"name": "Memory MCP", "package": "@modelcontextprotocol/server-memory", "category": "Knowledge Graph", "role": "Style memory", "url": "https://github.com/modelcontextprotocol/servers", "free": true}
+      ],
+      "synergy": ["PictoFlux generates images -> Filesystem saves them to project", "Figma provides design context -> PictoFlux generates matching visuals", "Memory stores brand preferences -> PictoFlux applies consistent styles"],
+      "mismatches": [],
+      "bestFor": ["Design agencies", "Content creators", "Marketing teams"],
+      "estimatedSetupMin": 5
+    },
+    {
+      "id": "research-engine",
+      "name": "Research Engine",
+      "tagline": "Deep research across web, academic, and code sources",
+      "icon": "🔍",
+      "servers": [
+        {"name": "Brave Search MCP", "package": "@anthropic/mcp-server-brave-search", "category": "Web Search", "role": "Web search", "url": "https://github.com/anthropics/mcp-servers", "free": true},
+        {"name": "Fetch MCP", "package": "@modelcontextprotocol/server-fetch", "category": "Web Scraping", "role": "Content extraction", "url": "https://github.com/modelcontextprotocol/servers", "free": true},
+        {"name": "Arxiv MCP", "package": "@anthropic/mcp-server-arxiv", "category": "Academic Research", "role": "Paper search", "url": "https://github.com/anthropics/mcp-servers", "free": true},
+        {"name": "Memory MCP", "package": "@modelcontextprotocol/server-memory", "category": "Knowledge Graph", "role": "Research memory", "url": "https://github.com/modelcontextprotocol/servers", "free": true}
+      ],
+      "synergy": ["Brave Search finds sources -> Fetch extracts full content", "Arxiv provides papers -> Memory indexes findings"],
+      "mismatches": [],
+      "bestFor": ["Researchers", "Analysts", "Students"],
+      "estimatedSetupMin": 4
+    },
+    {
+      "id": "fullstack-dev",
+      "name": "Full-Stack Dev",
+      "tagline": "Code, database, deploy - the complete development pipeline",
+      "icon": "⚡",
+      "servers": [
+        {"name": "GitHub MCP", "package": "@github/mcp-server", "category": "Code Repository", "role": "Repository management", "url": "https://github.com/github/github-mcp-server", "free": true},
+        {"name": "Postgres MCP", "package": "@modelcontextprotocol/server-postgres", "category": "Database", "role": "Database operations", "url": "https://github.com/modelcontextprotocol/servers", "free": true},
+        {"name": "Filesystem MCP", "package": "@modelcontextprotocol/server-filesystem", "category": "File Operations", "role": "Project files", "url": "https://github.com/modelcontextprotocol/servers", "free": true},
+        {"name": "Sequential Thinking MCP", "package": "@modelcontextprotocol/server-sequential-thinking", "category": "Reasoning", "role": "Step-by-step reasoning", "url": "https://github.com/modelcontextprotocol/servers", "free": true}
+      ],
+      "synergy": ["GitHub manages code -> Filesystem edits files -> Postgres manages data", "Sequential Thinking plans architecture -> Filesystem creates structure"],
+      "mismatches": ["Avoid Postgres MCP and Supabase MCP simultaneously"],
+      "bestFor": ["Full-stack developers", "Startups", "Solo builders"],
+      "estimatedSetupMin": 8
+    },
+    {
+      "id": "content-machine",
+      "name": "Content Machine",
+      "tagline": "Write, optimize, publish - end-to-end content pipeline",
+      "icon": "✍️",
+      "servers": [
+        {"name": "Brave Search MCP", "package": "@anthropic/mcp-server-brave-search", "category": "Web Search", "role": "Topic research", "url": "https://github.com/anthropics/mcp-servers", "free": true},
+        {"name": "PictoFlux AI", "package": "@anthropic/pictoflux-ai", "category": "Image Generation", "role": "Featured images", "url": "https://chat.mcp.so/server/pictoflux-ai", "free": true, "unlimited": true},
+        {"name": "Filesystem MCP", "package": "@modelcontextprotocol/server-filesystem", "category": "File Operations", "role": "Content storage", "url": "https://github.com/modelcontextprotocol/servers", "free": true},
+        {"name": "Memory MCP", "package": "@modelcontextprotocol/server-memory", "category": "Knowledge Graph", "role": "Brand voice memory", "url": "https://github.com/modelcontextprotocol/servers", "free": true}
+      ],
+      "synergy": ["Brave Search researches -> Memory stores brand voice -> Content written consistently", "PictoFlux generates visuals -> Filesystem saves with content"],
+      "mismatches": [],
+      "bestFor": ["Content marketers", "Bloggers", "Newsletter writers"],
+      "estimatedSetupMin": 5
+    },
+    {
+      "id": "data-pipeline",
+      "name": "Data Pipeline",
+      "tagline": "Extract, transform, visualize - data engineering in a box",
+      "icon": "📊",
+      "servers": [
+        {"name": "Postgres MCP", "package": "@modelcontextprotocol/server-postgres", "category": "Database", "role": "Data storage", "url": "https://github.com/modelcontextprotocol/servers", "free": true},
+        {"name": "Fetch MCP", "package": "@modelcontextprotocol/server-fetch", "category": "Web Scraping", "role": "Data extraction", "url": "https://github.com/modelcontextprotocol/servers", "free": true},
+        {"name": "Filesystem MCP", "package": "@modelcontextprotocol/server-filesystem", "category": "File Operations", "role": "ETL staging", "url": "https://github.com/modelcontextprotocol/servers", "free": true},
+        {"name": "SQLite MCP", "package": "@modelcontextprotocol/server-sqlite", "category": "Database", "role": "Local analytics", "url": "https://github.com/modelcontextprotocol/servers", "free": true}
+      ],
+      "synergy": ["Fetch extracts -> Filesystem stages -> Postgres warehouses -> SQLite explores locally"],
+      "mismatches": ["Do NOT use Postgres MCP and Supabase MCP together"],
+      "bestFor": ["Data engineers", "Analysts", "BI teams"],
+      "estimatedSetupMin": 10
+    },
+    {
+      "id": "security-audit",
+      "name": "Security Audit",
+      "tagline": "Scan, analyze, report - comprehensive security review",
+      "icon": "🛡️",
+      "servers": [
+        {"name": "GitHub MCP", "package": "@github/mcp-server", "category": "Code Repository", "role": "Code review", "url": "https://github.com/github/github-mcp-server", "free": true},
+        {"name": "Filesystem MCP", "package": "@modelcontextprotocol/server-filesystem", "category": "File Operations", "role": "Local scan", "url": "https://github.com/modelcontextprotocol/servers", "free": true},
+        {"name": "Sequential Thinking MCP", "package": "@modelcontextprotocol/server-sequential-thinking", "category": "Reasoning", "role": "Threat modeling", "url": "https://github.com/modelcontextprotocol/servers", "free": true},
+        {"name": "Brave Search MCP", "package": "@anthropic/mcp-server-brave-search", "category": "Web Search", "role": "CVE lookup", "url": "https://github.com/anthropics/mcp-servers", "free": true}
+      ],
+      "synergy": ["GitHub scans remote -> Filesystem scans local -> comprehensive coverage", "Brave Search finds CVEs -> Sequential Thinking assesses exploitability"],
+      "mismatches": [],
+      "bestFor": ["Security engineers", "DevOps teams", "Compliance officers"],
+      "estimatedSetupMin": 6
+    },
+    {
+      "id": "agent-os",
+      "name": "Agent OS",
+      "tagline": "Memory, orchestration, reasoning - the autonomous agent foundation",
+      "icon": "🤖",
+      "servers": [
+        {"name": "Memory MCP", "package": "@modelcontextprotocol/server-memory", "category": "Knowledge Graph", "role": "Long-term memory", "url": "https://github.com/modelcontextprotocol/servers", "free": true},
+        {"name": "Sequential Thinking MCP", "package": "@modelcontextprotocol/server-sequential-thinking", "category": "Reasoning", "role": "Structured reasoning", "url": "https://github.com/modelcontextprotocol/servers", "free": true},
+        {"name": "Filesystem MCP", "package": "@modelcontextprotocol/server-filesystem", "category": "File Operations", "role": "Persistent storage", "url": "https://github.com/modelcontextprotocol/servers", "free": true},
+        {"name": "Brave Search MCP", "package": "@anthropic/mcp-server-brave-search", "category": "Web Search", "role": "Grounding", "url": "https://github.com/anthropics/mcp-servers", "free": true}
+      ],
+      "synergy": ["The four pillars: Remember (Memory) -> Reason (Thinking) -> Act (Filesystem) -> Verify (Search)"],
+      "mismatches": [],
+      "bestFor": ["AI researchers", "Agent builders", "Automation engineers"],
+      "estimatedSetupMin": 5
+    },
+    {
+      "id": "product-launch",
+      "name": "Product Launch",
+      "tagline": "Research, build, market, sell - from zero to launched",
+      "icon": "🚀",
+      "servers": [
+        {"name": "Brave Search MCP", "package": "@anthropic/mcp-server-brave-search", "category": "Web Search", "role": "Market research", "url": "https://github.com/anthropics/mcp-servers", "free": true},
+        {"name": "PictoFlux AI", "package": "@anthropic/pictoflux-ai", "category": "Image Generation", "role": "Launch assets", "url": "https://chat.mcp.so/server/pictoflux-ai", "free": true, "unlimited": true},
+        {"name": "GitHub MCP", "package": "@github/mcp-server", "category": "Code Repository", "role": "Ship code", "url": "https://github.com/github/github-mcp-server", "free": true},
+        {"name": "Memory MCP", "package": "@modelcontextprotocol/server-memory", "category": "Knowledge Graph", "role": "Launch playbook", "url": "https://github.com/modelcontextprotocol/servers", "free": true}
+      ],
+      "synergy": ["Research (Search) -> Build (GitHub) -> Visualize (PictoFlux) -> Remember (Memory)"],
+      "mismatches": [],
+      "bestFor": ["Indie hackers", "Startup founders", "Solo entrepreneurs"],
+      "estimatedSetupMin": 7
+    }
+  ],
+  "synergyRules": {
+    "alwaysCombine": ["Memory MCP + any other server", "Sequential Thinking + any complex task", "Filesystem MCP + any server that produces artifacts"],
+    "neverCombine": ["Postgres MCP + Supabase MCP (database access conflict)", "Multiple file-write servers on same directory", "Two web search servers simultaneously"],
+    "conditionalCombine": ["GitHub MCP + GitLab MCP (only if managing repos on both platforms)", "Postgres MCP + SQLite MCP (fine if Postgres is production and SQLite is local)"]
+  }
+}
