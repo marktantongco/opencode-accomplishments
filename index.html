@@ -3,19 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Skills Showcase — 41 Active Skills</title>
-<meta name="description" content="Interactive showcase of 41 AI agent skills across 9 categories including MCP Servers — Neo-Brutalist Gen Z Design. Built with GSAP, Web Components, JSON-LD.">
+<title>AI Skills Showcase — 48 Active Skills</title>
+<meta name="description" content="Interactive showcase of 48 AI agent skills across 10 categories including Agent Modes and MCP Servers — Neo-Brutalist Gen Z Design. Built with GSAP, Web Components, JSON-LD.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <link rel="canonical" href="https://agentskills.io/showcase">
 
-<meta property="og:title" content="AI Skills Showcase — 41 Active Skills">
-<meta property="og:description" content="Interactive showcase of 41 AI agent skills across 9 categories including MCP Servers. Neo-brutalist ultramodern Gen Z design.">
+<meta property="og:title" content="AI Skills Showcase — 48 Active Skills">
+<meta property="og:description" content="Interactive showcase of 48 AI agent skills across 10 categories including Agent Modes and MCP Servers. Neo-brutalist ultramodern Gen Z design.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://agentskills.io/showcase">
 <meta property="og:image" content="og-skills-showcase.png">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Skills Showcase — 41 Active Skills">
-<meta name="twitter:description" content="Interactive showcase of 41 AI agent skills across 9 categories including MCP Servers.">
+<meta name="twitter:title" content="AI Skills Showcase — 48 Active Skills">
+<meta name="twitter:description" content="Interactive showcase of 48 AI agent skills across 10 categories including Agent Modes and MCP Servers.">
 <meta name="twitter:image" content="og-skills-showcase.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,8 +34,8 @@
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "AI Agent Skills Collection",
-  "description": "41 active AI agent skills across 9 categories including MCP Servers",
-  "numberOfItems": 41,
+  "description": "48 active AI agent skills across 10 categories including Agent Modes and MCP Servers",
+  "numberOfItems": 48,
   "itemListElement": [
     {"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"ui-ux-pro-max-v7","applicationCategory":"AISkill","description":"AI design intelligence — 60 styles, 48 palettes, 36 fonts, 24 industry rules, production-grade components"}},
     {"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"anthropic-frontend-design","applicationCategory":"AISkill","description":"Bold aesthetics for AI-native interfaces, conversational UI, trust-forward design"}},
@@ -75,14 +77,21 @@
     {"@type":"ListItem","position":38,"item":{"@type":"SoftwareApplication","name":"pictoflux-ai","applicationCategory":"MCPServer","description":"Free unlimited AI image generation via MCP protocol — text-to-image, style transfer, batch generation"}},
     {"@type":"ListItem","position":39,"item":{"@type":"SoftwareApplication","name":"mcp-stack-curator","applicationCategory":"MCPServer","description":"Intelligent MCP server stack builder — recommends optimal 4-server combinations with synergy analysis"}},
     {"@type":"ListItem","position":40,"item":{"@type":"SoftwareApplication","name":"mcp-registry","applicationCategory":"MCPServer","description":"Curated directory of 105+ free MCP servers across 14 categories with deduplication and ratings"}},
-    {"@type":"ListItem","position":41,"item":{"@type":"SoftwareApplication","name":"mcp-security-scanner","applicationCategory":"MCPServer","description":"Security-first vetting for MCP server installations — red flag detection, permission auditing, scope analysis"}}
+    {"@type":"ListItem","position":41,"item":{"@type":"SoftwareApplication","name":"mcp-security-scanner","applicationCategory":"MCPServer","description":"Security-first vetting for MCP server installations — red flag detection, permission auditing, scope analysis"}},
+    {"@type":"ListItem","position":42,"item":{"@type":"SoftwareApplication","name":"rabbit-multiply-ideas","applicationCategory":"AISkill","description":"Take an idea and multiply it into 10 different variations — change the angle, audience, and format for each"}},
+    {"@type":"ListItem","position":43,"item":{"@type":"SoftwareApplication","name":"owl-deep-analysis","applicationCategory":"AISkill","description":"Think slowly and analytically — examine problems from multiple perspectives and identify hidden factors most people overlook"}},
+    {"@type":"ListItem","position":44,"item":{"@type":"SoftwareApplication","name":"ant-break-into-steps","applicationCategory":"AISkill","description":"Break goals into the smallest possible steps someone could realistically complete"}},
+    {"@type":"ListItem","position":45,"item":{"@type":"SoftwareApplication","name":"eagle-big-picture","applicationCategory":"AISkill","description":"See the long-term strategy — explain how all the pieces connect from a bird's-eye view"}},
+    {"@type":"ListItem","position":46,"item":{"@type":"SoftwareApplication","name":"dolphin-creative-solutions","applicationCategory":"AISkill","description":"Generate curious, playful, and inventive solutions that most people wouldn't normally consider"}},
+    {"@type":"ListItem","position":47,"item":{"@type":"SoftwareApplication","name":"beaver-build-systems","applicationCategory":"AISkill","description":"Design practical systems that solve problems step by step, like a beaver building a dam"}},
+    {"@type":"ListItem","position":48,"item":{"@type":"SoftwareApplication","name":"elephant-cross-field","applicationCategory":"AISkill","description":"Connect ideas to insights from other fields such as psychology, economics, science, or history"}}
   ]
 }
 </script>
 
 <style>
 /* ===================================================================
-   NEO-BRUTALIST ULTRAMODERN GEN Z DESIGN SYSTEM v4.0
+   NEO-BRUTALIST ULTRAMODERN GEN Z DESIGN SYSTEM v5.0
    - Thick borders, hard offset shadows, high-sat colors
    - WCAG AA compliant contrast on all text
    - Monospace + display typography, sticker badges
@@ -122,6 +131,7 @@
   --cat-data: #64FFDA;
   --cat-creative: #FF9FF3;
   --cat-mcp: #C77DFF;
+  --cat-agents: #FF6B35;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1097,8 +1107,8 @@ body.embed-mode .skills-section {
 <!-- ===== SKILLS GRID ===== -->
 <main class="skills-section" id="skills-section">
   <div class="section-heading" id="section-heading">
-    <h2><span class="skill-count" id="skill-count">41</span> ACTIVE SKILLS</h2>
-    <p>9 categories // design // development // reasoning // content // strategy // system // data // creative // mcp servers</p>
+    <h2><span class="skill-count" id="skill-count">48</span> ACTIVE SKILLS</h2>
+    <p>10 categories // design // development // reasoning // content // strategy // system // data // creative // mcp servers // agent modes</p>
   </div>
   <div class="skills-grid" id="skills-grid" role="list" aria-label="Skills grid">
     <!-- Skill cards generated by JS -->
@@ -1108,12 +1118,12 @@ body.embed-mode .skills-section {
 <!-- ===== API NOTICE ===== -->
 <div class="api-notice" id="api-notice">
 <strong>ENDPOINTS:</strong> <code>?format=json</code> raw JSON &nbsp;|&nbsp; <code>?format=manifest</code> plugin.xml &nbsp;|&nbsp; <code>?skill=gsap-animations</code> auto-filter &nbsp;|&nbsp; <code>?category=Development</code> category filter &nbsp;|&nbsp; <code>?embed=true</code> iframe-ready &nbsp;|&nbsp; <code>?palette=FF2E63</code> live theme
-  <br><strong>VERSION:</strong> <code>v4.0.0</code> &nbsp;|&nbsp; <strong>UPDATED:</strong> <code>2026-05-19</code> &nbsp;|&nbsp; WCAG AA contrast &nbsp;|&nbsp; JSON-LD in <code>&lt;head&gt;</code> &nbsp;|&nbsp; GitHub Pages ready
+  <br><strong>VERSION:</strong> <code>v5.0.0</code> &nbsp;|&nbsp; <strong>UPDATED:</strong> <code>2026-05-19</code> &nbsp;|&nbsp; WCAG AA contrast &nbsp;|&nbsp; JSON-LD in <code>&lt;head&gt;</code> &nbsp;|&nbsp; GitHub Pages ready
 </div>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer" id="site-footer">
-  Built with <span class="brand-lime">ui-ux-pro-max-v7</span> + <span>gsap-animations</span> + <span>anthropic-frontend-design</span> + <span>frontend-design</span> // 41 skills // 9 categories // v4.0.0
+  Built with <span class="brand-lime">ui-ux-pro-max-v7</span> + <span>gsap-animations</span> + <span>anthropic-frontend-design</span> + <span>frontend-design</span> // 48 skills // 10 categories // v5.0.0
 </footer>
 
 <!-- Scroll-to-top FAB -->
@@ -1123,7 +1133,7 @@ body.embed-mode .skills-section {
 
 <script>
 // ===== VERSIONING — LIVING STANDARD =====
-const SKILLS_VERSION = '4.0.0';
+const SKILLS_VERSION = '5.0.0';
 const SKILLS_LAST_UPDATED = '2026-05-19';
 
 // ===== MACHINE-READABLE ENDPOINTS =====
@@ -1212,6 +1222,15 @@ function getSkillsDataRaw() {
     { name: "mcp-stack-curator", category: "MCP Servers", description: "Intelligent MCP server stack builder — recommends optimal 4-server combinations with synergy and mismatch analysis", icon: "\u{1F9E9}", invoke: "Use when deciding which MCP servers to combine, analyzing server compatibility, or building custom MCP stacks", tags: ["mcp","stack","curator","synergy","compatibility"], accent: "#C77DFF" },
     { name: "mcp-registry", category: "MCP Servers", description: "Curated directory of 105+ free MCP servers across 14 categories with deduplication and ratings", icon: "\u{1F4CA}", invoke: "Use when discovering, comparing, or evaluating free MCP servers across categories", tags: ["mcp","registry","directory","servers","ratings"], accent: "#C77DFF" },
     { name: "mcp-security-scanner", category: "MCP Servers", description: "Security-first vetting for MCP server installations — red flag detection, permission auditing, scope analysis", icon: "\u{1F6E1}", invoke: "Use when auditing MCP server security, checking permissions, or scanning for vulnerabilities before installation", tags: ["mcp","security","audit","vulnerability","permissions"], accent: "#C77DFF" },
+
+    // Agent Modes
+    { name: "rabbit-multiply-ideas", category: "Agent Modes", description: "Take an idea and multiply it into 10 different variations — change the angle, audience, and format for each", icon: "\u{1F407}", invoke: "Use when brainstorming variations, exploring different angles of an idea, or generating multiple creative directions", tags: ["multiply","variations","brainstorm","ideation","creativity"], accent: "#FF6B35" },
+    { name: "owl-deep-analysis", category: "Agent Modes", description: "Think like an owl — slow, observant and analytical. Examine from multiple perspectives and identify hidden factors", icon: "\u{1F989}", invoke: "Use when conducting deep analysis, examining hidden factors, or studying a problem from multiple perspectives", tags: ["analysis","observation","perspectives","hidden-factors","deep-thinking"], accent: "#FF6B35" },
+    { name: "ant-break-into-steps", category: "Agent Modes", description: "Break goals into the smallest possible steps someone could realistically complete", icon: "\u{1F41C}", invoke: "Use when breaking down complex goals, creating action plans, or decomposing tasks into manageable steps", tags: ["steps","decomposition","planning","actionable","micro-tasks"], accent: "#FF6B35" },
+    { name: "eagle-big-picture", category: "Agent Modes", description: "See the long-term strategy — explain how all the pieces connect from a bird's-eye view", icon: "\u{1F985}", invoke: "Use when mapping strategy, understanding how components connect, or planning long-term direction", tags: ["strategy","big-picture","long-term","connections","vision"], accent: "#FF6B35" },
+    { name: "dolphin-creative-solutions", category: "Agent Modes", description: "Generate curious, playful, and inventive solutions that most people wouldn't normally consider", icon: "\u{1F42C}", invoke: "Use when seeking creative solutions, thinking outside the box, or generating unconventional approaches", tags: ["creative","inventive","playful","unconventional","solutions"], accent: "#FF6B35" },
+    { name: "beaver-build-systems", category: "Agent Modes", description: "Design practical systems that solve problems step by step, like a beaver building a dam", icon: "\u{1F9AB}", invoke: "Use when building systems, creating processes, or designing structured solutions to complex problems", tags: ["systems","process","structure","practical","building"], accent: "#FF6B35" },
+    { name: "elephant-cross-field", category: "Agent Modes", description: "Connect ideas to insights from other fields such as psychology, economics, science, or history", icon: "\u{1F418}", invoke: "Use when finding cross-disciplinary connections, applying insights from other fields, or leveraging analogies", tags: ["cross-field","interdisciplinary","connections","analogies","insights"], accent: "#FF6B35" },
   ];
 }
 
@@ -1224,7 +1243,7 @@ function generatePluginXml(skills) {
   xml += '<!-- Version: ' + SKILLS_VERSION + ' | Updated: ' + SKILLS_LAST_UPDATED + ' -->\n';
   xml += '<plugin id="io.agentskills.showcase" version="' + SKILLS_VERSION + '">\n';
   xml += '  <name>AI Agent Skills Collection</name>\n';
-  xml += '  <description>41 active AI agent skills across 9 categories including MCP Servers for automated workflows</description>\n';
+  xml += '  <description>48 active AI agent skills across 10 categories including Agent Modes and MCP Servers for automated workflows</description>\n';
   xml += '  <vendor>AgentSkills</vendor>\n';
   xml += '  <version>' + SKILLS_VERSION + '</version>\n';
   xml += '  <lastUpdated>' + SKILLS_LAST_UPDATED + '</lastUpdated>\n';
@@ -1259,9 +1278,9 @@ function applyPalette() {
   const hex = palette.replace('#', '');
   if (!/^[0-9A-Fa-f]{6}$/.test(hex)) return;
 
-  const r = parseInt(hex.substr(0, 2), 16);
-  const g = parseInt(hex.substr(2, 2), 16);
-  const b = parseInt(hex.substr(4, 2), 16);
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
 
   const [h, s, l] = rgbToHsl(r, g, b);
 
@@ -1351,6 +1370,7 @@ const CATEGORIES = [
   { name: "Data & Web", color: "#64FFDA" },
   { name: "Creative", color: "#FF9FF3" },
   { name: "MCP Servers", color: "#C77DFF" },
+  { name: "Agent Modes", color: "#FF6B35" },
 ];
 
 // ===== WEB COMPONENT: <skill-card> =====
@@ -1551,13 +1571,14 @@ document.addEventListener('DOMContentLoaded', () => {
 function initMarquee() {
   const inner = document.getElementById('marquee-inner');
   const items = [
-    '41 SKILLS', '\u25C6', '9 CATEGORIES', '\u25C6',
+    '48 SKILLS', '\u25C6', '10 CATEGORIES', '\u25C6',
     'NEO-BRUTALIST', '\u25C6', 'GSAP POWERED', '\u25C6',
     'WEB COMPONENTS', '\u25C6', 'JSON-LD READY', '\u25C6',
     'WCAG AA', '\u25C6', 'ZERO BUILD STEP', '\u25C6',
     'DESIGN', '\u25C6', 'DEVELOPMENT', '\u25C6', 'REASONING', '\u25C6',
     'CONTENT', '\u25C6', 'STRATEGY', '\u25C6', 'SYSTEM', '\u25C6',
     'DATA', '\u25C6', 'CREATIVE', '\u25C6', 'MCP SERVERS', '\u25C6',
+    'AGENT MODES', '\u25C6',
   ];
   // Double for seamless loop
   const html = [...items, ...items].map(i => `<span>${i}</span>`).join('');
