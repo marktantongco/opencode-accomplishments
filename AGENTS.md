@@ -1,18 +1,20 @@
 # AGENTS.md — Structural Connection Map
 
-**Bridges the 38 Skills Showcase ↔ 18 Agent System Files ↔ Platform Skill Ecosystem**
+**Bridges the 48 Skills Showcase ↔ 18 Agent System Files ↔ 127 MCP Servers ↔ MCP Stack Curator**
 
 ---
 
 ## Architecture Overview
 
-This project operates on two complementary layers:
+This project operates on **three complementary layers**:
 
-1. **Skills Showcase** (`docs/index.html`) — A visual, interactive catalog of 38 platform skills across 8 categories, rendered as a neo-brutalist single-page app with GSAP animations, Web Components, and JSON-LD structured data. Serves as both a human-facing portfolio and a machine-readable API (`?format=json`, `?format=manifest`).
+1. **Skills Showcase** (`docs/index.html`) — A visual, interactive catalog of 48 platform skills across 10 categories, rendered as a neo-brutalist single-page app with GSAP animations, Web Components, JSON-LD structured data, MCP server pairings per skill, and an interactive MCP Stack Curator. Serves as both a human-facing portfolio and a machine-readable API (`?format=json`, `?format=manifest`).
 
 2. **Agent System** (`agents/`) — A production-ready AI partner system built on a Universal Router + 4 context-loaded skills (SKILL_01 through SKILL_04), with 18 comprehensive documentation files covering deployment, operations, monitoring, optimization, and evolution.
 
-The two layers are connected through a **skill routing matrix** that maps each platform skill to its corresponding agent skill mode, enabling intelligent context switching during AI-assisted work.
+3. **MCP Ecosystem** (`stacks.json` + `mcp-registry.json`) — A curated directory of 127 free MCP servers across 14 categories, plus 8 pre-built MCP stack configurations that solve the unsolved problem: *which 4 servers do you use together?* The MCP Stack Curator provides synergy scoring, conflict detection, and a build-your-own feature.
+
+The three layers are connected through a **skill-agent-MCP synergy matrix** that maps each platform skill to its corresponding agent skill mode AND recommended MCP servers, enabling intelligent context switching during AI-assisted work.
 
 ---
 
@@ -29,85 +31,136 @@ The two layers are connected through a **skill routing matrix** that maps each p
 
 ---
 
-## Platform Skills → Agent Skill Mapping
+## The 7 Agent Mode Skills
+
+| Agent Mode | Icon | Superpower | MCP Stack Pairing |
+|------------|------|------------|-------------------|
+| **Rabbit** | 🐇 | Multiply ideas — rapid ideation, brainstorming, divergent thinking | AI Research Lab |
+| **Owl** | 🦉 | Deep analysis — systematic decomposition, evidence evaluation | Security Audit Toolkit |
+| **Ant** | 🐜 | Break into steps — task decomposition, sequential planning | Full-Stack Web Studio |
+| **Eagle** | 🦅 | Big picture — strategic vision, cross-domain patterns | DevOps Command Center |
+| **Dolphin** | 🐬 | Creative solutions — lateral thinking, innovative paths | Creative Studio |
+| **Beaver** | 🦫 | Build systems — architecture, infrastructure, construction | Data Pipeline Studio |
+| **Elephant** | 🐘 | Cross-field connections — knowledge synthesis, interdisciplinary | Content Engine |
+
+---
+
+## Skill → Agent → MCP Synergy Matrix
 
 ### Design & UI Category → SKILL_02 (Design + Build)
 
-| Showcase Skill | Agent Mode | Why |
-|---------------|------------|-----|
-| ui-ux-pro-max | SKILL_02 | Visual design reasoning, component library patterns |
-| brainstorming | SKILL_02 | Gates into design before implementation |
-| gsap-animations | SKILL_02 | Animation design, scroll effects, motion system |
-| shadcn | SKILL_02 → SKILL_03 | Component design then production code |
-| web-design-guidelines | SKILL_02 | Design principles, responsive layout |
+| Showcase Skill | Agent Mode | MCP Servers | Why |
+|---------------|------------|-------------|-----|
+| ui-ux-pro-max-v7 | SKILL_02 | filesystem, fetch, google-drive | Design files + asset sourcing + brand kits |
+| anthropic-frontend-design | SKILL_02 | filesystem, fetch, google-drive | AI interface design + reference retrieval |
+| gsap-animations | SKILL_02 | filesystem, fetch, google-drive | Animation code + CDN references |
+| frontend-design | SKILL_02 | filesystem, fetch, google-drive | Component generation + design system access |
+| vercel-web-design-guidelines | SKILL_02 | filesystem, fetch, google-drive | Audit rules + accessibility standards |
 
 ### Reasoning Category → SKILL_01 (Conversational)
 
-| Showcase Skill | Agent Mode | Why |
-|---------------|------------|-----|
-| chain-of-thought | SKILL_01 | Structured reasoning for decisions |
-| socratic-method | SKILL_01 | Questioning-based exploration |
-| devils-advocate | SKILL_01 | Challenging assumptions, comparative reasoning |
-| simulation-sandbox | SKILL_01 → SKILL_04 | What-if exploration, scenario testing |
+| Showcase Skill | Agent Mode | MCP Servers | Why |
+|---------------|------------|-------------|-----|
+| chain-of-thought | SKILL_01 | memory, sequential-thinking, sqlite | Step storage + reasoning chains + structured data |
+| socratic-method | SKILL_01 | memory, sequential-thinking, sqlite | Question persistence + logical flow |
+| devils-advocate | SKILL_01 | memory, sequential-thinking, sqlite | Argument tracking + counter-logic |
+| simulation-sandbox | SKILL_01 → SKILL_04 | memory, sequential-thinking, sqlite | Scenario storage + state simulation |
 
 ### Development Category → SKILL_03 (Code + API)
 
-| Showcase Skill | Agent Mode | Why |
-|---------------|------------|-----|
-| coding-agent | SKILL_03 | Structured coding workflow, quality gates |
-| fullstack-dev | SKILL_03 | Fullstack production code |
-| next-best-practices | SKILL_03 | Framework correctness |
-| react-best-practices | SKILL_03 | Performance optimization |
-| composition-patterns | SKILL_03 | Scalable component architecture |
-| mcp-builder | SKILL_03 | API/protocol implementation |
-| react-native-skills | SKILL_03 | Mobile production code |
-| web-artifacts-builder | SKILL_03 | Build pipeline, single-file bundling |
+| Showcase Skill | Agent Mode | MCP Servers | Why |
+|---------------|------------|-------------|-----|
+| mcp-builder | SKILL_03 | filesystem, github, docker | Build MCP servers + version control + containerize |
+| superpowers | SKILL_03 | filesystem, github, docker | Spec-first code + CI/CD + packaging |
+| deployment-manager | SKILL_03 | filesystem, github, docker | Deploy pipeline + repo management + container deploys |
+| browser-use | SKILL_03 | filesystem, github, docker | Browser automation scripts + version + package |
+| web-artifacts-builder | SKILL_03 | filesystem, github, docker | Artifact builds + repo sync + container testing |
+| vercel-react-best-practices | SKILL_03 | filesystem, github, docker | React code + PR workflows + containerized builds |
+| explained-code | SKILL_03 | filesystem, github, docker | Code reading + repo access + analysis |
 
 ### Content Category → SKILL_01 + SKILL_02
 
-| Showcase Skill | Agent Mode | Why |
-|---------------|------------|-----|
-| docx | SKILL_01 | Document creation workflows |
-| pdf | SKILL_01 | Report generation |
-| xlsx | SKILL_01 | Spreadsheet/data analysis |
-| blog-writer | SKILL_02 | Content with visual framing |
+| Showcase Skill | Agent Mode | MCP Servers | Why |
+|---------------|------------|-------------|-----|
+| seo-content-writer | SKILL_01 | filesystem, brave-search, google-drive, slack | Research + write + briefs + review |
+| humanizer | SKILL_01 | filesystem, brave-search, google-drive, slack | Text processing + reference + editing + feedback |
+| social-media-manager | SKILL_01 | filesystem, brave-search, google-drive, slack | Content gen + trend research + assets + approval |
+| social-content-pillars | SKILL_01 | filesystem, brave-search, google-drive, slack | Calendar creation + research + planning + team sync |
 
 ### Strategy Category → SKILL_01 + SKILL_04
 
-| Showcase Skill | Agent Mode | Why |
-|---------------|------------|-----|
-| deep-research | SKILL_04 | Parallel search agents, cross-referencing |
-| seo-geo | SKILL_01 | Content strategy, optimization |
-| jobs-to-be-done | SKILL_01 | Customer research, value proposition |
-| skill-router | SKILL_04 | Intent classification, skill stack mapping |
+| Showcase Skill | Agent Mode | MCP Servers | Why |
+|---------------|------------|-------------|-----|
+| jtbd-research | SKILL_01 | brave-search, memory, fetch | Customer research + persist findings + source data |
+| gumroad-pipeline | SKILL_01 | brave-search, memory, fetch | Market research + funnel memory + competitor data |
+| feature-research | SKILL_01 | brave-search, memory, fetch | Architecture research + decision persistence + docs |
+| skill-finder | SKILL_04 | brave-search, memory, fetch | Skill discovery + rating memory + installation |
 
 ### System Category → SKILL_04 (Agentic)
 
-| Showcase Skill | Agent Mode | Why |
-|---------------|------------|-----|
-| skill-creator | SKILL_04 | Subagent-based eval, blind A/B comparison |
-| skill-vetter | SKILL_04 | Multi-phase security analysis |
-| skill-scanner | SKILL_04 | 8-phase scan pipeline |
-| find-skills | SKILL_01 | Discovery queries |
-| context-compressor | Cross-cutting | Token optimization (any mode) |
-| humanizer | SKILL_01 | Tone adjustment |
+| Showcase Skill | Agent Mode | MCP Servers | Why |
+|---------------|------------|-------------|-----|
+| persistent-memory | SKILL_04 | filesystem, github, docker | Memory system + config sync + backup |
+| system-prompt-sync | SKILL_04 | filesystem, github, docker | Auto-sync + version control + deployment |
+| feedback-loop | SKILL_04 | filesystem, github, docker | Metrics storage + issue tracking + monitoring |
+| context-compressor | Cross-cutting | filesystem, github, docker | Any mode + token optimization |
+| agent-roles | SKILL_04 | filesystem, github, docker | Role management + config versioning |
+| sample-hello-skill | SKILL_01 | filesystem, github, docker | Testing + validation |
 
 ### Data & Web Category → SKILL_04 + SKILL_01
 
-| Showcase Skill | Agent Mode | Why |
-|---------------|------------|-----|
-| web-search | SKILL_01 | Quick lookups, topic comparison |
-| web-reader | SKILL_01 → SKILL_04 | Page extraction, batch pipelines |
-| agent-browser | SKILL_04 | Autonomous browsing, form filling |
-| browser-use | SKILL_04 | Natural language → browser actions |
-| finance | SKILL_01 → SKILL_04 | Quick quotes → complex analysis |
+| Showcase Skill | Agent Mode | MCP Servers | Why |
+|---------------|------------|-------------|-----|
+| web-reader | SKILL_01 → SKILL_04 | fetch, brave-search, sqlite, postgres | Page extraction + discovery + local + production data |
+| audit-analyzer | SKILL_04 | fetch, brave-search, sqlite, postgres | Audit scraping + research + findings + reports |
+| web-design-guidelines | SKILL_01 | fetch, brave-search, sqlite, postgres | Design rules + reference + checklists + data |
+| code-research | SKILL_01 | fetch, brave-search, sqlite, postgres | Repo reading + search + local analysis + production |
+| explore | SKILL_01 | fetch, brave-search, sqlite, postgres | Codebase search + web search + indexing |
 
 ### Creative Category → SKILL_02 + SKILL_04
 
-| Showcase Skill | Agent Mode | Why |
-|---------------|------------|-----|
-| image-generation | SKILL_02 | Visual artifact creation |
-| photography-ai | SKILL_02 | Composition, lighting, gear advice |
+| Showcase Skill | Agent Mode | MCP Servers | Why |
+|---------------|------------|-------------|-----|
+| photography-ai | SKILL_02 | filesystem, fetch, everart | Image assets + reference + AI generation |
+| output-formatter | SKILL_02 | filesystem, fetch, everart | Format files + templates + media |
+
+### MCP Servers Category → SKILL_03 + SKILL_04
+
+| Showcase Skill | Agent Mode | MCP Servers | Why |
+|---------------|------------|-------------|-----|
+| pictoflux-ai | SKILL_03 | filesystem, github | MCP image tools + server management |
+| mcp-stack-curator | SKILL_04 | filesystem, github | Stack analysis + server configuration |
+| mcp-registry | SKILL_04 | filesystem, github | Registry management + catalog updates |
+| mcp-security-scanner | SKILL_04 | filesystem, github | Security auditing + config review |
+
+### Agent Modes Category → SKILL_04 (Agentic)
+
+| Showcase Skill | Agent Mode | MCP Servers | Why |
+|---------------|------------|-------------|-----|
+| agent-rabbit | SKILL_04 | memory, sequential-thinking, filesystem | Ideation storage + thought chains + idea files |
+| agent-owl | SKILL_04 | memory, sequential-thinking, filesystem | Analysis persistence + logical chains + evidence |
+| agent-ant | SKILL_04 | memory, sequential-thinking, filesystem | Task breakdown + step tracking + plan files |
+| agent-eagle | SKILL_04 | memory, sequential-thinking, filesystem | Strategy memory + vision chains + roadmap files |
+| agent-dolphin | SKILL_04 | memory, sequential-thinking, filesystem | Creative memory + reasoning + concept files |
+| agent-beaver | SKILL_04 | memory, sequential-thinking, filesystem | Architecture memory + build plans + system files |
+| agent-elephant | SKILL_04 | memory, sequential-thinking, filesystem | Knowledge graph + cross-domain links + synthesis |
+
+---
+
+## MCP Stack Registry
+
+8 pre-built stacks are defined in `stacks.json`. Each recommends exactly 4 servers with documented synergy scores and mismatch warnings.
+
+| Stack | Emoji | Synergy | Servers | Paired Skills |
+|-------|-------|---------|---------|---------------|
+| Full-Stack Web Studio | 🌐 | 94 | filesystem, github, vercel, postgres | fullstack-dev, frontend-design, deployment-manager, mcp-builder |
+| AI Research Lab | 🧪 | 91 | brave-search, fetch, memory, sqlite | deep-research, chain-of-thought, web-reader, context-compressor |
+| Content Engine | ✍️ | 87 | filesystem, brave-search, google-drive, slack | seo-geo, humanizer, social-media-manager, docx |
+| DevOps Command Center | 🏗️ | 92 | github, docker, kubernetes, slack | deployment-manager, audit-analyzer, feedback-loop, skill-vetter |
+| Data Pipeline Studio | 📊 | 89 | postgres, sqlite, fetch, filesystem | xlsx, finance, context-compressor, explore |
+| Security Audit Toolkit | 🔒 | 86 | filesystem, github, brave-search, docker | skill-vetter, audit-analyzer, skill-scanner, devils-advocate |
+| Creative Studio | 🎨 | 85 | filesystem, fetch, google-drive, slack | image-generation, photography-ai, gsap-animations, ui-ux-pro-max-v7 |
+| Mobile App Workshop | 📱 | 88 | filesystem, github, fetch, memory | react-native-skills, shadcn, deployment-manager, feedback-loop |
 
 ---
 
@@ -127,17 +180,23 @@ The two layers are connected through a **skill routing matrix** that maps each p
 | File | Purpose | Read When |
 |------|---------|-----------|
 | `00_START_HERE.md` | Navigation hub, file inventory, deployment timeline | Right now |
-| `01_OPERATIONAL_PLAYBOOKS.md` | 6 real-world workflows (build product, project mgmt, debug, client work, AI product, learning) | During Week 1 |
-| `02_ADVANCED_CONFIGURATIONS.md` | 6 platform configs (Claude.ai, API, Code, Batch, Team, Integrations) | Platform setup |
-| `03_MONITORING_METRICS.md` | Metrics tracking, dashboards, alerts, weekly health check | Every Friday |
-| `04_POWER_USER_PLAYBOOK.md` | 10 advanced patterns (parallel, incremental, feedback loops, token optimization, chaining) | Week 2+ mastery |
+| `01_OPERATIONAL_PLAYBOOKS.md` | 6 real-world workflows | During Week 1 |
+| `02_ADVANCED_CONFIGURATIONS.md` | 6 platform configs | Platform setup |
+| `03_MONITORING_METRICS.md` | Metrics tracking, dashboards, alerts | Every Friday |
+| `04_POWER_USER_PLAYBOOK.md` | 10 advanced patterns | Week 2+ mastery |
 | `05_EXTENDED_FAQ.md` | 30+ troubleshooting scenarios | When stuck |
-| `06_ONE_PAGE_CHEAT_SHEET.md` | One-page reference card | Daily (print + laminate) |
-| `07_INTEGRATION_GUIDE.md` | 8 integrations (Notion, Google Drive, GitHub, Slack, Email, Discord, Database, Zapier) | Adding tools |
-| `08_EVOLUTION_GUIDE.md` | 5-phase roadmap (Foundation → Stabilization → Optimization → Specialization → Scale) | Month 2+ planning |
-| `09_AUTOMATION_SCRIPTS.md` | 6 production-ready scripts (Python router, monitor, quality gate, JS switcher, report, deploy) | Building automation |
-| `10_VISUAL_REFERENCE.md` | Architecture diagrams, decision trees, workflow flows | Understanding system |
-| `11_COMPLETE_SYSTEM_INDEX.md` | Complete index of all 17 files, reading paths, maintenance schedule | Finding information |
+| `06_ONE_PAGE_CHEAT_SHEET.md` | One-page reference card | Daily |
+| `07_INTEGRATION_GUIDE.md` | 8 integrations | Adding tools |
+| `08_EVOLUTION_GUIDE.md` | 5-phase roadmap | Month 2+ planning |
+| `09_AUTOMATION_SCRIPTS.md` | 6 production-ready scripts | Building automation |
+| `10_VISUAL_REFERENCE.md` | Architecture diagrams, decision trees | Understanding system |
+| `11_COMPLETE_SYSTEM_INDEX.md` | Complete index of all files | Finding information |
+
+### MCP Data Files
+| File | Purpose | Read When |
+|------|---------|-----------|
+| `stacks.json` | 8 pre-built MCP stacks with synergy scoring | Choosing server combinations |
+| `mcp-registry.json` | 127 free MCP servers across 14 categories | Discovering MCP servers |
 
 ---
 
@@ -165,7 +224,7 @@ The `docs/index.html` showcase exposes skills data via URL parameters that the a
 - `?embed=true` — Embeddable mode (no header/footer)
 - `?palette=<hex>` — Override the design accent color
 
-The agent system's `SKILL_SHORTCUTS_FUNCTION_CALLS.md` provides programmatic loading functions (`loadSkill()`, `detect_skill()`, `call_claude_with_skill()`) that can integrate with the showcase's JSON endpoint to dynamically load skill specifications.
+Each skill card now displays MCP server pairings when expanded, and the MCP Stack Curator provides interactive stack exploration with synergy scoring.
 
 ---
 
@@ -176,5 +235,7 @@ The agent system's `SKILL_SHORTCUTS_FUNCTION_CALLS.md` provides programmatic loa
 3. Deploy Universal Router + SKILL_01 to your AI platform
 4. Test with 6 conversations (see Week 1 protocol)
 5. Add SKILL_02/03/04 based on testing results
-6. Monitor with `agents/03_MONITORING_METRICS.md` framework
-7. Evolve with `agents/08_EVOLUTION_GUIDE.md` roadmap
+6. Explore `stacks.json` for your MCP server combinations
+7. Use the MCP Stack Curator in the showcase to find your ideal stack
+8. Monitor with `agents/03_MONITORING_METRICS.md` framework
+9. Evolve with `agents/08_EVOLUTION_GUIDE.md` roadmap
