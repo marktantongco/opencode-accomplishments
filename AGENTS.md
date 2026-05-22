@@ -1,6 +1,6 @@
 # AGENTS.md — Structural Connection Map
 
-**Bridges the 50 Skills Showcase ↔ 18 Agent System Files ↔ 127 MCP Servers ↔ MCP Stack Curator**
+**Bridges the 52 Skills Showcase ↔ 18 Agent System Files ↔ 127 MCP Servers ↔ MCP Stack Curator ↔ Theme Marketplace ↔ Stack Recommender**
 
 ---
 
@@ -8,7 +8,7 @@
 
 This project operates on **three complementary layers**:
 
-1. **Skills Showcase** (`docs/index.html`) — A visual, interactive catalog of 50 platform skills across 10 categories, rendered as a neo-brutalist single-page app with GSAP animations, Web Components, JSON-LD structured data, MCP server pairings per skill, dark mode, stats dashboard, Agent Modes spotlight, and an interactive MCP Stack Curator. Serves as both a human-facing portfolio and a machine-readable API (`?format=json`, `?format=manifest`).
+1. **Skills Showcase** (`docs/index.html`) — A visual, interactive catalog of 52 platform skills across 10 categories, rendered as a neo-brutalist single-page app with GSAP animations, Web Components, JSON-LD structured data, MCP server pairings per skill, dark mode, stats dashboard, Agent Modes spotlight with hover tooltips showing MCP stack pairings, an interactive MCP Stack Curator, a Theme Marketplace with 6 named themes via `?theme=` URL params, and a Your Stack Recommender engine. Serves as both a human-facing portfolio and a machine-readable API (`?format=json`, `?format=manifest`, `?theme=cyberpunk`).
 
 2. **Agent System** (`agents/`) — A production-ready AI partner system built on a Universal Router + 4 context-loaded skills (SKILL_01 through SKILL_04), with 18 comprehensive documentation files covering deployment, operations, monitoring, optimization, and evolution.
 
@@ -65,6 +65,7 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 | socratic-method | SKILL_01 | memory, sequential-thinking, sqlite | Question persistence + logical flow |
 | devils-advocate | SKILL_01 | memory, sequential-thinking, sqlite | Argument tracking + counter-logic |
 | simulation-sandbox | SKILL_01 → SKILL_04 | memory, sequential-thinking, sqlite | Scenario storage + state simulation |
+| brainstorming | SKILL_01 | memory, sequential-thinking, sqlite | Idea generation + reasoning chains + structured storage |
 
 ### Development Category → SKILL_03 (Code + API)
 
@@ -78,6 +79,7 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 | web-artifacts-builder | SKILL_03 | filesystem, github, docker | Artifact builds + repo sync + container testing |
 | vercel-react-best-practices | SKILL_03 | filesystem, github, docker | React code + PR workflows + containerized builds |
 | explained-code | SKILL_03 | filesystem, github, docker | Code reading + repo access + analysis |
+| composition-patterns | SKILL_03 | filesystem, github, docker | Architecture patterns + version control + containerized tests |
 
 ### Content Category → SKILL_01 + SKILL_02
 

@@ -1,5 +1,5 @@
 {
-  "version": "7.0.0",
+  "version": "8.0.0",
   "lastUpdated": "2026-05-23",
   "description": "8 pre-built MCP Stack configurations — each stack recommends exactly 4 servers that work together with documented synergy scores and mismatch warnings. The unsolved problem: which 4 servers do you use together? These stacks answer that.",
   "stacks": [

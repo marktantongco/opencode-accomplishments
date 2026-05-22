@@ -1,9 +1,9 @@
 # OpenCode Accomplishments — AI Skills Showcase + Agent System + MCP Ecosystem
 
-> A self-contained, single-file interactive showcase of 50 AI agent skills across 10 categories — plus a complete production-ready Agent System with Universal Router + 4 context-loaded skills, 18 documentation files, 127 MCP servers in a searchable registry, 8 pre-built MCP stacks with synergy scoring, and an interactive MCP Stack Curator. Neo-brutalist ultramodern Gen Z design with dark mode. Zero build step — drop on GitHub Pages and ship.
+> A self-contained, single-file interactive showcase of 52 AI agent skills across 10 categories — plus a complete production-ready Agent System with Universal Router + 4 context-loaded skills, 18 documentation files, 127 MCP servers in a searchable registry, 8 pre-built MCP stacks with synergy scoring, an interactive MCP Stack Curator, a Theme Marketplace with 6 named themes, and a Your Stack Recommender engine. Neo-brutalist ultramodern Gen Z design with dark mode. Zero build step — drop on GitHub Pages and ship.
 
-![Version](https://img.shields.io/badge/version-7.0.0-FF2E63?style=for-the-badge&labelColor=000)
-![Skills](https://img.shields.io/badge/skills-50-BFFF00?style=for-the-badge&labelColor=000)
+![Version](https://img.shields.io/badge/version-8.0.0-FF2E63?style=for-the-badge&labelColor=000)
+![Skills](https://img.shields.io/badge/skills-52-BFFF00?style=for-the-badge&labelColor=000)
 ![MCP Servers](https://img.shields.io/badge/mcp_servers-127-FF6B35?style=for-the-badge&labelColor=000)
 ![Agent Files](https://img.shields.io/badge/agent_files-18-08F7FE?style=for-the-badge&labelColor=000)
 ![Stacks](https://img.shields.io/badge/mcp_stacks-8-C77DFF?style=for-the-badge&labelColor=000)
@@ -27,7 +27,7 @@ This project has **three complementary layers**:
 
 ### Layer 1: Skills Showcase (Visual + API + MCP Curator)
 
-A **living, self-updating AI Skills Registry** — an interactive, machine-readable catalog of 48 active AI agent skills across 10 categories. Built with vanilla HTML/CSS/JS, powered by GSAP animations, Web Components, JSON-LD structured data, MCP server pairings per skill, and an interactive MCP Stack Curator that solves the unsolved problem: *which 4 servers do you use together?*
+A **living, self-updating AI Skills Registry** — an interactive, machine-readable catalog of 52 active AI agent skills across 10 categories. Built with vanilla HTML/CSS/JS, powered by GSAP animations, Web Components, JSON-LD structured data, MCP server pairings per skill, an interactive MCP Stack Curator, a Theme Marketplace with 6 named themes via `?theme=` URL params, and a Your Stack Recommender engine that selects 3-5 skills and recommends the optimal MCP stack + agent mode.
 
 ### Layer 2: Agent System (Intelligence + Operations)
 
@@ -80,7 +80,7 @@ opencode-accomplishments/
 
 ---
 
-## Skills by Category (48 skills / 10 categories)
+## Skills by Category (52 skills / 10 categories)
 
 ### Design & UI (5 skills) — accent: `#BFFF00`
 | Skill | Description | MCP Servers |
@@ -91,15 +91,16 @@ opencode-accomplishments/
 | `frontend-design` | shadcn/ui + Tailwind + React component generation | filesystem, fetch, google-drive |
 | `vercel-web-design-guidelines` | Accessibility-first UX rules and performance budgets | filesystem, fetch, google-drive |
 
-### Reasoning (4 skills) — accent: `#08F7FE`
+### Reasoning (5 skills) — accent: `#08F7FE`
 | Skill | Description | MCP Servers |
 |---|---|---|
 | `chain-of-thought` | Step-by-step reasoning framework for complex problems | memory, sequential-thinking, sqlite |
 | `socratic-method` | Strategic questioning to uncover assumptions | memory, sequential-thinking, sqlite |
 | `devils-advocate` | Argue against premises to strengthen arguments | memory, sequential-thinking, sqlite |
 | `simulation-sandbox` | Test scenarios in safe simulated environments | memory, sequential-thinking, sqlite |
+| `brainstorming` | Structured brainstorming with divergent/convergent phases | memory, sequential-thinking, sqlite |
 
-### Development (8 skills) — accent: `#00FF9D`
+### Development (9 skills) — accent: `#00FF9D`
 | Skill | Description | MCP Servers |
 |---|---|---|
 | `mcp-builder` | Build MCP servers with TypeScript + Python | filesystem, github, docker |
@@ -110,6 +111,7 @@ opencode-accomplishments/
 | `web-artifacts-builder` | Single-file HTML artifacts with React + Tailwind | filesystem, github, docker |
 | `vercel-react-best-practices` | Production-grade React architecture, SSR/SSG | filesystem, github, docker |
 | `explained-code` | Beginner-friendly code explanation with analogies | filesystem, github, docker |
+| `composition-patterns` | Software composition patterns — DI, strategy, middleware, plugins | filesystem, github, docker |
 
 ### Content (4 skills) — accent: `#FF2E63`
 | Skill | Description | MCP Servers |
@@ -237,6 +239,7 @@ See `mcp-registry.json` for the complete registry with protocol types, compatibi
 | `?category=<name>` | Auto-selects category chip | `?category=MCP+Servers` |
 | `?embed=true` | Strips hero, marquee, footer for iframe | `?embed=true` |
 | `?palette=<hex>` | Overrides `--brand-primary` with any hex | `?palette=FF6B35` |
+| `?theme=<name>` | Applies named theme (midnight, sunset, forest, ocean, cyberpunk) | `?theme=cyberpunk` |
 
 ---
 
@@ -244,6 +247,7 @@ See `mcp-registry.json` for the complete registry with protocol types, compatibi
 
 | Version | Date | Changes |
 |---|---|---|
+| 8.0.0 | 2026-05-23 | Theme Marketplace (6 named themes via ?theme= URL param + switcher + share button), Your Stack Recommender (select 3-5 skills → optimal MCP stack + agent mode), Agent Mode hover tooltips (Rabbit → AI Research Lab), Featured Theme Banner, Copy Install Command button, Toast Notifications, Hero gradient animation, 2 new skills (brainstorming + composition-patterns), MCP stacks synced to stacks.json, all counts updated (50→52 skills) |
 | 7.0.0 | 2026-05-23 | Added tdd-workflow + to-prd skills (48→50 skills), dark mode with system preference detection, stats dashboard with animated counters, Agent Modes spotlight section, keyboard shortcuts (/, Esc), embed mode updates, Full Stack Designer 7-layer audit |
 | 6.0.0 | 2026-05-19 | Added MCP Servers + Agent Modes categories (38→48 skills, 8→10 categories), MCP server pairings per skill, MCP Stack Curator with Build Your Own, stacks.json (8 stacks), mcp-registry.json (127 servers), audit fixes (robots meta, favicon, substr→substring, nvidia-build removed), AGENTS.md synergy matrix |
 | 5.0.0 | 2026-05-18 | Added 7 Agent Mode skills (Rabbit/Owl/Ant/Eagle/Dolphin/Beaver/Elephant), comprehensive audit fixes |
