@@ -1,7 +1,7 @@
 {
-  "version": "8.0.0",
+  "version": "9.0.0",
   "lastUpdated": "2026-05-23",
-  "description": "8 pre-built MCP Stack configurations — each stack recommends exactly 4 servers that work together with documented synergy scores and mismatch warnings. The unsolved problem: which 4 servers do you use together? These stacks answer that.",
+  "description": "9 pre-built MCP Stack configurations — each stack recommends exactly 4 servers that work together with documented synergy scores and mismatch warnings. The unsolved problem: which 4 servers do you use together? These stacks answer that.",
   "stacks": [
     {
       "id": "fullstack-web",
@@ -136,6 +136,22 @@
       "synergy": { "score": 88, "reason": "Filesystem + GitHub for code lifecycle; Fetch for API integration; Memory for architectural decisions across sessions." },
       "mismatches": [],
       "skillsPaired": ["react-native-skills", "shadcn", "deployment-manager", "feedback-loop"]
+    },
+    {
+      "id": "infra-unified",
+      "name": "Unified AI Gateway",
+      "emoji": "🦉",
+      "description": "9Router + OWL Proxy Defense + 4-CLI unified gateway — route AI requests through free-tier providers first, with circuit breaker fallback and protocol-first proxy defense",
+      "useCase": "Teams and power users managing multiple AI providers (Gemini, Claude, Codex, OpenCode) with unified routing, proxy defense, and credential vault",
+      "servers": [
+        { "name": "filesystem", "reason": "Read/write 9Router configs, proxy routing rules, and credential vault files" },
+        { "name": "github", "reason": "Auto-commit proxy config changes, version control for routing rules" },
+        { "name": "docker", "reason": "Run 9Router gateway, sing-box proxy, and Redis cache containers" },
+        { "name": "fetch", "reason": "Health check proxy endpoints, test provider connectivity, monitor token validity" }
+      ],
+      "synergy": { "score": 96, "reason": "Filesystem stores configs; GitHub versions them; Docker runs the stack; Fetch monitors health. Complete infrastructure lifecycle with zero overlap." },
+      "mismatches": [],
+      "skillsPaired": ["9router-gateway", "owl-proxy-defense", "4cli-unified", "secret-vault"]
     }
   ],
   "curatorRules": {
