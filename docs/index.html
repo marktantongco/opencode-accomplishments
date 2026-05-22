@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<title>AI Skills Showcase — 52 Active Skills</title>
-<meta name="description" content="Interactive showcase of 52 AI agent skills across 10 categories — Neo-Brutalist Gen Z Design with Dark Mode, Theme Marketplace, Stack Recommender. Built with GSAP, Web Components, JSON-LD.">
+<title>AI Skills Showcase — 58 Active Skills</title>
+<meta name="description" content="Interactive showcase of 58 AI agent skills across 11 categories — Neo-Brutalist Gen Z Design with Dark Mode, Theme Marketplace, Stack Recommender. Built with GSAP, Web Components, JSON-LD.">
 <link rel="canonical" href="https://agentskills.io/showcase">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
-<meta property="og:title" content="AI Skills Showcase — 52 Active Skills">
-<meta property="og:description" content="Interactive showcase of 52 AI agent skills across 10 categories. Neo-brutalist ultramodern Gen Z design with dark mode, theme marketplace, and stack recommender.">
+<meta property="og:title" content="AI Skills Showcase — 58 Active Skills">
+<meta property="og:description" content="Interactive showcase of 58 AI agent skills across 11 categories. Neo-brutalist ultramodern Gen Z design with dark mode, theme marketplace, and stack recommender.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://agentskills.io/showcase">
 <meta property="og:image" content="og-skills-showcase.png">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Skills Showcase — 52 Active Skills">
-<meta name="twitter:description" content="Interactive showcase of 52 AI agent skills across 10 categories with dark mode, theme marketplace, and stack recommender.">
+<meta name="twitter:title" content="AI Skills Showcase — 58 Active Skills">
+<meta name="twitter:description" content="Interactive showcase of 58 AI agent skills across 11 categories with dark mode, theme marketplace, and stack recommender.">
 <meta name="twitter:image" content="og-skills-showcase.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,8 +35,8 @@
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "AI Agent Skills Collection",
-  "description": "52 active AI agent skills across 10 categories",
-  "numberOfItems": 52,
+  "description": "58 active AI agent skills across 11 categories",
+  "numberOfItems": 58,
   "itemListElement": [
     {"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"ui-ux-pro-max-v7","applicationCategory":"AISkill","description":"AI design intelligence — 60 styles, 48 palettes, 36 fonts, 24 industry rules, production-grade components"}},
     {"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"anthropic-frontend-design","applicationCategory":"AISkill","description":"Bold aesthetics for AI-native interfaces, conversational UI, trust-forward design"}},
@@ -89,7 +89,13 @@
     {"@type":"ListItem","position":49,"item":{"@type":"SoftwareApplication","name":"tdd-workflow","applicationCategory":"AISkill","description":"Test-driven development workflow — write tests first, watch them fail, write minimal code to pass, refactor with confidence"}},
     {"@type":"ListItem","position":50,"item":{"@type":"SoftwareApplication","name":"to-prd","applicationCategory":"AISkill","description":"Transform conversation context into a structured Product Requirements Document — synthesizes what you know into actionable specifications"}},
     {"@type":"ListItem","position":51,"item":{"@type":"SoftwareApplication","name":"brainstorming","applicationCategory":"AISkill","description":"Structured brainstorming framework with divergent and convergent phases — generates, clusters, prioritizes ideas"}},
-    {"@type":"ListItem","position":52,"item":{"@type":"SoftwareApplication","name":"composition-patterns","applicationCategory":"AISkill","description":"Software composition patterns — dependency injection, strategy pattern, decorator chains, middleware pipelines, plugin architectures"}}
+    {"@type":"ListItem","position":52,"item":{"@type":"SoftwareApplication","name":"composition-patterns","applicationCategory":"AISkill","description":"Software composition patterns — dependency injection, strategy pattern, decorator chains, middleware pipelines, plugin architectures"}},
+    {"@type":"ListItem","position":53,"item":{"@type":"SoftwareApplication","name":"9router-gateway","applicationCategory":"AISkill","description":"AI routing gateway with RTK compression, tier-based provider fallback, circuit breaker, and real-time dashboard — routes requests through free-tier providers first, paid only on fallback"}},
+    {"@type":"ListItem","position":54,"item":{"@type":"SoftwareApplication","name":"owl-proxy-defense","applicationCategory":"AISkill","description":"Protocol-first proxy defense stack with 5-tier escalation — http/1.1 core, ja3/ws browser on demand — anti-bot resilience with per-provider routing and CI/CD enforcement"}},
+    {"@type":"ListItem","position":55,"item":{"@type":"SoftwareApplication","name":"antigravity-proxy","applicationCategory":"AISkill","description":"MITM proxy bridge for free AI model access — intercepts IDE traffic to provide Claude/Gemini model access via multiple account rotation with staggered token refresh"}},
+    {"@type":"ListItem","position":56,"item":{"@type":"SoftwareApplication","name":"4cli-unified","applicationCategory":"AISkill","description":"Unified meta-CLI wrapper for OpenCode + Claude Code + Codex + Gemini CLI — one command for four agents with 9Router tier routing and unified credential vault"}},
+    {"@type":"ListItem","position":57,"item":{"@type":"SoftwareApplication","name":"triune-proxy-stack","applicationCategory":"AISkill","description":"Maximum redundancy proxy architecture — 9Router + OmniRoute + Orcaflow with token health dashboard, auto-failover, and distributed locking for zero-downtime AI access"}},
+    {"@type":"ListItem","position":58,"item":{"@type":"SoftwareApplication","name":"secret-vault","applicationCategory":"AISkill","description":"Unified credential vault with age encryption — manages API keys, OAuth tokens, and proxy credentials for all AI providers with rotation reminders and breach detection"}}
   ]
 }
 </script>
@@ -138,6 +144,7 @@
   --cat-creative: #FF9FF3;
   --cat-mcp: #FF6B35;
   --cat-agents: #C77DFF;
+  --cat-infra: #FF8C00;
 
   /* Theme transition */
   --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -2096,6 +2103,122 @@ body.embed-mode .skills-section {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+/* ===== INFRASTRUCTURE STACK ===== */
+.infra-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+}
+
+.infra-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.infra-heading h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  text-shadow: 2px 2px 0 #FF8C00;
+  margin-bottom: 0.5rem;
+}
+
+.infra-heading p {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.infra-architecture {
+  background: #0A0A0A;
+  border: 3px solid #FF8C00;
+  box-shadow: 6px 6px 0 #FF8C00;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: #08F7FE;
+  white-space: pre;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+[data-theme="dark"] .infra-architecture {
+  border-color: #FF8C00;
+}
+
+.infra-tiers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .infra-tiers { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 768px) {
+  .infra-tiers { grid-template-columns: repeat(5, 1fr); }
+}
+
+.infra-tier-card {
+  background: var(--bg-elevated);
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #FF8C00;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+[data-theme="dark"] .infra-tier-card {
+  border-color: #444;
+  box-shadow: 4px 4px 0 #333;
+}
+
+.infra-tier-card:hover {
+  transform: translate(-3px, -3px) rotate(-1deg);
+  box-shadow: 6px 6px 0 #FF8C00;
+}
+
+.infra-tier-label {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: #FF8C00;
+  text-transform: uppercase;
+}
+
+.infra-tier-provider {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0.25rem 0;
+}
+
+.infra-tier-cost {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.infra-tier-status {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+  vertical-align: middle;
+}
+
+.infra-tier-status.status-green { background: #00CC66; }
+.infra-tier-status.status-blue { background: #08F7FE; }
+.infra-tier-status.status-yellow { background: #FFD700; }
+.infra-tier-status.status-pink { background: #FF9FF3; }
+.infra-tier-status.status-orange { background: #FF8C00; }
 </style>
 </head>
 <body>
@@ -2118,8 +2241,8 @@ body.embed-mode .skills-section {
 
   <!-- Orbit stickers -->
   <div class="hero-orbit" id="hero-orbit" aria-hidden="true">
-    <div class="orbit-badge" id="orbit-1">&#9670; 52 SKILLS</div>
-    <div class="orbit-badge" id="orbit-2">&#9733; 10 CATEGORIES</div>
+    <div class="orbit-badge" id="orbit-1">&#9670; 58 SKILLS</div>
+    <div class="orbit-badge" id="orbit-2">&#9733; 11 CATEGORIES</div>
     <div class="orbit-badge" id="orbit-3">&#9830; MCP + AGENTS</div>
   </div>
 
@@ -2215,8 +2338,8 @@ body.embed-mode .skills-section {
 <!-- ===== SKILLS GRID ===== -->
 <main class="skills-section" id="skills-section">
   <div class="section-heading" id="section-heading">
-    <h2><span class="skill-count" id="skill-count">52</span> ACTIVE SKILLS</h2>
-    <p>10 categories // design // development // reasoning // content // strategy // system // data // creative // mcp // agents</p>
+    <h2><span class="skill-count" id="skill-count">58</span> ACTIVE SKILLS</h2>
+    <p>11 categories // design // development // reasoning // content // strategy // system // data // creative // mcp // agents // infrastructure</p>
   </div>
   <div class="skills-grid" id="skills-grid" role="list" aria-label="Skills grid">
     <!-- Skill cards generated by JS -->
@@ -2231,13 +2354,13 @@ body.embed-mode .skills-section {
   </div>
   <div class="agent-modes-row" id="agent-modes-row">
     <div class="agent-mode-card" data-skill="agent-rabbit" data-mcp-stack="AI Research Lab" tabindex="0">
-      <div class="agent-mode-tooltip">Rabbit → <span class="tooltip-stack">AI Research Lab</span><span class="tooltip-servers">brave-search, fetch, memory, sqlite</span></div>
+      <div class="agent-mode-tooltip">Rabbit → <span class="tooltip-stack">AI Research Lab</span><span class="tooltip-servers">brave-search, fetch, memory, sqlite, 9router-gateway</span></div>
       <span class="agent-mode-emoji">🐇</span>
       <div class="agent-mode-name">Rabbit</div>
       <div class="agent-mode-power">Multiply Ideas</div>
     </div>
-    <div class="agent-mode-card" data-skill="agent-owl" data-mcp-stack="Security Audit Toolkit" tabindex="0">
-      <div class="agent-mode-tooltip">Owl → <span class="tooltip-stack">Security Audit Toolkit</span><span class="tooltip-servers">filesystem, github, brave-search, docker</span></div>
+    <div class="agent-mode-card" data-skill="agent-owl" data-mcp-stack="9Router + OWL Defense" tabindex="0">
+      <div class="agent-mode-tooltip">Owl → <span class="tooltip-stack">9Router + OWL Defense</span><span class="tooltip-servers">9router, owl-proxy, audit-analyzer</span></div>
       <span class="agent-mode-emoji">🦉</span>
       <div class="agent-mode-name">Owl</div>
       <div class="agent-mode-power">Deep Analysis</div>
@@ -2248,8 +2371,8 @@ body.embed-mode .skills-section {
       <div class="agent-mode-name">Ant</div>
       <div class="agent-mode-power">Break Into Steps</div>
     </div>
-    <div class="agent-mode-card" data-skill="agent-eagle" data-mcp-stack="DevOps Command Center" tabindex="0">
-      <div class="agent-mode-tooltip">Eagle → <span class="tooltip-stack">DevOps Command Center</span><span class="tooltip-servers">github, docker, kubernetes, slack</span></div>
+    <div class="agent-mode-card" data-skill="agent-eagle" data-mcp-stack="Triune Proxy Stack" tabindex="0">
+      <div class="agent-mode-tooltip">Eagle → <span class="tooltip-stack">Triune Proxy Stack</span><span class="tooltip-servers">9router, omniroute, orcaflow</span></div>
       <span class="agent-mode-emoji">🦅</span>
       <div class="agent-mode-name">Eagle</div>
       <div class="agent-mode-power">Big Picture</div>
@@ -2266,12 +2389,26 @@ body.embed-mode .skills-section {
       <div class="agent-mode-name">Beaver</div>
       <div class="agent-mode-power">Build Systems</div>
     </div>
-    <div class="agent-mode-card" data-skill="agent-elephant" data-mcp-stack="Content Engine" tabindex="0">
-      <div class="agent-mode-tooltip">Elephant → <span class="tooltip-stack">Content Engine</span><span class="tooltip-servers">filesystem, brave-search, google-drive, slack</span></div>
+    <div class="agent-mode-card" data-skill="agent-elephant" data-mcp-stack="4-CLI Unified" tabindex="0">
+      <div class="agent-mode-tooltip">Elephant → <span class="tooltip-stack">4-CLI Unified</span><span class="tooltip-servers">opencode, claude, codex, gemini</span></div>
       <span class="agent-mode-emoji">🐘</span>
       <div class="agent-mode-name">Elephant</div>
       <div class="agent-mode-power">Cross-Field Connections</div>
     </div>
+  </div>
+</section>
+
+<!-- ===== INFRASTRUCTURE STACK — THE PIPELINE ===== -->
+<section class="infra-section" id="infra-section" aria-label="Infrastructure Stack">
+  <div class="infra-heading">
+    <h2>INFRASTRUCTURE STACK</h2>
+    <p>The pipeline that makes 58 skills work — routing, proxy, credentials, health monitoring</p>
+  </div>
+  <div class="infra-architecture" id="infra-architecture">
+    <!-- Architecture diagram rendered by JS -->
+  </div>
+  <div class="infra-tiers" id="infra-tiers">
+    <!-- Provider tier cards rendered by JS -->
   </div>
 </section>
 
@@ -2338,12 +2475,12 @@ body.embed-mode .skills-section {
 <!-- ===== API NOTICE ===== -->
 <div class="api-notice" id="api-notice">
 <strong>ENDPOINTS:</strong> <code>?format=json</code> raw JSON &nbsp;|&nbsp; <code>?format=manifest</code> plugin.xml &nbsp;|&nbsp; <code>?skill=gsap-animations</code> auto-filter &nbsp;|&nbsp; <code>?category=Development</code> category filter &nbsp;|&nbsp; <code>?embed=true</code> iframe-ready &nbsp;|&nbsp; <code>?palette=FF2E63</code> live theme &nbsp;|&nbsp; <code>?theme=cyberpunk</code> named theme
-  <br><strong>VERSION:</strong> <code>v8.0.0</code> &nbsp;|&nbsp; <strong>UPDATED:</strong> <code>2026-05-23</code> &nbsp;|&nbsp; Dark Mode &nbsp;|&nbsp; Theme Marketplace &nbsp;|&nbsp; Stack Recommender &nbsp;|&nbsp; WCAG AA contrast &nbsp;|&nbsp; JSON-LD in <code>&lt;head&gt;</code> &nbsp;|&nbsp; GitHub Pages ready
+  <br><strong>VERSION:</strong> <code>v9.0.0</code> &nbsp;|&nbsp; <strong>UPDATED:</strong> <code>2026-05-23</code> &nbsp;|&nbsp; Dark Mode &nbsp;|&nbsp; Theme Marketplace &nbsp;|&nbsp; Stack Recommender &nbsp;|&nbsp; Infrastructure Stack &nbsp;|&nbsp; WCAG AA contrast &nbsp;|&nbsp; JSON-LD in <code>&lt;head&gt;</code> &nbsp;|&nbsp; 58 skills &nbsp;|&nbsp; 11 categories &nbsp;|&nbsp; GitHub Pages ready
 </div>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer" id="site-footer">
-  Built with <span class="brand-lime">ui-ux-pro-max-v7</span> + <span>gsap-animations</span> + <span>anthropic-frontend-design</span> + <span>frontend-design</span> // 52 skills // 10 categories // Dark Mode // Theme Marketplace // Stack Recommender // v8.0.0
+  Built with <span class="brand-lime">ui-ux-pro-max-v7</span> + <span>gsap-animations</span> + <span>anthropic-frontend-design</span> + <span>frontend-design</span> // 58 skills // 11 categories // Dark Mode // Theme Marketplace // Stack Recommender // Infrastructure Stack // v9.0.0
 </footer>
 
 <!-- Toast Notification Container -->
@@ -2356,7 +2493,7 @@ body.embed-mode .skills-section {
 
 <script>
 // ===== VERSIONING — LIVING STANDARD =====
-const SKILLS_VERSION = '8.0.0';
+const SKILLS_VERSION = '9.0.0';
 const SKILLS_LAST_UPDATED = '2026-05-23';
 
 // ===== MACHINE-READABLE ENDPOINTS =====
@@ -2461,7 +2598,15 @@ function getSkillsDataRaw() {
 
     // NEW in v8.0.0
     { name: "brainstorming", category: "Reasoning", description: "Structured brainstorming framework with divergent and convergent phases — generates ideas rapidly, then clusters, prioritizes, and refines them into actionable concepts", icon: "\u{1F4A1}", invoke: "Use when generating creative ideas, running brainstorming sessions, or exploring solution spaces with structured divergence-convergence", tags: ["brainstorming","ideation","divergent","convergent","creative"], accent: "#08F7FE", mcpServers: ["memory","sequential-thinking","sqlite"] },
-    { name: "composition-patterns", category: "Development", description: "Software composition patterns — dependency injection, strategy pattern, decorator chains, middleware pipelines, and plugin architectures for extensible codebases", icon: "\u{1F9E9}", invoke: "Use when designing composable architectures, building plugin systems, or implementing dependency injection and strategy patterns", tags: ["composition","patterns","di","strategy","middleware","plugins"], accent: "#00FF9D", mcpServers: ["filesystem","github","docker"] }
+    { name: "composition-patterns", category: "Development", description: "Software composition patterns — dependency injection, strategy pattern, decorator chains, middleware pipelines, and plugin architectures for extensible codebases", icon: "\u{1F9E9}", invoke: "Use when designing composable architectures, building plugin systems, or implementing dependency injection and strategy patterns", tags: ["composition","patterns","di","strategy","middleware","plugins"], accent: "#00FF9D", mcpServers: ["filesystem","github","docker"] },
+
+    // Infrastructure — NEW in v9.0.0
+    { name: "9router-gateway", category: "Infrastructure", description: "AI routing gateway with RTK compression, tier-based provider fallback, circuit breaker, and real-time dashboard — routes requests through free-tier providers first, paid only on fallback", icon: "\u{1F310}", invoke: "Use when setting up AI model routing, managing provider tiers, or implementing circuit breaker patterns for API resilience", tags: ["routing","gateway","9router","fallback","circuit-breaker","rtk"], accent: "#FF8C00", mcpServers: ["filesystem","github","docker"] },
+    { name: "owl-proxy-defense", category: "Infrastructure", description: "Protocol-first proxy defense stack with 5-tier escalation — http/1.1 core, ja3/ws browser on demand — anti-bot resilience with per-provider routing and CI/CD enforcement", icon: "\u{1F6E1}", invoke: "Use when building proxy defense layers, anti-bot systems, or protocol escalation strategies for web scraping and API access", tags: ["proxy","defense","anti-bot","protocol","escalation","owl"], accent: "#FF8C00", mcpServers: ["filesystem","github","docker"] },
+    { name: "antigravity-proxy", category: "Infrastructure", description: "MITM proxy bridge for free AI model access — intercepts IDE traffic to provide Claude/Gemini model access via multiple account rotation with staggered token refresh", icon: "\u{1F680}", invoke: "Use when setting up free AI model access via MITM proxy, managing staggered OAuth token refresh, or bridging IDE traffic to AI providers", tags: ["mitm","proxy","claude","gemini","free-tier","antigravity"], accent: "#FF8C00", mcpServers: ["filesystem","github","docker"] },
+    { name: "4cli-unified", category: "Infrastructure", description: "Unified meta-CLI wrapper for OpenCode + Claude Code + Codex + Gemini CLI — one command for four agents with 9Router tier routing and unified credential vault", icon: "\u{1F4BB}", invoke: "Use when managing multiple AI coding CLIs, setting up unified routing across OpenCode/Claude/Codex/Gemini, or building credential vaults", tags: ["cli","unified","opencode","claude","codex","gemini","owl"], accent: "#FF8C00", mcpServers: ["filesystem","github","docker"] },
+    { name: "triune-proxy-stack", category: "Infrastructure", description: "Maximum redundancy proxy architecture — 9Router + OmniRoute + Orcaflow with token health dashboard, auto-failover, and distributed locking for zero-downtime AI access", icon: "\u{1F9CA}", invoke: "Use when building high-availability proxy stacks, implementing triple redundancy routing, or designing token health monitoring with auto-failover", tags: ["triune","redundancy","failover","orchestrator","health","monitoring"], accent: "#FF8C00", mcpServers: ["filesystem","github","docker"] },
+    { name: "secret-vault", category: "Infrastructure", description: "Unified credential vault with age encryption — manages API keys, OAuth tokens, and proxy credentials for all AI providers with rotation reminders and breach detection", icon: "\u{1F510}", invoke: "Use when managing API keys across providers, implementing encrypted credential storage, or setting up secret rotation and breach detection workflows", tags: ["vault","credentials","encryption","rotation","security","age"], accent: "#FF8C00", mcpServers: ["filesystem","github","docker"] }
   ];
 }
 
@@ -2474,7 +2619,7 @@ function generatePluginXml(skills) {
   xml += '<!-- Version: ' + SKILLS_VERSION + ' | Updated: ' + SKILLS_LAST_UPDATED + ' -->\n';
   xml += '<plugin id="io.agentskills.showcase" version="' + SKILLS_VERSION + '">\n';
   xml += '  <name>AI Agent Skills Collection</name>\n';
-  xml += '  <description>50 active AI agent skills across 10 categories for automated workflows</description>\n';
+  xml += '  <description>58 active AI agent skills across 11 categories for automated workflows</description>\n';
   xml += '  <vendor>AgentSkills</vendor>\n';
   xml += '  <version>' + SKILLS_VERSION + '</version>\n';
   xml += '  <lastUpdated>' + SKILLS_LAST_UPDATED + '</lastUpdated>\n';
@@ -2605,6 +2750,7 @@ const CATEGORIES = [
   { name: "Creative", color: "#FF9FF3" },
   { name: "MCP Servers", color: "#FF6B35" },
   { name: "Agent Modes", color: "#C77DFF" },
+  { name: "Infrastructure", color: "#FF8C00" },
 ];
 
 // ===== MCP STACK DATA =====
@@ -2969,8 +3115,8 @@ function initTheme() {
 // ===== STATS DASHBOARD ANIMATION =====
 function initStatsDashboard() {
   const targets = [
-    { id: 'stat-skills', value: 52 },
-    { id: 'stat-categories', value: 10 },
+    { id: 'stat-skills', value: 58 },
+    { id: 'stat-categories', value: 11 },
     { id: 'stat-mcp', value: 127 },
     { id: 'stat-agents', value: 7 }
   ];
@@ -3089,6 +3235,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initBuildYourOwn();
   initAgentSpotlight();
   initStackRecommender();
+  initInfraSection();
   initCopyInstallCommand();
 });
 
@@ -3096,7 +3243,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function initMarquee() {
   const inner = document.getElementById('marquee-inner');
   const items = [
-    '52 SKILLS', '\u25C6', '10 CATEGORIES', '\u25C6',
+    '58 SKILLS', '\u25C6', '11 CATEGORIES', '\u25C6',
     'NEO-BRUTALIST', '\u25C6', 'GSAP POWERED', '\u25C6',
     'WEB COMPONENTS', '\u25C6', 'JSON-LD READY', '\u25C6',
     'WCAG AA', '\u25C6', 'ZERO BUILD STEP', '\u25C6',
@@ -3104,7 +3251,7 @@ function initMarquee() {
     'DESIGN', '\u25C6', 'DEVELOPMENT', '\u25C6', 'REASONING', '\u25C6',
     'CONTENT', '\u25C6', 'STRATEGY', '\u25C6', 'SYSTEM', '\u25C6',
     'DATA', '\u25C6', 'CREATIVE', '\u25C6', 'MCP SERVERS', '\u25C6',
-    'AGENT MODES', '\u25C6',
+    'AGENT MODES', '\u25C6', 'INFRASTRUCTURE', '\u25C6',
   ];
   // Double for seamless loop
   const html = [...items, ...items].map(i => `<span>${i}</span>`).join('');
@@ -3747,7 +3894,8 @@ function calculateRecommendation() {
     'System': 'agent-beaver',
     'Data & Web': 'agent-beaver',
     'Creative': 'agent-dolphin',
-    'MCP Servers': 'agent-ant'
+    'MCP Servers': 'agent-ant',
+    'Infrastructure': 'agent-eagle'
   };
   
   let bestAgent = 'agent-rabbit';
@@ -3771,6 +3919,38 @@ function calculateRecommendation() {
   const maxPossible = recommenderSelection.length * 3;
   const compatScore = Math.min(98, Math.round((bestScore / maxPossible) * 80 + 15));
   
+  // Infrastructure recommendations based on selected skills
+  const devCount = recommenderSelection.filter(name => {
+    const s = SKILLS_DATA.find(sk => sk.name === name);
+    return s && s.category === 'Development';
+  }).length;
+  const dataCount = recommenderSelection.filter(name => {
+    const s = SKILLS_DATA.find(sk => sk.name === name);
+    return s && s.category === 'Data & Web';
+  }).length;
+  const sysCount = recommenderSelection.filter(name => {
+    const s = SKILLS_DATA.find(sk => sk.name === name);
+    return s && s.category === 'System';
+  }).length;
+  const stratCount = recommenderSelection.filter(name => {
+    const s = SKILLS_DATA.find(sk => sk.name === name);
+    return s && s.category === 'Strategy';
+  }).length;
+
+  let infraRecommendations = [];
+  if (devCount >= 3) {
+    infraRecommendations.push('9router-gateway + 4cli-unified — heavy Development usage benefits from unified CLI routing');
+  }
+  if (dataCount >= 2) {
+    infraRecommendations.push('owl-proxy-defense — Data & Web skills need robust proxy defense for scraping');
+  }
+  if (sysCount >= 2) {
+    infraRecommendations.push('secret-vault — System skills require centralized credential management');
+  }
+  if (stratCount >= 1 && devCount >= 1) {
+    infraRecommendations.push('triune-proxy-stack — Strategy + Development combo needs maximum redundancy');
+  }
+
   // Render result
   const resultEl = document.getElementById('recommender-result');
   resultEl.style.display = 'block';
@@ -3781,12 +3961,59 @@ function calculateRecommendation() {
     <div class="recommender-result-item"><strong>SERVERS:</strong> ${bestStack ? bestStack.servers.join(', ') : 'filesystem, github, docker, fetch'}</div>
     <div class="recommender-result-item"><strong>AGENT MODE:</strong> ${agentName} — ${agentPower} <span class="result-badge">${agentMcpStack}</span></div>
     <div class="recommender-result-item"><strong>COMPATIBILITY:</strong> ${compatScore}% — based on ${recommenderSelection.length} skills across ${categories.size} categories</div>
+    ${infraRecommendations.length > 0 ? infraRecommendations.map(r => `<div class="recommender-result-item" style="border-left-color:#FF8C00"><strong>INFRA PAIRING:</strong> ${r}</div>`).join('') : ''}
     ${bestStack && bestStack.warnings && bestStack.warnings.length > 0 ? bestStack.warnings.map(w => `<div class="recommender-result-item" style="border-left-color:#FF4444"><strong>NOTE:</strong> ${w}</div>`).join('') : ''}
   `;
   
   // Animate result
   if (typeof gsap !== 'undefined') {
     gsap.fromTo(resultEl, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'back.out(1.5)' });
+  }
+}
+
+// ===== INFRASTRUCTURE SECTION RENDERER =====
+function initInfraSection() {
+  // Render architecture diagram
+  const archEl = document.getElementById('infra-architecture');
+  if (archEl) {
+    const diagram = `┌─────────────────────────────────────────────────────┐
+│              UNIFIED STACK: 9Router + OWL + 4-CLI    │
+│                                                      │
+│  ┌──────────┐    ┌──────────┐    ┌──────────┐      │
+│  │ OWL Agent │◄──►│ 9Router  │◄──►│Antigrav. │      │
+│  │(Skills +  │    │ Gateway  │    │  Proxy   │      │
+│  │Protocols) │    │  :20128  │    │  :3000   │      │
+│  └─────┬─────┘    └────┬─────┘    └──────────┘      │
+│        │               │                             │
+│   ┌────┴────┬──────────┼────────┬────────┐         │
+│   ↓         ↓          ↓        ↓        ↓         │
+│ Gemini    Claude     Codex   OpenCode  Ollama       │
+│ (T0 Free) (T1)       (T2)    (T3)     (T4 Local)  │
+│                                                      │
+│  Protocol Stack: http/1.1 → h2 → ja3 → ws → browser│
+│  Proxy Stack: Tier 1-5 with auto-rotate             │
+└─────────────────────────────────────────────────────┘`;
+    archEl.textContent = diagram;
+  }
+
+  // Render tier cards
+  const tiersEl = document.getElementById('infra-tiers');
+  if (tiersEl) {
+    const tiers = [
+      { label: 'T0', provider: 'Gemini', cost: 'FREE', quota: '60/min 1000/day', status: 'status-green' },
+      { label: 'T1', provider: 'Claude Code', cost: '$20/mo', quota: 'Unlimited', status: 'status-blue' },
+      { label: 'T2', provider: 'Codex CLI', cost: '$20/mo', quota: 'ChatGPT Plus', status: 'status-yellow' },
+      { label: 'T3', provider: 'OpenCode', cost: '$20/mo', quota: 'Plugin ecosystem', status: 'status-pink' },
+      { label: 'T4', provider: 'Ollama', cost: 'LOCAL', quota: 'Unlimited (quality trade-off)', status: 'status-orange' }
+    ];
+
+    tiersEl.innerHTML = tiers.map(t => `
+      <div class="infra-tier-card">
+        <div class="infra-tier-label">${t.label}</div>
+        <div class="infra-tier-provider"><span class="infra-tier-status ${t.status}"></span>${t.provider}</div>
+        <div class="infra-tier-cost">${t.cost} · ${t.quota}</div>
+      </div>
+    `).join('');
   }
 }
 </script>
