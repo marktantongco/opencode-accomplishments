@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<title>AI Skills Showcase — 48 Active Skills</title>
-<meta name="description" content="Interactive showcase of 48 AI agent skills across 10 categories — Neo-Brutalist Gen Z Design. Built with GSAP, Web Components, JSON-LD.">
+<title>AI Skills Showcase — 52 Active Skills</title>
+<meta name="description" content="Interactive showcase of 52 AI agent skills across 10 categories — Neo-Brutalist Gen Z Design with Dark Mode, Theme Marketplace, Stack Recommender. Built with GSAP, Web Components, JSON-LD.">
 <link rel="canonical" href="https://agentskills.io/showcase">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
-<meta property="og:title" content="AI Skills Showcase — 48 Active Skills">
-<meta property="og:description" content="Interactive showcase of 48 AI agent skills across 10 categories. Neo-brutalist ultramodern Gen Z design.">
+<meta property="og:title" content="AI Skills Showcase — 52 Active Skills">
+<meta property="og:description" content="Interactive showcase of 52 AI agent skills across 10 categories. Neo-brutalist ultramodern Gen Z design with dark mode, theme marketplace, and stack recommender.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://agentskills.io/showcase">
 <meta property="og:image" content="og-skills-showcase.png">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Skills Showcase — 48 Active Skills">
-<meta name="twitter:description" content="Interactive showcase of 48 AI agent skills across 10 categories.">
+<meta name="twitter:title" content="AI Skills Showcase — 52 Active Skills">
+<meta name="twitter:description" content="Interactive showcase of 52 AI agent skills across 10 categories with dark mode, theme marketplace, and stack recommender.">
 <meta name="twitter:image" content="og-skills-showcase.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,8 +35,8 @@
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "AI Agent Skills Collection",
-  "description": "48 active AI agent skills across 10 categories",
-  "numberOfItems": 48,
+  "description": "52 active AI agent skills across 10 categories",
+  "numberOfItems": 52,
   "itemListElement": [
     {"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"ui-ux-pro-max-v7","applicationCategory":"AISkill","description":"AI design intelligence — 60 styles, 48 palettes, 36 fonts, 24 industry rules, production-grade components"}},
     {"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"anthropic-frontend-design","applicationCategory":"AISkill","description":"Bold aesthetics for AI-native interfaces, conversational UI, trust-forward design"}},
@@ -85,14 +85,18 @@
     {"@type":"ListItem","position":45,"item":{"@type":"SoftwareApplication","name":"agent-eagle","applicationCategory":"AISkill","description":"Big picture — strategic vision, cross-domain patterns, and second-order thinking. Sees the forest AND the trees"}},
     {"@type":"ListItem","position":46,"item":{"@type":"SoftwareApplication","name":"agent-dolphin","applicationCategory":"AISkill","description":"Creative solutions — lateral thinking, analogical reasoning, and innovative problem-solving. Finds elegant unconventional paths"}},
     {"@type":"ListItem","position":47,"item":{"@type":"SoftwareApplication","name":"agent-beaver","applicationCategory":"AISkill","description":"Build systems — architecture design, infrastructure planning, and system construction. Builds things that last"}},
-    {"@type":"ListItem","position":48,"item":{"@type":"SoftwareApplication","name":"agent-elephant","applicationCategory":"AISkill","description":"Cross-field connections — knowledge synthesis, interdisciplinary bridging, and pattern transfer. Connects dots across domains"}}
+    {"@type":"ListItem","position":48,"item":{"@type":"SoftwareApplication","name":"agent-elephant","applicationCategory":"AISkill","description":"Cross-field connections — knowledge synthesis, interdisciplinary bridging, and pattern transfer. Connects dots across domains"}},
+    {"@type":"ListItem","position":49,"item":{"@type":"SoftwareApplication","name":"tdd-workflow","applicationCategory":"AISkill","description":"Test-driven development workflow — write tests first, watch them fail, write minimal code to pass, refactor with confidence"}},
+    {"@type":"ListItem","position":50,"item":{"@type":"SoftwareApplication","name":"to-prd","applicationCategory":"AISkill","description":"Transform conversation context into a structured Product Requirements Document — synthesizes what you know into actionable specifications"}},
+    {"@type":"ListItem","position":51,"item":{"@type":"SoftwareApplication","name":"brainstorming","applicationCategory":"AISkill","description":"Structured brainstorming framework with divergent and convergent phases — generates, clusters, prioritizes ideas"}},
+    {"@type":"ListItem","position":52,"item":{"@type":"SoftwareApplication","name":"composition-patterns","applicationCategory":"AISkill","description":"Software composition patterns — dependency injection, strategy pattern, decorator chains, middleware pipelines, plugin architectures"}}
   ]
 }
 </script>
 
 <style>
 /* ===================================================================
-   NEO-BRUTALIST ULTRAMODERN GEN Z DESIGN SYSTEM v6.0
+   NEO-BRUTALIST ULTRAMODERN GEN Z DESIGN SYSTEM v7.0
    - Thick borders, hard offset shadows, high-sat colors
    - WCAG AA compliant contrast on all text
    - Monospace + display typography, sticker badges
@@ -134,6 +138,338 @@
   --cat-creative: #FF9FF3;
   --cat-mcp: #FF6B35;
   --cat-agents: #C77DFF;
+
+  /* Theme transition */
+  --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ===== DARK MODE ===== */
+[data-theme="dark"] {
+  --bg-base: #0A0A0A;
+  --bg-surface: #141414;
+  --bg-elevated: #1E1E1E;
+  --text-primary: #E8E8E8;
+  --text-secondary: #C8C8C8;
+  --text-muted: #888888;
+  --border-thick: 3px solid #333333;
+  --shadow-hard: 4px 4px 0px #333333;
+  --shadow-hard-lg: 6px 6px 0px #333333;
+  --shadow-accent: 4px 4px 0px #333333;
+}
+
+[data-theme="dark"] body,
+[data-theme="dark"] .hero {
+  background: var(--bg-base);
+}
+
+[data-theme="dark"] .hero-title {
+  color: var(--text-primary);
+  -webkit-text-stroke: 2px var(--text-primary);
+}
+
+[data-theme="dark"] .hero-subtitle {
+  background: var(--bg-surface);
+  border-color: #444;
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .hero-badge,
+[data-theme="dark"] .hero-card,
+[data-theme="dark"] .filter-section,
+[data-theme="dark"] .marquee {
+  border-color: #444;
+}
+
+[data-theme="dark"] skill-card {
+  background: var(--bg-elevated);
+  border-color: #444;
+  box-shadow: 5px 5px 0 #333;
+}
+
+[data-theme="dark"] skill-card:hover {
+  box-shadow: 8px 8px 0 var(--card-accent, var(--brand-primary));
+}
+
+[data-theme="dark"] .card-name { color: var(--text-primary); }
+[data-theme="dark"] .card-icon { background: var(--bg-surface); border-color: #444; }
+[data-theme="dark"] .card-category { border-color: #444; }
+[data-theme="dark"] .card-tag { background: var(--bg-surface); border-color: #444; color: var(--text-secondary); }
+[data-theme="dark"] .card-invoke { background: var(--bg-surface); border-color: #444; color: var(--text-secondary); }
+[data-theme="dark"] .card-invoke strong { color: var(--text-primary); }
+[data-theme="dark"] .card-mcp-servers { background: var(--bg-surface); border-color: #444; }
+[data-theme="dark"] .card-mcp-label { color: var(--text-primary); }
+[data-theme="dark"] .card-jsonld-toggle { background: var(--bg-surface); border-color: #444; color: var(--text-secondary); }
+[data-theme="dark"] .card-jsonld { background: var(--bg-surface); border-color: #555; color: var(--text-secondary); }
+
+[data-theme="dark"] .filter-chip { background: var(--bg-elevated); border-color: #444; color: var(--text-primary); }
+[data-theme="dark"] .filter-chip.active { color: #000; border-color: #444; }
+[data-theme="dark"] .search-input { background: var(--bg-elevated); border-color: #444; color: var(--text-primary); }
+[data-theme="dark"] .search-input::placeholder { color: #666; }
+[data-theme="dark"] .sort-select { background: var(--bg-elevated); border-color: #444; color: var(--text-primary); }
+
+[data-theme="dark"] .mcp-stack-card { background: var(--bg-elevated); border-color: #444; box-shadow: 4px 4px 0 #333; }
+[data-theme="dark"] .mcp-stack-name { color: var(--text-primary); }
+[data-theme="dark"] .mcp-stack-emoji { background: var(--bg-surface); border-color: #444; }
+[data-theme="dark"] .mcp-server-badge { background: var(--bg-surface); border-color: #444; color: var(--text-primary); }
+[data-theme="dark"] .mcp-stack-detail-item { background: var(--bg-surface); border-color: #444; color: var(--text-secondary); }
+[data-theme="dark"] .mcp-stack-detail-item strong { color: var(--text-primary); }
+[data-theme="dark"] .mcp-build-section { background: var(--bg-surface); border-color: #444; }
+[data-theme="dark"] .mcp-build-select { background: var(--bg-elevated); border-color: #444; color: var(--text-primary); }
+[data-theme="dark"] .mcp-build-result { background: var(--bg-surface); border-color: #444; color: var(--text-secondary); }
+[data-theme="dark"] .mcp-synergy-bar { background: #2A2A2A; border-color: #444; }
+
+[data-theme="dark"] .orbit-badge { background: var(--bg-elevated); border-color: #444; color: var(--text-primary); }
+[data-theme="dark"] .hero-card { background: var(--bg-elevated); border-color: #444; }
+[data-theme="dark"] .hero-card-name { color: var(--text-primary); }
+[data-theme="dark"] .hero-card-tag { background: var(--bg-surface); border-color: #444; color: var(--text-secondary); }
+
+[data-theme="dark"] .no-results { background: var(--bg-surface); border-color: #444; }
+[data-theme="dark"] .no-results-text { color: var(--text-primary); }
+
+[data-theme="dark"] body::before {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+}
+
+[data-theme="dark"] .scroll-top-fab { border-color: #444; }
+
+/* Theme toggle button */
+.theme-toggle {
+  flex-shrink: 0;
+  width: 40px; height: 40px;
+  background: var(--bg-elevated);
+  border: 2px solid #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+
+[data-theme="dark"] .theme-toggle {
+  border-color: #444;
+  background: var(--bg-surface);
+}
+
+.theme-toggle:hover {
+  box-shadow: 3px 3px 0 var(--brand-primary);
+  transform: rotate(-5deg);
+}
+
+/* ===== STATS DASHBOARD ===== */
+.stats-dashboard {
+  background: var(--bg-surface);
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+  padding: 1.5rem 2rem;
+}
+
+[data-theme="dark"] .stats-dashboard {
+  border-color: #444;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .stats-row { grid-template-columns: repeat(4, 1fr); }
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+  background: var(--bg-elevated);
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  transition: transform 0.15s ease;
+}
+
+[data-theme="dark"] .stat-item {
+  border-color: #444;
+  box-shadow: 3px 3px 0 #333;
+}
+
+.stat-item:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--brand-primary);
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--brand-primary);
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+/* ===== AGENT MODES SPOTLIGHT ===== */
+.agent-spotlight {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+}
+
+.agent-spotlight-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.agent-spotlight-heading h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  text-shadow: 2px 2px 0 var(--cat-agents);
+  margin-bottom: 0.5rem;
+}
+
+.agent-spotlight-heading p {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.agent-modes-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .agent-modes-row { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .agent-modes-row { grid-template-columns: repeat(7, 1fr); }
+}
+
+.agent-mode-card {
+  background: var(--bg-elevated);
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 var(--cat-agents);
+  padding: 1.25rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+[data-theme="dark"] .agent-mode-card {
+  border-color: #444;
+  box-shadow: 4px 4px 0 #333;
+}
+
+.agent-mode-card:hover {
+  transform: translate(-3px, -3px) rotate(-1deg);
+  box-shadow: 6px 6px 0 var(--cat-agents);
+}
+
+.agent-mode-emoji {
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.agent-mode-name {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.agent-mode-power {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Agent Mode MCP Stack Tooltip */
+.agent-mode-card {
+  position: relative;
+}
+
+.agent-mode-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  background: var(--bg-elevated);
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 var(--cat-agents);
+  padding: 0.6rem 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  z-index: 300;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.agent-mode-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #000;
+}
+
+.agent-mode-tooltip .tooltip-stack {
+  color: var(--brand-primary);
+  background: #000;
+  padding: 0.1rem 0.4rem;
+  margin-left: 0.3rem;
+}
+
+.agent-mode-tooltip .tooltip-servers {
+  display: block;
+  font-size: 0.55rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  font-weight: 400;
+}
+
+[data-theme="dark"] .agent-mode-tooltip {
+  border-color: #444;
+  box-shadow: 4px 4px 0 #333;
+}
+
+[data-theme="dark"] .agent-mode-tooltip::after {
+  border-top-color: #444;
+}
+
+.agent-mode-card:hover .agent-mode-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1321,7 +1657,11 @@ body.embed-mode .marquee,
 body.embed-mode .hero-orbit,
 body.embed-mode .scroll-top-fab,
 body.embed-mode #progress-bar,
-body.embed-mode .mcp-curator-section {
+body.embed-mode .mcp-curator-section,
+body.embed-mode .agent-spotlight,
+body.embed-mode .stats-dashboard,
+body.embed-mode .stack-recommender,
+body.embed-mode .featured-theme-banner {
   display: none !important;
 }
 
@@ -1362,6 +1702,400 @@ body.embed-mode .skills-section {
   white-space: nowrap;
   border-width: 0;
 }
+
+/* ===== THEME MARKETPLACE ===== */
+.theme-switcher {
+  flex-shrink: 0;
+  padding: 0.4rem 0.6rem;
+  border: 2px solid #000;
+  background: #fff;
+  color: #000;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  padding-right: 1.5rem;
+}
+
+[data-theme="dark"] .theme-switcher {
+  background: var(--bg-elevated);
+  border-color: #444;
+  color: var(--text-primary);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%23888' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+}
+
+.theme-switcher:focus {
+  box-shadow: 3px 3px 0 var(--brand-primary);
+}
+
+.share-theme-btn {
+  flex-shrink: 0;
+  padding: 0.4rem 0.8rem;
+  border: 2px solid #000;
+  background: var(--brand-tertiary);
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  transition: all 0.15s ease;
+}
+
+.share-theme-btn:hover {
+  box-shadow: 3px 3px 0 #000;
+  transform: translate(-1px, -1px);
+}
+
+[data-theme="dark"] .share-theme-btn {
+  border-color: #444;
+}
+
+/* Featured Theme Banner */
+.featured-theme-banner {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--bg-elevated);
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 var(--brand-secondary);
+  padding: 0.5rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 10;
+  transform: rotate(2deg);
+  animation: banner-pulse 4s ease-in-out infinite;
+}
+
+[data-theme="dark"] .featured-theme-banner {
+  border-color: #444;
+  box-shadow: 4px 4px 0 #333;
+}
+
+.featured-theme-banner .theme-dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+  vertical-align: middle;
+}
+
+@keyframes banner-pulse {
+  0%, 100% { transform: rotate(2deg) scale(1); }
+  50% { transform: rotate(1deg) scale(1.02); }
+}
+
+/* ===== YOUR STACK RECOMMENDER ===== */
+.stack-recommender {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+}
+
+.stack-recommender-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.stack-recommender-heading h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  text-shadow: 2px 2px 0 var(--brand-tertiary);
+  margin-bottom: 0.5rem;
+}
+
+.stack-recommender-heading p {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.recommender-panel {
+  background: var(--bg-surface);
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0 var(--brand-tertiary);
+  padding: 2rem;
+  position: relative;
+}
+
+[data-theme="dark"] .recommender-panel {
+  border-color: #444;
+  box-shadow: 6px 6px 0 #333;
+}
+
+.recommender-step {
+  margin-bottom: 1.5rem;
+}
+
+.recommender-step-label {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.recommender-skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.recommender-skill-chip {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.3rem 0.6rem;
+  border: 2px solid #000;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  transition: all 0.15s ease;
+}
+
+.recommender-skill-chip:hover {
+  box-shadow: 2px 2px 0 #000;
+}
+
+.recommender-skill-chip.selected {
+  background: var(--brand-tertiary);
+  color: #000;
+  box-shadow: 3px 3px 0 #000;
+  transform: rotate(-1deg);
+}
+
+[data-theme="dark"] .recommender-skill-chip {
+  background: var(--bg-elevated);
+  border-color: #444;
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .recommender-skill-chip.selected {
+  background: var(--brand-tertiary);
+  color: #000;
+  border-color: #444;
+}
+
+.recommender-selected {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  min-height: 2rem;
+  margin-bottom: 1rem;
+}
+
+.recommender-selected-chip {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.3rem 0.6rem;
+  border: 2px solid #000;
+  background: var(--brand-primary);
+  color: #000;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.recommender-selected-chip:hover {
+  background: #FF4444;
+  color: #fff;
+}
+
+.recommender-result {
+  background: var(--bg-elevated);
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 var(--brand-primary);
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+[data-theme="dark"] .recommender-result {
+  border-color: #444;
+  box-shadow: 4px 4px 0 #333;
+}
+
+.recommender-result-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.recommender-result-item {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-surface);
+  border: 1px solid #ccc;
+  border-left: 4px solid var(--brand-tertiary);
+  margin-bottom: 0.5rem;
+}
+
+[data-theme="dark"] .recommender-result-item {
+  background: var(--bg-surface);
+  border-color: #444;
+  color: var(--text-secondary);
+}
+
+.recommender-result-item strong {
+  color: var(--text-primary);
+}
+
+.recommender-result-item .result-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  padding: 0.15rem 0.4rem;
+  background: var(--brand-tertiary);
+  color: #000;
+  border: 1px solid #000;
+  margin-left: 0.3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.recommender-calculate-btn {
+  padding: 0.6rem 1.5rem;
+  border: 3px solid #000;
+  background: var(--brand-secondary);
+  color: #000;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.15s ease;
+  box-shadow: 4px 4px 0 #000;
+}
+
+.recommender-calculate-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000;
+}
+
+.recommender-calculate-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 4px 4px 0 #000;
+}
+
+[data-theme="dark"] .recommender-calculate-btn {
+  border-color: #444;
+}
+
+/* ===== TOAST NOTIFICATION ===== */
+.toast-container {
+  position: fixed;
+  bottom: 5rem;
+  right: 2rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.toast {
+  background: var(--bg-elevated);
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 var(--brand-primary);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  animation: toast-in 0.3s ease, toast-out 0.3s ease 2.5s forwards;
+  max-width: 320px;
+}
+
+[data-theme="dark"] .toast {
+  border-color: #444;
+  box-shadow: 4px 4px 0 #333;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes toast-out {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(20px); }
+}
+
+/* Copy Install Command Button */
+.card-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  background: #fff;
+  border: 2px solid #000;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.15s ease;
+  margin-top: 0.5rem;
+}
+
+.card-copy-btn:hover {
+  background: var(--brand-primary);
+  box-shadow: 2px 2px 0 #000;
+}
+
+[data-theme="dark"] .card-copy-btn {
+  background: var(--bg-surface);
+  border-color: #444;
+  color: var(--text-secondary);
+}
+
+/* Hero gradient animation */
+.hero-animated-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.15;
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary), var(--brand-tertiary), var(--brand-primary));
+  background-size: 400% 400%;
+  animation: hero-gradient 15s ease infinite;
+}
+
+[data-theme="dark"] .hero-animated-bg {
+  opacity: 0.08;
+}
+
+@keyframes hero-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 </style>
 </head>
 <body>
@@ -1373,11 +2107,18 @@ body.embed-mode .skills-section {
 <section class="hero" id="hero" aria-label="Hero section featuring the ui-ux-pro-max-v7 skill">
   <div class="hero-block-left" aria-hidden="true"></div>
   <div class="hero-block-right" aria-hidden="true"></div>
+  <div class="hero-animated-bg" aria-hidden="true"></div>
   <div class="hero-scanlines" aria-hidden="true"></div>
+
+  <!-- Featured Theme Banner -->
+  <div class="featured-theme-banner" id="featured-theme-banner">
+    <span class="theme-dot" id="featured-theme-dot" style="background: var(--brand-primary)"></span>
+    <span id="featured-theme-name">DEFAULT</span> THEME
+  </div>
 
   <!-- Orbit stickers -->
   <div class="hero-orbit" id="hero-orbit" aria-hidden="true">
-    <div class="orbit-badge" id="orbit-1">&#9670; 48 SKILLS</div>
+    <div class="orbit-badge" id="orbit-1">&#9670; 52 SKILLS</div>
     <div class="orbit-badge" id="orbit-2">&#9733; 10 CATEGORIES</div>
     <div class="orbit-badge" id="orbit-3">&#9830; MCP + AGENTS</div>
   </div>
@@ -1421,6 +2162,28 @@ body.embed-mode .skills-section {
   </div>
 </div>
 
+<!-- ===== STATS DASHBOARD ===== -->
+<section class="stats-dashboard" id="stats-dashboard" aria-label="Statistics">
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-number" id="stat-skills">0</div>
+      <div class="stat-label">Skills</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" id="stat-categories">0</div>
+      <div class="stat-label">Categories</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" id="stat-mcp">0</div>
+      <div class="stat-label">MCP Servers</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" id="stat-agents">0</div>
+      <div class="stat-label">Agent Modes</div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FILTER BAR ===== -->
 <nav class="filter-section" id="filter-section" aria-label="Skill filters">
   <div class="filter-row">
@@ -1436,19 +2199,107 @@ body.embed-mode .skills-section {
       <option value="category">CATEGORY</option>
       <option value="recent">RECENT</option>
     </select>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">☀️</button>
+    <select class="theme-switcher" id="theme-switcher" aria-label="Select color theme" title="Color theme">
+      <option value="">DEFAULT</option>
+      <option value="midnight">MIDNIGHT</option>
+      <option value="sunset">SUNSET</option>
+      <option value="forest">FOREST</option>
+      <option value="ocean">OCEAN</option>
+      <option value="cyberpunk">CYBERPUNK</option>
+    </select>
+    <button class="share-theme-btn" id="share-theme-btn" aria-label="Share current theme URL" title="Share theme">SHARE</button>
   </div>
 </nav>
 
 <!-- ===== SKILLS GRID ===== -->
 <main class="skills-section" id="skills-section">
   <div class="section-heading" id="section-heading">
-    <h2><span class="skill-count" id="skill-count">48</span> ACTIVE SKILLS</h2>
+    <h2><span class="skill-count" id="skill-count">52</span> ACTIVE SKILLS</h2>
     <p>10 categories // design // development // reasoning // content // strategy // system // data // creative // mcp // agents</p>
   </div>
   <div class="skills-grid" id="skills-grid" role="list" aria-label="Skills grid">
     <!-- Skill cards generated by JS -->
   </div>
 </main>
+
+<!-- ===== AGENT MODES SPOTLIGHT ===== -->
+<section class="agent-spotlight" id="agent-spotlight" aria-label="Agent Modes">
+  <div class="agent-spotlight-heading">
+    <h2>7 AGENT MODES</h2>
+    <p>Your AI's personality — switch modes to match the task</p>
+  </div>
+  <div class="agent-modes-row" id="agent-modes-row">
+    <div class="agent-mode-card" data-skill="agent-rabbit" data-mcp-stack="AI Research Lab" tabindex="0">
+      <div class="agent-mode-tooltip">Rabbit → <span class="tooltip-stack">AI Research Lab</span><span class="tooltip-servers">brave-search, fetch, memory, sqlite</span></div>
+      <span class="agent-mode-emoji">🐇</span>
+      <div class="agent-mode-name">Rabbit</div>
+      <div class="agent-mode-power">Multiply Ideas</div>
+    </div>
+    <div class="agent-mode-card" data-skill="agent-owl" data-mcp-stack="Security Audit Toolkit" tabindex="0">
+      <div class="agent-mode-tooltip">Owl → <span class="tooltip-stack">Security Audit Toolkit</span><span class="tooltip-servers">filesystem, github, brave-search, docker</span></div>
+      <span class="agent-mode-emoji">🦉</span>
+      <div class="agent-mode-name">Owl</div>
+      <div class="agent-mode-power">Deep Analysis</div>
+    </div>
+    <div class="agent-mode-card" data-skill="agent-ant" data-mcp-stack="Full-Stack Web Studio" tabindex="0">
+      <div class="agent-mode-tooltip">Ant → <span class="tooltip-stack">Full-Stack Web Studio</span><span class="tooltip-servers">filesystem, github, vercel, postgres</span></div>
+      <span class="agent-mode-emoji">🐜</span>
+      <div class="agent-mode-name">Ant</div>
+      <div class="agent-mode-power">Break Into Steps</div>
+    </div>
+    <div class="agent-mode-card" data-skill="agent-eagle" data-mcp-stack="DevOps Command Center" tabindex="0">
+      <div class="agent-mode-tooltip">Eagle → <span class="tooltip-stack">DevOps Command Center</span><span class="tooltip-servers">github, docker, kubernetes, slack</span></div>
+      <span class="agent-mode-emoji">🦅</span>
+      <div class="agent-mode-name">Eagle</div>
+      <div class="agent-mode-power">Big Picture</div>
+    </div>
+    <div class="agent-mode-card" data-skill="agent-dolphin" data-mcp-stack="Creative Studio" tabindex="0">
+      <div class="agent-mode-tooltip">Dolphin → <span class="tooltip-stack">Creative Studio</span><span class="tooltip-servers">filesystem, fetch, google-drive, slack</span></div>
+      <span class="agent-mode-emoji">🐬</span>
+      <div class="agent-mode-name">Dolphin</div>
+      <div class="agent-mode-power">Creative Solutions</div>
+    </div>
+    <div class="agent-mode-card" data-skill="agent-beaver" data-mcp-stack="Data Pipeline Studio" tabindex="0">
+      <div class="agent-mode-tooltip">Beaver → <span class="tooltip-stack">Data Pipeline Studio</span><span class="tooltip-servers">postgres, sqlite, fetch, filesystem</span></div>
+      <span class="agent-mode-emoji">🦫</span>
+      <div class="agent-mode-name">Beaver</div>
+      <div class="agent-mode-power">Build Systems</div>
+    </div>
+    <div class="agent-mode-card" data-skill="agent-elephant" data-mcp-stack="Content Engine" tabindex="0">
+      <div class="agent-mode-tooltip">Elephant → <span class="tooltip-stack">Content Engine</span><span class="tooltip-servers">filesystem, brave-search, google-drive, slack</span></div>
+      <span class="agent-mode-emoji">🐘</span>
+      <div class="agent-mode-name">Elephant</div>
+      <div class="agent-mode-power">Cross-Field Connections</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== YOUR STACK RECOMMENDER ===== -->
+<section class="stack-recommender" id="stack-recommender" aria-label="Your Stack Recommendation Engine">
+  <div class="stack-recommender-heading">
+    <h2>YOUR STACK RECOMMENDER</h2>
+    <p>Select 3-5 skills you use — get the optimal MCP stack + agent mode combination</p>
+  </div>
+  <div class="recommender-panel">
+    <div class="recommender-step">
+      <div class="recommender-step-label">1. SELECT YOUR SKILLS (3-5)</div>
+      <div class="recommender-skills-grid" id="recommender-skills-grid">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+    <div class="recommender-step">
+      <div class="recommender-step-label">2. YOUR SELECTION</div>
+      <div class="recommender-selected" id="recommender-selected">
+        <!-- Selected chips appear here -->
+      </div>
+      <button class="recommender-calculate-btn" id="recommender-calculate-btn" disabled>GET RECOMMENDATION</button>
+    </div>
+    <div class="recommender-result" id="recommender-result" style="display:none">
+      <!-- Recommendation result -->
+    </div>
+  </div>
+</section>
 
 <!-- ===== MCP STACK CURATOR ===== -->
 <section class="mcp-curator-section" id="mcp-curator-section" aria-label="MCP Stack Curator">
@@ -1486,14 +2337,17 @@ body.embed-mode .skills-section {
 
 <!-- ===== API NOTICE ===== -->
 <div class="api-notice" id="api-notice">
-<strong>ENDPOINTS:</strong> <code>?format=json</code> raw JSON &nbsp;|&nbsp; <code>?format=manifest</code> plugin.xml &nbsp;|&nbsp; <code>?skill=gsap-animations</code> auto-filter &nbsp;|&nbsp; <code>?category=Development</code> category filter &nbsp;|&nbsp; <code>?embed=true</code> iframe-ready &nbsp;|&nbsp; <code>?palette=FF2E63</code> live theme
-  <br><strong>VERSION:</strong> <code>v6.1.0</code> &nbsp;|&nbsp; <strong>UPDATED:</strong> <code>2026-05-23</code> &nbsp;|&nbsp; WCAG AA contrast &nbsp;|&nbsp; JSON-LD in <code>&lt;head&gt;</code> &nbsp;|&nbsp; GitHub Pages ready
+<strong>ENDPOINTS:</strong> <code>?format=json</code> raw JSON &nbsp;|&nbsp; <code>?format=manifest</code> plugin.xml &nbsp;|&nbsp; <code>?skill=gsap-animations</code> auto-filter &nbsp;|&nbsp; <code>?category=Development</code> category filter &nbsp;|&nbsp; <code>?embed=true</code> iframe-ready &nbsp;|&nbsp; <code>?palette=FF2E63</code> live theme &nbsp;|&nbsp; <code>?theme=cyberpunk</code> named theme
+  <br><strong>VERSION:</strong> <code>v8.0.0</code> &nbsp;|&nbsp; <strong>UPDATED:</strong> <code>2026-05-23</code> &nbsp;|&nbsp; Dark Mode &nbsp;|&nbsp; Theme Marketplace &nbsp;|&nbsp; Stack Recommender &nbsp;|&nbsp; WCAG AA contrast &nbsp;|&nbsp; JSON-LD in <code>&lt;head&gt;</code> &nbsp;|&nbsp; GitHub Pages ready
 </div>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer" id="site-footer">
-  Built with <span class="brand-lime">ui-ux-pro-max-v7</span> + <span>gsap-animations</span> + <span>anthropic-frontend-design</span> + <span>frontend-design</span> // 48 skills // 10 categories // v6.1.0
+  Built with <span class="brand-lime">ui-ux-pro-max-v7</span> + <span>gsap-animations</span> + <span>anthropic-frontend-design</span> + <span>frontend-design</span> // 52 skills // 10 categories // Dark Mode // Theme Marketplace // Stack Recommender // v8.0.0
 </footer>
+
+<!-- Toast Notification Container -->
+<div class="toast-container" id="toast-container"></div>
 
 <!-- Scroll-to-top FAB -->
 <button class="scroll-top-fab" id="scroll-top-fab" aria-label="Scroll to top">
@@ -1502,7 +2356,7 @@ body.embed-mode .skills-section {
 
 <script>
 // ===== VERSIONING — LIVING STANDARD =====
-const SKILLS_VERSION = '6.1.0';
+const SKILLS_VERSION = '8.0.0';
 const SKILLS_LAST_UPDATED = '2026-05-23';
 
 // ===== MACHINE-READABLE ENDPOINTS =====
@@ -1600,6 +2454,14 @@ function getSkillsDataRaw() {
     { name: "agent-dolphin", category: "Agent Modes", description: "Creative solutions — lateral thinking, analogical reasoning, and innovative problem-solving. Finds elegant unconventional paths", icon: "\u{1F42C}", invoke: "Use when finding creative, lateral, or unconventional solutions to problems", tags: ["agent","creative","lateral","innovative","elegant"], accent: "#C77DFF", mcpServers: ["memory","sequential-thinking","filesystem"] },
     { name: "agent-beaver", category: "Agent Modes", description: "Build systems — architecture design, infrastructure planning, and system construction. Builds things that last", icon: "\u{1F9AB}", invoke: "Use when designing architecture, planning infrastructure, or building systems", tags: ["agent","architecture","infrastructure","systems","builder"], accent: "#C77DFF", mcpServers: ["memory","sequential-thinking","filesystem"] },
     { name: "agent-elephant", category: "Agent Modes", description: "Cross-field connections — knowledge synthesis, interdisciplinary bridging, and pattern transfer. Connects dots across domains", icon: "\u{1F418}", invoke: "Use when synthesizing knowledge across domains or bridging interdisciplinary gaps", tags: ["agent","synthesis","interdisciplinary","connections","knowledge"], accent: "#C77DFF", mcpServers: ["memory","sequential-thinking","filesystem"] },
+
+    // NEW in v7.0.0
+    { name: "tdd-workflow", category: "Development", description: "Test-driven development workflow — write tests first, watch them fail, write minimal code to pass, refactor with confidence. Red-green-refactor cycles with vertical slice architecture", icon: "\u{1F9EA}", invoke: "Use when writing code test-first, building with TDD discipline, or creating behavior-focused integration tests", tags: ["tdd","testing","red-green-refactor","behavior","integration"], accent: "#00FF9D", mcpServers: ["filesystem","github","docker"] },
+    { name: "to-prd", category: "Strategy", description: "Transform conversation context and codebase understanding into a structured Product Requirements Document — synthesizes what you already know into actionable specifications", icon: "\u{1F4CB}", invoke: "Use when converting ideas, discussions, or research into a formal PRD with user stories, acceptance criteria, and technical requirements", tags: ["prd","requirements","specification","product","documentation"], accent: "#FFE600", mcpServers: ["brave-search","memory","fetch"] },
+
+    // NEW in v8.0.0
+    { name: "brainstorming", category: "Reasoning", description: "Structured brainstorming framework with divergent and convergent phases — generates ideas rapidly, then clusters, prioritizes, and refines them into actionable concepts", icon: "\u{1F4A1}", invoke: "Use when generating creative ideas, running brainstorming sessions, or exploring solution spaces with structured divergence-convergence", tags: ["brainstorming","ideation","divergent","convergent","creative"], accent: "#08F7FE", mcpServers: ["memory","sequential-thinking","sqlite"] },
+    { name: "composition-patterns", category: "Development", description: "Software composition patterns — dependency injection, strategy pattern, decorator chains, middleware pipelines, and plugin architectures for extensible codebases", icon: "\u{1F9E9}", invoke: "Use when designing composable architectures, building plugin systems, or implementing dependency injection and strategy patterns", tags: ["composition","patterns","di","strategy","middleware","plugins"], accent: "#00FF9D", mcpServers: ["filesystem","github","docker"] }
   ];
 }
 
@@ -1612,7 +2474,7 @@ function generatePluginXml(skills) {
   xml += '<!-- Version: ' + SKILLS_VERSION + ' | Updated: ' + SKILLS_LAST_UPDATED + ' -->\n';
   xml += '<plugin id="io.agentskills.showcase" version="' + SKILLS_VERSION + '">\n';
   xml += '  <name>AI Agent Skills Collection</name>\n';
-  xml += '  <description>48 active AI agent skills across 10 categories for automated workflows</description>\n';
+  xml += '  <description>50 active AI agent skills across 10 categories for automated workflows</description>\n';
   xml += '  <vendor>AgentSkills</vendor>\n';
   xml += '  <version>' + SKILLS_VERSION + '</version>\n';
   xml += '  <lastUpdated>' + SKILLS_LAST_UPDATED + '</lastUpdated>\n';
@@ -1748,99 +2610,100 @@ const CATEGORIES = [
 // ===== MCP STACK DATA =====
 const MCP_STACKS = [
   {
-    name: "Full-Stack Dev Kit",
-    emoji: "\u{1F680}",
-    description: "Complete development environment for building and deploying web applications",
-    servers: ["filesystem", "github", "docker", "fetch"],
-    synergy: 96,
-    useCase: "Building, testing, and deploying web apps with full file and repo access",
-    synergyReason: "filesystem + github covers code lifecycle; docker handles deployment; fetch provides API testing",
-    warnings: ["docker requires elevated permissions — audit before use"],
-    pairedSkills: ["superpowers", "deployment-manager", "mcp-builder"]
-  },
-  {
-    name: "Research Engine",
-    emoji: "\u{1F50D}",
-    description: "Deep research with web scraping, search, and structured data storage",
-    servers: ["fetch", "brave-search", "sqlite", "memory"],
-    synergy: 93,
-    useCase: "Conducting deep research, storing findings, and building knowledge bases",
-    synergyReason: "fetch + brave-search covers all discovery; sqlite stores results; memory maintains context",
-    warnings: ["brave-search has rate limits — cache results in sqlite"],
-    pairedSkills: ["code-research", "web-reader", "feature-research"]
-  },
-  {
-    name: "Design Studio",
-    emoji: "\u{1F3A8}",
-    description: "Creative workflow with file access, web assets, and cloud collaboration",
-    servers: ["filesystem", "fetch", "google-drive", "everart"],
-    synergy: 88,
-    useCase: "Creating designs, generating visual assets, and sharing via cloud storage",
-    synergyReason: "filesystem manages local assets; fetch pulls inspiration; google-drive shares; everart generates",
-    warnings: ["everart may have limited free tier — monitor usage"],
-    pairedSkills: ["ui-ux-pro-max-v7", "photography-ai", "pictoflux-ai"]
-  },
-  {
-    name: "Content Machine",
-    emoji: "\u{270D}",
-    description: "Content creation, SEO optimization, and multi-platform publishing",
-    servers: ["filesystem", "brave-search", "google-drive", "slack"],
-    synergy: 91,
-    useCase: "Writing SEO content, researching keywords, publishing across platforms",
-    synergyReason: "filesystem drafts; brave-search researches keywords; google-drive publishes; slack distributes",
-    warnings: ["slack posting requires workspace admin approval"],
-    pairedSkills: ["seo-content-writer", "social-media-manager", "humanizer"]
-  },
-  {
-    name: "Data Pipeline",
-    emoji: "\u{1F4CA}",
-    description: "Data extraction, transformation, and storage for analytics workflows",
-    servers: ["fetch", "brave-search", "sqlite", "postgres"],
+    name: "Full-Stack Web Studio",
+    emoji: "\u{1F310}",
+    description: "Build, deploy, and monitor production web applications end-to-end",
+    servers: ["filesystem", "github", "vercel", "postgres"],
     synergy: 94,
-    useCase: "Extracting data from the web, transforming, and loading into databases",
-    synergyReason: "fetch extracts; brave-search discovers sources; sqlite for staging; postgres for production",
-    warnings: ["postgres connection needs credential management"],
-    pairedSkills: ["web-reader", "audit-analyzer", "explore"]
+    useCase: "Solo dev or small team shipping a full-stack Next.js app from concept to production",
+    synergyReason: "Filesystem + GitHub covers code lifecycle; Vercel handles deployment; Postgres provides persistent storage",
+    warnings: [],
+    pairedSkills: ["fullstack-dev", "frontend-design", "deployment-manager", "mcp-builder"]
   },
   {
-    name: "Agent Brain",
+    name: "AI Research Lab",
     emoji: "\u{1F9E0}",
-    description: "Cognitive architecture for reasoning, memory, and sequential planning",
-    servers: ["memory", "sequential-thinking", "filesystem", "sqlite"],
-    synergy: 97,
-    useCase: "Complex reasoning tasks, maintaining context, and planning multi-step workflows",
-    synergyReason: "memory provides persistence; sequential-thinking structures reasoning; filesystem stores outputs; sqlite logs decisions",
-    warnings: ["memory store can grow large — implement cleanup policies"],
-    pairedSkills: ["chain-of-thought", "agent-rabbit", "agent-owl"]
+    description: "Research, analyze, and synthesize information with AI-powered search and knowledge graphs",
+    servers: ["brave-search", "fetch", "memory", "sqlite"],
+    synergy: 91,
+    useCase: "Deep research workflows requiring multi-source verification and structured knowledge extraction",
+    synergyReason: "Search discovers, Fetch extracts, Memory persists, SQLite structures. Clean pipeline with zero overlap",
+    warnings: [],
+    pairedSkills: ["chain-of-thought", "web-reader", "context-compressor", "brainstorming"]
   },
   {
-    name: "MCP Builder Kit",
-    emoji: "\u{1F527}",
-    description: "Build and test MCP servers with security auditing and registry lookup",
-    servers: ["filesystem", "github", "docker", "postgres"],
-    synergy: 90,
-    useCase: "Developing new MCP servers, testing integrations, and publishing packages",
-    synergyReason: "filesystem writes code; github manages versions; docker tests containers; postgres validates data layer",
-    warnings: ["docker + postgres together can be resource-intensive"],
-    pairedSkills: ["mcp-builder", "mcp-security-scanner", "mcp-registry"]
+    name: "Content Engine",
+    emoji: "\u{270D}",
+    description: "End-to-end content creation, optimization, and distribution pipeline",
+    servers: ["filesystem", "brave-search", "google-drive", "slack"],
+    synergy: 87,
+    useCase: "Content teams producing SEO-optimized articles, social posts, and newsletters at scale",
+    synergyReason: "Search + Filesystem covers research-to-draft; Google Drive provides source material; Slack enables review",
+    warnings: ["Both filesystem and google-drive store files — decide primary storage to avoid split-brain"],
+    pairedSkills: ["seo-content-writer", "humanizer", "social-media-manager", "to-prd"]
   },
   {
-    name: "Security Audit",
+    name: "DevOps Command Center",
+    emoji: "\u{1F3D7}",
+    description: "Deploy, monitor, and respond to incidents across cloud infrastructure",
+    servers: ["github", "docker", "kubernetes", "slack"],
+    synergy: 92,
+    useCase: "Platform teams managing multi-service deployments with observability and incident response",
+    synergyReason: "GitHub -> Docker -> K8s is the standard build-ship-run pipeline. Slack adds the human notification layer",
+    warnings: [],
+    pairedSkills: ["deployment-manager", "audit-analyzer", "feedback-loop", "skill-vetter"]
+  },
+  {
+    name: "Data Pipeline Studio",
+    emoji: "\u{1F4CA}",
+    description: "Ingest, transform, analyze, and visualize data at any scale",
+    servers: ["postgres", "sqlite", "fetch", "filesystem"],
+    synergy: 89,
+    useCase: "Data engineers building ETL pipelines, running analytics, and creating dashboards",
+    synergyReason: "Fetch + Filesystem for ingestion; Postgres for production data; SQLite for analysis sandbox",
+    warnings: ["Both are SQL databases — use Postgres for production, SQLite for local analysis only"],
+    pairedSkills: ["web-reader", "audit-analyzer", "explore", "composition-patterns"]
+  },
+  {
+    name: "Security Audit Toolkit",
     emoji: "\u{1F6E1}",
-    description: "Security-first stack for auditing configurations and scanning vulnerabilities",
-    servers: ["filesystem", "github", "docker", "fetch"],
+    description: "Scan, analyze, and remediate security vulnerabilities across code and infrastructure",
+    servers: ["filesystem", "github", "brave-search", "docker"],
+    synergy: 86,
+    useCase: "Security teams running vulnerability assessments, dependency audits, and compliance checks",
+    synergyReason: "Filesystem + GitHub covers code security; Search covers external threat intel; Docker covers container security",
+    warnings: [],
+    pairedSkills: ["mcp-security-scanner", "audit-analyzer", "devils-advocate"]
+  },
+  {
+    name: "Creative Studio",
+    emoji: "\u{1F3A8}",
+    description: "Design, generate, and manage visual assets with AI-powered creative tools",
+    servers: ["filesystem", "fetch", "google-drive", "slack"],
     synergy: 85,
-    useCase: "Scanning codebases for vulnerabilities, auditing configurations, checking dependencies",
-    synergyReason: "filesystem reads configs; github checks repos; docker scans containers; fetch verifies endpoints",
-    warnings: ["read-only mode recommended — disable write permissions during audit"],
-    pairedSkills: ["mcp-security-scanner", "audit-analyzer", "context-compressor"]
+    useCase: "Designers and creators producing images, UI mockups, and visual content at scale",
+    synergyReason: "Filesystem for local work; Fetch for sourcing; Google Drive for sharing; Slack for review",
+    warnings: ["Asset storage split — use Drive for shared, filesystem for local"],
+    pairedSkills: ["ui-ux-pro-max-v7", "photography-ai", "gsap-animations"]
+  },
+  {
+    name: "Mobile App Workshop",
+    emoji: "\u{1F4F1}",
+    description: "Design, develop, test, and ship React Native mobile applications",
+    servers: ["filesystem", "github", "fetch", "memory"],
+    synergy: 88,
+    useCase: "Mobile developers building cross-platform apps with React Native and backend APIs",
+    synergyReason: "Filesystem + GitHub for code lifecycle; Fetch for API integration; Memory for architectural decisions",
+    warnings: [],
+    pairedSkills: ["frontend-design", "deployment-manager", "tdd-workflow"]
   }
 ];
 
 // ===== ALL AVAILABLE MCP SERVERS (for Build Your Own) =====
 const ALL_MCP_SERVERS = [
   "filesystem", "fetch", "github", "docker", "brave-search", "google-drive",
-  "slack", "sqlite", "postgres", "memory", "sequential-thinking", "everart"
+  "slack", "sqlite", "postgres", "memory", "sequential-thinking", "everart",
+  "vercel", "kubernetes"
 ];
 
 // ===== SYNERGY CALCULATION =====
@@ -1864,7 +2727,11 @@ const SYNERGY_PAIRS = {
   "sequential-thinking+sqlite": 3, "sequential-thinking+fetch": 2,
   "google-drive+slack": 4, "google-drive+everart": 3,
   "everart+fetch": 4, "everart+google-drive": 3,
-  "slack+google-drive": 4, "slack+brave-search": 3
+  "slack+google-drive": 4, "slack+brave-search": 3,
+  "vercel+github": 5, "vercel+postgres": 5, "vercel+filesystem": 4,
+  "vercel+docker": 2, "vercel+fetch": 3, "vercel+memory": 2,
+  "kubernetes+docker": 5, "kubernetes+github": 4, "kubernetes+slack": 4,
+  "kubernetes+postgres": 3, "kubernetes+filesystem": 2
 };
 
 function calculateSynergy(servers) {
@@ -1951,6 +2818,7 @@ class SkillCard extends HTMLElement {
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           JSON-LD
         </button>
+        <button class="card-copy-btn" data-skill="${name}" aria-label="Copy install command">&#x2398; INSTALL</button>
         <div class="card-jsonld">${this.generateJsonLd()}</div>
       </div>
       <svg class="card-expand-indicator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -2076,11 +2944,137 @@ function applyURLParams() {
   }
 }
 
+// ===== DARK MODE =====
+function initTheme() {
+  const toggle = document.getElementById('theme-toggle');
+  if (!toggle) return;
+  
+  // Check saved preference or system preference
+  const saved = localStorage.getItem('skills-theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialTheme = saved || (prefersDark ? 'dark' : 'light');
+  
+  document.documentElement.setAttribute('data-theme', initialTheme);
+  toggle.textContent = initialTheme === 'dark' ? '🌙' : '☀️';
+  
+  toggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('skills-theme', next);
+    toggle.textContent = next === 'dark' ? '🌙' : '☀️';
+  });
+}
+
+// ===== STATS DASHBOARD ANIMATION =====
+function initStatsDashboard() {
+  const targets = [
+    { id: 'stat-skills', value: 52 },
+    { id: 'stat-categories', value: 10 },
+    { id: 'stat-mcp', value: 127 },
+    { id: 'stat-agents', value: 7 }
+  ];
+  
+  // Animate counters on scroll
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+    
+    const dashboard = document.getElementById('stats-dashboard');
+    if (dashboard) {
+      ScrollTrigger.create({
+        trigger: dashboard,
+        start: 'top 80%',
+        once: true,
+        onEnter: () => {
+          targets.forEach(t => {
+            const el = document.getElementById(t.id);
+            if (el) {
+              gsap.to({ val: 0 }, {
+                val: t.value,
+                duration: 1.5,
+                ease: 'power2.out',
+                onUpdate: function() {
+                  el.textContent = Math.round(this.targets()[0].val);
+                }
+              });
+            }
+          });
+        }
+      });
+    }
+  } else {
+    // Fallback: just set the numbers
+    targets.forEach(t => {
+      const el = document.getElementById(t.id);
+      if (el) el.textContent = t.value;
+    });
+  }
+}
+
+// ===== KEYBOARD SHORTCUTS =====
+function initKeyboardShortcuts() {
+  document.addEventListener('keydown', (e) => {
+    // '/' focuses search
+    if (e.key === '/' && !e.ctrlKey && !e.metaKey) {
+      const search = document.getElementById('search-input');
+      if (document.activeElement !== search) {
+        e.preventDefault();
+        search.focus();
+      }
+    }
+    
+    // Escape closes expanded cards and blurs search
+    if (e.key === 'Escape') {
+      const search = document.getElementById('search-input');
+      if (document.activeElement === search) {
+        search.blur();
+        return;
+      }
+      // Collapse all expanded cards
+      document.querySelectorAll('skill-card.expanded').forEach(card => {
+        card.classList.remove('expanded');
+      });
+      document.querySelectorAll('mcp-stack-card.expanded').forEach(card => {
+        card.classList.remove('expanded');
+      });
+    }
+  });
+}
+
+// ===== AGENT MODE SPOTLIGHT CLICKS =====
+function initAgentSpotlight() {
+  document.querySelectorAll('.agent-mode-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const skillName = card.getAttribute('data-skill');
+      if (skillName) {
+        // Find and expand the matching skill card
+        const skillCard = document.querySelector(`skill-card[name="${skillName}"]`);
+        if (skillCard) {
+          skillCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(() => skillCard.classList.add('expanded'), 300);
+        }
+      }
+    });
+    
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.click();
+      }
+    });
+  });
+}
+
 // ===== INIT =====
 document.addEventListener('DOMContentLoaded', () => {
   applyPalette();
   applyEmbedMode();
   applyURLParams();
+  initTheme();
+  initThemeSwitcher();
+  initFeaturedThemeBanner();
+  initStatsDashboard();
+  initKeyboardShortcuts();
   initMarquee();
   initFilterChips();
   renderSkills();
@@ -2093,16 +3087,20 @@ document.addEventListener('DOMContentLoaded', () => {
   initParallax();
   initMCPCurator();
   initBuildYourOwn();
+  initAgentSpotlight();
+  initStackRecommender();
+  initCopyInstallCommand();
 });
 
 // ===== MARQUEE =====
 function initMarquee() {
   const inner = document.getElementById('marquee-inner');
   const items = [
-    '48 SKILLS', '\u25C6', '10 CATEGORIES', '\u25C6',
+    '52 SKILLS', '\u25C6', '10 CATEGORIES', '\u25C6',
     'NEO-BRUTALIST', '\u25C6', 'GSAP POWERED', '\u25C6',
     'WEB COMPONENTS', '\u25C6', 'JSON-LD READY', '\u25C6',
     'WCAG AA', '\u25C6', 'ZERO BUILD STEP', '\u25C6',
+    'THEME MARKETPLACE', '\u25C6', 'STACK RECOMMENDER', '\u25C6',
     'DESIGN', '\u25C6', 'DEVELOPMENT', '\u25C6', 'REASONING', '\u25C6',
     'CONTENT', '\u25C6', 'STRATEGY', '\u25C6', 'SYSTEM', '\u25C6',
     'DATA', '\u25C6', 'CREATIVE', '\u25C6', 'MCP SERVERS', '\u25C6',
@@ -2509,6 +3507,288 @@ function initBuildYourOwn() {
 document.getElementById('hero-cta').addEventListener('click', () => {
   document.getElementById('filter-section').scrollIntoView({ behavior: 'smooth' });
 });
+
+// ===== THEME MARKETPLACE =====
+const THEMES = {
+  default: { primary: '#BFFF00', secondary: '#FF2E63', tertiary: '#08F7FE', name: 'DEFAULT' },
+  midnight: { primary: '#6366F1', secondary: '#F59E0B', tertiary: '#8B5CF6', name: 'MIDNIGHT' },
+  sunset: { primary: '#F97316', secondary: '#EC4899', tertiary: '#FBBF24', name: 'SUNSET' },
+  forest: { primary: '#22C55E', secondary: '#A3E635', tertiary: '#14B8A6', name: 'FOREST' },
+  ocean: { primary: '#0EA5E9', secondary: '#06B6D4', tertiary: '#3B82F6', name: 'OCEAN' },
+  cyberpunk: { primary: '#F0ABFC', secondary: '#E11D48', tertiary: '#22D3EE', name: 'CYBERPUNK' }
+};
+
+let currentTheme = 'default';
+
+function applyTheme(themeName) {
+  const theme = THEMES[themeName];
+  if (!theme) return;
+  currentTheme = themeName;
+  const root = document.documentElement.style;
+  root.setProperty('--brand-primary', theme.primary);
+  root.setProperty('--brand-secondary', theme.secondary);
+  root.setProperty('--brand-tertiary', theme.tertiary);
+  
+  // Update featured theme banner
+  const banner = document.getElementById('featured-theme-name');
+  const dot = document.getElementById('featured-theme-dot');
+  if (banner) banner.textContent = theme.name;
+  if (dot) dot.style.background = theme.primary;
+  
+  // Save to localStorage
+  localStorage.setItem('skills-theme-name', themeName);
+  
+  // Update theme switcher
+  const switcher = document.getElementById('theme-switcher');
+  if (switcher) switcher.value = themeName === 'default' ? '' : themeName;
+}
+
+function initThemeSwitcher() {
+  const switcher = document.getElementById('theme-switcher');
+  if (!switcher) return;
+  
+  // Load saved theme
+  const saved = localStorage.getItem('skills-theme-name');
+  if (saved && THEMES[saved]) {
+    applyTheme(saved);
+  }
+  
+  // Check URL param
+  const params = new URLSearchParams(window.location.search);
+  const themeParam = params.get('theme');
+  if (themeParam && THEMES[themeParam.toLowerCase()]) {
+    applyTheme(themeParam.toLowerCase());
+  }
+  
+  switcher.addEventListener('change', () => {
+    const val = switcher.value || 'default';
+    applyTheme(val);
+    showToast('THEME: ' + THEMES[val].name);
+  });
+  
+  // Share button
+  const shareBtn = document.getElementById('share-theme-btn');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', () => {
+      const url = new URL(window.location);
+      if (currentTheme !== 'default') {
+        url.searchParams.set('theme', currentTheme);
+      }
+      url.searchParams.delete('palette');
+      navigator.clipboard.writeText(url.toString()).then(() => {
+        showToast('THEME URL COPIED!');
+      }).catch(() => {
+        showToast('COPY FAILED — TRY AGAIN');
+      });
+    });
+  }
+}
+
+// Featured Theme Banner — rotates themes every 10s
+let featuredThemeIndex = 0;
+const featuredThemeOrder = ['default', 'midnight', 'cyberpunk', 'sunset', 'ocean', 'forest'];
+
+function initFeaturedThemeBanner() {
+  setInterval(() => {
+    featuredThemeIndex = (featuredThemeIndex + 1) % featuredThemeOrder.length;
+    const themeName = featuredThemeOrder[featuredThemeIndex];
+    const theme = THEMES[themeName];
+    const banner = document.getElementById('featured-theme-name');
+    const dot = document.getElementById('featured-theme-dot');
+    if (banner && theme) {
+      banner.textContent = theme.name;
+      if (dot) dot.style.background = theme.primary;
+    }
+  }, 10000);
+}
+
+// ===== TOAST NOTIFICATIONS =====
+function showToast(message) {
+  const container = document.getElementById('toast-container');
+  if (!container) return;
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = message;
+  container.appendChild(toast);
+  setTimeout(() => {
+    if (toast.parentNode) toast.parentNode.removeChild(toast);
+  }, 3000);
+}
+
+// ===== COPY INSTALL COMMAND =====
+function initCopyInstallCommand() {
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.card-copy-btn');
+    if (!btn) return;
+    e.stopPropagation();
+    const skillName = btn.getAttribute('data-skill');
+    const command = 'claude skill install ' + skillName;
+    navigator.clipboard.writeText(command).then(() => {
+      showToast('COPIED: ' + command);
+      btn.textContent = 'COPIED!';
+      setTimeout(() => { btn.innerHTML = '&#x2398; INSTALL'; }, 1500);
+    }).catch(() => {
+      showToast('COPY FAILED');
+    });
+  });
+}
+
+// ===== STACK RECOMMENDER =====
+let recommenderSelection = [];
+
+function initStackRecommender() {
+  const grid = document.getElementById('recommender-skills-grid');
+  const calcBtn = document.getElementById('recommender-calculate-btn');
+  if (!grid || !calcBtn) return;
+  
+  // Populate skill chips (non-agent, non-system skills for practical recommendations)
+  const recommendableSkills = SKILLS_DATA.filter(s => 
+    s.category !== 'Agent Modes' && s.category !== 'System' && s.name !== 'sample-hello-skill'
+  );
+  
+  recommendableSkills.forEach(skill => {
+    const chip = document.createElement('span');
+    chip.className = 'recommender-skill-chip';
+    chip.textContent = skill.name;
+    chip.setAttribute('data-skill', skill.name);
+    chip.addEventListener('click', () => toggleRecommenderSkill(skill.name));
+    grid.appendChild(chip);
+  });
+  
+  calcBtn.addEventListener('click', calculateRecommendation);
+}
+
+function toggleRecommenderSkill(skillName) {
+  const idx = recommenderSelection.indexOf(skillName);
+  if (idx >= 0) {
+    recommenderSelection.splice(idx, 1);
+  } else {
+    if (recommenderSelection.length >= 5) {
+      showToast('MAX 5 SKILLS — REMOVE ONE FIRST');
+      return;
+    }
+    recommenderSelection.push(skillName);
+  }
+  updateRecommenderUI();
+}
+
+function updateRecommenderUI() {
+  // Update skill chips
+  document.querySelectorAll('.recommender-skill-chip').forEach(chip => {
+    const name = chip.getAttribute('data-skill');
+    chip.classList.toggle('selected', recommenderSelection.includes(name));
+  });
+  
+  // Update selected area
+  const selected = document.getElementById('recommender-selected');
+  selected.innerHTML = '';
+  recommenderSelection.forEach(name => {
+    const chip = document.createElement('span');
+    chip.className = 'recommender-selected-chip';
+    chip.textContent = name + ' \u00D7';
+    chip.addEventListener('click', () => {
+      const idx = recommenderSelection.indexOf(name);
+      if (idx >= 0) recommenderSelection.splice(idx, 1);
+      updateRecommenderUI();
+    });
+    selected.appendChild(chip);
+  });
+  
+  // Enable/disable calculate button
+  const calcBtn = document.getElementById('recommender-calculate-btn');
+  calcBtn.disabled = recommenderSelection.length < 3;
+}
+
+function calculateRecommendation() {
+  if (recommenderSelection.length < 3) return;
+  
+  // Collect MCP servers from selected skills
+  const serverFreq = {};
+  const categories = new Set();
+  
+  recommenderSelection.forEach(skillName => {
+    const skill = SKILLS_DATA.find(s => s.name === skillName);
+    if (skill) {
+      categories.add(skill.category);
+      (skill.mcpServers || []).forEach(server => {
+        serverFreq[server] = (serverFreq[server] || 0) + 1;
+      });
+    }
+  });
+  
+  // Find best matching pre-built stack
+  let bestStack = null;
+  let bestScore = 0;
+  
+  MCP_STACKS.forEach(stack => {
+    let overlap = 0;
+    stack.servers.forEach(server => {
+      if (serverFreq[server]) overlap += serverFreq[server];
+    });
+    // Also check skill overlap
+    let skillOverlap = 0;
+    (stack.pairedSkills || []).forEach(ps => {
+      if (recommenderSelection.includes(ps)) skillOverlap += 2;
+    });
+    const totalScore = overlap + skillOverlap;
+    if (totalScore > bestScore) {
+      bestScore = totalScore;
+      bestStack = stack;
+    }
+  });
+  
+  // Determine best agent mode based on categories
+  const categoryAgentMap = {
+    'Design & UI': 'agent-dolphin',
+    'Reasoning': 'agent-owl',
+    'Development': 'agent-ant',
+    'Content': 'agent-elephant',
+    'Strategy': 'agent-eagle',
+    'System': 'agent-beaver',
+    'Data & Web': 'agent-beaver',
+    'Creative': 'agent-dolphin',
+    'MCP Servers': 'agent-ant'
+  };
+  
+  let bestAgent = 'agent-rabbit';
+  let bestAgentCount = 0;
+  const agentFreq = {};
+  categories.forEach(cat => {
+    const agent = categoryAgentMap[cat] || 'agent-rabbit';
+    agentFreq[agent] = (agentFreq[agent] || 0) + 1;
+    if (agentFreq[agent] > bestAgentCount) {
+      bestAgentCount = agentFreq[agent];
+      bestAgent = agent;
+    }
+  });
+  
+  const agentSkill = SKILLS_DATA.find(s => s.name === bestAgent);
+  const agentName = agentSkill ? agentSkill.name.replace('agent-', '').charAt(0).toUpperCase() + agentSkill.name.replace('agent-', '').slice(1) : 'Rabbit';
+  const agentPower = agentSkill ? agentSkill.description.split('—')[0].trim() : 'Multiply Ideas';
+  const agentMcpStack = agentSkill ? (document.querySelector(`.agent-mode-card[data-skill="${bestAgent}"]`)?.getAttribute('data-mcp-stack') || 'AI Research Lab') : 'AI Research Lab';
+  
+  // Calculate compatibility score
+  const maxPossible = recommenderSelection.length * 3;
+  const compatScore = Math.min(98, Math.round((bestScore / maxPossible) * 80 + 15));
+  
+  // Render result
+  const resultEl = document.getElementById('recommender-result');
+  resultEl.style.display = 'block';
+  
+  resultEl.innerHTML = `
+    <div class="recommender-result-title">YOUR OPTIMAL STACK</div>
+    <div class="recommender-result-item"><strong>MCP STACK:</strong> ${bestStack ? bestStack.name : 'Full-Stack Web Studio'} <span class="result-badge">${bestStack ? bestStack.synergy + '% synergy' : '96% synergy'}</span></div>
+    <div class="recommender-result-item"><strong>SERVERS:</strong> ${bestStack ? bestStack.servers.join(', ') : 'filesystem, github, docker, fetch'}</div>
+    <div class="recommender-result-item"><strong>AGENT MODE:</strong> ${agentName} — ${agentPower} <span class="result-badge">${agentMcpStack}</span></div>
+    <div class="recommender-result-item"><strong>COMPATIBILITY:</strong> ${compatScore}% — based on ${recommenderSelection.length} skills across ${categories.size} categories</div>
+    ${bestStack && bestStack.warnings && bestStack.warnings.length > 0 ? bestStack.warnings.map(w => `<div class="recommender-result-item" style="border-left-color:#FF4444"><strong>NOTE:</strong> ${w}</div>`).join('') : ''}
+  `;
+  
+  // Animate result
+  if (typeof gsap !== 'undefined') {
+    gsap.fromTo(resultEl, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'back.out(1.5)' });
+  }
+}
 </script>
 </body>
 </html>

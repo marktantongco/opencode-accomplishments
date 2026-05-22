@@ -1,9 +1,9 @@
 # OpenCode Accomplishments — AI Skills Showcase + Agent System + MCP Ecosystem
 
-> A self-contained, single-file interactive showcase of 48 AI agent skills across 10 categories — plus a complete production-ready Agent System with Universal Router + 4 context-loaded skills, 18 documentation files, 127 MCP servers in a searchable registry, 8 pre-built MCP stacks with synergy scoring, and an interactive MCP Stack Curator. Neo-brutalist ultramodern Gen Z design. Zero build step — drop on GitHub Pages and ship.
+> A self-contained, single-file interactive showcase of 50 AI agent skills across 10 categories — plus a complete production-ready Agent System with Universal Router + 4 context-loaded skills, 18 documentation files, 127 MCP servers in a searchable registry, 8 pre-built MCP stacks with synergy scoring, and an interactive MCP Stack Curator. Neo-brutalist ultramodern Gen Z design with dark mode. Zero build step — drop on GitHub Pages and ship.
 
-![Version](https://img.shields.io/badge/version-6.0.0-FF2E63?style=for-the-badge&labelColor=000)
-![Skills](https://img.shields.io/badge/skills-48-BFFF00?style=for-the-badge&labelColor=000)
+![Version](https://img.shields.io/badge/version-7.0.0-FF2E63?style=for-the-badge&labelColor=000)
+![Skills](https://img.shields.io/badge/skills-50-BFFF00?style=for-the-badge&labelColor=000)
 ![MCP Servers](https://img.shields.io/badge/mcp_servers-127-FF6B35?style=for-the-badge&labelColor=000)
 ![Agent Files](https://img.shields.io/badge/agent_files-18-08F7FE?style=for-the-badge&labelColor=000)
 ![Stacks](https://img.shields.io/badge/mcp_stacks-8-C77DFF?style=for-the-badge&labelColor=000)
@@ -99,11 +99,12 @@ opencode-accomplishments/
 | `devils-advocate` | Argue against premises to strengthen arguments | memory, sequential-thinking, sqlite |
 | `simulation-sandbox` | Test scenarios in safe simulated environments | memory, sequential-thinking, sqlite |
 
-### Development (7 skills) — accent: `#00FF9D`
+### Development (8 skills) — accent: `#00FF9D`
 | Skill | Description | MCP Servers |
 |---|---|---|
 | `mcp-builder` | Build MCP servers with TypeScript + Python | filesystem, github, docker |
 | `superpowers` | Spec-first development with TDD and sub-agent delegation | filesystem, github, docker |
+| `tdd-workflow` | Test-driven development workflow — red-green-refactor cycles | filesystem, github, docker |
 | `deployment-manager` | Deploy across GitHub Pages, Vercel, Netlify | filesystem, github, docker |
 | `browser-use` | Headful browser automation with natural language control | filesystem, github, docker |
 | `web-artifacts-builder` | Single-file HTML artifacts with React + Tailwind | filesystem, github, docker |
@@ -118,10 +119,11 @@ opencode-accomplishments/
 | `social-media-manager` | Post generation for 30 days across platforms | filesystem, brave-search, google-drive, slack |
 | `social-content-pillars` | Monthly content calendar with 90-day editorial plan | filesystem, brave-search, google-drive, slack |
 
-### Strategy (4 skills) — accent: `#FFE600`
+### Strategy (5 skills) — accent: `#FFE600`
 | Skill | Description | MCP Servers |
 |---|---|---|
 | `jtbd-research` | 8-step Jobs to be Done product research methodology | brave-search, memory, fetch |
+| `to-prd` | Transform context into structured Product Requirements Document | brave-search, memory, fetch |
 | `gumroad-pipeline` | Lead magnet to funnel to product launch workflow | brave-search, memory, fetch |
 | `feature-research` | Research existing architecture before implementing | brave-search, memory, fetch |
 | `skill-finder` | Skill discovery, evaluation, and installation meta-skill | brave-search, memory, fetch |
@@ -242,6 +244,7 @@ See `mcp-registry.json` for the complete registry with protocol types, compatibi
 
 | Version | Date | Changes |
 |---|---|---|
+| 7.0.0 | 2026-05-23 | Added tdd-workflow + to-prd skills (48→50 skills), dark mode with system preference detection, stats dashboard with animated counters, Agent Modes spotlight section, keyboard shortcuts (/, Esc), embed mode updates, Full Stack Designer 7-layer audit |
 | 6.0.0 | 2026-05-19 | Added MCP Servers + Agent Modes categories (38→48 skills, 8→10 categories), MCP server pairings per skill, MCP Stack Curator with Build Your Own, stacks.json (8 stacks), mcp-registry.json (127 servers), audit fixes (robots meta, favicon, substr→substring, nvidia-build removed), AGENTS.md synergy matrix |
 | 5.0.0 | 2026-05-18 | Added 7 Agent Mode skills (Rabbit/Owl/Ant/Eagle/Dolphin/Beaver/Elephant), comprehensive audit fixes |
 | 4.0.0 | 2026-05-17 | Added complete Agent System (18 files), AGENTS.md structural connection map |

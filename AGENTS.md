@@ -1,6 +1,6 @@
 # AGENTS.md — Structural Connection Map
 
-**Bridges the 48 Skills Showcase ↔ 18 Agent System Files ↔ 127 MCP Servers ↔ MCP Stack Curator**
+**Bridges the 50 Skills Showcase ↔ 18 Agent System Files ↔ 127 MCP Servers ↔ MCP Stack Curator**
 
 ---
 
@@ -8,7 +8,7 @@
 
 This project operates on **three complementary layers**:
 
-1. **Skills Showcase** (`docs/index.html`) — A visual, interactive catalog of 48 platform skills across 10 categories, rendered as a neo-brutalist single-page app with GSAP animations, Web Components, JSON-LD structured data, MCP server pairings per skill, and an interactive MCP Stack Curator. Serves as both a human-facing portfolio and a machine-readable API (`?format=json`, `?format=manifest`).
+1. **Skills Showcase** (`docs/index.html`) — A visual, interactive catalog of 50 platform skills across 10 categories, rendered as a neo-brutalist single-page app with GSAP animations, Web Components, JSON-LD structured data, MCP server pairings per skill, dark mode, stats dashboard, Agent Modes spotlight, and an interactive MCP Stack Curator. Serves as both a human-facing portfolio and a machine-readable API (`?format=json`, `?format=manifest`).
 
 2. **Agent System** (`agents/`) — A production-ready AI partner system built on a Universal Router + 4 context-loaded skills (SKILL_01 through SKILL_04), with 18 comprehensive documentation files covering deployment, operations, monitoring, optimization, and evolution.
 
@@ -72,6 +72,7 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 |---------------|------------|-------------|-----|
 | mcp-builder | SKILL_03 | filesystem, github, docker | Build MCP servers + version control + containerize |
 | superpowers | SKILL_03 | filesystem, github, docker | Spec-first code + CI/CD + packaging |
+| tdd-workflow | SKILL_03 | filesystem, github, docker | Test-first discipline + version control + containerized test runs |
 | deployment-manager | SKILL_03 | filesystem, github, docker | Deploy pipeline + repo management + container deploys |
 | browser-use | SKILL_03 | filesystem, github, docker | Browser automation scripts + version + package |
 | web-artifacts-builder | SKILL_03 | filesystem, github, docker | Artifact builds + repo sync + container testing |
@@ -92,6 +93,7 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 | Showcase Skill | Agent Mode | MCP Servers | Why |
 |---------------|------------|-------------|-----|
 | jtbd-research | SKILL_01 | brave-search, memory, fetch | Customer research + persist findings + source data |
+| to-prd | SKILL_01 + SKILL_04 | brave-search, memory, fetch | Context synthesis + requirement persistence + source verification |
 | gumroad-pipeline | SKILL_01 | brave-search, memory, fetch | Market research + funnel memory + competitor data |
 | feature-research | SKILL_01 | brave-search, memory, fetch | Architecture research + decision persistence + docs |
 | skill-finder | SKILL_04 | brave-search, memory, fetch | Skill discovery + rating memory + installation |
