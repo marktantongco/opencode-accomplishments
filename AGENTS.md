@@ -1,6 +1,6 @@
 # AGENTS.md — Structural Connection Map
 
-**Bridges the 52 Skills Showcase ↔ 18 Agent System Files ↔ 127 MCP Servers ↔ MCP Stack Curator ↔ Theme Marketplace ↔ Stack Recommender**
+**Bridges the 66 Skills Showcase ↔ 18 Agent System Files ↔ 145 MCP Servers ↔ Animation Pipeline ↔ Three.js Orchestrator ↔ ModelScope MCP ↔ MCP Stack Curator ↔ Theme Marketplace ↔ Stack Recommender**
 
 ---
 
@@ -8,11 +8,11 @@
 
 This project operates on **three complementary layers**:
 
-1. **Skills Showcase** (`docs/index.html`) — A visual, interactive catalog of 52 platform skills across 10 categories, rendered as a neo-brutalist single-page app with GSAP animations, Web Components, JSON-LD structured data, MCP server pairings per skill, dark mode, stats dashboard, Agent Modes spotlight with hover tooltips showing MCP stack pairings, an interactive MCP Stack Curator, a Theme Marketplace with 6 named themes via `?theme=` URL params, and a Your Stack Recommender engine. Serves as both a human-facing portfolio and a machine-readable API (`?format=json`, `?format=manifest`, `?theme=cyberpunk`).
+1. **Skills Showcase** (`docs/index.html`) — A visual, interactive catalog of 66 platform skills across 11 categories, including the Animation Pipeline (orchestrator → motion-animator / gsap-animator → auditor), Three.js Orchestrator (gates all 3D work), Skill Architect (create/optimze SKILL.md files), ModelScope MCP Hub (2300+ free Chinese MCP servers), and Context7 Docs (always-current API documentation). Neo-brutalist design with GSAP animations, Web Components, JSON-LD, MCP pairings, dark mode, stats dashboard, Agent Modes spotlight, MCP Stack Curator, Theme Marketplace, and Your Stack Recommender. Serves as both a human-facing portfolio and a machine-readable API (`?format=json`, `?format=manifest`, `?theme=cyberpunk`).
 
 2. **Agent System** (`agents/`) — A production-ready AI partner system built on a Universal Router + 4 context-loaded skills (SKILL_01 through SKILL_04), with 18 comprehensive documentation files covering deployment, operations, monitoring, optimization, and evolution.
 
-3. **MCP Ecosystem** (`stacks.json` + `mcp-registry.json`) — A curated directory of 127 free MCP servers across 14 categories, plus 8 pre-built MCP stack configurations that solve the unsolved problem: *which 4 servers do you use together?* The MCP Stack Curator provides synergy scoring, conflict detection, and a build-your-own feature.
+3. **MCP Ecosystem** (`stacks.json` + `mcp-registry.json`) — A curated directory of 145 free MCP servers across 15 categories (now including ModelScope), plus 8 pre-built MCP stack configurations that solve the unsolved problem: *which 4 servers do you use together?* Now includes ModelScope (魔搭) curated servers with free hosted deployment, Context7 documentation fetching, XiYan NL2SQL, and Gaode Maps. The MCP Stack Curator provides synergy scoring, conflict detection, and a build-your-own feature.
 
 The three layers are connected through a **skill-agent-MCP synergy matrix** that maps each platform skill to its corresponding agent skill mode AND recommended MCP servers, enabling intelligent context switching during AI-assisted work.
 
@@ -54,6 +54,10 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 | ui-ux-pro-max-v7 | SKILL_02 | filesystem, fetch, google-drive | Design files + asset sourcing + brand kits |
 | anthropic-frontend-design | SKILL_02 | filesystem, fetch, google-drive | AI interface design + reference retrieval |
 | gsap-animations | SKILL_02 | filesystem, fetch, google-drive | Animation code + CDN references |
+| animation-orchestrator | SKILL_02 | filesystem, fetch, google-drive | Routes ALL animation work — Motion vs GSAP vs CSS decision gate |
+| animation-auditor | SKILL_03 | filesystem, github, docker | Pre-commit quality gates for animation code |
+| motion-animator | SKILL_02 | filesystem, fetch, google-drive | React UI animations with Motion (2.3KB-34KB) |
+| gsap-animator | SKILL_02 | filesystem, fetch, google-drive | Complex timeline/scroll/SVG animations with GSAP |
 | frontend-design | SKILL_02 | filesystem, fetch, google-drive | Component generation + design system access |
 | vercel-web-design-guidelines | SKILL_02 | filesystem, fetch, google-drive | Audit rules + accessibility standards |
 
@@ -80,6 +84,9 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 | vercel-react-best-practices | SKILL_03 | filesystem, github, docker | React code + PR workflows + containerized builds |
 | explained-code | SKILL_03 | filesystem, github, docker | Code reading + repo access + analysis |
 | composition-patterns | SKILL_03 | filesystem, github, docker | Architecture patterns + version control + containerized tests |
+| threejs-orchestrator | SKILL_03 | filesystem, github, docker | Gates ALL 3D work — routes r3f-react vs vanilla vs Babylon.js |
+| skill-architect | SKILL_03 | filesystem, github, docker | Create/optimize SKILL.md files following Agent Skills standard |
+| context7-docs | SKILL_03 | context7, fetch, memory | Always-current API documentation for any library |
 
 ### Content Category → SKILL_01 + SKILL_02
 
@@ -136,6 +143,7 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 | mcp-stack-curator | SKILL_04 | filesystem, github | Stack analysis + server configuration |
 | mcp-registry | SKILL_04 | filesystem, github | Registry management + catalog updates |
 | mcp-security-scanner | SKILL_04 | filesystem, github | Security auditing + config review |
+| modelscope-mcp-hub | SKILL_04 | modelscope-image-gen, modelscope-model-discovery, context7 | 2300+ free Chinese MCP servers with hosted deployment |
 
 ### Agent Modes Category → SKILL_04 (Agentic)
 
@@ -200,7 +208,7 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 | File | Purpose | Read When |
 |------|---------|-----------|
 | `stacks.json` | 8 pre-built MCP stacks with synergy scoring | Choosing server combinations |
-| `mcp-registry.json` | 127 free MCP servers across 14 categories | Discovering MCP servers |
+| `mcp-registry.json` | 145 free MCP servers across 15 categories (incl. ModelScope) | Discovering MCP servers |
 
 ---
 
@@ -243,3 +251,83 @@ Each skill card now displays MCP server pairings when expanded, and the MCP Stac
 7. Use the MCP Stack Curator in the showcase to find your ideal stack
 8. Monitor with `agents/03_MONITORING_METRICS.md` framework
 9. Evolve with `agents/08_EVOLUTION_GUIDE.md` roadmap
+
+---
+
+## Animation + 3D Pipeline Rules (v10.0.0)
+
+### Animation Orchestrator Gate
+
+**No animation code may be written without routing through animation-orchestrator first.**
+
+```
+IF user asks for animation
+    THEN route to animation-orchestrator first
+
+IF animation-orchestrator selects Motion
+    THEN route to motion-animator
+
+IF animation-orchestrator selects GSAP
+    THEN route to gsap-animator
+
+IF animation is simple (hover, fade)
+    THEN motion-animator with useAnimate mini (2.3KB)
+
+IF animation involves scroll + multiple sections
+    THEN gsap-animator with ScrollTrigger
+
+IF animation code is written
+    THEN animation-auditor validates before commit
+```
+
+### Three.js Orchestrator Gate
+
+**No 3D code may be written without routing through threejs-orchestrator first.**
+
+```
+IF user asks for 3D
+    THEN route to threejs-orchestrator first
+
+IF 3D is for React UI
+    THEN route to r3f-react with lazy-load + ssr:false
+
+IF 3D is for compute/physics
+    THEN route to vanilla Three.js with WebGPU
+
+IF 3D is for games
+    THEN route to Babylon.js
+
+IF Three.js is used in React without R3F
+    THEN REJECT — anti-pattern, use R3F
+
+IF Three.js import is synchronous in page/layout
+    THEN REJECT — must use dynamic import with ssr:false
+```
+
+### Pre-Commit Hook
+
+The `.git/hooks/pre-commit` hook runs `audit-animation.py` and `audit-threejs.py` on every commit. It catches:
+- Missing cleanup (useGSAP, dispose, revert)
+- Bundle violations (synchronous 3D imports in page bundles)
+- Missing 'use client' in R3F/Motion files
+- Missing reduced-motion checks
+- GSAP plugin import without registerPlugin
+
+### Skills Directory Structure
+
+```
+skills/
+├── animation-orchestrator/   # Routes ALL animation requests
+├── animation-auditor/         # Quality gates + audit-animation.py
+├── motion-animator/           # React UI animations (Motion)
+├── gsap-animator/             # Complex animations (GSAP)
+├── agent-master/              # Orchestrates 7-agent pipeline
+├── agent-decision/            # Decides IF and WHAT to animate
+├── agent-simulator/           # Traces all interactions + edge cases
+├── agent-auditor/             # Validates against standards
+├── agent-profiler/            # Finds ACTUAL bottlenecks
+├── agent-optimizer/           # Applies targeted fixes
+├── agent-implementation/      # Writes the code
+├── agent-maintenance/         # Monitors production
+└── skill-architect/           # Create/optimize SKILL.md files
+```

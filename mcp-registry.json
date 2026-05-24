@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-07-09",
-  "description": "Comprehensive registry of 127 free MCP servers across 14 categories \u2014 the data backbone for the MCP Stack Curator feature. Each entry includes protocol, tags, stack compatibility, and conflict data for automated stack recommendation.",
+  "lastUpdated": "2026-05-24",
+  "description": "Comprehensive registry of 145 free MCP servers across 15 categories — the data backbone for the MCP Stack Curator feature. Now includes ModelScope (魔搭) curated servers with free hosted deployment. Each entry includes protocol, tags, stack compatibility, and conflict data for automated stack recommendation.",
   "categories": [
     "File & Storage",
     "Database",
@@ -16,7 +16,8 @@
     "Content & Media",
     "Monitoring",
     "Integration",
-    "Utility"
+    "Utility",
+    "ModelScope"
   ],
   "servers": [
     {
@@ -133,7 +134,7 @@
     {
       "name": "git",
       "category": "File & Storage",
-      "description": "Perform Git operations directly \u2014 clone, commit, branch, diff, and log without a GitHub wrapper",
+      "description": "Perform Git operations directly — clone, commit, branch, diff, and log without a GitHub wrapper",
       "protocol": "stdio",
       "isFree": true,
       "tags": [
@@ -215,7 +216,7 @@
     {
       "name": "sqlite",
       "category": "Database",
-      "description": "Query and manage SQLite databases \u2014 ideal for local analysis, prototyping, and embedded data",
+      "description": "Query and manage SQLite databases — ideal for local analysis, prototyping, and embedded data",
       "protocol": "stdio",
       "isFree": true,
       "tags": [
@@ -388,7 +389,7 @@
     {
       "name": "fetch",
       "category": "Web & Search",
-      "description": "Retrieve and extract content from URLs \u2014 HTML pages, APIs, and structured data sources",
+      "description": "Retrieve and extract content from URLs — HTML pages, APIs, and structured data sources",
       "protocol": "stdio",
       "isFree": true,
       "tags": [
@@ -585,7 +586,7 @@
     {
       "name": "kubernetes",
       "category": "Cloud & DevOps",
-      "description": "Manage Kubernetes clusters \u2014 deployments, services, pods, and scaling operations",
+      "description": "Manage Kubernetes clusters — deployments, services, pods, and scaling operations",
       "protocol": "stdio",
       "isFree": true,
       "tags": [
@@ -697,7 +698,7 @@
     {
       "name": "aws",
       "category": "Cloud & DevOps",
-      "description": "Interact with AWS services \u2014 EC2, Lambda, S3, IAM, CloudWatch, and more via unified interface",
+      "description": "Interact with AWS services — EC2, Lambda, S3, IAM, CloudWatch, and more via unified interface",
       "protocol": "stdio",
       "isFree": true,
       "tags": [
@@ -744,7 +745,7 @@
     {
       "name": "azure",
       "category": "Cloud & DevOps",
-      "description": "Manage Microsoft Azure resources \u2014 VMs, Azure Functions, Blob Storage, and Active Directory",
+      "description": "Manage Microsoft Azure resources — VMs, Azure Functions, Blob Storage, and Active Directory",
       "protocol": "SSE",
       "isFree": true,
       "tags": [
@@ -1408,7 +1409,7 @@
     {
       "name": "github",
       "category": "Development",
-      "description": "Full GitHub integration \u2014 repos, pull requests, issues, actions, and code search",
+      "description": "Full GitHub integration — repos, pull requests, issues, actions, and code search",
       "protocol": "stdio",
       "isFree": true,
       "tags": [
@@ -1556,7 +1557,7 @@
     {
       "name": "cargo",
       "category": "Development",
-      "description": "Build, test, and manage Rust projects with Cargo \u2014 compile, run, and publish crates",
+      "description": "Build, test, and manage Rust projects with Cargo — compile, run, and publish crates",
       "protocol": "stdio",
       "isFree": true,
       "tags": [
@@ -1576,7 +1577,7 @@
     {
       "name": "pip",
       "category": "Development",
-      "description": "Manage Python packages with pip \u2014 install, search, and inspect dependencies",
+      "description": "Manage Python packages with pip — install, search, and inspect dependencies",
       "protocol": "stdio",
       "isFree": true,
       "tags": [
@@ -1596,7 +1597,7 @@
     {
       "name": "deno",
       "category": "Development",
-      "description": "Run and manage Deno projects \u2014 execute scripts, manage permissions, and compile binaries",
+      "description": "Run and manage Deno projects — execute scripts, manage permissions, and compile binaries",
       "protocol": "stdio",
       "isFree": true,
       "tags": [
@@ -2068,7 +2069,7 @@
     {
       "name": "pandoc",
       "category": "Content & Media",
-      "description": "Convert documents between formats with Pandoc \u2014 Markdown, HTML, PDF, DOCX, and more",
+      "description": "Convert documents between formats with Pandoc — Markdown, HTML, PDF, DOCX, and more",
       "protocol": "stdio",
       "isFree": true,
       "tags": [
@@ -2734,6 +2735,405 @@
       "stackConflict": [
         "openai"
       ]
+    },
+    {
+      "name": "modelscope-image-gen",
+      "category": "AI & ML",
+      "description": "Generate images using ModelScope's 12800+ text-to-image models via MCP — access Qwen, FLUX, SDXL, and Chinese-specific models with free hosted deployment",
+      "protocol": "SSE",
+      "isFree": true,
+      "tags": [
+        "image-generation",
+        "modelscope",
+        "chinese-ai",
+        "text-to-image",
+        "free-hosted"
+      ],
+      "stackCompatibility": [
+        "filesystem",
+        "fetch",
+        "memory"
+      ],
+      "stackConflict": [
+        "everart"
+      ],
+      "source": "modelscope.cn/mcp"
+    },
+    {
+      "name": "modelscope-model-discovery",
+      "category": "AI & ML",
+      "description": "Discover and search ModelScope's 200K+ ML models, datasets, and apps — find the right model for your task with metadata and benchmark comparisons",
+      "protocol": "SSE",
+      "isFree": true,
+      "tags": [
+        "model-discovery",
+        "modelscope",
+        "ml-models",
+        "datasets",
+        "chinese-ai"
+      ],
+      "stackCompatibility": [
+        "fetch",
+        "memory",
+        "brave-search"
+      ],
+      "stackConflict": [],
+      "source": "modelscope.cn/mcp"
+    },
+    {
+      "name": "context7",
+      "category": "Development",
+      "description": "Fetch up-to-date, version-specific documentation and code examples directly into LLM prompts — eliminates stale or hallucinated API references for any library",
+      "protocol": "SSE",
+      "isFree": true,
+      "tags": [
+        "documentation",
+        "context",
+        "up-to-date",
+        "version-specific",
+        "code-examples"
+      ],
+      "stackCompatibility": [
+        "filesystem",
+        "github",
+        "fetch"
+      ],
+      "stackConflict": [],
+      "source": "modelscope.cn/mcp"
+    },
+    {
+      "name": "arxiv-paper",
+      "category": "AI & ML",
+      "description": "Search and parse arXiv papers with full PDF content extraction — retrieve academic papers, get abstracts, and extract methodology sections for research workflows",
+      "protocol": "stdio",
+      "isFree": true,
+      "tags": [
+        "academic",
+        "arxiv",
+        "papers",
+        "research",
+        "pdf-extraction"
+      ],
+      "stackCompatibility": [
+        "fetch",
+        "memory",
+        "sequential-thinking"
+      ],
+      "stackConflict": [],
+      "source": "modelscope.cn/mcp"
+    },
+    {
+      "name": "mineru-document-parser",
+      "category": "Content & Media",
+      "description": "Parse web pages and documents into structured content via MCP — extract text, tables, and layout from PDFs, DOCX, and HTML with MinerU's open-source pipeline",
+      "protocol": "SSE",
+      "isFree": true,
+      "tags": [
+        "document-parsing",
+        "pdf",
+        "content-extraction",
+        "mineru",
+        "tables"
+      ],
+      "stackCompatibility": [
+        "filesystem",
+        "fetch",
+        "sqlite"
+      ],
+      "stackConflict": [],
+      "source": "modelscope.cn/mcp"
+    },
+    {
+      "name": "alipay-mcp",
+      "category": "Integration",
+      "description": "Integrate Alipay payment capabilities into LLM applications — transaction creation, query, and refund for Chinese fintech workflows",
+      "protocol": "SSE",
+      "isFree": true,
+      "tags": [
+        "alipay",
+        "payment",
+        "fintech",
+        "chinese",
+        "transactions"
+      ],
+      "stackCompatibility": [
+        "fetch",
+        "sqlite",
+        "memory"
+      ],
+      "stackConflict": [],
+      "source": "modelscope.cn/mcp"
+    },
+    {
+      "name": "xiyan-sql",
+      "category": "Database",
+      "description": "Natural language to SQL query engine using XiyanSQL — ask questions in plain language and get database results without writing SQL, supports multiple databases",
+      "protocol": "stdio",
+      "isFree": true,
+      "tags": [
+        "nl2sql",
+        "natural-language",
+        "sql",
+        "database-query",
+        "chinese-ai"
+      ],
+      "stackCompatibility": [
+        "postgres",
+        "mysql",
+        "sqlite"
+      ],
+      "stackConflict": [],
+      "source": "modelscope.cn/mcp"
+    },
+    {
+      "name": "gaode-maps",
+      "category": "Web & Search",
+      "description": "Access Gaode (Amap) maps API for Chinese location services — geocoding, routing, POI search, and real-time traffic for China-specific applications",
+      "protocol": "SSE",
+      "isFree": true,
+      "tags": [
+        "maps",
+        "chinese",
+        "gaode",
+        "amap",
+        "geocoding",
+        "routing"
+      ],
+      "stackCompatibility": [
+        "fetch",
+        "memory",
+        "filesystem"
+      ],
+      "stackConflict": [
+        "google-maps"
+      ],
+      "source": "modelscope.cn/mcp"
+    },
+    {
+      "name": "desktop-commander",
+      "category": "Development",
+      "description": "Execute terminal commands and manage processes from AI — run builds, start dev servers, manage Docker containers, and execute scripts with full I/O capture",
+      "protocol": "stdio",
+      "isFree": true,
+      "tags": [
+        "terminal",
+        "commands",
+        "process-management",
+        "scripts",
+        "docker"
+      ],
+      "stackCompatibility": [
+        "filesystem",
+        "github",
+        "docker"
+      ],
+      "stackConflict": [],
+      "source": "mcp.so"
+    },
+    {
+      "name": "mcp-sequential-thinking",
+      "category": "AI & ML",
+      "description": "Dynamic and reflective thinking framework — break down complex problems into structured reasoning chains with branching, revision, and confidence scoring",
+      "protocol": "stdio",
+      "isFree": true,
+      "tags": [
+        "reasoning",
+        "thinking",
+        "chain-of-thought",
+        "structured",
+        "problem-solving"
+      ],
+      "stackCompatibility": [
+        "memory",
+        "brave-search",
+        "fetch"
+      ],
+      "stackConflict": [
+        "sequential-thinking"
+      ],
+      "source": "mcp.so"
+    },
+    {
+      "name": "everything-mcp",
+      "category": "Utility",
+      "description": "Reference MCP server implementing all protocol features — use as template, testing tool, or educational resource for MCP server development",
+      "protocol": "stdio",
+      "isFree": true,
+      "tags": [
+        "reference",
+        "testing",
+        "template",
+        "mcp-protocol",
+        "educational"
+      ],
+      "stackCompatibility": [
+        "filesystem",
+        "github"
+      ],
+      "stackConflict": [],
+      "source": "github.com"
+    },
+    {
+      "name": "mcp-sheguard",
+      "category": "Security",
+      "description": "Prompt injection detection and content safety guard for MCP interactions — filter malicious prompts, detect jailbreak attempts, and enforce content policies",
+      "protocol": "stdio",
+      "isFree": true,
+      "tags": [
+        "security",
+        "prompt-injection",
+        "content-safety",
+        "guard",
+        "filtering"
+      ],
+      "stackCompatibility": [
+        "filesystem",
+        "github",
+        "brave-search"
+      ],
+      "stackConflict": [],
+      "source": "mcp.so"
+    },
+    {
+      "name": "taskmaster-ai",
+      "category": "Productivity",
+      "description": "AI-powered task management with PRD parsing — break down product requirements into development tasks, track progress, and generate implementation plans",
+      "protocol": "stdio",
+      "isFree": true,
+      "tags": [
+        "task-management",
+        "prd",
+        "project-planning",
+        "ai-planning",
+        "development"
+      ],
+      "stackCompatibility": [
+        "github",
+        "filesystem",
+        "memory"
+      ],
+      "stackConflict": [
+        "todoist"
+      ],
+      "source": "mcp.so"
+    },
+    {
+      "name": "supabase-mcp",
+      "category": "Database",
+      "description": "Direct Supabase MCP integration — manage tables, run SQL, handle auth, and manage storage via Supabase's official MCP server with real-time subscriptions",
+      "protocol": "SSE",
+      "isFree": true,
+      "tags": [
+        "supabase",
+        "postgres",
+        "auth",
+        "realtime",
+        "baas"
+      ],
+      "stackCompatibility": [
+        "vercel",
+        "github",
+        "fetch"
+      ],
+      "stackConflict": [
+        "supabase"
+      ],
+      "source": "supabase.com"
+    },
+    {
+      "name": "stripe-mcp",
+      "category": "Integration",
+      "description": "Integrate Stripe payment processing — create charges, manage subscriptions, handle webhooks, and query transaction data via MCP",
+      "protocol": "SSE",
+      "isFree": true,
+      "tags": [
+        "stripe",
+        "payment",
+        "subscriptions",
+        "billing",
+        "fintech"
+      ],
+      "stackCompatibility": [
+        "fetch",
+        "sqlite",
+        "vercel"
+      ],
+      "stackConflict": [
+        "alipay-mcp"
+      ],
+      "source": "stripe.com"
+    },
+    {
+      "name": "vercel-ai-sdk",
+      "category": "AI & ML",
+      "description": "Vercel AI SDK MCP server — access AI model routing, streaming responses, and tool calling with support for OpenAI, Anthropic, Google, and local models",
+      "protocol": "SSE",
+      "isFree": true,
+      "tags": [
+        "ai-sdk",
+        "vercel",
+        "model-routing",
+        "streaming",
+        "multi-provider"
+      ],
+      "stackCompatibility": [
+        "vercel",
+        "github",
+        "fetch"
+      ],
+      "stackConflict": [
+        "openai",
+        "anthropic"
+      ],
+      "source": "vercel.com"
+    },
+    {
+      "name": "browserbase",
+      "category": "Web & Search",
+      "description": "Cloud browser automation at scale — run headless browsers in the cloud for web scraping, testing, and screenshot capture without local browser dependencies",
+      "protocol": "SSE",
+      "isFree": true,
+      "tags": [
+        "browser",
+        "cloud",
+        "automation",
+        "scraping",
+        "headless"
+      ],
+      "stackCompatibility": [
+        "fetch",
+        "github",
+        "filesystem"
+      ],
+      "stackConflict": [
+        "puppeteer",
+        "playwright"
+      ],
+      "source": "browserbase.com"
+    },
+    {
+      "name": "qdrant-mcp",
+      "category": "AI & ML",
+      "description": "Official Qdrant vector database MCP server — manage collections, search embeddings, and perform similarity queries for RAG and semantic search pipelines",
+      "protocol": "stdio",
+      "isFree": true,
+      "tags": [
+        "vector-db",
+        "qdrant",
+        "embeddings",
+        "similarity-search",
+        "rag"
+      ],
+      "stackCompatibility": [
+        "openai",
+        "langchain",
+        "memory"
+      ],
+      "stackConflict": [
+        "chromadb",
+        "pinecone"
+      ],
+      "source": "qdrant.tech"
     }
   ],
   "stats": {
