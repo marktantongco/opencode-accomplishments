@@ -1,0 +1,169 @@
+# Web Animation Mastery Skillset Manifest
+# Version: 1.0.0
+# Description: Motion v12 + GSAP v3.13+ hybrid animation skills for React/Vue
+# Standard: agentskills.io open standard
+
+name: web-animation-mastery
+version: 1.0.0
+description: >
+  Hybrid animation skillset combining Motion v12 (ex-Framer Motion) for UI-layer
+  animations and GSAP v3.13+ for content-layer animations with strict boundaries,
+  bundle budgets, and mobile-first optimization.
+
+author: animation-hybrid-architect
+license: MIT
+repository: https://github.com/marktantongco/opencode-accomplishments
+
+skills:
+  - name: motion-animation-engineer
+    version: 1.0.0
+    description: Motion v12 declarative UI animation engineer for React/Vue
+    path: skills/motion-animation-engineer/SKILL.md
+    category: animation
+    layer: ui
+    bundle_tiers:
+      ultra: 2.3    # useAnimate mini
+      mobile: 9     # LazyMotion + domAnimation
+      web: 34       # LazyMotion + domMax
+    triggers:
+      - motion animation
+      - framer motion
+      - react animation
+      - declarative animation
+      - layout animation
+      - gesture animation
+      - AnimatePresence
+      - useAnimate
+      - LazyMotion
+
+  - name: gsap-animation-engineer
+    version: 1.0.0
+    description: GSAP v3.13+ cinematic scroll/text/SVG animation engineer
+    path: skills/gsap-animation-engineer/SKILL.md
+    category: animation
+    layer: content
+    bundle_tiers:
+      ultra: 2.2    # @gsap/react core only
+      mobile: 18    # core + ScrollTrigger
+      web: 42       # core + ScrollTrigger + SplitText + Flip
+    triggers:
+      - gsap animation
+      - scroll animation
+      - ScrollTrigger
+      - SplitText
+      - SVG morph
+      - timeline animation
+      - useGSAP
+      - Flip animation
+      - scroll pinning
+
+  - name: animation-hybrid-architect
+    version: 1.0.0
+    description: Meta-skill for combining Motion + GSAP with strict boundaries
+    path: skills/animation-hybrid-architect/SKILL.md
+    category: animation
+    layer: orchestration
+    bundle_tiers:
+      ultra: 5      # Combined ultra runtimes
+      mobile: 30    # Mobile initial budget
+      web: 100      # Web initial budget
+    triggers:
+      - hybrid animation
+      - motion and gsap
+      - animation architecture
+      - animation boundary
+      - animation orchestration
+      - combine motion gsap
+
+# Performance constraints
+performance:
+  ultra_runtime: 5       # KB — for performance-critical / low-end
+  mobile_initial: 30     # KB — standard mobile page load
+  web_initial: 100       # KB — desktop page load
+  ram_ceiling: 3.7       # GB — Design OS memory limit
+  fps_target: 60         # Target FPS
+  fps_minimum: 30        # Minimum acceptable FPS
+
+# Layer ownership rules
+layers:
+  ui:
+    owner: motion-animation-engineer
+    domains:
+      - modal animations
+      - gesture interactions
+      - layout transitions
+      - presence animations
+      - micro-interactions
+    gpu_properties:
+      - transform
+      - opacity
+
+  content:
+    owner: gsap-animation-engineer
+    domains:
+      - scroll sequences
+      - text reveals
+      - SVG animations
+      - timeline orchestration
+      - layout state changes
+      - page transitions
+    gpu_properties:
+      - transform
+      - opacity
+      - clipPath
+
+  orchestration:
+    owner: animation-hybrid-architect
+    domains:
+      - animation routing
+      - boundary enforcement
+      - bundle management
+      - mobile optimization
+      - cleanup coordination
+
+# Boundary rules
+boundaries:
+  - rule: "Motion and GSAP must NEVER animate the same DOM element"
+    severity: error
+  - rule: "Motion layout animations must not overlap with GSAP Flip on same elements"
+    severity: error
+  - rule: "Motion useScroll is for light parallax only; ScrollTrigger for scroll-heavy work"
+    severity: warning
+  - rule: "All animation code must check prefers-reduced-motion"
+    severity: error
+  - rule: "Animation libraries must be dynamically imported in page/layout components"
+    severity: warning
+  - rule: "Total animation bundle must stay within tier budget"
+    severity: error
+
+# MCP integration
+mcp:
+  server: animation-tools
+  version: 1.0.0
+  tools:
+    - animate_route    # Route animation requests
+    - animate_audit    # Audit animation code
+    - animate_budget   # Check bundle budgets
+    - animate_boundary # Validate Motion/GSAP boundaries
+    - animate_profile  # Profile animation performance
+
+# References
+references:
+  motion:
+    - skills/motion-animation-engineer/references/performance-budgets.md
+    - skills/motion-animation-engineer/references/react-vue-patterns.md
+    - skills/motion-animation-engineer/references/bundle-guide.md
+    - skills/motion-animation-engineer/references/scroll-patterns.md
+    - skills/motion-animation-engineer/references/cleanup-protocols.md
+  gsap:
+    - skills/gsap-animation-engineer/references/plugin-catalog.md
+    - skills/gsap-animation-engineer/references/scroll-patterns.md
+    - skills/gsap-animation-engineer/references/react-integration.md
+    - skills/gsap-animation-engineer/references/split-text-guide.md
+    - skills/gsap-animation-engineer/references/cleanup-protocols.md
+  hybrid:
+    - skills/animation-hybrid-architect/references/stack-patterns.md
+    - skills/animation-hybrid-architect/references/bundle-budgets.md
+    - skills/animation-hybrid-architect/references/mobile-optimization.md
+    - skills/animation-hybrid-architect/references/mcp-schema.md
+    - skills/animation-hybrid-architect/references/cleanup-protocols.md
