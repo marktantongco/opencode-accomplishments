@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenCode Accomplishments | Fullstack Dev Journey</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #0a0a0f;
-            --bg-card: #13131a;
-            --bg-elevated: #1a1a24;
-            --accent-cyan: #00d4ff;
-            --accent-magenta: #ff006e;
-            --accent-lime: #bfff00;
-            --accent-gold: #ffd700;
+            --brand-primary: #BFFF00;
+            --brand-secondary: #FF2E63;
+            --brand-tertiary: #08F7FE;
+            --near-black: oklch(12% 0.01 250);
+            --bg-card: oklch(14% 0.015 250);
+            --bg-elevated: oklch(18% 0.02 250);
             --text-primary: #f0f0f5;
             --text-secondary: #8888a0;
             --border-subtle: #2a2a3a;
+            /* Legacy aliases mapped to brand palette */
+            --accent-cyan: var(--brand-tertiary);
+            --accent-magenta: var(--brand-secondary);
+            --accent-lime: var(--brand-primary);
+            --accent-gold: #ffd700;
         }
         
         * { box-sizing: border-box; }
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
             min-height: 100vh;
@@ -37,8 +41,8 @@
             position: fixed;
             inset: 0;
             background-image: 
-                linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+                linear-gradient(rgba(8,247,254,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(8,247,254,0.02) 1px, transparent 1px);
             background-size: 60px 60px;
             pointer-events: none;
             z-index: 0;
@@ -62,6 +66,19 @@
             0%, 100% { transform: translate(0, 0); }
             50% { transform: translate(50px, 30px); }
         }
+
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .badge { animation: none !important; }
+            .glow-cyan, .glow-magenta { animation: none !important; }
+            .bg-glow { opacity: 0.06 !important; }
+            .nav-tab { transition: none !important; }
+        }
         
         /* Main Container */
         .container {
@@ -83,8 +100,8 @@
             align-items: center;
             gap: 8px;
             padding: 8px 16px;
-            background: rgba(0,212,255,0.1);
-            border: 1px solid rgba(0,212,255,0.3);
+            background: rgba(8,247,254,0.1);
+            border: 1px solid rgba(8,247,254,0.3);
             border-radius: 100px;
             font-size: 13px;
             font-weight: 600;
@@ -94,8 +111,8 @@
         }
         
         @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(0,212,255,0.2); }
-            50% { box-shadow: 0 0 40px rgba(0,212,255,0.4); }
+            0%, 100% { box-shadow: 0 0 20px rgba(8,247,254,0.2); }
+            50% { box-shadow: 0 0 40px rgba(8,247,254,0.4); }
         }
         
         .title {
@@ -106,10 +123,7 @@
         }
         
         .title .gradient {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-magenta));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--brand-tertiary);
         }
         
         .subtitle {
@@ -149,6 +163,11 @@
             color: var(--text-primary);
         }
         
+        .nav-tab:focus-visible {
+            outline: 3px solid var(--brand-tertiary);
+            outline-offset: 2px;
+        }
+        
         .nav-tab.active {
             background: var(--accent-cyan);
             color: var(--bg-primary);
@@ -175,7 +194,7 @@
             font-size: 24px;
         }
         
-        .section-icon.cyan { background: rgba(0,212,255,0.15); }
+        .section-icon.cyan { background: rgba(8,247,254,0.15); }
         .section-icon.magenta { background: rgba(255,0,110,0.15); }
         .section-icon.lime { background: rgba(191,255,0,0.15); }
         .section-icon.gold { background: rgba(255,215,0,0.15); }
@@ -325,7 +344,7 @@
             text-transform: uppercase;
         }
         
-        .skill-tag.core { background: rgba(0,212,255,0.2); color: var(--accent-cyan); }
+        .skill-tag.core { background: rgba(8,247,254,0.2); color: var(--accent-cyan); }
         .skill-tag.creative { background: rgba(255,0,110,0.2); color: var(--accent-magenta); }
         .skill-tag.dev { background: rgba(191,255,0,0.2); color: var(--accent-lime); }
         .skill-tag.strategy { background: rgba(255,215,0,0.2); color: var(--accent-gold); }
@@ -414,7 +433,7 @@
             color: var(--accent-cyan);
             margin-bottom: 12px;
             padding: 8px 12px;
-            background: rgba(0,212,255,0.1);
+            background: rgba(8,247,254,0.1);
             border-radius: 6px;
         }
         
@@ -445,7 +464,7 @@
         
         /* Interactive Terminal */
         .terminal {
-            background: #0d0d12;
+            background: oklch(12% 0.01 250);
             border-radius: 16px;
             border: 1px solid var(--border-subtle);
             overflow: hidden;
@@ -514,8 +533,8 @@
         }
         
         .goal-card {
-            background: rgba(0,212,255,0.1);
-            border: 1px solid rgba(0,212,255,0.3);
+            background: rgba(8,247,254,0.1);
+            border: 1px solid rgba(8,247,254,0.3);
         }
         
         .blocker-card {
@@ -614,7 +633,7 @@
         
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(0,212,255,0.3);
+            box-shadow: 0 10px 40px rgba(8,247,254,0.3);
         }
         
         /* Footer */
@@ -663,17 +682,17 @@
         </header>
 
         <!-- Navigation -->
-        <nav class="nav-tabs">
-            <button class="nav-tab active" data-section="overview">Overview</button>
-            <button class="nav-tab" data-section="timeline">Timeline</button>
-            <button class="nav-tab" data-section="skills">Skills Built</button>
-            <button class="nav-tab" data-section="config">Config</button>
-            <button class="nav-tab" data-section="terminal">Terminal</button>
-            <button class="nav-tab" data-section="agent">Agent Flow</button>
+        <nav class="nav-tabs" role="tablist" aria-label="Section navigation">
+            <button class="nav-tab active" data-section="overview" role="tab" aria-selected="true" tabindex="0" id="tab-overview">Overview</button>
+            <button class="nav-tab" data-section="timeline" role="tab" aria-selected="false" tabindex="-1" id="tab-timeline">Timeline</button>
+            <button class="nav-tab" data-section="skills" role="tab" aria-selected="false" tabindex="-1" id="tab-skills">Skills Built</button>
+            <button class="nav-tab" data-section="config" role="tab" aria-selected="false" tabindex="-1" id="tab-config">Config</button>
+            <button class="nav-tab" data-section="terminal" role="tab" aria-selected="false" tabindex="-1" id="tab-terminal">Terminal</button>
+            <button class="nav-tab" data-section="agent" role="tab" aria-selected="false" tabindex="-1" id="tab-agent">Agent Flow</button>
         </nav>
 
         <!-- Section: Overview -->
-        <section id="overview" class="section active">
+        <section id="overview" class="section active" role="tabpanel" aria-labelledby="tab-overview">
             <!-- Stats -->
             <div class="stats-grid">
                 <div class="stat-card">
@@ -714,7 +733,7 @@
         </section>
 
         <!-- Section: Timeline -->
-        <section id="timeline" class="section">
+        <section id="timeline" class="section" role="tabpanel" aria-labelledby="tab-timeline">
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">Session 1</div>
@@ -755,7 +774,7 @@
         </section>
 
         <!-- Section: Skills -->
-        <section id="skills" class="section">
+        <section id="skills" class="section" role="tabpanel" aria-labelledby="tab-skills">
             <div class="skills-grid">
                 <div class="skill-card">
                     <div class="skill-name">
@@ -894,7 +913,7 @@
         </section>
 
         <!-- Section: Config -->
-        <section id="config" class="section">
+        <section id="config" class="section" role="tabpanel" aria-labelledby="tab-config">
             <div class="config-grid">
                 <div class="config-card">
                     <div class="config-path">/home/hive/workspace/AGENTS.md</div>
@@ -964,7 +983,7 @@ If I ask you to do X:
         </section>
 
         <!-- Section: Terminal -->
-        <section id="terminal" class="section">
+        <section id="terminal" class="section" role="tabpanel" aria-labelledby="tab-terminal">
             <div class="terminal">
                 <div class="terminal-header">
                     <div class="terminal-dot red"></div>
@@ -1021,7 +1040,7 @@ feature-research/
         </section>
 
         <!-- Section: Agent Flow -->
-        <section id="agent" class="section">
+        <section id="agent" class="section" role="tabpanel" aria-labelledby="tab-agent">
             <div class="agent-flow">
                 <div class="agent-step">
                     <div class="step-number">1</div>
@@ -1083,14 +1102,46 @@ feature-research/
         // Navigation
         document.querySelectorAll('.nav-tab').forEach(tab => {
             tab.addEventListener('click', () => {
-                // Update tabs
-                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                
-                // Update sections
-                document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-                document.getElementById(tab.dataset.section).classList.add('active');
+                switchTab(tab.dataset.section);
             });
+        });
+
+        function switchTab(sectionId) {
+            // Update tabs
+            document.querySelectorAll('.nav-tab').forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+                t.setAttribute('tabindex', '-1');
+            });
+            const activeTab = document.querySelector(`.nav-tab[data-section="${sectionId}"]`);
+            activeTab.classList.add('active');
+            activeTab.setAttribute('aria-selected', 'true');
+            activeTab.setAttribute('tabindex', '0');
+            
+            // Update sections
+            document.querySelectorAll('.section').forEach(s => {
+                s.classList.remove('active');
+                s.hidden = true;
+            });
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+            activeSection.hidden = false;
+        }
+
+        // Keyboard nav for tabs
+        document.querySelector('.nav-tabs').addEventListener('keydown', (e) => {
+            const tabs = [...document.querySelectorAll('.nav-tab')];
+            const current = tabs.findIndex(t => t.getAttribute('aria-selected') === 'true');
+            let next = -1;
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { next = (current + 1) % tabs.length; }
+            else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { next = (current - 1 + tabs.length) % tabs.length; }
+            else if (e.key === 'Home') { next = 0; }
+            else if (e.key === 'End') { next = tabs.length - 1; }
+            if (next >= 0) {
+                e.preventDefault();
+                tabs[next].focus();
+                tabs[next].click();
+            }
         });
 
         // Copy Code
