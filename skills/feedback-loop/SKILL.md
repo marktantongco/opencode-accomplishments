@@ -1,0 +1,91 @@
+---
+name: feedback-loop
+description: >
+  Iterative improvement cycles from metrics to research. Use when use when implementing iterative improvement processes
+  Triggers on keywords: feedback, metrics, improvement, iteration.
+allowed-tools: Read, Write, Bash, Edit, Grep, Glob
+user-invocable: true
+mcp-servers: [filesystem, github, docker]
+---
+
+# Feedback Loop System
+
+## context
+
+Iterative improvement cycles from metrics to research. Collects performance data, identifies patterns, generates hypotheses, and validates improvements through controlled experiments. This skill provides system-level capabilities that maintain agent state, ensure consistency, and optimize resource usage across sessions and projects.
+
+## instructions
+
+### Step 1: Assess System Needs
+
+1. Identify the system operation required — memory, sync, compression, or role management
+2. Determine scope — single session, multi-session, or cross-project
+3. Map dependencies — what other systems or tools are involved
+4. Establish operational parameters — retention, frequency, thresholds
+
+### Step 2: Execute System Operation
+
+1. **Initialize** — Set up or load required state and configuration
+2. **Process** — Execute the core operation with proper error handling
+3. **Validate** — Verify the operation completed correctly
+4. **Report** — Document what was done and any issues encountered
+
+### Step 3: Generate System Report
+
+```markdown
+## System Operation Report
+
+### Operation
+Type of operation performed
+
+### Input
+What was processed
+
+### Output
+Results of the operation
+
+### State Changes
+- Change 1: before to after
+- Change 2: before to after
+
+### Issues Encountered
+- Issue: resolution
+```
+
+### Step 4: Verify System Health
+
+- [ ] Operation completed without errors
+- [ ] State is consistent and valid
+- [ ] No resource leaks or orphaned data
+- [ ] Logging and monitoring are active
+- [ ] Backup/recovery procedures are in place
+
+## constraints
+
+- NEVER modify system state without logging the change.
+- NEVER assume operations succeed — always validate results.
+- NEVER skip cleanup — system resources must be properly released.
+- ALWAYS handle concurrent access and race conditions.
+- ALWAYS maintain backward compatibility with existing state.
+
+## examples
+
+### Example: System Operation
+
+**Input:** "Use when implementing iterative improvement processes"
+
+**Output:**
+```markdown
+## System Operation Report
+
+### Operation
+Feedback Loop executed successfully
+
+### State Changes
+- Configuration updated with new parameters
+- State persisted to storage
+
+### Verification
+- All health checks passing
+- No resource leaks detected
+```
