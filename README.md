@@ -1,27 +1,18 @@
 # opencode-accomplishments
 
-## Multi-Skill AI Agent System + MCP Server Directory + Agent Modes
+## Dual-Page AI Agent Skills + MCP Directory + Agent Modes + Dev Journey
 
-The first unified **skills-plus-MCP-plus-modes directory** — 48 AI agent skills across 10 categories, 7 cognitive Agent Modes, 8 pre-built MCP stacks, and a curated registry of 105+ free MCP servers.
+A two-page interactive static site showcasing an AI agent ecosystem: **48 skills** across 10 categories, **7 cognitive Agent Modes**, **8 pre-built MCP stacks**, a curated registry of **105+ free MCP servers**, and a full **interactive dev journey timeline**.
 
 ---
 
 ### Live Demo
 
-**GitHub Pages:** [marktantongco.github.io/opencode-accomplishments](https://marktantongco.github.io/opencode-accomplishments/)
-
-**Vercel:** [opencode-accomplishments.vercel.app](https://opencode-accomplishments.vercel.app/)
-
-**API Endpoints:**
-| Endpoint | Description |
-|----------|-------------|
-| `?format=json` | Raw JSON of all 48 skills |
-| `?format=manifest` | JetBrains-style plugin.xml for IDE auto-discovery |
-| `?category=Agent Modes` | Filter by category |
-| `?category=MCP Servers` | Filter by MCP category |
-| `?skill=rabbit-multiply-ideas` | Auto-filter to specific skill |
-| `?embed=true` | iframe-ready (no hero/footer/marquee) |
-| `?palette=FF2E63` | Live theme generation from any hex color |
+| Platform | URL |
+|----------|-----|
+| **Skills Showcase** | [agentskills.io/showcase](https://agentskills.io/showcase) |
+| **GitHub Pages** | [marktantongco.github.io/opencode-accomplishments](https://marktantongco.github.io/opencode-accomplishments/) |
+| **Vercel** | [opencode-accomplishments.vercel.app](https://opencode-accomplishments.vercel.app/) |
 
 ---
 
@@ -29,9 +20,82 @@ The first unified **skills-plus-MCP-plus-modes directory** — 48 AI agent skill
 
 | Version | Date | Changes |
 |---------|------|---------|
+| **v6.0.0** | 2026-05-26 | Added **interactive accomplishments page** (`accomplishments.html`) with data-driven skills, debounced search, GSAP/ScrollTrigger animations, light/dark theme toggle, scroll progress bar, keyboard navigation, animated stat counters, skeleton loading states, empty state, and cross-page nav banner on both pages. Fixed CSS `var()` bug in inline JS hover handlers. |
 | **v5.0.0** | 2026-05-19 | Added 7 Agent Modes (Rabbit, Owl, Ant, Eagle, Dolphin, Beaver, Elephant) with `#FF6B35` accent. Fixed `substr()` deprecation, added robots meta + favicon. 41→48 skills, 9→10 categories |
-| **v4.0.0** | 2026-05-19 | Added MCP Servers category (4 skills: PictoFlux AI, MCP Stack Curator, MCP Registry, MCP Security Scanner). Removed nvidia-build. Added stacks.json + mcp-registry.json. 38→41 skills, 8→9 categories |
-| **v3.0.0** | 2026-05-06 | Neo-brutalist redesign, GSAP 3, Web Components, JSON-LD, URL endpoints, embed mode, palette API. 38 skills, 8 categories |
+| **v4.0.0** | 2026-05-19 | Added MCP Servers category (4 skills). Removed nvidia-build. Added stacks.json + mcp-registry.json. 38→41 skills, 8→9 categories |
+| **v3.0.0** | 2026-05-06 | Neo-brutalist redesign, GSAP 3, Web Components, JSON-LD, URL endpoints, embed mode, palette API |
+
+---
+
+## Page 1: Skills Showcase (`index.html`)
+
+The main landing page — an interactive, neo-brutalist gallery of all 48 AI agent skills with Web Component `<skill-card>` elements, GSAP animations, and JSON-LD structured data for AI agent discovery.
+
+### Features
+- **48 interactive skill cards** across 10 categories with color-coded tags
+- **Category filtering** — click to filter by Design, Development, Strategy, etc.
+- **Live search** with debounced input
+- **URL API endpoints** — `?category=`, `?skill=`, `?format=json`, `?format=manifest`, `?embed=true`, `?palette=`
+- **Web Components** — Shadow-free `<skill-card>` custom elements
+- **GSAP 3.12.5** — Hero orbit animations, ScrollTrigger reveals, Flip for category transitions
+- **JSON-LD** — Machine-readable `ItemList` of all 48 skills for search engines and AI crawlers
+- **Neo-brutalist design** — Thick borders, hard offset shadows, high-saturation colors, glitch effects, grain overlay, asymmetric layouts, Y2K chrome accents
+- **100% static** — Zero build step, zero dependencies, deploy anywhere
+
+### URL Endpoints (index.html)
+
+| Endpoint | Description |
+|----------|-------------|
+| `?format=json` | Raw JSON of all 48 skills |
+| `?format=manifest` | JetBrains-style plugin.xml for IDE auto-discovery |
+| `?category=Agent Modes` | Filter by category on load |
+| `?category=MCP Servers` | Filter by MCP category |
+| `?skill=rabbit-multiply-ideas` | Auto-filter to a specific skill |
+| `?embed=true` | iframe-ready mode (strips hero/footer/marquee) |
+| `?palette=FF2E63` | Live theme generation from any hex color |
+
+---
+
+## Page 2: Accomplishments (`accomplishments.html`)
+
+An interactive portfolio timeline documenting the fullstack dev journey — skills created, configuration, terminal sessions, and agent workflow. Built as a tabbed single-page application with data-driven interactivity.
+
+### Features
+
+| Feature | Detail |
+|---------|--------|
+| **Tab Navigation** | Overview / Timeline / Skills Built / Config / Terminal / Agent Flow |
+| **Animated Stats** | Custom `requestAnimationFrame` counters with cubic ease-out — lines of system prompt, skills created, activation scripts, config files |
+| **Data-Driven Skills** | 19 skills rendered from JS array with **debounced live search** across name, description, category, and tag |
+| **GSAP + ScrollTrigger** | Staggered timeline reveals, agent flow step animations, stat card scale-ins, config/terminal fade-ups — all respecting `prefers-reduced-motion: reduce` |
+| **Light/Dark Theme** | Toggle persisted via `localStorage`, smooth CSS custom property transitions |
+| **Scroll Progress Bar** | Fixed top gradient bar showing reading progress |
+| **Scroll-to-Top Button** | Appears after 400px scroll |
+| **Keyboard Navigation** | `/` to focus search, `←`/`→` to switch tabs, `Escape` to blur, `Home`/`End` for first/last tab |
+| **Skeleton Loading** | Shimmer placeholder cards replaced by JS-rendered skill grid |
+| **Empty State** | Friendly "No Skills Match" message with clear search button when filter returns zero results |
+| **Copy-to-Clipboard** | Code block copy button with visual feedback |
+| **Responsive** | Full mobile layout at 768px and 480px breakpoints |
+
+### Accessibility
+- Semantic `<main>`, `<nav>`, `<section>` landmarks with `role` and `aria-` attributes
+- `aria-current="page"` on active tab and current page indicator
+- `aria-selected` and `tabindex` management for tabpanel pattern
+- `focus-visible` outlines on all interactive elements
+- Screen reader labels on icon-only buttons (theme toggle, scroll-to-top, copy)
+- Hidden decorative elements with `aria-hidden="true"`
+
+---
+
+## Cross-Page Navigation
+
+Both pages include a persistent navigation banner at the top linking to:
+- **Skills Showcase** (`index.html`)
+- **Accomplishments** (`accomplishments.html`)
+- **MCP Stacks** (`stacks.json`)
+- **MCP Registry** (`mcp-registry.json`)
+
+The current page is highlighted with `aria-current="page"` and a distinct color treatment.
 
 ---
 
@@ -54,8 +118,6 @@ The first unified **skills-plus-MCP-plus-modes directory** — 48 AI agent skill
 
 ### Agent Modes — Cognitive Thinking Framework
 
-Each Agent Mode embodies a distinct thinking style inspired by the natural world. Switch between modes to approach problems from different angles.
-
 | Mode | Emoji | Thinking Style | Best For |
 |------|-------|----------------|----------|
 | **Rabbit** | 🐇 | Multiply Ideas | Brainstorming variations, generating 10 different angles/audiences/formats from one idea |
@@ -65,8 +127,6 @@ Each Agent Mode embodies a distinct thinking style inspired by the natural world
 | **Dolphin** | 🐬 | Creative Solutions | Playful, inventive approaches that break conventional thinking patterns |
 | **Beaver** | 🦫 | Build Systems | Designing practical, step-by-step systems and processes that solve problems |
 | **Elephant** | 🐘 | Cross-Field Connections | Applying insights from psychology, economics, science, and history to current challenges |
-
-**How to use:** Each mode has a unique `invoke` trigger. Combine modes for compound thinking — start with Rabbit to generate options, then use Owl to analyze each deeply, then Ant to break the best option into steps.
 
 ---
 
@@ -96,35 +156,31 @@ Each Agent Mode embodies a distinct thinking style inspired by the natural world
 
 **Categories:** Web Search, Database, File Operations, Knowledge & Memory, Image Generation, Code Repository, Communication, Productivity, Reasoning, Design Tools, Cloud, Academic Research, Social Media, Monitoring
 
-**PictoFlux AI** is a contributed entry — free, unlimited AI image generation at `https://chat.mcp.so/server/pictoflux-ai`
-
-**Security Vetting Process:**
-1. Package signature verification
-2. Permission scope analysis (filesystem, network, env vars)
-3. Dependency vulnerability scan
-4. Community trust signals (stars, contributors, maintainer history)
-5. Red flag detection (excessive permissions, unverified maintainers)
+Full registry: [`mcp-registry.json`](./mcp-registry.json)
 
 ---
 
 ### Technical Architecture
 
-**Design System:** Neo-Brutalist Ultramodern Gen Z v5.0 — thick borders, hard offset shadows, high-saturation colors, WCAG AA contrast compliance, monospace + display typography, glitch effects, grain overlay, asymmetric layouts, Y2K chrome accents.
-
-**Tech Stack:**
+#### Skills Showcase (`index.html`)
+- **Design System:** Neo-Brutalist Ultramodern Gen Z v5.0 — thick borders, hard offset shadows, WCAG AA contrast, monospace + display typography, glitch effects, grain overlay
 - **GSAP 3.12.5** — Animations, ScrollTrigger, Flip plugin for layout transitions
 - **Web Components** — Custom `<skill-card>` element with shadow-free DOM
 - **JSON-LD** — Machine-readable `ItemList` in `<head>` for search engine and AI agent discovery
 - **CSS Custom Properties** — Dynamic theming via `?palette=` endpoint
-- **Zero Build Step** — Single-file HTML, no Node.js, no bundler, deploy anywhere
 
-**URL Endpoints:**
-- `?format=json` — Raw JSON export of all 48 skills with metadata
-- `?format=manifest` — JetBrains-style plugin.xml for IDE auto-discovery
-- `?category=<name>` — Auto-filter to a specific category on load
-- `?skill=<name>` — Auto-search for a specific skill on load
-- `?embed=true` — Strip hero/marquee/footer for iframe embedding
-- `?palette=FF2E63` — Generate a full brutalist color system from any hex triplet
+#### Accomplishments (`accomplishments.html`)
+- **Design System:** Dark cyber aesthetic with neon accents (lime `#BFFF00`, cyan `#08F7FE`, magenta `#FF2E63`) with optional light theme
+- **GSAP 3.12.5 + ScrollTrigger** — Staggered timeline reveals, agent flow steps, stat card animations
+- **Data-Driven JS** — Skills rendered from `SKILLS_DATA` array with debounced live filtering
+- **CSS Custom Properties** — Full light/dark theme via `[data-theme="light"]` attribute, persisted in `localStorage`
+- **Custom Animation Engine** — `requestAnimationFrame` stat counters with cubic ease-out (no external dependency)
+- **Tabpanel ARIA Pattern** — Full keyboard accessibility with `aria-selected`, `tabindex`, `role="tablist"`
+
+#### Both Pages
+- **Zero Build Step** — Single-file HTML (×2), no Node.js, no bundler, deploy anywhere
+- **CDN Assets** — GSAP via cdnjs, Tailwind CSS via CDN (index.html), Google Fonts (Space Grotesk + Space Mono + Archivo Black)
+- **Responsive** — Mobile-first layouts with 768px and 480px breakpoints
 
 ---
 
@@ -132,11 +188,12 @@ Each Agent Mode embodies a distinct thinking style inspired by the natural world
 
 ```
 opencode-accomplishments/
-├── index.html               # Skills showcase (v5.0.0, neo-brutalist, GSAP)
+├── index.html               # Skills Showcase (v6.0.0, 48 skills, GSAP, Web Components)
+├── accomplishments.html     # Dev Journey Timeline (v6.0.0, data-driven, GSAP, theme toggle)
 ├── stacks.json              # 8 pre-built MCP stacks with synergy analysis
 ├── mcp-registry.json        # 105+ free MCP servers, 14 categories
 ├── vercel.json              # Vercel deployment config (static, headers)
-├── AGENTS.md                # Agent operating instructions
+├── AGENTS.md                # Agent operating instructions (261-line system prompt)
 ├── SKILLS.md                # Skill documentation
 ├── PLUGINS.md               # Plugin manifest docs
 ├── agents/                  # Agent skill definitions
@@ -146,10 +203,10 @@ opencode-accomplishments/
 │   ├── SKILL_04_AGENTIC.md
 │   └── ...
 ├── skills/                  # Individual skill specifications
-│   ├── context-compressor/  # Context compression skill
-│   ├── ui-ux-pro-max-v7/    # Design intelligence skill
-│   ├── gsap-animations/     # Animation patterns skill
-│   ├── mcp-builder/         # MCP server building skill
+│   ├── context-compressor/
+│   ├── ui-ux-pro-max-v7/
+│   ├── gsap-animations/
+│   ├── mcp-builder/
 │   └── ...
 ├── profiles/                # Agent profiles
 ├── workflows/               # Workflow definitions
@@ -158,16 +215,16 @@ opencode-accomplishments/
 
 ---
 
-### Optimization Audit — v5.0.0
+### Deployment
 
-| Issue Found | Fix Applied |
-|-------------|-------------|
-| `String.prototype.substr()` deprecated | Replaced with `substring()` in `applyPalette()` |
-| Missing `<meta name="robots">` | Added `index, follow` robots meta tag |
-| Missing favicon | Added SVG emoji favicon (lightning bolt) |
-| nvidia-build skill still in `skills/` directory | Kept for historical reference (removed from showcase in v4.0.0) |
-| Stale `skills-showcase.html` in download dir | Synced to match repo version |
-| Count inconsistencies (41 vs 48) | All 15+ references updated to 48 skills, 10 categories |
+Both pages are deployed to **GitHub Pages** (via GitHub Actions) and **Vercel** (via Vercel CLI / Git integration).
+
+| Platform | Trigger | Config |
+|----------|---------|--------|
+| **GitHub Pages** | Push to `main`/`master` | `.github/workflows/deploy.yml` |
+| **Vercel** | Push to `main` | `vercel.json` (static, clean URLs, security headers) |
+
+The `vercel.json` config rewrites all routes to `index.html` for SPA-like URL handling.
 
 ---
 
@@ -200,4 +257,4 @@ MIT
 
 ---
 
-Built with **ui-ux-pro-max-v7** + **gsap-animations** + **anthropic-frontend-design** + **frontend-design** — 48 skills — 10 categories — v5.0.0
+Built with **ui-ux-pro-max-v7** + **gsap-animations** + **anthropic-frontend-design** + **frontend-design** — 48 skills — 10 categories — 7 Agent Modes — 2 pages — v6.0.0

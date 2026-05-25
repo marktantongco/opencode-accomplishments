@@ -1105,6 +1105,45 @@ body.embed-mode .skills-section {
   skill-card { cursor: pointer; }
 }
 
+/* ===== CROSS-PAGE NAV BANNER ===== */
+.nav-banner {
+  position: relative;
+  z-index: 50;
+  background: var(--bg-surface);
+  border-bottom: 3px solid var(--black);
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  font-family: var(--font-mono);
+}
+.nav-banner-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s;
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+.nav-banner-link:hover { color: var(--brand-tertiary); background: rgba(8,247,254,0.08); }
+.nav-banner-link:focus-visible {
+  outline: 2px solid var(--brand-tertiary);
+  outline-offset: 2px;
+}
+.nav-banner-divider { color: var(--gray-600); font-weight: 300; }
+.nav-banner-current {
+  color: var(--brand-primary);
+  font-weight: 700;
+  padding: 4px 12px;
+  background: rgba(191,255,0,0.1);
+}
+
 /* ===== UTILITY ===== */
 .sr-only {
   position: absolute;
@@ -1121,6 +1160,18 @@ body.embed-mode .skills-section {
 
 <!-- Scroll Progress Bar -->
 <div id="progress-bar" role="progressbar" aria-label="Reading progress"></div>
+
+<!-- ===== CROSS-PAGE NAV BANNER ===== -->
+<nav class="nav-banner">
+  <a href="accomplishments.html" class="nav-banner-link" aria-label="View fullstack dev accomplishments timeline">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    Accomplishments
+  </a>
+  <span class="nav-banner-divider" aria-hidden="true">|</span>
+  <span class="nav-banner-current" aria-current="page">Skills Showcase</span>
+  <span class="nav-banner-divider" aria-hidden="true">|</span>
+  <a href="stacks.json" class="nav-banner-link">MCP Stacks</a>
+</nav>
 
 <!-- ===== HERO SECTION ===== -->
 <section class="hero" id="hero" aria-label="Hero section featuring the ui-ux-pro-max-v7 skill">
