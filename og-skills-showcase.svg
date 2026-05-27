@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+
+  <!-- Grid pattern -->
+  <g opacity="0.06" stroke="#BFFF00" stroke-width="1">
+    <line x1="0" y1="0" x2="0" y2="630"/><line x1="60" y1="0" x2="60" y2="630"/>
+    <line x1="120" y1="0" x2="120" y2="630"/><line x1="180" y1="0" x2="180" y2="630"/>
+    <line x1="240" y1="0" x2="240" y2="630"/><line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="360" y1="0" x2="360" y2="630"/><line x1="420" y1="0" x2="420" y2="630"/>
+    <line x1="480" y1="0" x2="480" y2="630"/><line x1="540" y1="0" x2="540" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/><line x1="660" y1="0" x2="660" y2="630"/>
+    <line x1="720" y1="0" x2="720" y2="630"/><line x1="780" y1="0" x2="780" y2="630"/>
+    <line x1="840" y1="0" x2="840" y2="630"/><line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="960" y1="0" x2="960" y2="630"/><line x1="1020" y1="0" x2="1020" y2="630"/>
+    <line x1="1080" y1="0" x2="1080" y2="630"/><line x1="1140" y1="0" x2="1140" y2="630"/>
+    <line x1="0" y1="0" x2="1200" y2="0"/><line x1="0" y1="63" x2="1200" y2="63"/>
+    <line x1="0" y1="126" x2="1200" y2="126"/><line x1="0" y1="189" x2="1200" y2="189"/>
+    <line x1="0" y1="252" x2="1200" y2="252"/><line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="378" x2="1200" y2="378"/><line x1="0" y1="441" x2="1200" y2="441"/>
+    <line x1="0" y1="504" x2="1200" y2="504"/><line x1="0" y1="567" x2="1200" y2="567"/>
+  </g>
+
+  <!-- Color blocks -->
+  <rect x="0" y="0" width="300" height="630" fill="#BFFF00" opacity="0.04" clip-path="polygon(0 0, 100% 0, 70% 100%, 0 100%)"/>
+  <rect x="900" y="0" width="300" height="630" fill="#FF2E63" opacity="0.04" clip-path="polygon(30% 0, 100% 0, 100% 100%, 0 100%)"/>
+
+  <!-- Sticker badge -->
+  <g transform="translate(60, 180)">
+    <rect x="0" y="0" width="240" height="48" rx="4" fill="#BFFF00" stroke="#000" stroke-width="4"/>
+    <rect x="4" y="4" width="232" height="40" rx="2" fill="none" stroke="#000" stroke-width="1" opacity="0.3"/>
+    <text x="120" y="32" font-family="monospace" font-size="16" font-weight="bold" fill="#000" text-anchor="middle" letter-spacing="4">⚡ AGENT SKILLS</text>
+  </g>
+
+  <!-- Title -->
+  <text x="60" y="340" font-family="'Archivo Black', 'Arial Black', sans-serif" font-size="90" font-weight="900" fill="#FFFFFF" letter-spacing="-2">
+    AI SKILLS
+  </text>
+  <text x="60" y="420" font-family="'Archivo Black', 'Arial Black', sans-serif" font-size="90" font-weight="900" fill="#BFFF00" letter-spacing="-2">
+    SHOWCASE
+    <!-- Hard shadow -->
+    <tspan dx="2" dy="2" fill="none" stroke="#FF2E63" stroke-width="4" font-size="90">SHOWCASE</tspan>
+  </text>
+
+  <!-- Stats bar -->
+  <g transform="translate(60, 470)">
+    <rect x="0" y="0" width="1200" height="4" fill="#FF2E63"/>
+  </g>
+
+  <!-- Subtitle stats -->
+  <g transform="translate(60, 500)">
+    <rect x="0" y="0" width="120" height="40" rx="4" fill="#1a1a1a" stroke="#BFFF00" stroke-width="3"/>
+    <text x="60" y="26" font-family="monospace" font-size="14" font-weight="bold" fill="#BFFF00" text-anchor="middle">48 SKILLS</text>
+  </g>
+  <g transform="translate(200, 500)">
+    <rect x="0" y="0" width="140" height="40" rx="4" fill="#1a1a1a" stroke="#FF2E63" stroke-width="3"/>
+    <text x="70" y="26" font-family="monospace" font-size="14" font-weight="bold" fill="#FF2E63" text-anchor="middle">10 CATEGORIES</text>
+  </g>
+  <g transform="translate(360, 500)">
+    <rect x="0" y="0" width="160" height="40" rx="4" fill="#1a1a1a" stroke="#08F7FE" stroke-width="3"/>
+    <text x="80" y="26" font-family="monospace" font-size="14" font-weight="bold" fill="#08F7FE" text-anchor="middle">7 AGENT MODES</text>
+  </g>
+
+  <!-- URL at bottom -->
+  <text x="60" y="590" font-family="monospace" font-size="16" fill="#666" letter-spacing="2">agentskills.io/showcase</text>
+
+  <!-- Noise overlay -->
+  <rect width="1200" height="630" fill="none" filter="url(#noise)" opacity="0.03" pointer-events="none"/>
+</svg>

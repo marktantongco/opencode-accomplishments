@@ -12,6 +12,7 @@
     <meta property="og:description" content="Interactive portfolio showcasing everything built with OpenCode — system prompts, skills, configs, and agent workflows.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://agentskills.io/accomplishments">
+    <meta property="og:image" content="og-skills-showcase.svg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="OpenCode Accomplishments | Fullstack Dev Journey">
 
@@ -1341,7 +1342,7 @@
             <div class="code-block">
                 <div class="code-header">
                     <span class="code-lang">markdown</span>
-                    <button class="code-copy-btn" onclick="copyCode(this)" aria-label="Copy code to clipboard">📋 Copy</button>
+                    <button class="code-copy-btn" aria-label="Copy code to clipboard">📋 Copy</button>
                 </div>
                 <div class="code-content">
 <pre>## 🏗️ OPERATING PRINCIPLE: NO ONE-OFF WORK
@@ -1667,7 +1668,7 @@ feature-research/
                         <div class="skills-empty-icon" role="img" aria-label="Search">🔍</div>
                         <div class="skills-empty-text">No Skills Match Your Search</div>
                         <div class="skills-empty-hint">Try a different keyword or clear the search</div>
-                        <button class="clear-search-btn" onclick="clearSkillsSearch()">Clear Search</button>
+                        <button class="clear-search-btn">Clear Search</button>
                     </div>
                 `;
                 return;
@@ -1762,6 +1763,20 @@ feature-research/
             }, 2000);
         }
         window.copyCode = copyCode;
+
+        // ===== BUTTON EVENT LISTENERS (replaces inline onclick) =====
+        function initButtonHandlers() {
+            // Copy buttons
+            document.querySelectorAll('.code-copy-btn').forEach(btn => {
+                btn.addEventListener('click', () => copyCode(btn));
+            });
+            // Clear search button (re-rendered dynamically, listen via delegation)
+            document.addEventListener('click', (e) => {
+                if (e.target.classList.contains('clear-search-btn')) {
+                    clearSkillsSearch();
+                }
+            });
+        }
 
         // ===== SCROLL PROGRESS =====
         function initScrollProgress() {
@@ -1960,6 +1975,7 @@ feature-research/
             initScrollTop();
             initThemeToggle();
             initGSAPAnimations();
+            initButtonHandlers();
         });
     </script>
 </body>

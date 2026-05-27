@@ -2,7 +2,7 @@
 
 ## Dual-Page AI Agent Skills + MCP Directory + Agent Modes + Dev Journey
 
-A two-page interactive static site showcasing an AI agent ecosystem: **48 skills** across 10 categories, **7 cognitive Agent Modes**, **8 pre-built MCP stacks**, a curated registry of **105+ free MCP servers**, and a full **interactive dev journey timeline**.
+A two-page interactive static site showcasing an AI agent ecosystem: **48 skills** across 10 categories, **7 cognitive Agent Modes**, **8 pre-built MCP stacks**, a curated registry of **78 free MCP servers**, and a full **interactive dev journey timeline**.
 
 ---
 
@@ -152,7 +152,7 @@ The current page is highlighted with `aria-current="page"` and a distinct color 
 
 ### MCP Server Registry
 
-105+ free MCP servers across 14 categories, sourced from 10+ directories including PulseMCP, MCP.so, Glama.ai, and Smithery.
+78 free MCP servers across 14 categories, sourced from 10+ directories including PulseMCP, MCP.so, Glama.ai, and Smithery.
 
 **Categories:** Web Search, Database, File Operations, Knowledge & Memory, Image Generation, Code Repository, Communication, Productivity, Reasoning, Design Tools, Cloud, Academic Research, Social Media, Monitoring
 
@@ -191,7 +191,7 @@ opencode-accomplishments/
 ├── index.html               # Skills Showcase (v6.0.0, 48 skills, GSAP, Web Components)
 ├── accomplishments.html     # Dev Journey Timeline (v6.0.0, data-driven, GSAP, theme toggle)
 ├── stacks.json              # 8 pre-built MCP stacks with synergy analysis
-├── mcp-registry.json        # 105+ free MCP servers, 14 categories
+├── mcp-registry.json        # 78 free MCP servers, 14 categories
 ├── vercel.json              # Vercel deployment config (static, headers)
 ├── AGENTS.md                # Agent operating instructions (261-line system prompt)
 ├── SKILLS.md                # Skill documentation

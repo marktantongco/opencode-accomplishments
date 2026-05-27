@@ -12,3 +12,5 @@ temp/
 *.tmp
 .vercel/
 .vercel
+_audit.py
+_audit2.py

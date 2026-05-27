@@ -15,6 +15,9 @@
     }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/index.html", "destination": "/index.html" },
+    { "source": "/accomplishments", "destination": "/accomplishments.html" },
+    { "source": "/accomplishments.html", "destination": "/accomplishments.html" }
   ]
 }
