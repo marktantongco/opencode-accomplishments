@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 <title>AI Skills Showcase — 76 Active Skills</title>
-<meta name="description" content="Interactive showcase of 76 AI agent skills across 12 categories — Animation Pipeline, Three.js Orchestrator, ModelScope MCP, Premium Modern Design with Dark Mode, Theme Marketplace, Stack Recommender.">
+<meta name="description" content="Interactive showcase of 76 AI agent skills across 11 categories — Animation Pipeline, Three.js Orchestrator, ModelScope MCP, Premium Modern Design with Dark Mode, Theme Marketplace, Stack Recommender.">
 <link rel="canonical" href="https://agentskills.io/showcase">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
 <meta property="og:title" content="AI Skills Showcase — 76 Active Skills">
-<meta property="og:description" content="Interactive showcase of 76 AI agent skills across 12 categories. Animation Pipeline, Three.js Orchestrator, ModelScope MCP, premium modern design with dark mode, theme marketplace, and stack recommender.">
+<meta property="og:description" content="Interactive showcase of 76 AI agent skills across 11 categories. Animation Pipeline, Three.js Orchestrator, ModelScope MCP, premium modern design with dark mode, theme marketplace, and stack recommender.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://agentskills.io/showcase">
 <meta property="og:image" content="og-skills-showcase.png">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI Skills Showcase — 76 Active Skills">
-<meta name="twitter:description" content="Interactive showcase of 76 AI agent skills across 12 categories with animation pipeline, Three.js orchestrator, ModelScope MCP, dark mode, and stack recommender.">
+<meta name="twitter:description" content="Interactive showcase of 76 AI agent skills across 11 categories with animation pipeline, Three.js orchestrator, ModelScope MCP, dark mode, and stack recommender.">
 <meta name="twitter:image" content="og-skills-showcase.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +35,7 @@
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "AI Agent Skills Collection",
-  "description": "76 active AI agent skills across 12 categories",
+  "description": "76 active AI agent skills across 11 categories",
   "numberOfItems": 66,
   "itemListElement": [
     {"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"ui-ux-pro-max-v7","applicationCategory":"AISkill","description":"AI design intelligence — 60 styles, 48 palettes, 36 fonts, 24 industry rules, production-grade components"}},
@@ -609,10 +609,6 @@ body::before {
   z-index: 0;
 }
 
-/* Scanlines removed — replaced with subtle warm glow */
-.hero-scanlines {
-  display: none;
-}
 
 .hero-animated-bg {
   position: absolute;
@@ -2278,6 +2274,24 @@ body.embed-mode .skills-section {
 .infra-tier-status.status-yellow { background: #d97706; }
 .infra-tier-status.status-pink { background: #9f1239; }
 .infra-tier-status.status-orange { background: #b45309; }
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-animated-bg {
+    animation: none !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -2290,7 +2304,6 @@ body.embed-mode .skills-section {
   <div class="hero-block-left" aria-hidden="true"></div>
   <div class="hero-block-right" aria-hidden="true"></div>
   <div class="hero-animated-bg" aria-hidden="true"></div>
-  <div class="hero-scanlines" aria-hidden="true"></div>
 
   <!-- Featured Theme Banner -->
   <div class="featured-theme-banner" id="featured-theme-banner">
@@ -2298,9 +2311,6 @@ body.embed-mode .skills-section {
     <span id="featured-theme-name">DEFAULT</span> THEME
   </div>
 
-  <!-- Orbit stickers -->
-  <div class="hero-orbit" id="hero-orbit" aria-hidden="true">
-    <div class="orbit-badge" id="orbit-1">&#9670; 58 SKILLS</div>
     <div class="orbit-badge" id="orbit-2">&#9733; 11 CATEGORIES</div>
     <div class="orbit-badge" id="orbit-3">&#9830; MCP + AGENTS</div>
   </div>
@@ -2337,12 +2347,6 @@ body.embed-mode .skills-section {
   </div>
 </section>
 
-<!-- ===== MARQUEE TICKER ===== -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-inner" id="marquee-inner">
-    <!-- Filled by JS -->
-  </div>
-</div>
 
 <!-- ===== STATS DASHBOARD ===== -->
 <section class="stats-dashboard" id="stats-dashboard" aria-label="Statistics">
@@ -2361,7 +2365,7 @@ body.embed-mode .skills-section {
     </div>
     <div class="stat-item">
       <div class="stat-number" id="stat-agents">0</div>
-      <div class="stat-label">Agent Modes</div>
+      <div class="stat-label">Agents</div>
     </div>
   </div>
 </section>
@@ -2398,7 +2402,7 @@ body.embed-mode .skills-section {
 <main class="skills-section" id="skills-section">
   <div class="section-heading" id="section-heading">
     <h2><span class="skill-count" id="skill-count">58</span> ACTIVE SKILLS</h2>
-    <p>12 categories // design // development // reasoning // content // strategy // system // data // creative // mcp // agents // infrastructure</p>
+    <p>11 categories // design // development // reasoning // content // strategy // system // data // creative // mcp // agents // infrastructure</p>
   </div>
   <div class="skills-grid" id="skills-grid" role="list" aria-label="Skills grid">
     <!-- Skill cards generated by JS -->
@@ -2406,7 +2410,7 @@ body.embed-mode .skills-section {
 </main>
 
 <!-- ===== AGENT MODES SPOTLIGHT ===== -->
-<section class="agent-spotlight" id="agent-spotlight" aria-label="Agent Modes">
+<section class="agent-spotlight" id="agent-spotlight" aria-label="Agents">
   <div class="agent-spotlight-heading">
     <h2>7 AGENT MODES</h2>
     <p>Your AI's personality — switch modes to match the task</p>
@@ -2534,12 +2538,12 @@ body.embed-mode .skills-section {
 <!-- ===== API NOTICE ===== -->
 <div class="api-notice" id="api-notice">
 <strong>ENDPOINTS:</strong> <code>?format=json</code> raw JSON &nbsp;|&nbsp; <code>?format=manifest</code> plugin.xml &nbsp;|&nbsp; <code>?skill=gsap-animations</code> auto-filter &nbsp;|&nbsp; <code>?category=Development</code> category filter &nbsp;|&nbsp; <code>?embed=true</code> iframe-ready &nbsp;|&nbsp; <code>?palette=FF2E63</code> live theme &nbsp;|&nbsp; <code>?theme=cyberpunk</code> named theme
-  <br><strong>VERSION:</strong> <code>v11.0.0</code> &nbsp;|&nbsp; <strong>UPDATED:</strong> <code>2026-05-24</code> &nbsp;|&nbsp; Dark Mode &nbsp;|&nbsp; Theme Marketplace &nbsp;|&nbsp; Stack Recommender &nbsp;|&nbsp; Infrastructure Stack &nbsp;|&nbsp; WCAG AA contrast &nbsp;|&nbsp; JSON-LD in <code>&lt;head&gt;</code> &nbsp;|&nbsp; 76 skills &nbsp;|&nbsp; 12 categories &nbsp;|&nbsp; GitHub Pages ready
+  <br><strong>VERSION:</strong> <code>v11.1.0</code> &nbsp;|&nbsp; <strong>UPDATED:</strong> <code>2026-05-24</code> &nbsp;|&nbsp; Dark Mode &nbsp;|&nbsp; Theme Marketplace &nbsp;|&nbsp; Stack Recommender &nbsp;|&nbsp; Infrastructure Stack &nbsp;|&nbsp; WCAG AA contrast &nbsp;|&nbsp; JSON-LD in <code>&lt;head&gt;</code> &nbsp;|&nbsp; 76 skills &nbsp;|&nbsp; 11 categories &nbsp;|&nbsp; GitHub Pages ready
 </div>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer" id="site-footer">
-  Built with <span class="brand-lime">ui-ux-pro-max-v7</span> + <span>gsap-animations</span> + <span>anthropic-frontend-design</span> + <span>frontend-design</span> // 76 skills // 12 categories // Dark Mode // Theme Marketplace // Stack Recommender // Infrastructure Stack // v11.0.0
+  Built with <span class="brand-lime">ui-ux-pro-max-v7</span> + <span>gsap-animations</span> + <span>anthropic-frontend-design</span> + <span>frontend-design</span> // 76 skills // 11 categories // Dark Mode // Theme Marketplace // Stack Recommender // Infrastructure Stack // v11.1.0
 </footer>
 
 <!-- Toast Notification Container -->
@@ -2584,102 +2588,102 @@ const SKILLS_LAST_UPDATED = '2026-05-24';
 function getSkillsDataRaw() {
   return [
     // Design & UI
-    { name: "ui-ux-pro-max-v7", category: "Design & UI", description: "AI design intelligence — 60 styles, 48 palettes, 36 fonts, 24 industry rules, production-grade components", icon: "\u{1F3A8}", invoke: "Use when designing UIs, building design systems, or creating production-grade components", tags: ["design","ui","ux","components","palettes","fonts"], accent: "#BFFF00", mcpServers: ["filesystem","fetch","google-drive"] },
-    { name: "anthropic-frontend-design", category: "Design & UI", description: "Bold aesthetics for AI-native interfaces, conversational UI, trust-forward design", icon: "\u{1F3AF}", invoke: "Use when building AI-native or conversational interfaces", tags: ["ai","frontend","trust","conversational"], accent: "#BFFF00", mcpServers: ["filesystem","fetch","google-drive"] },
-    { name: "gsap-animations", category: "Design & UI", description: "Production-grade GSAP animation patterns — 24 patterns, ScrollTrigger, Flip plugin, React integration", icon: "\u{1F3AC}", invoke: "Use when building animations, scroll effects, or motion design", tags: ["gsap","animation","scroll","motion","react"], accent: "#BFFF00", mcpServers: ["filesystem","fetch","google-drive"] },
-    { name: "frontend-design", category: "Design & UI", description: "shadcn/ui + Tailwind + React component generation for production-ready UI", icon: "\u{1F5A5}", invoke: "Use when generating React components with shadcn/ui and Tailwind", tags: ["shadcn","tailwind","react","components"], accent: "#BFFF00", mcpServers: ["filesystem","fetch","google-drive"] },
-    { name: "vercel-web-design-guidelines", category: "Design & UI", description: "Comprehensive accessibility-first UX rules and performance budgets", icon: "\u{267F}", invoke: "Use when auditing accessibility or setting performance budgets", tags: ["accessibility","ux","performance","guidelines"], accent: "#BFFF00", mcpServers: ["filesystem","fetch","google-drive"] },
+    { name: "ui-ux-pro-max-v7", category: "Design & UI", description: "AI design intelligence — 60 styles, 48 palettes, 36 fonts, 24 industry rules, production-grade components", icon: "\u{1F3A8}", invoke: "Use when designing UIs, building design systems, or creating production-grade components", tags: ["design","ui","ux","components","palettes","fonts"], accent: "#4338ca", mcpServers: ["filesystem","fetch","google-drive"] },
+    { name: "anthropic-frontend-design", category: "Design & UI", description: "Bold aesthetics for AI-native interfaces, conversational UI, trust-forward design", icon: "\u{1F3AF}", invoke: "Use when building AI-native or conversational interfaces", tags: ["ai","frontend","trust","conversational"], accent: "#4338ca", mcpServers: ["filesystem","fetch","google-drive"] },
+    { name: "gsap-animations", category: "Design & UI", description: "Production-grade GSAP animation patterns — 24 patterns, ScrollTrigger, Flip plugin, React integration", icon: "\u{1F3AC}", invoke: "Use when building animations, scroll effects, or motion design", tags: ["gsap","animation","scroll","motion","react"], accent: "#4338ca", mcpServers: ["filesystem","fetch","google-drive"] },
+    { name: "frontend-design", category: "Design & UI", description: "shadcn/ui + Tailwind + React component generation for production-ready UI", icon: "\u{1F5A5}", invoke: "Use when generating React components with shadcn/ui and Tailwind", tags: ["shadcn","tailwind","react","components"], accent: "#4338ca", mcpServers: ["filesystem","fetch","google-drive"] },
+    { name: "vercel-web-design-guidelines", category: "Design & UI", description: "Comprehensive accessibility-first UX rules and performance budgets", icon: "\u{267F}", invoke: "Use when auditing accessibility or setting performance budgets", tags: ["accessibility","ux","performance","guidelines"], accent: "#4338ca", mcpServers: ["filesystem","fetch","google-drive"] },
 
     // Reasoning
-    { name: "chain-of-thought", category: "Reasoning", description: "Step-by-step reasoning framework for complex problems", icon: "\u{1F9E0}", invoke: "Use when solving complex, multi-step problems requiring explicit reasoning", tags: ["reasoning","logic","step-by-step","analysis"], accent: "#08F7FE", mcpServers: ["memory","sequential-thinking","sqlite"] },
-    { name: "socratic-method", category: "Reasoning", description: "Strategic questioning to uncover assumptions and guide discovery", icon: "\u{2753}", invoke: "Use when coaching, teaching, or guiding someone to discover answers themselves", tags: ["questioning","coaching","teaching","discovery"], accent: "#08F7FE", mcpServers: ["memory","sequential-thinking","sqlite"] },
-    { name: "devils-advocate", category: "Reasoning", description: "Argue against premises to strengthen arguments and prevent confirmation bias", icon: "\u{1F525}", invoke: "Use when testing assumptions, strengthening arguments, or avoiding groupthink", tags: ["debate","bias","arguments","critical-thinking"], accent: "#08F7FE", mcpServers: ["memory","sequential-thinking","sqlite"] },
-    { name: "simulation-sandbox", category: "Reasoning", description: "Test scenarios in safe simulated environments without real-world consequences", icon: "\u{1F3AE}", invoke: "Use when testing decisions or exploring scenarios risk-free", tags: ["simulation","testing","scenarios","risk"], accent: "#08F7FE", mcpServers: ["memory","sequential-thinking","sqlite"] },
+    { name: "chain-of-thought", category: "Reasoning", description: "Step-by-step reasoning framework for complex problems", icon: "\u{1F9E0}", invoke: "Use when solving complex, multi-step problems requiring explicit reasoning", tags: ["reasoning","logic","step-by-step","analysis"], accent: "#059669", mcpServers: ["memory","sequential-thinking","sqlite"] },
+    { name: "socratic-method", category: "Reasoning", description: "Strategic questioning to uncover assumptions and guide discovery", icon: "\u{2753}", invoke: "Use when coaching, teaching, or guiding someone to discover answers themselves", tags: ["questioning","coaching","teaching","discovery"], accent: "#059669", mcpServers: ["memory","sequential-thinking","sqlite"] },
+    { name: "devils-advocate", category: "Reasoning", description: "Argue against premises to strengthen arguments and prevent confirmation bias", icon: "\u{1F525}", invoke: "Use when testing assumptions, strengthening arguments, or avoiding groupthink", tags: ["debate","bias","arguments","critical-thinking"], accent: "#059669", mcpServers: ["memory","sequential-thinking","sqlite"] },
+    { name: "simulation-sandbox", category: "Reasoning", description: "Test scenarios in safe simulated environments without real-world consequences", icon: "\u{1F3AE}", invoke: "Use when testing decisions or exploring scenarios risk-free", tags: ["simulation","testing","scenarios","risk"], accent: "#059669", mcpServers: ["memory","sequential-thinking","sqlite"] },
 
     // Development
-    { name: "mcp-builder", category: "Development", description: "Build MCP servers with TypeScript + Python, full lifecycle planning", icon: "\u{1F527}", invoke: "Use when building MCP servers or tool integrations", tags: ["mcp","typescript","python","servers"], accent: "#00FF9D", mcpServers: ["filesystem","github","docker"] },
-    { name: "superpowers", category: "Development", description: "Spec-first development with TDD and sub-agent delegation", icon: "\u26A1", invoke: "Use when doing spec-first development or delegating to sub-agents", tags: ["tdd","spec","delegation","development"], accent: "#00FF9D", mcpServers: ["filesystem","github","docker"] },
-    { name: "deployment-manager", category: "Development", description: "Deploy, monitor, update across GitHub Pages, Vercel, Netlify", icon: "\u{1F680}", invoke: "Use when deploying applications or managing infrastructure", tags: ["deploy","vercel","netlify","github-pages"], accent: "#00FF9D", mcpServers: ["filesystem","github","docker"] },
-    { name: "browser-use", category: "Development", description: "Headful browser automation with natural language control", icon: "\u{1F310}", invoke: "Use when automating browser tasks with natural language commands", tags: ["browser","automation","playwright","testing"], accent: "#00FF9D", mcpServers: ["filesystem","github","docker"] },
-    { name: "web-artifacts-builder", category: "Development", description: "Single-file HTML artifacts with React + Tailwind, zero dependencies", icon: "\u{1F4E6}", invoke: "Use when creating self-contained HTML artifacts or demos", tags: ["artifacts","html","react","tailwind"], accent: "#00FF9D", mcpServers: ["filesystem","github","docker"] },
-    { name: "vercel-react-best-practices", category: "Development", description: "Production-grade React architecture, hooks patterns, SSR/SSG strategies", icon: "\u269B", invoke: "Use when architecting React apps or optimizing performance", tags: ["react","architecture","ssr","performance"], accent: "#00FF9D", mcpServers: ["filesystem","github","docker"] },
-    { name: "explained-code", category: "Development", description: "Beginner-friendly code explanation with analogies and diagrams", icon: "\u{1F4D6}", invoke: "Use when explaining code to beginners or creating educational content", tags: ["explanation","education","analogies","diagrams"], accent: "#00FF9D", mcpServers: ["filesystem","github","docker"] },
+    { name: "mcp-builder", category: "Development", description: "Build MCP servers with TypeScript + Python, full lifecycle planning", icon: "\u{1F527}", invoke: "Use when building MCP servers or tool integrations", tags: ["mcp","typescript","python","servers"], accent: "#059669", mcpServers: ["filesystem","github","docker"] },
+    { name: "superpowers", category: "Development", description: "Spec-first development with TDD and sub-agent delegation", icon: "\u26A1", invoke: "Use when doing spec-first development or delegating to sub-agents", tags: ["tdd","spec","delegation","development"], accent: "#059669", mcpServers: ["filesystem","github","docker"] },
+    { name: "deployment-manager", category: "Development", description: "Deploy, monitor, update across GitHub Pages, Vercel, Netlify", icon: "\u{1F680}", invoke: "Use when deploying applications or managing infrastructure", tags: ["deploy","vercel","netlify","github-pages"], accent: "#059669", mcpServers: ["filesystem","github","docker"] },
+    { name: "browser-use", category: "Development", description: "Headful browser automation with natural language control", icon: "\u{1F310}", invoke: "Use when automating browser tasks with natural language commands", tags: ["browser","automation","playwright","testing"], accent: "#059669", mcpServers: ["filesystem","github","docker"] },
+    { name: "web-artifacts-builder", category: "Development", description: "Single-file HTML artifacts with React + Tailwind, zero dependencies", icon: "\u{1F4E6}", invoke: "Use when creating self-contained HTML artifacts or demos", tags: ["artifacts","html","react","tailwind"], accent: "#059669", mcpServers: ["filesystem","github","docker"] },
+    { name: "vercel-react-best-practices", category: "Development", description: "Production-grade React architecture, hooks patterns, SSR/SSG strategies", icon: "\u269B", invoke: "Use when architecting React apps or optimizing performance", tags: ["react","architecture","ssr","performance"], accent: "#059669", mcpServers: ["filesystem","github","docker"] },
+    { name: "explained-code", category: "Development", description: "Beginner-friendly code explanation with analogies and diagrams", icon: "\u{1F4D6}", invoke: "Use when explaining code to beginners or creating educational content", tags: ["explanation","education","analogies","diagrams"], accent: "#059669", mcpServers: ["filesystem","github","docker"] },
 
     // Content
-    { name: "seo-content-writer", category: "Content", description: "SEO-optimized content creation with GEO optimization for AI answer engines", icon: "\u{270D}", invoke: "Use when writing SEO content or optimizing for AI answer engines", tags: ["seo","content","geo","writing"], accent: "#FF2E63", mcpServers: ["filesystem","brave-search","google-drive","slack"] },
-    { name: "humanizer", category: "Content", description: "Strip AI writing patterns for human-like copy — anti-AI-detection rewriting", icon: "\u{1F9D1}", invoke: "Use when rewriting AI-generated text to sound more human", tags: ["humanize","writing","anti-detection","rewriting"], accent: "#FF2E63", mcpServers: ["filesystem","brave-search","google-drive","slack"] },
-    { name: "social-media-manager", category: "Content", description: "Platform-appropriate post generation for 30 days across LinkedIn, Twitter, Instagram, TikTok", icon: "\u{1F4F1}", invoke: "Use when generating social media content calendars or posts", tags: ["social-media","content","calendar","posts"], accent: "#FF2E63", mcpServers: ["filesystem","brave-search","google-drive","slack"] },
-    { name: "social-content-pillars", category: "Content", description: "Monthly content calendar for multi-brand social media with 90-day editorial plan", icon: "\u{1F4CA}", invoke: "Use when planning multi-brand social media content strategy", tags: ["content","strategy","calendar","editorial"], accent: "#FF2E63", mcpServers: ["filesystem","brave-search","google-drive","slack"] },
+    { name: "seo-content-writer", category: "Content", description: "SEO-optimized content creation with GEO optimization for AI answer engines", icon: "\u{270D}", invoke: "Use when writing SEO content or optimizing for AI answer engines", tags: ["seo","content","geo","writing"], accent: "#c2410c", mcpServers: ["filesystem","brave-search","google-drive","slack"] },
+    { name: "humanizer", category: "Content", description: "Strip AI writing patterns for human-like copy — anti-AI-detection rewriting", icon: "\u{1F9D1}", invoke: "Use when rewriting AI-generated text to sound more human", tags: ["humanize","writing","anti-detection","rewriting"], accent: "#c2410c", mcpServers: ["filesystem","brave-search","google-drive","slack"] },
+    { name: "social-media-manager", category: "Content", description: "Platform-appropriate post generation for 30 days across LinkedIn, Twitter, Instagram, TikTok", icon: "\u{1F4F1}", invoke: "Use when generating social media content calendars or posts", tags: ["social-media","content","calendar","posts"], accent: "#c2410c", mcpServers: ["filesystem","brave-search","google-drive","slack"] },
+    { name: "social-content-pillars", category: "Content", description: "Monthly content calendar for multi-brand social media with 90-day editorial plan", icon: "\u{1F4CA}", invoke: "Use when planning multi-brand social media content strategy", tags: ["content","strategy","calendar","editorial"], accent: "#c2410c", mcpServers: ["filesystem","brave-search","google-drive","slack"] },
 
     // Strategy
-    { name: "jtbd-research", category: "Strategy", description: "8-step Jobs to be Done product research methodology", icon: "\u{1F50D}", invoke: "Use when conducting product research using the JTBD framework", tags: ["jtbd","research","product","methodology"], accent: "#FFE600", mcpServers: ["brave-search","memory","fetch"] },
-    { name: "gumroad-pipeline", category: "Strategy", description: "Lead magnet to funnel to product launch workflow for digital products", icon: "\u{1F6D2}", invoke: "Use when setting up a digital product sales funnel", tags: ["funnel","gumroad","launch","digital-products"], accent: "#FFE600", mcpServers: ["brave-search","memory","fetch"] },
-    { name: "feature-research", category: "Strategy", description: "Research existing architecture before implementing a complex feature", icon: "\u{1F4C8}", invoke: "Use when researching before building a new feature", tags: ["research","architecture","feature","planning"], accent: "#FFE600", mcpServers: ["brave-search","memory","fetch"] },
-    { name: "skill-finder", category: "Strategy", description: "Skill discovery, evaluation, and installation meta-skill with security vetting", icon: "\u{1F50E}", invoke: "Use when finding, evaluating, or installing new skills", tags: ["skills","evaluation","installation","security"], accent: "#FFE600", mcpServers: ["brave-search","memory","fetch"] },
+    { name: "jtbd-research", category: "Strategy", description: "8-step Jobs to be Done product research methodology", icon: "\u{1F50D}", invoke: "Use when conducting product research using the JTBD framework", tags: ["jtbd","research","product","methodology"], accent: "#ca8a04", mcpServers: ["brave-search","memory","fetch"] },
+    { name: "gumroad-pipeline", category: "Strategy", description: "Lead magnet to funnel to product launch workflow for digital products", icon: "\u{1F6D2}", invoke: "Use when setting up a digital product sales funnel", tags: ["funnel","gumroad","launch","digital-products"], accent: "#ca8a04", mcpServers: ["brave-search","memory","fetch"] },
+    { name: "feature-research", category: "Strategy", description: "Research existing architecture before implementing a complex feature", icon: "\u{1F4C8}", invoke: "Use when researching before building a new feature", tags: ["research","architecture","feature","planning"], accent: "#ca8a04", mcpServers: ["brave-search","memory","fetch"] },
+    { name: "skill-finder", category: "Strategy", description: "Skill discovery, evaluation, and installation meta-skill with security vetting", icon: "\u{1F50E}", invoke: "Use when finding, evaluating, or installing new skills", tags: ["skills","evaluation","installation","security"], accent: "#ca8a04", mcpServers: ["brave-search","memory","fetch"] },
 
     // System
-    { name: "persistent-memory", category: "System", description: "Structured memory system for agent context continuity", icon: "\u{1F9E0}", invoke: "Use when maintaining context across sessions or conversations", tags: ["memory","context","persistence","continuity"], accent: "#A8B2D8", mcpServers: ["filesystem","github","docker"] },
-    { name: "system-prompt-sync", category: "System", description: "Auto-sync AGENTS.md across all git repos on version tags", icon: "\u{1F504}", invoke: "Use when synchronizing system prompts across repositories", tags: ["sync","git","agents","automation"], accent: "#A8B2D8", mcpServers: ["filesystem","github","docker"] },
-    { name: "feedback-loop", category: "System", description: "Iterative improvement cycles from metrics to research", icon: "\u{1F501}", invoke: "Use when implementing iterative improvement processes", tags: ["feedback","metrics","improvement","iteration"], accent: "#A8B2D8", mcpServers: ["filesystem","github","docker"] },
-    { name: "context-compressor", category: "System", description: "Compress long contexts preserving critical information", icon: "\u{1F5C2}", invoke: "Use when reducing context length while keeping essential information", tags: ["compression","context","optimization","tokens"], accent: "#A8B2D8", mcpServers: ["filesystem","github","docker"] },
-    { name: "agent-roles", category: "System", description: "Unified multi-agent role system — Builder, Coder, Council, Orchestrator, Plan, Researcher, Reviewer, Scribe", icon: "\u{1F465}", invoke: "Use when coordinating multi-agent workflows with role delegation", tags: ["agents","roles","orchestration","delegation"], accent: "#A8B2D8", mcpServers: ["filesystem","github","docker"] },
-    { name: "sample-hello-skill", category: "System", description: "Hello-world demo skill for testing skill activation and validation", icon: "\u{1F44B}", invoke: "Use when testing the skill system or validating installation", tags: ["demo","test","validation","hello"], accent: "#A8B2D8", mcpServers: ["filesystem","github","docker"] },
+    { name: "persistent-memory", category: "System", description: "Structured memory system for agent context continuity", icon: "\u{1F9E0}", invoke: "Use when maintaining context across sessions or conversations", tags: ["memory","context","persistence","continuity"], accent: "#6366f1", mcpServers: ["filesystem","github","docker"] },
+    { name: "system-prompt-sync", category: "System", description: "Auto-sync AGENTS.md across all git repos on version tags", icon: "\u{1F504}", invoke: "Use when synchronizing system prompts across repositories", tags: ["sync","git","agents","automation"], accent: "#6366f1", mcpServers: ["filesystem","github","docker"] },
+    { name: "feedback-loop", category: "System", description: "Iterative improvement cycles from metrics to research", icon: "\u{1F501}", invoke: "Use when implementing iterative improvement processes", tags: ["feedback","metrics","improvement","iteration"], accent: "#6366f1", mcpServers: ["filesystem","github","docker"] },
+    { name: "context-compressor", category: "System", description: "Compress long contexts preserving critical information", icon: "\u{1F5C2}", invoke: "Use when reducing context length while keeping essential information", tags: ["compression","context","optimization","tokens"], accent: "#6366f1", mcpServers: ["filesystem","github","docker"] },
+    { name: "agent-roles", category: "System", description: "Unified multi-agent role system — Builder, Coder, Council, Orchestrator, Plan, Researcher, Reviewer, Scribe", icon: "\u{1F465}", invoke: "Use when coordinating multi-agent workflows with role delegation", tags: ["agents","roles","orchestration","delegation"], accent: "#6366f1", mcpServers: ["filesystem","github","docker"] },
+    { name: "sample-hello-skill", category: "System", description: "Hello-world demo skill for testing skill activation and validation", icon: "\u{1F44B}", invoke: "Use when testing the skill system or validating installation", tags: ["demo","test","validation","hello"], accent: "#6366f1", mcpServers: ["filesystem","github","docker"] },
 
     // Data & Web
-    { name: "web-reader", category: "Data & Web", description: "Web page extraction with site crawling and spidering capabilities", icon: "\u{1F578}", invoke: "Use when extracting content from web pages or crawling sites", tags: ["web","scraping","crawling","extraction"], accent: "#64FFDA", mcpServers: ["fetch","brave-search","sqlite","postgres"] },
-    { name: "audit-analyzer", category: "Data & Web", description: "Detect and prioritize audit issues — performance, accessibility, monitoring", icon: "\u{1F4CB}", invoke: "Use when auditing websites for performance, accessibility, or monitoring issues", tags: ["audit","performance","accessibility","monitoring"], accent: "#64FFDA", mcpServers: ["fetch","brave-search","sqlite","postgres"] },
-    { name: "web-design-guidelines", category: "Data & Web", description: "Quick self-audit checklist for design consistency — typography, color, spacing, accessibility", icon: "\u{1F3A8}", invoke: "Use when self-auditing design consistency across a project", tags: ["design","guidelines","audit","consistency"], accent: "#64FFDA", mcpServers: ["fetch","brave-search","sqlite","postgres"] },
-    { name: "code-research", category: "Data & Web", description: "Research open-source repositories to understand how something is built", icon: "\u{1F4DA}", invoke: "Use when researching open-source code to understand implementation patterns", tags: ["research","codebase","open-source","patterns"], accent: "#64FFDA", mcpServers: ["fetch","brave-search","sqlite","postgres"] },
-    { name: "explore", category: "Data & Web", description: "Search a codebase using codebase_search tool — saves time and tokens over grep", icon: "\u{1F50D}", invoke: "Use when searching a codebase efficiently without grep", tags: ["search","codebase","explore","efficiency"], accent: "#64FFDA", mcpServers: ["fetch","brave-search","sqlite","postgres"] },
+    { name: "web-reader", category: "Data & Web", description: "Web page extraction with site crawling and spidering capabilities", icon: "\u{1F578}", invoke: "Use when extracting content from web pages or crawling sites", tags: ["web","scraping","crawling","extraction"], accent: "#0d9488", mcpServers: ["fetch","brave-search","sqlite","postgres"] },
+    { name: "audit-analyzer", category: "Data & Web", description: "Detect and prioritize audit issues — performance, accessibility, monitoring", icon: "\u{1F4CB}", invoke: "Use when auditing websites for performance, accessibility, or monitoring issues", tags: ["audit","performance","accessibility","monitoring"], accent: "#0d9488", mcpServers: ["fetch","brave-search","sqlite","postgres"] },
+    { name: "web-design-guidelines", category: "Data & Web", description: "Quick self-audit checklist for design consistency — typography, color, spacing, accessibility", icon: "\u{1F3A8}", invoke: "Use when self-auditing design consistency across a project", tags: ["design","guidelines","audit","consistency"], accent: "#0d9488", mcpServers: ["fetch","brave-search","sqlite","postgres"] },
+    { name: "code-research", category: "Data & Web", description: "Research open-source repositories to understand how something is built", icon: "\u{1F4DA}", invoke: "Use when researching open-source code to understand implementation patterns", tags: ["research","codebase","open-source","patterns"], accent: "#0d9488", mcpServers: ["fetch","brave-search","sqlite","postgres"] },
+    { name: "explore", category: "Data & Web", description: "Search a codebase using codebase_search tool — saves time and tokens over grep", icon: "\u{1F50D}", invoke: "Use when searching a codebase efficiently without grep", tags: ["search","codebase","explore","efficiency"], accent: "#0d9488", mcpServers: ["fetch","brave-search","sqlite","postgres"] },
 
     // Creative
-    { name: "photography-ai", category: "Creative", description: "Professional visual engineering framework with batch processing, prompt engineering, cinematic sequences", icon: "\u{1F4F7}", invoke: "Use when creating photography or visual content with AI assistance", tags: ["photography","visual","prompt","cinematic"], accent: "#FF9FF3", mcpServers: ["filesystem","fetch","everart"] },
-    { name: "output-formatter", category: "Creative", description: "Strict formatting rules for all output types — JSON, tables, markdown", icon: "\u{1F4DD}", invoke: "Use when enforcing consistent formatting across outputs", tags: ["formatting","json","tables","markdown"], accent: "#FF9FF3", mcpServers: ["filesystem","fetch","everart"] },
+    { name: "photography-ai", category: "Creative", description: "Professional visual engineering framework with batch processing, prompt engineering, cinematic sequences", icon: "\u{1F4F7}", invoke: "Use when creating photography or visual content with AI assistance", tags: ["photography","visual","prompt","cinematic"], accent: "#a855f7", mcpServers: ["filesystem","fetch","everart"] },
+    { name: "output-formatter", category: "Creative", description: "Strict formatting rules for all output types — JSON, tables, markdown", icon: "\u{1F4DD}", invoke: "Use when enforcing consistent formatting across outputs", tags: ["formatting","json","tables","markdown"], accent: "#a855f7", mcpServers: ["filesystem","fetch","everart"] },
 
     // MCP Servers
-    { name: "pictoflux-ai", category: "MCP Servers", description: "AI-powered image generation and visual editing via MCP protocol — create, transform, and composite images through standardized tool calls", icon: "\u{1F3A8}", invoke: "Use when generating or editing images via MCP protocol tool calls", tags: ["mcp","image","visual","generation","editing"], accent: "#FF6B35", mcpServers: ["filesystem","github"] },
-    { name: "mcp-stack-curator", category: "MCP Servers", description: "Recommends which 4 MCP servers to use together — solves the unsolved problem of server combination synergy with conflict detection", icon: "\u{1F9E9}", invoke: "Use when deciding which MCP servers to combine for maximum synergy", tags: ["mcp","stacks","synergy","curation","combinations"], accent: "#FF6B35", mcpServers: ["filesystem","github"] },
-    { name: "mcp-registry", category: "MCP Servers", description: "Searchable directory of 105+ free MCP servers across 14 categories with deduplication and compatibility scoring", icon: "\u{1F4CB}", invoke: "Use when searching for MCP servers or checking compatibility scores", tags: ["mcp","registry","directory","servers","catalog"], accent: "#FF6B35", mcpServers: ["filesystem","github"] },
-    { name: "mcp-security-scanner", category: "MCP Servers", description: "Audit MCP server configurations for security vulnerabilities, permission scopes, and trust verification", icon: "\u{1F6E1}", invoke: "Use when auditing MCP server security, permissions, or trust levels", tags: ["mcp","security","audit","permissions","trust"], accent: "#FF6B35", mcpServers: ["filesystem","github"] },
+    { name: "pictoflux-ai", category: "MCP Servers", description: "AI-powered image generation and visual editing via MCP protocol — create, transform, and composite images through standardized tool calls", icon: "\u{1F3A8}", invoke: "Use when generating or editing images via MCP protocol tool calls", tags: ["mcp","image","visual","generation","editing"], accent: "#ea580c", mcpServers: ["filesystem","github"] },
+    { name: "mcp-stack-curator", category: "MCP Servers", description: "Recommends which 4 MCP servers to use together — solves the unsolved problem of server combination synergy with conflict detection", icon: "\u{1F9E9}", invoke: "Use when deciding which MCP servers to combine for maximum synergy", tags: ["mcp","stacks","synergy","curation","combinations"], accent: "#ea580c", mcpServers: ["filesystem","github"] },
+    { name: "mcp-registry", category: "MCP Servers", description: "Searchable directory of 105+ free MCP servers across 14 categories with deduplication and compatibility scoring", icon: "\u{1F4CB}", invoke: "Use when searching for MCP servers or checking compatibility scores", tags: ["mcp","registry","directory","servers","catalog"], accent: "#ea580c", mcpServers: ["filesystem","github"] },
+    { name: "mcp-security-scanner", category: "MCP Servers", description: "Audit MCP server configurations for security vulnerabilities, permission scopes, and trust verification", icon: "\u{1F6E1}", invoke: "Use when auditing MCP server security, permissions, or trust levels", tags: ["mcp","security","audit","permissions","trust"], accent: "#ea580c", mcpServers: ["filesystem","github"] },
 
-    // Agent Modes
-    { name: "agent-rabbit", category: "Agent Modes", description: "Multiply ideas — rapid ideation, brainstorming, and divergent thinking. Generates many options quickly, then clusters and prioritizes", icon: "\u{1F407}", invoke: "Use when brainstorming, ideating, or generating many creative options quickly", tags: ["agent","ideation","brainstorm","diverge","creative"], accent: "#C77DFF", mcpServers: ["memory","sequential-thinking","filesystem"] },
-    { name: "agent-owl", category: "Agent Modes", description: "Deep analysis — systematic decomposition, evidence evaluation, and convergent thinking. Finds what others miss", icon: "\u{1F989}", invoke: "Use when performing deep analysis, evaluating evidence, or convergent thinking", tags: ["agent","analysis","decompose","converge","critical"], accent: "#C77DFF", mcpServers: ["memory","sequential-thinking","filesystem"] },
-    { name: "agent-ant", category: "Agent Modes", description: "Break into steps — task decomposition, work breakdown structures, and sequential execution planning. Ships incrementally", icon: "\u{1F41C}", invoke: "Use when decomposing tasks, planning work breakdowns, or shipping incrementally", tags: ["agent","decompose","steps","planning","incremental"], accent: "#C77DFF", mcpServers: ["memory","sequential-thinking","filesystem"] },
-    { name: "agent-eagle", category: "Agent Modes", description: "Big picture — strategic vision, cross-domain patterns, and second-order thinking. Sees the forest AND the trees", icon: "\u{1F985}", invoke: "Use when seeing the big picture, finding cross-domain patterns, or strategic vision", tags: ["agent","strategy","vision","patterns","cross-domain"], accent: "#C77DFF", mcpServers: ["memory","sequential-thinking","filesystem"] },
-    { name: "agent-dolphin", category: "Agent Modes", description: "Creative solutions — lateral thinking, analogical reasoning, and innovative problem-solving. Finds elegant unconventional paths", icon: "\u{1F42C}", invoke: "Use when finding creative, lateral, or unconventional solutions to problems", tags: ["agent","creative","lateral","innovative","elegant"], accent: "#C77DFF", mcpServers: ["memory","sequential-thinking","filesystem"] },
-    { name: "agent-beaver", category: "Agent Modes", description: "Build systems — architecture design, infrastructure planning, and system construction. Builds things that last", icon: "\u{1F9AB}", invoke: "Use when designing architecture, planning infrastructure, or building systems", tags: ["agent","architecture","infrastructure","systems","builder"], accent: "#C77DFF", mcpServers: ["memory","sequential-thinking","filesystem"] },
-    { name: "agent-elephant", category: "Agent Modes", description: "Cross-field connections — knowledge synthesis, interdisciplinary bridging, and pattern transfer. Connects dots across domains", icon: "\u{1F418}", invoke: "Use when synthesizing knowledge across domains or bridging interdisciplinary gaps", tags: ["agent","synthesis","interdisciplinary","connections","knowledge"], accent: "#C77DFF", mcpServers: ["memory","sequential-thinking","filesystem"] },
+    // Agents
+    { name: "agent-rabbit", category: "Agents", description: "Multiply ideas — rapid ideation, brainstorming, and divergent thinking. Generates many options quickly, then clusters and prioritizes", icon: "\u{1F407}", invoke: "Use when brainstorming, ideating, or generating many creative options quickly", tags: ["agent","ideation","brainstorm","diverge","creative"], accent: "#6366f1", mcpServers: ["memory","sequential-thinking","filesystem"] },
+    { name: "agent-owl", category: "Agents", description: "Deep analysis — systematic decomposition, evidence evaluation, and convergent thinking. Finds what others miss", icon: "\u{1F989}", invoke: "Use when performing deep analysis, evaluating evidence, or convergent thinking", tags: ["agent","analysis","decompose","converge","critical"], accent: "#6366f1", mcpServers: ["memory","sequential-thinking","filesystem"] },
+    { name: "agent-ant", category: "Agents", description: "Break into steps — task decomposition, work breakdown structures, and sequential execution planning. Ships incrementally", icon: "\u{1F41C}", invoke: "Use when decomposing tasks, planning work breakdowns, or shipping incrementally", tags: ["agent","decompose","steps","planning","incremental"], accent: "#6366f1", mcpServers: ["memory","sequential-thinking","filesystem"] },
+    { name: "agent-eagle", category: "Agents", description: "Big picture — strategic vision, cross-domain patterns, and second-order thinking. Sees the forest AND the trees", icon: "\u{1F985}", invoke: "Use when seeing the big picture, finding cross-domain patterns, or strategic vision", tags: ["agent","strategy","vision","patterns","cross-domain"], accent: "#6366f1", mcpServers: ["memory","sequential-thinking","filesystem"] },
+    { name: "agent-dolphin", category: "Agents", description: "Creative solutions — lateral thinking, analogical reasoning, and innovative problem-solving. Finds elegant unconventional paths", icon: "\u{1F42C}", invoke: "Use when finding creative, lateral, or unconventional solutions to problems", tags: ["agent","creative","lateral","innovative","elegant"], accent: "#6366f1", mcpServers: ["memory","sequential-thinking","filesystem"] },
+    { name: "agent-beaver", category: "Agents", description: "Build systems — architecture design, infrastructure planning, and system construction. Builds things that last", icon: "\u{1F9AB}", invoke: "Use when designing architecture, planning infrastructure, or building systems", tags: ["agent","architecture","infrastructure","systems","builder"], accent: "#6366f1", mcpServers: ["memory","sequential-thinking","filesystem"] },
+    { name: "agent-elephant", category: "Agents", description: "Cross-field connections — knowledge synthesis, interdisciplinary bridging, and pattern transfer. Connects dots across domains", icon: "\u{1F418}", invoke: "Use when synthesizing knowledge across domains or bridging interdisciplinary gaps", tags: ["agent","synthesis","interdisciplinary","connections","knowledge"], accent: "#6366f1", mcpServers: ["memory","sequential-thinking","filesystem"] },
 
     // NEW in v7.0.0
-    { name: "tdd-workflow", category: "Development", description: "Test-driven development workflow — write tests first, watch them fail, write minimal code to pass, refactor with confidence. Red-green-refactor cycles with vertical slice architecture", icon: "\u{1F9EA}", invoke: "Use when writing code test-first, building with TDD discipline, or creating behavior-focused integration tests", tags: ["tdd","testing","red-green-refactor","behavior","integration"], accent: "#00FF9D", mcpServers: ["filesystem","github","docker"] },
-    { name: "to-prd", category: "Strategy", description: "Transform conversation context and codebase understanding into a structured Product Requirements Document — synthesizes what you already know into actionable specifications", icon: "\u{1F4CB}", invoke: "Use when converting ideas, discussions, or research into a formal PRD with user stories, acceptance criteria, and technical requirements", tags: ["prd","requirements","specification","product","documentation"], accent: "#FFE600", mcpServers: ["brave-search","memory","fetch"] },
+    { name: "tdd-workflow", category: "Development", description: "Test-driven development workflow — write tests first, watch them fail, write minimal code to pass, refactor with confidence. Red-green-refactor cycles with vertical slice architecture", icon: "\u{1F9EA}", invoke: "Use when writing code test-first, building with TDD discipline, or creating behavior-focused integration tests", tags: ["tdd","testing","red-green-refactor","behavior","integration"], accent: "#059669", mcpServers: ["filesystem","github","docker"] },
+    { name: "to-prd", category: "Strategy", description: "Transform conversation context and codebase understanding into a structured Product Requirements Document — synthesizes what you already know into actionable specifications", icon: "\u{1F4CB}", invoke: "Use when converting ideas, discussions, or research into a formal PRD with user stories, acceptance criteria, and technical requirements", tags: ["prd","requirements","specification","product","documentation"], accent: "#ca8a04", mcpServers: ["brave-search","memory","fetch"] },
 
     // NEW in v8.0.0
-    { name: "brainstorming", category: "Reasoning", description: "Structured brainstorming framework with divergent and convergent phases — generates ideas rapidly, then clusters, prioritizes, and refines them into actionable concepts", icon: "\u{1F4A1}", invoke: "Use when generating creative ideas, running brainstorming sessions, or exploring solution spaces with structured divergence-convergence", tags: ["brainstorming","ideation","divergent","convergent","creative"], accent: "#08F7FE", mcpServers: ["memory","sequential-thinking","sqlite"] },
-    { name: "composition-patterns", category: "Development", description: "Software composition patterns — dependency injection, strategy pattern, decorator chains, middleware pipelines, and plugin architectures for extensible codebases", icon: "\u{1F9E9}", invoke: "Use when designing composable architectures, building plugin systems, or implementing dependency injection and strategy patterns", tags: ["composition","patterns","di","strategy","middleware","plugins"], accent: "#00FF9D", mcpServers: ["filesystem","github","docker"] },
+    { name: "brainstorming", category: "Reasoning", description: "Structured brainstorming framework with divergent and convergent phases — generates ideas rapidly, then clusters, prioritizes, and refines them into actionable concepts", icon: "\u{1F4A1}", invoke: "Use when generating creative ideas, running brainstorming sessions, or exploring solution spaces with structured divergence-convergence", tags: ["brainstorming","ideation","divergent","convergent","creative"], accent: "#059669", mcpServers: ["memory","sequential-thinking","sqlite"] },
+    { name: "composition-patterns", category: "Development", description: "Software composition patterns — dependency injection, strategy pattern, decorator chains, middleware pipelines, and plugin architectures for extensible codebases", icon: "\u{1F9E9}", invoke: "Use when designing composable architectures, building plugin systems, or implementing dependency injection and strategy patterns", tags: ["composition","patterns","di","strategy","middleware","plugins"], accent: "#059669", mcpServers: ["filesystem","github","docker"] },
 
-    // Infrastructure — NEW in v11.0.0
-    { name: "9router-gateway", category: "Infrastructure", description: "AI routing gateway with RTK compression, tier-based provider fallback, circuit breaker, and real-time dashboard — routes requests through free-tier providers first, paid only on fallback", icon: "\u{1F310}", invoke: "Use when setting up AI model routing, managing provider tiers, or implementing circuit breaker patterns for API resilience", tags: ["routing","gateway","9router","fallback","circuit-breaker","rtk"], accent: "#FF8C00", mcpServers: ["filesystem","github","docker"] },
-    { name: "owl-proxy-defense", category: "Infrastructure", description: "Protocol-first proxy defense stack with 5-tier escalation — http/1.1 core, ja3/ws browser on demand — anti-bot resilience with per-provider routing and CI/CD enforcement", icon: "\u{1F6E1}", invoke: "Use when building proxy defense layers, anti-bot systems, or protocol escalation strategies for web scraping and API access", tags: ["proxy","defense","anti-bot","protocol","escalation","owl"], accent: "#FF8C00", mcpServers: ["filesystem","github","docker"] },
-    { name: "antigravity-proxy", category: "Infrastructure", description: "MITM proxy bridge for free AI model access — intercepts IDE traffic to provide Claude/Gemini model access via multiple account rotation with staggered token refresh", icon: "\u{1F680}", invoke: "Use when setting up free AI model access via MITM proxy, managing staggered OAuth token refresh, or bridging IDE traffic to AI providers", tags: ["mitm","proxy","claude","gemini","free-tier","antigravity"], accent: "#FF8C00", mcpServers: ["filesystem","github","docker"] },
-    { name: "4cli-unified", category: "Infrastructure", description: "Unified meta-CLI wrapper for OpenCode + Claude Code + Codex + Gemini CLI — one command for four agents with 9Router tier routing and unified credential vault", icon: "\u{1F4BB}", invoke: "Use when managing multiple AI coding CLIs, setting up unified routing across OpenCode/Claude/Codex/Gemini, or building credential vaults", tags: ["cli","unified","opencode","claude","codex","gemini","owl"], accent: "#FF8C00", mcpServers: ["filesystem","github","docker"] },
-    { name: "triune-proxy-stack", category: "Infrastructure", description: "Maximum redundancy proxy architecture — 9Router + OmniRoute + Orcaflow with token health dashboard, auto-failover, and distributed locking for zero-downtime AI access", icon: "\u{1F9CA}", invoke: "Use when building high-availability proxy stacks, implementing triple redundancy routing, or designing token health monitoring with auto-failover", tags: ["triune","redundancy","failover","orchestrator","health","monitoring"], accent: "#FF8C00", mcpServers: ["filesystem","github","docker"] },
-    { name: "secret-vault", category: "Infrastructure", description: "Unified credential vault with age encryption — manages API keys, OAuth tokens, and proxy credentials for all AI providers with rotation reminders and breach detection", icon: "\u{1F510}", invoke: "Use when managing API keys across providers, implementing encrypted credential storage, or setting up secret rotation and breach detection workflows", tags: ["vault","credentials","encryption","rotation","security","age"], accent: "#FF8C00", mcpServers: ["filesystem","github","docker"] },
+    // Infrastructure — NEW in v11.1.0
+    { name: "9router-gateway", category: "Infrastructure", description: "AI routing gateway with RTK compression, tier-based provider fallback, circuit breaker, and real-time dashboard — routes requests through free-tier providers first, paid only on fallback", icon: "\u{1F310}", invoke: "Use when setting up AI model routing, managing provider tiers, or implementing circuit breaker patterns for API resilience", tags: ["routing","gateway","9router","fallback","circuit-breaker","rtk"], accent: "#d97706", mcpServers: ["filesystem","github","docker"] },
+    { name: "owl-proxy-defense", category: "Infrastructure", description: "Protocol-first proxy defense stack with 5-tier escalation — http/1.1 core, ja3/ws browser on demand — anti-bot resilience with per-provider routing and CI/CD enforcement", icon: "\u{1F6E1}", invoke: "Use when building proxy defense layers, anti-bot systems, or protocol escalation strategies for web scraping and API access", tags: ["proxy","defense","anti-bot","protocol","escalation","owl"], accent: "#d97706", mcpServers: ["filesystem","github","docker"] },
+    { name: "antigravity-proxy", category: "Infrastructure", description: "MITM proxy bridge for free AI model access — intercepts IDE traffic to provide Claude/Gemini model access via multiple account rotation with staggered token refresh", icon: "\u{1F680}", invoke: "Use when setting up free AI model access via MITM proxy, managing staggered OAuth token refresh, or bridging IDE traffic to AI providers", tags: ["mitm","proxy","claude","gemini","free-tier","antigravity"], accent: "#d97706", mcpServers: ["filesystem","github","docker"] },
+    { name: "4cli-unified", category: "Infrastructure", description: "Unified meta-CLI wrapper for OpenCode + Claude Code + Codex + Gemini CLI — one command for four agents with 9Router tier routing and unified credential vault", icon: "\u{1F4BB}", invoke: "Use when managing multiple AI coding CLIs, setting up unified routing across OpenCode/Claude/Codex/Gemini, or building credential vaults", tags: ["cli","unified","opencode","claude","codex","gemini","owl"], accent: "#d97706", mcpServers: ["filesystem","github","docker"] },
+    { name: "triune-proxy-stack", category: "Infrastructure", description: "Maximum redundancy proxy architecture — 9Router + OmniRoute + Orcaflow with token health dashboard, auto-failover, and distributed locking for zero-downtime AI access", icon: "\u{1F9CA}", invoke: "Use when building high-availability proxy stacks, implementing triple redundancy routing, or designing token health monitoring with auto-failover", tags: ["triune","redundancy","failover","orchestrator","health","monitoring"], accent: "#d97706", mcpServers: ["filesystem","github","docker"] },
+    { name: "secret-vault", category: "Infrastructure", description: "Unified credential vault with age encryption — manages API keys, OAuth tokens, and proxy credentials for all AI providers with rotation reminders and breach detection", icon: "\u{1F510}", invoke: "Use when managing API keys across providers, implementing encrypted credential storage, or setting up secret rotation and breach detection workflows", tags: ["vault","credentials","encryption","rotation","security","age"], accent: "#d97706", mcpServers: ["filesystem","github","docker"] },
 
     // Animation Pipeline — NEW in v10.0.0
-    { name: "animation-orchestrator", category: "Design & UI", description: "Router for all animation requests — decides Motion vs GSAP vs CSS, enforces 5KB budget, prevents wrong-tool selection and bundle bloat. Gates ALL animation work", icon: "\u{1F3AC}", invoke: "Use when ANY animation is requested — this skill routes to the correct tool (Motion, GSAP, CSS) before any code is written. Never bypass this gate", tags: ["animation","orchestrator","routing","budget","decision","gate"], accent: "#BFFF00", mcpServers: ["filesystem","fetch","google-drive"] },
-    { name: "animation-auditor", category: "Design & UI", description: "Quality gates for animation code — catches missing cleanup (useGSAP, dispose), bundle violations, Tailwind/Motion conflicts, missing reduced-motion checks, and SSR errors before commit", icon: "\u{1F6E1}", invoke: "Use when auditing animation code, running pre-commit checks, or validating animation quality gates. Add to pre-commit hooks immediately", tags: ["animation","audit","quality","cleanup","accessibility","pre-commit"], accent: "#BFFF00", mcpServers: ["filesystem","github","docker"] },
-    { name: "motion-animator", category: "Design & UI", description: "React-native UI animations with Motion (Framer Motion v12+) — hover, scroll reveal, layout, exit, gestures, springs. Bundle-aware: useAnimate mini (2.3KB) or LazyMotion + m (4.6KB) for budget compliance", icon: "\u{1F4AB}", invoke: "Use when building React UI animations: hover effects, scroll reveals, layout transitions, exit animations, gesture-driven interactions. Routed by animation-orchestrator", tags: ["motion","react","animation","hover","scroll","gestures","springs"], accent: "#BFFF00", mcpServers: ["filesystem","fetch","google-drive"] },
-    { name: "gsap-animator", category: "Design & UI", description: "Complex timeline/scroll/SVG animations with GSAP — ScrollTrigger pin, SVG morph, text split effects, physics-based motion. Full GSAP ecosystem: ScrollTrigger, Flip, Draggable, SplitText, DrawSVG", icon: "\u{1F3B5}", invoke: "Use when building complex animations: timelines, scroll-driven narratives, SVG morphs, text effects, physics. Routed by animation-orchestrator when Motion is insufficient", tags: ["gsap","timeline","scroll","svg","morph","physics","split-text"], accent: "#BFFF00", mcpServers: ["filesystem","fetch","google-drive"] },
+    { name: "animation-orchestrator", category: "Design & UI", description: "Router for all animation requests — decides Motion vs GSAP vs CSS, enforces 5KB budget, prevents wrong-tool selection and bundle bloat. Gates ALL animation work", icon: "\u{1F3AC}", invoke: "Use when ANY animation is requested — this skill routes to the correct tool (Motion, GSAP, CSS) before any code is written. Never bypass this gate", tags: ["animation","orchestrator","routing","budget","decision","gate"], accent: "#4338ca", mcpServers: ["filesystem","fetch","google-drive"] },
+    { name: "animation-auditor", category: "Design & UI", description: "Quality gates for animation code — catches missing cleanup (useGSAP, dispose), bundle violations, Tailwind/Motion conflicts, missing reduced-motion checks, and SSR errors before commit", icon: "\u{1F6E1}", invoke: "Use when auditing animation code, running pre-commit checks, or validating animation quality gates. Add to pre-commit hooks immediately", tags: ["animation","audit","quality","cleanup","accessibility","pre-commit"], accent: "#4338ca", mcpServers: ["filesystem","github","docker"] },
+    { name: "motion-animator", category: "Design & UI", description: "React-native UI animations with Motion (Framer Motion v12+) — hover, scroll reveal, layout, exit, gestures, springs. Bundle-aware: useAnimate mini (2.3KB) or LazyMotion + m (4.6KB) for budget compliance", icon: "\u{1F4AB}", invoke: "Use when building React UI animations: hover effects, scroll reveals, layout transitions, exit animations, gesture-driven interactions. Routed by animation-orchestrator", tags: ["motion","react","animation","hover","scroll","gestures","springs"], accent: "#4338ca", mcpServers: ["filesystem","fetch","google-drive"] },
+    { name: "gsap-animator", category: "Design & UI", description: "Complex timeline/scroll/SVG animations with GSAP — ScrollTrigger pin, SVG morph, text split effects, physics-based motion. Full GSAP ecosystem: ScrollTrigger, Flip, Draggable, SplitText, DrawSVG", icon: "\u{1F3B5}", invoke: "Use when building complex animations: timelines, scroll-driven narratives, SVG morphs, text effects, physics. Routed by animation-orchestrator when Motion is insufficient", tags: ["gsap","timeline","scroll","svg","morph","physics","split-text"], accent: "#4338ca", mcpServers: ["filesystem","fetch","google-drive"] },
 
     // Three.js — NEW in v10.0.0
-    { name: "threejs-orchestrator", category: "Development", description: "Gates ALL 3D work — routes to r3f-react for UI, vanilla Three.js for compute, Babylon.js for games. Prevents vanilla Three.js in React anti-pattern. Enforces lazy-load, ssr:false, transpilePackages", icon: "\u{1F30D}", invoke: "Use when ANY 3D work is requested — this skill routes to the correct 3D tool before implementation. Developers must never default to what they know", tags: ["threejs","orchestrator","3d","routing","gate","r3f","webgpu"], accent: "#00FF9D", mcpServers: ["filesystem","github","docker"] },
-    { name: "skill-architect", category: "Development", description: "Create, design, refactor, and optimize AI agent skills (SKILL.md files) following the Agent Skills open standard — progressive disclosure, trigger-optimized descriptions, validation, packaging for distribution", icon: "\u{1F3D7}", invoke: "Use when building new skills, converting workflows into skills, improving skill triggering, or packaging skills for distribution", tags: ["skill","architect","create","design","optimize","package","agentskills"], accent: "#00FF9D", mcpServers: ["filesystem","github","docker"] },
+    { name: "threejs-orchestrator", category: "Development", description: "Gates ALL 3D work — routes to r3f-react for UI, vanilla Three.js for compute, Babylon.js for games. Prevents vanilla Three.js in React anti-pattern. Enforces lazy-load, ssr:false, transpilePackages", icon: "\u{1F30D}", invoke: "Use when ANY 3D work is requested — this skill routes to the correct 3D tool before implementation. Developers must never default to what they know", tags: ["threejs","orchestrator","3d","routing","gate","r3f","webgpu"], accent: "#059669", mcpServers: ["filesystem","github","docker"] },
+    { name: "skill-architect", category: "Development", description: "Create, design, refactor, and optimize AI agent skills (SKILL.md files) following the Agent Skills open standard — progressive disclosure, trigger-optimized descriptions, validation, packaging for distribution", icon: "\u{1F3D7}", invoke: "Use when building new skills, converting workflows into skills, improving skill triggering, or packaging skills for distribution", tags: ["skill","architect","create","design","optimize","package","agentskills"], accent: "#059669", mcpServers: ["filesystem","github","docker"] },
 
     // ModelScope MCP — NEW in v10.0.0
-    { name: "modelscope-mcp-hub", category: "MCP Servers", description: "Access ModelScope (魔搭) MCP Plaza — 2300+ free MCP servers with hosted deployment. Chinese AI ecosystem: image generation, document parsing, maps, payments, NL2SQL. Free cloud hosting included", icon: "\u{1F4E6}", invoke: "Use when discovering Chinese MCP servers, accessing free hosted MCP deployment, or integrating ModelScope's 12800+ AI models", tags: ["modelscope","mcp","chinese","hosted","free","魔搭","image-gen"], accent: "#FF6B35", mcpServers: ["modelscope-image-gen","modelscope-model-discovery","context7"] },
-    { name: "context7-docs", category: "Development", description: "Fetch up-to-date, version-specific documentation and code examples into LLM prompts — eliminates stale or hallucinated API references for any library. Always-current docs", icon: "\u{1F4D6}", invoke: "Use when looking up current API documentation, fighting hallucinated references, or getting version-specific code examples for any library", tags: ["documentation","context","up-to-date","api","reference","version-specific"], accent: "#00FF9D", mcpServers: ["context7","fetch","memory"] }
+    { name: "modelscope-mcp-hub", category: "MCP Servers", description: "Access ModelScope (魔搭) MCP Plaza — 2300+ free MCP servers with hosted deployment. Chinese AI ecosystem: image generation, document parsing, maps, payments, NL2SQL. Free cloud hosting included", icon: "\u{1F4E6}", invoke: "Use when discovering Chinese MCP servers, accessing free hosted MCP deployment, or integrating ModelScope's 12800+ AI models", tags: ["modelscope","mcp","chinese","hosted","free","魔搭","image-gen"], accent: "#ea580c", mcpServers: ["modelscope-image-gen","modelscope-model-discovery","context7"] },
+    { name: "context7-docs", category: "Development", description: "Fetch up-to-date, version-specific documentation and code examples into LLM prompts — eliminates stale or hallucinated API references for any library. Always-current docs", icon: "\u{1F4D6}", invoke: "Use when looking up current API documentation, fighting hallucinated references, or getting version-specific code examples for any library", tags: ["documentation","context","up-to-date","api","reference","version-specific"], accent: "#059669", mcpServers: ["context7","fetch","memory"] }
   ];
 }
 
@@ -2692,7 +2696,7 @@ function generatePluginXml(skills) {
   xml += '<!-- Version: ' + SKILLS_VERSION + ' | Updated: ' + SKILLS_LAST_UPDATED + ' -->\n';
   xml += '<plugin id="io.agentskills.showcase" version="' + SKILLS_VERSION + '">\n';
   xml += '  <name>AI Agent Skills Collection</name>\n';
-  xml += '  <description>76 active AI agent skills across 12 categories for automated workflows</description>\n';
+  xml += '  <description>76 active AI agent skills across 11 categories for automated workflows</description>\n';
   xml += '  <vendor>AgentSkills</vendor>\n';
   xml += '  <version>' + SKILLS_VERSION + '</version>\n';
   xml += '  <lastUpdated>' + SKILLS_LAST_UPDATED + '</lastUpdated>\n';
@@ -2812,31 +2816,31 @@ function applyEmbedMode() {
 
 // ===== CATEGORY CONFIG =====
 const CATEGORIES = [
-  { name: "All", color: "#BFFF00" },,
+  { name: "All", color: "#4338ca" },,
 
-    // 7-Agent MASTER Pipeline — NEW in v11.0.0
-    {{ name: "agent-auditor", category: "Agent Pipeline", description: "7-agent MASTER pipeline auditor — validates animation code, checks cleanup, accessibility, and performance before commit. Runs quality gates on every animation PR", icon: "\u{{1F6E1}}", invoke: "Use when auditing animation code quality, running CI pipeline checks, or validating cleanup before merge", tags: ["agent","auditor","pipeline","quality","validation","master"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
-    {{ name: "agent-decision", category: "Agent Pipeline", description: "7-agent MASTER pipeline decision engine — routes tasks to the right specialist agent based on complexity, domain, and available context", icon: "\u{{2694}}", invoke: "Use when deciding which agent or skill should handle a task, or when routing complex multi-step workflows", tags: ["agent","decision","routing","pipeline","master","orchestrator"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
-    {{ name: "agent-maintenance", category: "Agent Pipeline", description: "7-agent MASTER pipeline maintenance — keeps skills, dependencies, and documentation current and consistent across versions", icon: "\u{{1F527}}", invoke: "Use when updating skill definitions, syncing dependencies, or maintaining project documentation", tags: ["agent","maintenance","pipeline","update","sync","master"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
-    {{ name: "agent-master", category: "Agent Pipeline", description: "7-agent MASTER pipeline orchestrator — coordinates all 7 agents in sequence: Decision, Simulator, Implementation, Auditor, Profiler, Optimizer, Maintenance", icon: "\u{{1F451}}", invoke: "Use when running the full 7-agent pipeline for complex animation or feature work that needs all quality gates", tags: ["agent","master","pipeline","orchestrator","7-agent","coordination"], accent: "#9D4EDD", mcpServers: ["filesystem","github","docker"] }},
-    {{ name: "agent-optimizer", category: "Agent Pipeline", description: "7-agent MASTER pipeline optimizer — reduces bundle size, eliminates dead code, and improves runtime performance of animation implementations", icon: "\u{{26A1}}", invoke: "Use when optimizing animation performance, reducing bundle size, or eliminating dead code from animation implementations", tags: ["agent","optimizer","pipeline","performance","bundle","master"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
-    {{ name: "agent-profiler", category: "Agent Pipeline", description: "7-agent MASTER pipeline profiler — measures FPS, memory, and layout thrash to identify animation bottlenecks before they reach production", icon: "\u{{1F4CA}}", invoke: "Use when profiling animation performance, measuring FPS drops, or identifying memory leaks in animation code", tags: ["agent","profiler","pipeline","fps","memory","performance"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
-    {{ name: "agent-simulator", category: "Agent Pipeline", description: "7-agent MASTER pipeline simulator — dry-runs implementations to catch issues before real execution. Validates edge cases and failure modes", icon: "\u{{1F3AE}}", invoke: "Use when simulating animation behavior, dry-running implementations, or testing edge cases before deployment", tags: ["agent","simulator","pipeline","dry-run","validation","master"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
+    // 7-Agent MASTER Pipeline — NEW in v11.1.0
+    {{ name: "agent-auditor", category: "Agents", description: "7-agent MASTER pipeline auditor — validates animation code, checks cleanup, accessibility, and performance before commit. Runs quality gates on every animation PR", icon: "\u{{1F6E1}}", invoke: "Use when auditing animation code quality, running CI pipeline checks, or validating cleanup before merge", tags: ["agent","auditor","pipeline","quality","validation","master"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
+    {{ name: "agent-decision", category: "Agents", description: "7-agent MASTER pipeline decision engine — routes tasks to the right specialist agent based on complexity, domain, and available context", icon: "\u{{2694}}", invoke: "Use when deciding which agent or skill should handle a task, or when routing complex multi-step workflows", tags: ["agent","decision","routing","pipeline","master","orchestrator"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
+    {{ name: "agent-maintenance", category: "Agents", description: "7-agent MASTER pipeline maintenance — keeps skills, dependencies, and documentation current and consistent across versions", icon: "\u{{1F527}}", invoke: "Use when updating skill definitions, syncing dependencies, or maintaining project documentation", tags: ["agent","maintenance","pipeline","update","sync","master"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
+    {{ name: "agent-master", category: "Agents", description: "7-agent MASTER pipeline orchestrator — coordinates all 7 agents in sequence: Decision, Simulator, Implementation, Auditor, Profiler, Optimizer, Maintenance", icon: "\u{{1F451}}", invoke: "Use when running the full 7-agent pipeline for complex animation or feature work that needs all quality gates", tags: ["agent","master","pipeline","orchestrator","7-agent","coordination"], accent: "#9D4EDD", mcpServers: ["filesystem","github","docker"] }},
+    {{ name: "agent-optimizer", category: "Agents", description: "7-agent MASTER pipeline optimizer — reduces bundle size, eliminates dead code, and improves runtime performance of animation implementations", icon: "\u{{26A1}}", invoke: "Use when optimizing animation performance, reducing bundle size, or eliminating dead code from animation implementations", tags: ["agent","optimizer","pipeline","performance","bundle","master"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
+    {{ name: "agent-profiler", category: "Agents", description: "7-agent MASTER pipeline profiler — measures FPS, memory, and layout thrash to identify animation bottlenecks before they reach production", icon: "\u{{1F4CA}}", invoke: "Use when profiling animation performance, measuring FPS drops, or identifying memory leaks in animation code", tags: ["agent","profiler","pipeline","fps","memory","performance"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
+    {{ name: "agent-simulator", category: "Agents", description: "7-agent MASTER pipeline simulator — dry-runs implementations to catch issues before real execution. Validates edge cases and failure modes", icon: "\u{{1F3AE}}", invoke: "Use when simulating animation behavior, dry-running implementations, or testing edge cases before deployment", tags: ["agent","simulator","pipeline","dry-run","validation","master"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
 
-    // Animation Engineer Skills — NEW in v11.0.0
-    {{ name: "animation-hybrid-architect", category: "Design & UI", description: "Meta-skill for combining Motion v12 + GSAP v3.13+ with strict boundaries — Motion owns UI layer (modals, gestures, layout), GSAP owns content layer (scroll, text, SVG). Never animate same element with both", icon: "\u{{1F517}}", invoke: "Use when combining Motion and GSAP in the same project, or when deciding which animation library to use for a specific element", tags: ["animation","hybrid","motion","gsap","architect","boundary"], accent: "#BFFF00", mcpServers: ["filesystem","fetch"] }},
-    {{ name: "gsap-animation-engineer", category: "Design & UI", description: "GSAP v3.13+ cinematic scroll/text/SVG animation engineer — ScrollTrigger pin, SplitText, SVG morph, Flip, physics-based motion with React useGSAP hook. All plugins free since April 2025", icon: "\u{{1F3AC}}", invoke: "Use when engineering complex GSAP animations: cinematic scroll sequences, SVG morphs, text splitting effects, or physics-based motion with React integration", tags: ["gsap","engineer","scrolltrigger","splittext","svg","physics","usegsap"], accent: "#BFFF00", mcpServers: ["filesystem","fetch"] }},
-    {{ name: "motion-animation-engineer", category: "Design & UI", description: "Motion v12 (ex-Framer Motion) declarative UI animation engineer for React/Vue — hover, scroll reveal, layout, exit, gestures, springs with bundle-aware loading (2.3KB-34KB)", icon: "\u{{1F4AB}}", invoke: "Use when engineering Motion v12 animations with precise bundle control: mini imports, LazyMotion, useAnimate for production budget compliance", tags: ["motion","engineer","react","vue","bundle","lazy","useanimate"], accent: "#BFFF00", mcpServers: ["filesystem","fetch"] }}
-  { name: "Design & UI", color: "#BFFF00" },
-  { name: "Reasoning", color: "#08F7FE" },
+    // Animation Engineer Skills — NEW in v11.1.0
+    {{ name: "animation-hybrid-architect", category: "Design & UI", description: "Meta-skill for combining Motion v12 + GSAP v3.13+ with strict boundaries — Motion owns UI layer (modals, gestures, layout), GSAP owns content layer (scroll, text, SVG). Never animate same element with both", icon: "\u{{1F517}}", invoke: "Use when combining Motion and GSAP in the same project, or when deciding which animation library to use for a specific element", tags: ["animation","hybrid","motion","gsap","architect","boundary"], accent: "#4338ca", mcpServers: ["filesystem","fetch"] }},
+    {{ name: "gsap-animation-engineer", category: "Design & UI", description: "GSAP v3.13+ cinematic scroll/text/SVG animation engineer — ScrollTrigger pin, SplitText, SVG morph, Flip, physics-based motion with React useGSAP hook. All plugins free since April 2025", icon: "\u{{1F3AC}}", invoke: "Use when engineering complex GSAP animations: cinematic scroll sequences, SVG morphs, text splitting effects, or physics-based motion with React integration", tags: ["gsap","engineer","scrolltrigger","splittext","svg","physics","usegsap"], accent: "#4338ca", mcpServers: ["filesystem","fetch"] }},
+    {{ name: "motion-animation-engineer", category: "Design & UI", description: "Motion v12 (ex-Framer Motion) declarative UI animation engineer for React/Vue — hover, scroll reveal, layout, exit, gestures, springs with bundle-aware loading (2.3KB-34KB)", icon: "\u{{1F4AB}}", invoke: "Use when engineering Motion v12 animations with precise bundle control: mini imports, LazyMotion, useAnimate for production budget compliance", tags: ["motion","engineer","react","vue","bundle","lazy","useanimate"], accent: "#4338ca", mcpServers: ["filesystem","fetch"] }}
+  { name: "Design & UI", color: "#4338ca" },
+  { name: "Reasoning", color: "#059669" },
   { name: "Development", color: "#00FF9D" },
-  { name: "Content", color: "#FF2E63" },
+  { name: "Content", color: "#c2410c" },
   { name: "Strategy", color: "#FFE600" },
   { name: "System", color: "#A8B2D8" },
   { name: "Data & Web", color: "#64FFDA" },
   { name: "Creative", color: "#FF9FF3" },
   { name: "MCP Servers", color: "#FF6B35" },
-  { name: "Agent Modes", color: "#C77DFF" },
+  { name: "Agents", color: "#6366f1" },
   { name: "Infrastructure", color: "#FF8C00" },
 ];
 
@@ -3019,7 +3023,7 @@ class SkillCard extends HTMLElement {
     const invoke = this.getAttribute('invoke') || '';
     const tagsStr = this.getAttribute('tags') || '';
     const tags = tagsStr.split(',').map(t => t.trim()).filter(Boolean);
-    const accent = this.skillData.accent || '#BFFF00';
+    const accent = this.skillData.accent || '#4338ca';
     const mcpServers = this.skillData.mcpServers || [];
 
     this.setAttribute('role', 'listitem');
@@ -3203,8 +3207,8 @@ function initTheme() {
 function initStatsDashboard() {
   const targets = [
     { id: 'stat-skills', value: 58 },
-    { id: 'stat-categories', value: 12 },
-    { id: 'stat-mcp', value: 127 },
+    { id: 'stat-categories', value: 11 },
+    { id: 'stat-mcp', value: 117 },
     { id: 'stat-agents', value: 7 }
   ];
   
@@ -3308,8 +3312,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFeaturedThemeBanner();
   initStatsDashboard();
   initKeyboardShortcuts();
-  initMarquee();
-  initFilterChips();
+    initFilterChips();
   renderSkills();
   initSearch();
   initSort();
@@ -3326,24 +3329,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyInstallCommand();
 });
 
-// ===== MARQUEE =====
-function initMarquee() {
-  const inner = document.getElementById('marquee-inner');
-  const items = [
-    '58 SKILLS', '\u25C6', '11 CATEGORIES', '\u25C6',
-    'NEO-BRUTALIST', '\u25C6', 'GSAP POWERED', '\u25C6',
-    'WEB COMPONENTS', '\u25C6', 'JSON-LD READY', '\u25C6',
-    'WCAG AA', '\u25C6', 'ZERO BUILD STEP', '\u25C6',
-    'THEME MARKETPLACE', '\u25C6', 'STACK RECOMMENDER', '\u25C6',
-    'DESIGN', '\u25C6', 'DEVELOPMENT', '\u25C6', 'REASONING', '\u25C6',
-    'CONTENT', '\u25C6', 'STRATEGY', '\u25C6', 'SYSTEM', '\u25C6',
-    'DATA', '\u25C6', 'CREATIVE', '\u25C6', 'MCP SERVERS', '\u25C6',
-    'AGENT MODES', '\u25C6', 'INFRASTRUCTURE', '\u25C6',
-  ];
-  // Double for seamless loop
-  const html = [...items, ...items].map(i => `<span>${i}</span>`).join('');
-  inner.innerHTML = html;
-}
 
 // ===== FILTER CHIPS =====
 function initFilterChips() {
@@ -3744,7 +3729,7 @@ document.getElementById('hero-cta').addEventListener('click', () => {
 
 // ===== THEME MARKETPLACE =====
 const THEMES = {
-  default: { primary: '#BFFF00', secondary: '#FF2E63', tertiary: '#08F7FE', name: 'DEFAULT' },
+  default: { primary: '#4338ca', secondary: '#c2410c', tertiary: '#059669', name: 'DEFAULT' },
   midnight: { primary: '#6366F1', secondary: '#F59E0B', tertiary: '#8B5CF6', name: 'MIDNIGHT' },
   sunset: { primary: '#F97316', secondary: '#EC4899', tertiary: '#FBBF24', name: 'SUNSET' },
   forest: { primary: '#22C55E', secondary: '#A3E635', tertiary: '#14B8A6', name: 'FOREST' },
@@ -3877,7 +3862,7 @@ function initStackRecommender() {
   
   // Populate skill chips (non-agent, non-system skills for practical recommendations)
   const recommendableSkills = SKILLS_DATA.filter(s => 
-    s.category !== 'Agent Modes' && s.category !== 'System' && s.name !== 'sample-hello-skill'
+    s.category !== 'Agents' && s.category !== 'System' && s.name !== 'sample-hello-skill'
   );
   
   recommendableSkills.forEach(skill => {
