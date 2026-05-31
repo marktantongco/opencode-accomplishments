@@ -104,16 +104,16 @@
     {"@type":"ListItem","position":64,"item":{"@type":"SoftwareApplication","name":"skill-architect","applicationCategory":"AISkill","description":"Create, design, refactor, and optimize AI agent skills following the Agent Skills open standard"}},
     {"@type":"ListItem","position":65,"item":{"@type":"SoftwareApplication","name":"modelscope-mcp-hub","applicationCategory":"AISkill","description":"Access ModelScope MCP Plaza — 2300+ free MCP servers with hosted deployment from the Chinese AI ecosystem"}},
     {"@type":"ListItem","position":66,"item":{"@type":"SoftwareApplication","name":"context7-docs","applicationCategory":"AISkill","description":"Fetch up-to-date, version-specific documentation and code examples into LLM prompts for any library"}},
-    {{"@type":"ListItem","position":67,"item":{{"@type":"SoftwareApplication","name":"agent-auditor","applicationCategory":"AISkill","description":"7-agent MASTER pipeline auditor — validates animation code, checks cleanup, accessibility, and performance before commit"}}}},
-    {{"@type":"ListItem","position":68,"item":{{"@type":"SoftwareApplication","name":"agent-decision","applicationCategory":"AISkill","description":"7-agent MASTER pipeline decision engine — routes tasks to the right specialist agent based on complexity and domain"}}}},
-    {{"@type":"ListItem","position":69,"item":{{"@type":"SoftwareApplication","name":"agent-maintenance","applicationCategory":"AISkill","description":"7-agent MASTER pipeline maintenance — keeps skills, dependencies, and documentation current and consistent"}}}},
-    {{"@type":"ListItem","position":70,"item":{{"@type":"SoftwareApplication","name":"agent-master","applicationCategory":"AISkill","description":"7-agent MASTER pipeline orchestrator — coordinates all 7 agents in sequence: Decision, Simulator, Implementation, Auditor, Profiler, Optimizer, Maintenance"}}}},
-    {{"@type":"ListItem","position":71,"item":{{"@type":"SoftwareApplication","name":"agent-optimizer","applicationCategory":"AISkill","description":"7-agent MASTER pipeline optimizer — reduces bundle size, eliminates dead code, and improves runtime performance"}}}},
-    {{"@type":"ListItem","position":72,"item":{{"@type":"SoftwareApplication","name":"agent-profiler","applicationCategory":"AISkill","description":"7-agent MASTER pipeline profiler — measures FPS, memory, and layout thrash to identify animation bottlenecks"}}}},
-    {{"@type":"ListItem","position":73,"item":{{"@type":"SoftwareApplication","name":"agent-simulator","applicationCategory":"AISkill","description":"7-agent MASTER pipeline simulator — dry-runs implementations to catch issues before real execution"}}}},
-    {{"@type":"ListItem","position":74,"item":{{"@type":"SoftwareApplication","name":"animation-hybrid-architect","applicationCategory":"AISkill","description":"Meta-skill for combining Motion v12 + GSAP v3.13+ with strict boundaries — Motion owns UI layer, GSAP owns content layer"}}}},
-    {{"@type":"ListItem","position":75,"item":{{"@type":"SoftwareApplication","name":"gsap-animation-engineer","applicationCategory":"AISkill","description":"GSAP v3.13+ cinematic scroll/text/SVG animation engineer — ScrollTrigger, SplitText, SVG morph, Flip, physics-based motion"}}}},
-    {{"@type":"ListItem","position":76,"item":{{"@type":"SoftwareApplication","name":"motion-animation-engineer","applicationCategory":"AISkill","description":"Motion v12 declarative UI animation engineer for React/Vue — hover, scroll reveal, layout, exit, gestures, springs with bundle-aware loading"}}}}
+    {"@type":"ListItem","position":67,"item":{"@type":"SoftwareApplication","name":"agent-auditor","applicationCategory":"AISkill","description":"7-agent MASTER pipeline auditor — validates animation code, checks cleanup, accessibility, and performance before commit"}},
+    {"@type":"ListItem","position":68,"item":{"@type":"SoftwareApplication","name":"agent-decision","applicationCategory":"AISkill","description":"7-agent MASTER pipeline decision engine — routes tasks to the right specialist agent based on complexity and domain"}},
+    {"@type":"ListItem","position":69,"item":{"@type":"SoftwareApplication","name":"agent-maintenance","applicationCategory":"AISkill","description":"7-agent MASTER pipeline maintenance — keeps skills, dependencies, and documentation current and consistent"}},
+    {"@type":"ListItem","position":70,"item":{"@type":"SoftwareApplication","name":"agent-master","applicationCategory":"AISkill","description":"7-agent MASTER pipeline orchestrator — coordinates all 7 agents in sequence: Decision, Simulator, Implementation, Auditor, Profiler, Optimizer, Maintenance"}},
+    {"@type":"ListItem","position":71,"item":{"@type":"SoftwareApplication","name":"agent-optimizer","applicationCategory":"AISkill","description":"7-agent MASTER pipeline optimizer — reduces bundle size, eliminates dead code, and improves runtime performance"}},
+    {"@type":"ListItem","position":72,"item":{"@type":"SoftwareApplication","name":"agent-profiler","applicationCategory":"AISkill","description":"7-agent MASTER pipeline profiler — measures FPS, memory, and layout thrash to identify animation bottlenecks"}},
+    {"@type":"ListItem","position":73,"item":{"@type":"SoftwareApplication","name":"agent-simulator","applicationCategory":"AISkill","description":"7-agent MASTER pipeline simulator — dry-runs implementations to catch issues before real execution"}},
+    {"@type":"ListItem","position":74,"item":{"@type":"SoftwareApplication","name":"animation-hybrid-architect","applicationCategory":"AISkill","description":"Meta-skill for combining Motion v12 + GSAP v3.13+ with strict boundaries — Motion owns UI layer, GSAP owns content layer"}},
+    {"@type":"ListItem","position":75,"item":{"@type":"SoftwareApplication","name":"gsap-animation-engineer","applicationCategory":"AISkill","description":"GSAP v3.13+ cinematic scroll/text/SVG animation engineer — ScrollTrigger, SplitText, SVG morph, Flip, physics-based motion"}},
+    {"@type":"ListItem","position":76,"item":{"@type":"SoftwareApplication","name":"motion-animation-engineer","applicationCategory":"AISkill","description":"Motion v12 declarative UI animation engineer for React/Vue — hover, scroll reveal, layout, exit, gestures, springs with bundle-aware loading"}}
   ]
 }
 </script>
@@ -155,15 +155,15 @@
 
   --cat-design: #4338ca;
   --cat-reasoning: #059669;
-  --cat-development: #c2410c;
-  --cat-content: #9f1239;
-  --cat-strategy: #a16207;
-  --cat-system: #6b7280;
-  --cat-data: #0891b2;
-  --cat-creative: #7c3aed;
+  --cat-development: #059669;
+  --cat-content: #c2410c;
+  --cat-strategy: #ca8a04;
+  --cat-system: #6366f1;
+  --cat-data: #0d9488;
+  --cat-creative: #a855f7;
   --cat-mcp: #ea580c;
-  --cat-agents: #7c3aed;
-  --cat-infra: #b45309;
+  --cat-agents: #6366f1;
+  --cat-infra: #d97706;
 
   --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -879,6 +879,15 @@ body::before {
 .editorial-band-text .sep {
   margin: 0 1.5rem;
   opacity: 0.4;
+}
+
+[data-theme="dark"] .editorial-band {
+  background: #1a1a1a;
+  border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .editorial-band-text {
+  color: #8a857f;
 }
 
 /* ===== FILTER BAR ===== */
@@ -2383,7 +2392,7 @@ body.embed-mode .skills-section {
     </div>
     <div class="search-wrapper">
       <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-      <input type="search" class="search-input" id="search-input" placeholder="SEARCH SKILLS..." aria-label="Search skills by name or tag">
+      <input type="search" class="search-input" id="search-input" placeholder="SEARCH SKILLS..." aria-label="Search skills by name or tag" aria-controls="skills-grid">
     </div>
     <select class="sort-select" id="sort-select" aria-label="Sort skills">
       <option value="alpha">A → Z</option>
@@ -2406,7 +2415,7 @@ body.embed-mode .skills-section {
 <!-- ===== SKILLS GRID ===== -->
 <main class="skills-section" id="skills-section">
   <div class="section-heading" id="section-heading">
-    <h2><span class="skill-count" id="skill-count">58</span> ACTIVE SKILLS</h2>
+    <h2><span class="skill-count" id="skill-count" aria-live="polite">76</span> ACTIVE SKILLS</h2>
     <p>11 categories // design // development // reasoning // content // strategy // system // data // creative // mcp // agents // infrastructure</p>
   </div>
   <div class="skills-grid" id="skills-grid" role="list" aria-label="Skills grid">
@@ -2561,8 +2570,8 @@ body.embed-mode .skills-section {
 
 <script>
 // ===== VERSIONING — LIVING STANDARD =====
-const SKILLS_VERSION = '10.0.0';
-const SKILLS_LAST_UPDATED = '2026-05-24';
+const SKILLS_VERSION = '12.0.0';
+const SKILLS_LAST_UPDATED = '2026-05-31';
 
 // ===== MACHINE-READABLE ENDPOINTS =====
 // ?format=json — raw JSON of all skills
@@ -2688,7 +2697,21 @@ function getSkillsDataRaw() {
 
     // ModelScope MCP — NEW in v10.0.0
     { name: "modelscope-mcp-hub", category: "MCP Servers", description: "Access ModelScope (魔搭) MCP Plaza — 2300+ free MCP servers with hosted deployment. Chinese AI ecosystem: image generation, document parsing, maps, payments, NL2SQL. Free cloud hosting included", icon: "\u{1F4E6}", invoke: "Use when discovering Chinese MCP servers, accessing free hosted MCP deployment, or integrating ModelScope's 12800+ AI models", tags: ["modelscope","mcp","chinese","hosted","free","魔搭","image-gen"], accent: "#ea580c", mcpServers: ["modelscope-image-gen","modelscope-model-discovery","context7"] },
-    { name: "context7-docs", category: "Development", description: "Fetch up-to-date, version-specific documentation and code examples into LLM prompts — eliminates stale or hallucinated API references for any library. Always-current docs", icon: "\u{1F4D6}", invoke: "Use when looking up current API documentation, fighting hallucinated references, or getting version-specific code examples for any library", tags: ["documentation","context","up-to-date","api","reference","version-specific"], accent: "#059669", mcpServers: ["context7","fetch","memory"] }
+    { name: "context7-docs", category: "Development", description: "Fetch up-to-date, version-specific documentation and code examples into LLM prompts — eliminates stale or hallucinated API references for any library. Always-current docs", icon: "\u{1F4D6}", invoke: "Use when looking up current API documentation, fighting hallucinated references, or getting version-specific code examples for any library", tags: ["documentation","context","up-to-date","api","reference","version-specific"], accent: "#059669", mcpServers: ["context7","fetch","memory"] },
+
+    // 7-Agent MASTER Pipeline — NEW in v11.1.0
+    { name: "agent-auditor", category: "Agents", description: "7-agent MASTER pipeline auditor — validates animation code, checks cleanup, accessibility, and performance before commit. Runs quality gates on every animation PR", icon: "\u{1F6E1}", invoke: "Use when auditing animation code quality, running CI pipeline checks, or validating cleanup before merge", tags: ["agent","auditor","pipeline","quality","validation","master"], accent: "#6366f1", mcpServers: ["filesystem","github"] },
+    { name: "agent-decision", category: "Agents", description: "7-agent MASTER pipeline decision engine — routes tasks to the right specialist agent based on complexity, domain, and available context", icon: "\u{2694}", invoke: "Use when deciding which agent or skill should handle a task, or when routing complex multi-step workflows", tags: ["agent","decision","routing","pipeline","master","orchestrator"], accent: "#6366f1", mcpServers: ["filesystem","github"] },
+    { name: "agent-maintenance", category: "Agents", description: "7-agent MASTER pipeline maintenance — keeps skills, dependencies, and documentation current and consistent across versions", icon: "\u{1F527}", invoke: "Use when updating skill definitions, syncing dependencies, or maintaining project documentation", tags: ["agent","maintenance","pipeline","update","sync","master"], accent: "#6366f1", mcpServers: ["filesystem","github"] },
+    { name: "agent-master", category: "Agents", description: "7-agent MASTER pipeline orchestrator — coordinates all 7 agents in sequence: Decision, Simulator, Implementation, Auditor, Profiler, Optimizer, Maintenance", icon: "\u{1F451}", invoke: "Use when running the full 7-agent pipeline for complex animation or feature work that needs all quality gates", tags: ["agent","master","pipeline","orchestrator","7-agent","coordination"], accent: "#6366f1", mcpServers: ["filesystem","github","docker"] },
+    { name: "agent-optimizer", category: "Agents", description: "7-agent MASTER pipeline optimizer — reduces bundle size, eliminates dead code, and improves runtime performance of animation implementations", icon: "\u{26A1}", invoke: "Use when optimizing animation performance, reducing bundle size, or eliminating dead code from animation implementations", tags: ["agent","optimizer","pipeline","performance","bundle","master"], accent: "#6366f1", mcpServers: ["filesystem","github"] },
+    { name: "agent-profiler", category: "Agents", description: "7-agent MASTER pipeline profiler — measures FPS, memory, and layout thrash to identify animation bottlenecks before they reach production", icon: "\u{1F4CA}", invoke: "Use when profiling animation performance, measuring FPS drops, or identifying memory leaks in animation code", tags: ["agent","profiler","pipeline","fps","memory","performance"], accent: "#6366f1", mcpServers: ["filesystem","github"] },
+    { name: "agent-simulator", category: "Agents", description: "7-agent MASTER pipeline simulator — dry-runs implementations to catch issues before real execution. Validates edge cases and failure modes", icon: "\u{1F3AE}", invoke: "Use when simulating animation behavior, dry-running implementations, or testing edge cases before deployment", tags: ["agent","simulator","pipeline","dry-run","validation","master"], accent: "#6366f1", mcpServers: ["filesystem","github"] },
+
+    // Animation Engineer Skills — NEW in v11.1.0
+    { name: "animation-hybrid-architect", category: "Design & UI", description: "Meta-skill for combining Motion v12 + GSAP v3.13+ with strict boundaries — Motion owns UI layer (modals, gestures, layout), GSAP owns content layer (scroll, text, SVG). Never animate same element with both", icon: "\u{1F517}", invoke: "Use when combining Motion and GSAP in the same project, or when deciding which animation library to use for a specific element", tags: ["animation","hybrid","motion","gsap","architect","boundary"], accent: "#4338ca", mcpServers: ["filesystem","fetch"] },
+    { name: "gsap-animation-engineer", category: "Design & UI", description: "GSAP v3.13+ cinematic scroll/text/SVG animation engineer — ScrollTrigger pin, SplitText, SVG morph, Flip, physics-based motion with React useGSAP hook. All plugins free since April 2025", icon: "\u{1F3AC}", invoke: "Use when engineering complex GSAP animations: cinematic scroll sequences, SVG morphs, text splitting effects, or physics-based motion with React integration", tags: ["gsap","engineer","scrolltrigger","splittext","svg","physics","usegsap"], accent: "#4338ca", mcpServers: ["filesystem","fetch"] },
+    { name: "motion-animation-engineer", category: "Design & UI", description: "Motion v12 (ex-Framer Motion) declarative UI animation engineer for React/Vue — hover, scroll reveal, layout, exit, gestures, springs with bundle-aware loading (2.3KB-34KB)", icon: "\u{1F4AB}", invoke: "Use when engineering Motion v12 animations with precise bundle control: mini imports, LazyMotion, useAnimate for production budget compliance", tags: ["motion","engineer","react","vue","bundle","lazy","useanimate"], accent: "#4338ca", mcpServers: ["filesystem","fetch"] }
   ];
 }
 
@@ -2730,7 +2753,7 @@ function escapeXml(str) {
 }
 
 // ===== DYNAMIC PALETTE ENDPOINT (?palette=FF2E63) =====
-// Accepts any hex triplet, generates a full brutalist color system on the fly
+// Accepts any hex triplet, generates a premium modern color system on the fly
 function applyPalette() {
   const params = new URLSearchParams(window.location.search);
   const palette = params.get('palette');
@@ -2821,32 +2844,18 @@ function applyEmbedMode() {
 
 // ===== CATEGORY CONFIG =====
 const CATEGORIES = [
-  { name: "All", color: "#4338ca" },,
-
-    // 7-Agent MASTER Pipeline — NEW in v11.1.0
-    {{ name: "agent-auditor", category: "Agents", description: "7-agent MASTER pipeline auditor — validates animation code, checks cleanup, accessibility, and performance before commit. Runs quality gates on every animation PR", icon: "\u{{1F6E1}}", invoke: "Use when auditing animation code quality, running CI pipeline checks, or validating cleanup before merge", tags: ["agent","auditor","pipeline","quality","validation","master"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
-    {{ name: "agent-decision", category: "Agents", description: "7-agent MASTER pipeline decision engine — routes tasks to the right specialist agent based on complexity, domain, and available context", icon: "\u{{2694}}", invoke: "Use when deciding which agent or skill should handle a task, or when routing complex multi-step workflows", tags: ["agent","decision","routing","pipeline","master","orchestrator"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
-    {{ name: "agent-maintenance", category: "Agents", description: "7-agent MASTER pipeline maintenance — keeps skills, dependencies, and documentation current and consistent across versions", icon: "\u{{1F527}}", invoke: "Use when updating skill definitions, syncing dependencies, or maintaining project documentation", tags: ["agent","maintenance","pipeline","update","sync","master"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
-    {{ name: "agent-master", category: "Agents", description: "7-agent MASTER pipeline orchestrator — coordinates all 7 agents in sequence: Decision, Simulator, Implementation, Auditor, Profiler, Optimizer, Maintenance", icon: "\u{{1F451}}", invoke: "Use when running the full 7-agent pipeline for complex animation or feature work that needs all quality gates", tags: ["agent","master","pipeline","orchestrator","7-agent","coordination"], accent: "#9D4EDD", mcpServers: ["filesystem","github","docker"] }},
-    {{ name: "agent-optimizer", category: "Agents", description: "7-agent MASTER pipeline optimizer — reduces bundle size, eliminates dead code, and improves runtime performance of animation implementations", icon: "\u{{26A1}}", invoke: "Use when optimizing animation performance, reducing bundle size, or eliminating dead code from animation implementations", tags: ["agent","optimizer","pipeline","performance","bundle","master"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
-    {{ name: "agent-profiler", category: "Agents", description: "7-agent MASTER pipeline profiler — measures FPS, memory, and layout thrash to identify animation bottlenecks before they reach production", icon: "\u{{1F4CA}}", invoke: "Use when profiling animation performance, measuring FPS drops, or identifying memory leaks in animation code", tags: ["agent","profiler","pipeline","fps","memory","performance"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
-    {{ name: "agent-simulator", category: "Agents", description: "7-agent MASTER pipeline simulator — dry-runs implementations to catch issues before real execution. Validates edge cases and failure modes", icon: "\u{{1F3AE}}", invoke: "Use when simulating animation behavior, dry-running implementations, or testing edge cases before deployment", tags: ["agent","simulator","pipeline","dry-run","validation","master"], accent: "#9D4EDD", mcpServers: ["filesystem","github"] }},
-
-    // Animation Engineer Skills — NEW in v11.1.0
-    {{ name: "animation-hybrid-architect", category: "Design & UI", description: "Meta-skill for combining Motion v12 + GSAP v3.13+ with strict boundaries — Motion owns UI layer (modals, gestures, layout), GSAP owns content layer (scroll, text, SVG). Never animate same element with both", icon: "\u{{1F517}}", invoke: "Use when combining Motion and GSAP in the same project, or when deciding which animation library to use for a specific element", tags: ["animation","hybrid","motion","gsap","architect","boundary"], accent: "#4338ca", mcpServers: ["filesystem","fetch"] }},
-    {{ name: "gsap-animation-engineer", category: "Design & UI", description: "GSAP v3.13+ cinematic scroll/text/SVG animation engineer — ScrollTrigger pin, SplitText, SVG morph, Flip, physics-based motion with React useGSAP hook. All plugins free since April 2025", icon: "\u{{1F3AC}}", invoke: "Use when engineering complex GSAP animations: cinematic scroll sequences, SVG morphs, text splitting effects, or physics-based motion with React integration", tags: ["gsap","engineer","scrolltrigger","splittext","svg","physics","usegsap"], accent: "#4338ca", mcpServers: ["filesystem","fetch"] }},
-    {{ name: "motion-animation-engineer", category: "Design & UI", description: "Motion v12 (ex-Framer Motion) declarative UI animation engineer for React/Vue — hover, scroll reveal, layout, exit, gestures, springs with bundle-aware loading (2.3KB-34KB)", icon: "\u{{1F4AB}}", invoke: "Use when engineering Motion v12 animations with precise bundle control: mini imports, LazyMotion, useAnimate for production budget compliance", tags: ["motion","engineer","react","vue","bundle","lazy","useanimate"], accent: "#4338ca", mcpServers: ["filesystem","fetch"] }}
+  { name: "All", color: "#4338ca" },
   { name: "Design & UI", color: "#4338ca" },
   { name: "Reasoning", color: "#059669" },
-  { name: "Development", color: "#00FF9D" },
+  { name: "Development", color: "#059669" },
   { name: "Content", color: "#c2410c" },
-  { name: "Strategy", color: "#FFE600" },
-  { name: "System", color: "#A8B2D8" },
-  { name: "Data & Web", color: "#64FFDA" },
-  { name: "Creative", color: "#FF9FF3" },
-  { name: "MCP Servers", color: "#FF6B35" },
+  { name: "Strategy", color: "#ca8a04" },
+  { name: "System", color: "#6366f1" },
+  { name: "Data & Web", color: "#0d9488" },
+  { name: "Creative", color: "#a855f7" },
+  { name: "MCP Servers", color: "#ea580c" },
   { name: "Agents", color: "#6366f1" },
-  { name: "Infrastructure", color: "#FF8C00" },
+  { name: "Infrastructure", color: "#d97706" }
 ];
 
 // ===== MCP STACK DATA =====
@@ -2893,7 +2902,7 @@ const MCP_STACKS = [
     useCase: "Platform teams managing multi-service deployments with observability and incident response",
     synergyReason: "GitHub -> Docker -> K8s is the standard build-ship-run pipeline. Slack adds the human notification layer",
     warnings: [],
-    pairedSkills: ["deployment-manager", "audit-analyzer", "feedback-loop", "skill-vetter"]
+    pairedSkills: ["deployment-manager", "audit-analyzer", "feedback-loop", "skill-finder"]
   },
   {
     name: "Data Pipeline Studio",
@@ -3111,7 +3120,7 @@ class SkillCard extends HTMLElement {
       }
     });
 
-    // Brutalist hover — hard translate instead of 3D tilt
+    // Premium micro-hover — subtle translate with scale
     if (window.matchMedia('(hover: hover)').matches) {
       this.addEventListener('mouseenter', () => {
         if (!this._expanded) {
@@ -3211,9 +3220,9 @@ function initTheme() {
 // ===== STATS DASHBOARD ANIMATION =====
 function initStatsDashboard() {
   const targets = [
-    { id: 'stat-skills', value: 58 },
+    { id: 'stat-skills', value: 76 },
     { id: 'stat-categories', value: 11 },
-    { id: 'stat-mcp', value: 117 },
+    { id: 'stat-mcp', value: 145 },
     { id: 'stat-agents', value: 7 }
   ];
   
@@ -3493,7 +3502,7 @@ function initScrollTopFab() {
   });
 }
 
-// ===== HERO ANIMATIONS — BRUTALIST GSAP =====
+// ===== HERO ANIMATIONS — Premium GSAP =====
 function initHeroAnimations() {
   gsap.registerPlugin(ScrollTrigger);
 
