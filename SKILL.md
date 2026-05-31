@@ -2,7 +2,7 @@
 
 ## Context
 
-Generates a self-contained, single-file HTML showcase for any collection of AI agent skills. The showcase is neo-brutalist ultramodern Gen Z design with GSAP animations, Web Components, JSON-LD structured data, and multiple machine-readable endpoints. Zero build step — drop on GitHub Pages and ship. WCAG AA compliant contrast ratios throughout. Dynamic palette endpoint for live theming.
+Generates a self-contained, single-file HTML showcase for any collection of AI agent skills. Premium modern design system (Playfair Display + Inter typography, indigo/parchment palette, soft shadows, scroll reveal animations) with GSAP animations, Web Components, JSON-LD structured data, and multiple machine-readable endpoints. Zero build step — drop on GitHub Pages and ship. WCAG AA compliant contrast ratios throughout. Respects `prefers-reduced-motion`. Dynamic palette endpoint for live theming.
 
 Use this skill when:
 - You need to build or regenerate a skills showcase / registry page
@@ -33,14 +33,17 @@ Collect all skills into a JavaScript array. Each skill object has:
 
 | Category | Accent |
 |---|---|
-| Design & UI | `#BFFF00` |
-| Reasoning | `#08F7FE` |
-| Development | `#00FF9D` |
-| Content | `#FF2E63` |
-| Strategy | `#FFE600` |
-| System | `#A8B2D8` |
-| Data & Web | `#64FFDA` |
-| Creative | `#FF9FF3` |
+| Design & UI | `#4338ca` (indigo) |
+| Reasoning | `#059669` (emerald) |
+| Development | `#059669` (emerald) |
+| Content | `#c2410c` (orange-red) |
+| Strategy | `#ca8a04` (amber) |
+| System | `#6366f1` (violet) |
+| Data & Web | `#0d9488` (teal) |
+| Creative | `#a855f7` (purple) |
+| MCP Servers | `#ea580c` (orange) |
+| Agents | `#6366f1` (violet) |
+| Infrastructure | `#b45309` (brown) |
 
 ### 3. Reusability Contract
 
@@ -59,7 +62,7 @@ To rebrand for a different collection:
 | `?category=Development` | Auto-selects category chip |
 | `?format=json` | Returns raw JSON with version, count, all skills |
 | `?format=manifest` | Returns JetBrains-style plugin.xml for AI IDE integration |
-| `?embed=true` | Strips hero, marquee, footer — just filter bar + grid (for iframe embedding) |
+| `?embed=true` | Strips hero, editorial band, footer — just filter bar + grid (for iframe embedding) |
 | `?palette=FF2E63` | Overrides `--brand-primary` with any hex triplet; derives secondary (+180 hue) and tertiary (+120 hue) |
 
 ### 5. Accessibility (WCAG AA)
@@ -68,8 +71,8 @@ All text meets WCAG AA contrast requirements:
 - `--text-primary: #000000` — 21:1 on white (AAA)
 - `--text-secondary: #1F1F1F` — 15.4:1 on white (AAA)
 - `--text-muted: #555555` — 7.5:1 on white (AA)
-- Marquee: lime text `#BFFF00` on black `#000000` — ~18.6:1 (AAA)
-- No text uses `#BFFF00` (electric lime) on white backgrounds
+- Editorial band: light text on dark bg — high contrast
+- `prefers-reduced-motion: reduce` disables all animations
 - Sort select dropdown arrow uses black fill (visible on white)
 - Minimum font size for body text: 0.82rem
 
@@ -94,7 +97,7 @@ All text meets WCAG AA contrast requirements:
 - NEVER duplicate skills across categories. MECE principle — one skill, one category.
 - NEVER remove JSON-LD structured data from `<head>`. Machine readability is a hard requirement.
 - ALWAYS include ARIA labels on interactive elements.
-- ALWAYS use thick borders (3px) and hard offset shadows (zero blur) — this is the neo-brutalist design system.
+- ALWAYS use soft shadows and subtle borders — this is the premium modern design system (Playfair Display + Inter, indigo/parchment palette).
 - ALWAYS version the SKILLS_DATA array. The showcase is a living standard.
 - ALWAYS ensure WCAG AA contrast (4.5:1 minimum) on all text elements.
-- NEVER use electric lime (#BFFF00) or similar low-contrast colors on white backgrounds for text.
+- NEVER use neon/high-saturation colors (e.g., #BFFF00, #08F7FE, #00FF9D) on white backgrounds for text — use muted, desaturated accents.

@@ -36,7 +36,7 @@
   "@type": "ItemList",
   "name": "AI Agent Skills Collection",
   "description": "76 active AI agent skills across 11 categories",
-  "numberOfItems": 66,
+  "numberOfItems": 76,
   "itemListElement": [
     {"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"ui-ux-pro-max-v7","applicationCategory":"AISkill","description":"AI design intelligence — 60 styles, 48 palettes, 36 fonts, 24 industry rules, production-grade components"}},
     {"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"anthropic-frontend-design","applicationCategory":"AISkill","description":"Bold aesthetics for AI-native interfaces, conversational UI, trust-forward design"}},
@@ -201,8 +201,7 @@
 
 [data-theme="dark"] .hero-badge,
 [data-theme="dark"] .hero-card,
-[data-theme="dark"] .filter-section,
-[data-theme="dark"] .marquee {
+[data-theme="dark"] .filter-section {
   border-color: #3a3a3a;
 }
 
@@ -856,35 +855,30 @@ body::before {
   background: rgba(42,42,42,0.85);
 }
 
-/* ===== MARQUEE — redesigned as static editorial band ===== */
-.marquee {
+/* ===== EDITORIAL BAND — static announcement strip ===== */
+.editorial-band {
   background: var(--text-primary);
   border-top: 1px solid var(--text-primary);
   border-bottom: 1px solid var(--text-primary);
-  padding: 0.75rem 0;
-  overflow: hidden;
+  padding: 0.75rem 2rem;
+  text-align: center;
   white-space: nowrap;
+  overflow: hidden;
 }
 
-.marquee-inner {
-  display: inline-flex;
-  animation: marquee-scroll 45s linear infinite;
-}
-
-.marquee-inner span {
+.editorial-band-text {
   font-family: var(--font-body);
   font-size: 0.75rem;
   color: var(--bg-elevated);
-  padding: 0 2.5rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-weight: 500;
   opacity: 0.7;
 }
 
-@keyframes marquee-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.editorial-band-text .sep {
+  margin: 0 1.5rem;
+  opacity: 0.4;
 }
 
 /* ===== FILTER BAR ===== */
@@ -1721,7 +1715,7 @@ skill-card.expanded .card-expand-indicator {
 
 /* ===== EMBED MODE (?embed=true) ===== */
 body.embed-mode .hero,
-body.embed-mode .marquee,
+body.embed-mode .editorial-band,
 body.embed-mode .hero-orbit,
 body.embed-mode .scroll-top-fab,
 body.embed-mode #progress-bar,
@@ -2291,6 +2285,9 @@ body.embed-mode .skills-section {
   .hero-animated-bg {
     animation: none !important;
   }
+  #hero-orbit {
+    animation: none !important;
+  }
 }
 </style>
 </head>
@@ -2311,6 +2308,8 @@ body.embed-mode .skills-section {
     <span id="featured-theme-name">DEFAULT</span> THEME
   </div>
 
+  <div class="hero-orbit" id="hero-orbit" aria-hidden="true">
+    <div class="orbit-badge" id="orbit-1">&#9670; 76 SKILLS</div>
     <div class="orbit-badge" id="orbit-2">&#9733; 11 CATEGORIES</div>
     <div class="orbit-badge" id="orbit-3">&#9830; MCP + AGENTS</div>
   </div>
@@ -2347,6 +2346,12 @@ body.embed-mode .skills-section {
   </div>
 </section>
 
+<!-- ===== EDITORIAL BAND — static announcement ===== -->
+<div class="editorial-band" aria-hidden="true">
+  <span class="editorial-band-text">
+    76 Skills <span class="sep">◆</span> 11 Categories <span class="sep">◆</span> Animation Pipeline <span class="sep">◆</span> Three.js Orchestrator <span class="sep">◆</span> ModelScope MCP <span class="sep">◆</span> 7-Agent Pipeline <span class="sep">◆</span> 145 MCP Servers <span class="sep">◆</span> Dark Mode <span class="sep">◆</span> Theme Marketplace <span class="sep">◆</span> Stack Recommender
+  </span>
+</div>
 
 <!-- ===== STATS DASHBOARD ===== -->
 <section class="stats-dashboard" id="stats-dashboard" aria-label="Statistics">
@@ -2538,12 +2543,12 @@ body.embed-mode .skills-section {
 <!-- ===== API NOTICE ===== -->
 <div class="api-notice" id="api-notice">
 <strong>ENDPOINTS:</strong> <code>?format=json</code> raw JSON &nbsp;|&nbsp; <code>?format=manifest</code> plugin.xml &nbsp;|&nbsp; <code>?skill=gsap-animations</code> auto-filter &nbsp;|&nbsp; <code>?category=Development</code> category filter &nbsp;|&nbsp; <code>?embed=true</code> iframe-ready &nbsp;|&nbsp; <code>?palette=FF2E63</code> live theme &nbsp;|&nbsp; <code>?theme=cyberpunk</code> named theme
-  <br><strong>VERSION:</strong> <code>v11.1.0</code> &nbsp;|&nbsp; <strong>UPDATED:</strong> <code>2026-05-24</code> &nbsp;|&nbsp; Dark Mode &nbsp;|&nbsp; Theme Marketplace &nbsp;|&nbsp; Stack Recommender &nbsp;|&nbsp; Infrastructure Stack &nbsp;|&nbsp; WCAG AA contrast &nbsp;|&nbsp; JSON-LD in <code>&lt;head&gt;</code> &nbsp;|&nbsp; 76 skills &nbsp;|&nbsp; 11 categories &nbsp;|&nbsp; GitHub Pages ready
+  <br><strong>VERSION:</strong> <code>v12.0.0</code> &nbsp;|&nbsp; <strong>UPDATED:</strong> <code>2026-05-31</code> &nbsp;|&nbsp; Dark Mode &nbsp;|&nbsp; Theme Marketplace &nbsp;|&nbsp; Stack Recommender &nbsp;|&nbsp; Infrastructure Stack &nbsp;|&nbsp; WCAG AA contrast &nbsp;|&nbsp; JSON-LD in <code>&lt;head&gt;</code> &nbsp;|&nbsp; 76 skills &nbsp;|&nbsp; 11 categories &nbsp;|&nbsp; GitHub Pages ready
 </div>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer" id="site-footer">
-  Built with <span class="brand-lime">ui-ux-pro-max-v7</span> + <span>gsap-animations</span> + <span>anthropic-frontend-design</span> + <span>frontend-design</span> // 76 skills // 11 categories // Dark Mode // Theme Marketplace // Stack Recommender // Infrastructure Stack // v11.1.0
+  Built with <span class="brand-lime">ui-ux-pro-max-v7</span> + <span>gsap-animations</span> + <span>anthropic-frontend-design</span> + <span>frontend-design</span> // 76 skills // 11 categories // Dark Mode // Theme Marketplace // Stack Recommender // Infrastructure Stack // v12.0.0
 </footer>
 
 <!-- Toast Notification Container -->
@@ -2752,7 +2757,7 @@ function applyPalette() {
   const [tr, tg, tb] = hslToRgb((h + 120) % 360, s, Math.min(l + 15, 85));
   root.setProperty('--brand-tertiary', '#' + toHex(tr) + toHex(tg) + toHex(tb));
 
-  // Update marquee border colors (already using var(--brand-primary))
+  // Editorial band uses var(--brand-primary) via CSS — auto-updated
   // Update progress bar (already using var(--brand-primary))
   // Category accent colors stay per-skill — they're semantic, not thematic
 }
@@ -2801,7 +2806,7 @@ function toHex(n) {
 }
 
 // ===== EMBED MODE (?embed=true) =====
-// Strips hero, footer, marquee — just filter bar + grid for iframe embedding
+// Strips hero, footer, editorial band — just filter bar + grid for iframe embedding
 function applyEmbedMode() {
   const params = new URLSearchParams(window.location.search);
   if (params.get('embed') === 'true') {
@@ -3549,11 +3554,15 @@ function initHeroAnimations() {
     gsap.set(badge, { x: x, y: y });
   });
 
-  gsap.to('#hero-orbit', { rotation: 360, duration: 25, ease: 'none', repeat: -1 });
-  gsap.to('.orbit-badge', { rotation: -360, duration: 25, ease: 'none', repeat: -1 });
+  // Gentle orbit rotation — respects prefers-reduced-motion
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReducedMotion) {
+    gsap.to('#hero-orbit', { rotation: 360, duration: 60, ease: 'none', repeat: -1 });
+    gsap.to('.orbit-badge', { rotation: -360, duration: 60, ease: 'none', repeat: -1 });
+  }
 }
 
-// ===== CARD REVEAL ANIMATIONS — BRUTALIST =====
+// ===== CARD REVEAL ANIMATIONS — Premium Modern =====
 function initCardRevealAnimations() {
   gsap.registerPlugin(ScrollTrigger);
 

@@ -1,14 +1,14 @@
 # OpenCode Accomplishments — AI Skills Showcase + Agent System + MCP Ecosystem
 
-> A self-contained, single-file interactive showcase of **66 AI agent skills** across **11 categories** — plus a complete production-ready Agent System with Universal Router + 4 context-loaded skills, 18 documentation files, **145 MCP servers** in a searchable registry across 15 categories, **9 pre-built MCP stacks** with synergy scoring (incl. Unified AI Gateway at 96% synergy), an interactive MCP Stack Curator, a Theme Marketplace with 6 named themes, a Your Stack Recommender engine, an Animation Pipeline with orchestrator gate + auditor, a Three.js Orchestrator with r3f-react routing, a 7-agent MASTER pipeline, a Skill Architect, ModelScope MCP Hub (2300+ free Chinese servers), and Context7 always-current docs. Neo-brutalist ultramodern Gen Z design with dark mode. Zero build step — drop on GitHub Pages and ship.
+> A self-contained, single-file interactive showcase of **76 AI agent skills** across **11 categories** — plus a complete production-ready Agent System with Universal Router + 4 context-loaded skills, 18 documentation files, **145 MCP servers** in a searchable registry across 15 categories, **9 pre-built MCP stacks** with synergy scoring (incl. Unified AI Gateway at 96% synergy), an interactive MCP Stack Curator, a Theme Marketplace with 6 named themes, a Your Stack Recommender engine, an Animation Pipeline with orchestrator gate + auditor, a Three.js Orchestrator with r3f-react routing, a 7-agent MASTER pipeline, a Skill Architect, ModelScope MCP Hub (2300+ free Chinese servers), and Context7 always-current docs. Premium modern design (Playfair Display + Inter, indigo/parchment palette, soft shadows) with dark mode + `prefers-reduced-motion` support. Zero build step — drop on GitHub Pages and ship.
 
-![Version](https://img.shields.io/badge/version-10.0.0-FF2E63?style=for-the-badge&labelColor=000)
-![Skills](https://img.shields.io/badge/skills-66-BFFF00?style=for-the-badge&labelColor=000)
-![MCP Servers](https://img.shields.io/badge/mcp_servers-145-FF6B35?style=for-the-badge&labelColor=000)
-![Agent Files](https://img.shields.io/badge/agent_files-18-08F7FE?style=for-the-badge&labelColor=000)
-![Stacks](https://img.shields.io/badge/mcp_stacks-9-C77DFF?style=for-the-badge&labelColor=000)
-![WCAG](https://img.shields.io/badge/WCAG-AA-00FF9D?style=for-the-badge&labelColor=000)
-![Zero Build](https://img.shields.io/badge/zero_build-step-FFE600?style=for-the-badge&labelColor=000)
+![Version](https://img.shields.io/badge/version-12.0.0-6366f1?style=for-the-badge&labelColor=000)
+![Skills](https://img.shields.io/badge/skills-76-4338ca?style=for-the-badge&labelColor=000)
+![MCP Servers](https://img.shields.io/badge/mcp_servers-145-ea580c?style=for-the-badge&labelColor=000)
+![Agent Files](https://img.shields.io/badge/agent_files-18-059669?style=for-the-badge&labelColor=000)
+![Stacks](https://img.shields.io/badge/mcp_stacks-9-6366f1?style=for-the-badge&labelColor=000)
+![WCAG](https://img.shields.io/badge/WCAG-AA-059669?style=for-the-badge&labelColor=000)
+![Zero Build](https://img.shields.io/badge/zero_build-step-ca8a04?style=for-the-badge&labelColor=000)
 
 ---
 
@@ -27,7 +27,7 @@ This project has **three complementary layers** connected through a skill-agent-
 
 ### Layer 1: Skills Showcase (Visual + API + MCP Curator)
 
-A **living, self-updating AI Skills Registry** — an interactive, machine-readable catalog of 66 active AI agent skills across 11 categories. Built with vanilla HTML/CSS/JS, powered by GSAP animations, Web Components, JSON-LD structured data, MCP server pairings per skill, an interactive MCP Stack Curator, a Theme Marketplace with 6 named themes via `?theme=` URL params, and a Your Stack Recommender engine that selects 3-5 skills and recommends the optimal MCP stack + agent mode. Now includes the Animation Pipeline (orchestrator + motion-animator + gsap-animator + auditor), Three.js Orchestrator (gates all 3D work), Skill Architect (create/optimize SKILL.md files), ModelScope MCP Hub (2300+ free Chinese MCP servers), and Context7 Docs (always-current API documentation).
+A **living, self-updating AI Skills Registry** — an interactive, machine-readable catalog of 76 active AI agent skills across 11 categories. Premium modern design (Playfair Display + Inter typography, indigo/parchment palette, soft shadows, scroll reveal animations) with GSAP animations, Web Components, JSON-LD structured data, MCP server pairings per skill, an interactive MCP Stack Curator, a Theme Marketplace with 6 named themes via `?theme=` URL params, and a Your Stack Recommender engine. Respects `prefers-reduced-motion`. Includes the Animation Pipeline (orchestrator + motion-animator + gsap-animator + auditor + hybrid-architect), Three.js Orchestrator (gates all 3D work), Skill Architect (create/optimize SKILL.md files), ModelScope MCP Hub (2300+ free Chinese MCP servers), and Context7 Docs (always-current API documentation).
 
 ### Layer 2: Agent System (Intelligence + Operations)
 
@@ -91,9 +91,9 @@ opencode-accomplishments/
 
 ---
 
-## Skills by Category (66 skills / 11 categories)
+## Skills by Category (76 skills / 11 categories)
 
-### Design & UI (9 skills) — accent: `#BFFF00`
+### Design & UI (9 skills) — accent: `#4338ca`
 | Skill | Description | MCP Servers |
 |---|---|---|
 | `ui-ux-pro-max-v7` | AI design intelligence — 60 styles, 48 palettes, 36 fonts, 24 industry rules | filesystem, fetch, google-drive |
@@ -106,7 +106,7 @@ opencode-accomplishments/
 | `frontend-design` | shadcn/ui + Tailwind + React component generation | filesystem, fetch, google-drive |
 | `vercel-web-design-guidelines` | Accessibility-first UX rules and performance budgets | filesystem, fetch, google-drive |
 
-### Reasoning (5 skills) — accent: `#08F7FE`
+### Reasoning (5 skills) — accent: `#059669`
 | Skill | Description | MCP Servers |
 |---|---|---|
 | `chain-of-thought` | Step-by-step reasoning framework for complex problems | memory, sequential-thinking, sqlite |
@@ -115,7 +115,7 @@ opencode-accomplishments/
 | `simulation-sandbox` | Test scenarios in safe simulated environments | memory, sequential-thinking, sqlite |
 | `brainstorming` | Structured brainstorming with divergent/convergent phases | memory, sequential-thinking, sqlite |
 
-### Development (12 skills) — accent: `#00FF9D`
+### Development (12 skills) — accent: `#059669`
 | Skill | Description | MCP Servers |
 |---|---|---|
 | `mcp-builder` | Build MCP servers with TypeScript + Python | filesystem, github, docker |
@@ -131,7 +131,7 @@ opencode-accomplishments/
 | `skill-architect` | Create/optimize SKILL.md files following Agent Skills standard | filesystem, github, docker |
 | `context7-docs` | Always-current API documentation for any library | context7, fetch, memory |
 
-### Content (4 skills) — accent: `#FF2E63`
+### Content (4 skills) — accent: `#c2410c`
 | Skill | Description | MCP Servers |
 |---|---|---|
 | `seo-content-writer` | SEO-optimized content with GEO optimization | filesystem, brave-search, google-drive, slack |
@@ -139,7 +139,7 @@ opencode-accomplishments/
 | `social-media-manager` | Post generation for 30 days across platforms | filesystem, brave-search, google-drive, slack |
 | `social-content-pillars` | Monthly content calendar with 90-day editorial plan | filesystem, brave-search, google-drive, slack |
 
-### Strategy (5 skills) — accent: `#FFE600`
+### Strategy (5 skills) — accent: `#ca8a04`
 | Skill | Description | MCP Servers |
 |---|---|---|
 | `jtbd-research` | 8-step Jobs to be Done product research methodology | brave-search, memory, fetch |
@@ -148,7 +148,7 @@ opencode-accomplishments/
 | `feature-research` | Research existing architecture before implementing | brave-search, memory, fetch |
 | `skill-finder` | Skill discovery, evaluation, and installation meta-skill | brave-search, memory, fetch |
 
-### System (6 skills) — accent: `#A8B2D8`
+### System (6 skills) — accent: `#6366f1`
 | Skill | Description | MCP Servers |
 |---|---|---|
 | `persistent-memory` | Structured memory system for agent context continuity | filesystem, github, docker |
@@ -158,7 +158,7 @@ opencode-accomplishments/
 | `agent-roles` | Unified multi-agent role system | filesystem, github, docker |
 | `sample-hello-skill` | Hello-world demo skill for testing activation | filesystem, github, docker |
 
-### Data & Web (5 skills) — accent: `#64FFDA`
+### Data & Web (5 skills) — accent: `#0d9488`
 | Skill | Description | MCP Servers |
 |---|---|---|
 | `web-reader` | Web page extraction with crawling and spidering | fetch, brave-search, sqlite, postgres |
@@ -167,13 +167,13 @@ opencode-accomplishments/
 | `code-research` | Research open-source repositories | fetch, brave-search, sqlite, postgres |
 | `explore` | Search a codebase efficiently without grep | fetch, brave-search, sqlite, postgres |
 
-### Creative (2 skills) — accent: `#FF9FF3`
+### Creative (2 skills) — accent: `#a855f7`
 | Skill | Description | MCP Servers |
 |---|---|---|
 | `photography-ai` | Professional visual engineering with batch processing | filesystem, fetch, everart |
 | `output-formatter` | Strict formatting rules for all output types | filesystem, fetch, everart |
 
-### MCP Servers (5 skills) — accent: `#FF6B35`
+### MCP Servers (5 skills) — accent: `#ea580c`
 | Skill | Description | MCP Servers |
 |---|---|---|
 | `pictoflux-ai` | AI-powered image generation and visual editing via MCP protocol | filesystem, github |
@@ -182,7 +182,7 @@ opencode-accomplishments/
 | `mcp-security-scanner` | Audit MCP server configurations for security vulnerabilities | filesystem, github |
 | `modelscope-mcp-hub` | 2300+ free Chinese MCP servers with hosted deployment (ModelScope 魔搭) | modelscope-image-gen, modelscope-model-discovery, context7 |
 
-### Agent Modes (7 skills) — accent: `#C77DFF`
+### Agents (7 skills) — accent: `#6366f1`
 | Skill | Icon | Description | MCP Servers |
 |---|---|---|---|
 | `agent-rabbit` | 🐇 | Multiply ideas — rapid ideation, brainstorming, divergent thinking | memory, sequential-thinking, filesystem |
@@ -193,15 +193,25 @@ opencode-accomplishments/
 | `agent-beaver` | 🦫 | Build systems — architecture, infrastructure, construction | memory, sequential-thinking, filesystem |
 | `agent-elephant` | 🐘 | Cross-field connections — knowledge synthesis, interdisciplinary | memory, sequential-thinking, filesystem |
 
-### Animation Pipeline (6 skills) — accent: `#FF9F43` **NEW in v10.0.0**
+### Animation Engineering + 7-Agent Pipeline + Infrastructure (16 skills) — **NEW in v11.0.0+**
 | Skill | Description | MCP Servers |
 |---|---|---|
-| `agent-master` | Orchestrates the 7-agent pipeline — DECISION → SIMULATOR → IMPLEMENTATION → AUDITOR → PROFILER → OPTIMIZER → MAINTENANCE | filesystem, github, docker |
-| `agent-decision` | Decides IF and WHAT to animate/animate — prevents 60% of animation tech debt at the decision stage | memory, sequential-thinking, filesystem |
-| `agent-simulator` | Traces all interactions + edge cases before code is written | memory, sequential-thinking, filesystem |
-| `agent-implementation` | Writes the animation/interaction code following orchestrator decisions | filesystem, github, docker |
-| `agent-auditor` | Validates animation code against standards (accessibility, performance, cleanup) | filesystem, github, docker |
+| `agent-master` | Orchestrates the 7-agent pipeline — DECISION → SIMULATOR → IMPLEMENTATION → AUDITOR → PROFILER → OPTIMIZER → MAINTENANCE | memory, sequential-thinking, filesystem |
+| `agent-decision` | Routes tasks to the right specialist agent based on complexity and domain | memory, sequential-thinking, filesystem |
+| `agent-simulator` | Dry-runs implementations to catch issues before real execution | memory, sequential-thinking, filesystem |
+| `agent-auditor` | Validates against standards (accessibility, performance, cleanup) | filesystem, github, docker |
 | `agent-profiler` | Finds ACTUAL bottlenecks with real measurement, not guesswork | filesystem, github, docker |
+| `agent-optimizer` | Reduces bundle size, eliminates dead code, improves runtime | filesystem, github, docker |
+| `agent-maintenance` | Keeps skills, dependencies, and documentation current | filesystem, github, docker |
+| `animation-hybrid-architect` | Meta-skill for combining Motion v12 + GSAP v3.13+ with strict boundaries | filesystem, fetch, google-drive |
+| `gsap-animation-engineer` | GSAP v3.13+ cinematic scroll/text/SVG animation engineer | filesystem, fetch, google-drive |
+| `motion-animation-engineer` | Motion v12 declarative UI animation engineer for React/Vue | filesystem, fetch, google-drive |
+| `9router-gateway` | AI routing gateway with RTK compression, tier-based provider fallback | filesystem, github, docker |
+| `owl-proxy-defense` | Protocol-first proxy defense stack with 5-tier escalation | filesystem, github, docker |
+| `antigravity-proxy` | MITM proxy bridge for free AI model access | filesystem, github, docker |
+| `4cli-unified` | Unified meta-CLI wrapper for OpenCode + Claude Code + Codex + Gemini CLI | filesystem, github, docker |
+| `triune-proxy-stack` | Maximum redundancy proxy architecture with auto-failover | filesystem, github, docker |
+| `secret-vault` | Unified credential vault with age encryption | filesystem, github, docker |
 
 ---
 
@@ -388,7 +398,7 @@ The three layers connect through a **skill-agent-MCP synergy matrix** that maps 
 | Data & Web | SKILL_04 + SKILL_01 | fetch, brave-search, sqlite, postgres |
 | Creative | SKILL_02 + SKILL_04 | filesystem, fetch, everart |
 | MCP Servers | SKILL_03 + SKILL_04 | filesystem, github, modelscope-* |
-| Agent Modes | SKILL_04 (Agentic) | memory, sequential-thinking, filesystem |
+| Agents | SKILL_04 (Agentic) | memory, sequential-thinking, filesystem |
 | Animation Pipeline | SKILL_02 + SKILL_03 | filesystem, github, docker |
 
 Full synergy matrix with per-skill MCP pairings is in `AGENTS.md`.
@@ -403,7 +413,7 @@ Full synergy matrix with per-skill MCP pairings is in `AGENTS.md`.
 | `?format=manifest` | Returns JetBrains-style plugin.xml | `?format=manifest` |
 | `?skill=<name>` | Auto-filters to matching skill name/tag | `?skill=gsap-animations` |
 | `?category=<name>` | Auto-selects category chip | `?category=MCP+Servers` |
-| `?embed=true` | Strips hero, marquee, footer for iframe | `?embed=true` |
+| `?embed=true` | Strips hero, editorial band, footer for iframe | `?embed=true` |
 | `?palette=<hex>` | Overrides `--brand-primary` with any hex | `?palette=FF6B35` |
 | `?theme=<name>` | Applies named theme (midnight, sunset, forest, ocean, cyberpunk, neon) | `?theme=cyberpunk` |
 
@@ -442,7 +452,11 @@ This is critical when chaining skills: Research (SKILL_01) → Design (SKILL_02)
 
 | Version | Date | Changes |
 |---|---|---|
-| **10.0.0** | 2026-05-24 | Animation Pipeline (orchestrator + motion-animator + gsap-animator + auditor), Three.js Orchestrator (gates all 3D work), 7-Agent MASTER Pipeline (DECISION → SIMULATOR → IMPLEMENTATION → AUDITOR → PROFILER → OPTIMIZER → MAINTENANCE), Skill Architect (create/optimize SKILL.md files), ModelScope MCP Hub (2300+ free Chinese servers, 8 curated in registry), Context7 Docs (always-current API docs), Unified AI Gateway stack (96% synergy), Pre-commit hooks (audit-animation.py + audit-threejs.py), 14 new skills (52→66), 1 new category (10→11), 18 new MCP servers (127→145), 1 new MCP category (14→15), 1 new stack (8→9) |
+| **12.0.0** | 2026-05-31 | Merged online + local versions: fixed broken orbit badges, replaced marquee with static editorial band, synced root + docs index.html, updated AGENTS.md/SKILL.md/README to 76 skills/11 categories, added Infrastructure + 7-Agent Pipeline + Animation Engineering to synergy matrix, updated accent colors to modern palette, added prefers-reduced-motion for orbit rotation, updated JSON-LD to 76 items |
+| **11.2.0** | 2026-05-24 | Audit fix — removed orphaned brutalist refs, merged "Agent Modes" → "Agents" category (12→11), added `prefers-reduced-motion: reduce` CSS, updated accent colors from neon to modern muted palette |
+| **11.1.0** | 2026-05-24 | Taste Skill redesign — premium modern design system (Playfair Display + Inter, indigo/parchment, soft shadows, scroll reveal) replacing neo-brutalist |
+| **11.0.0** | 2026-05-24 | Added 61 SKILL.md files + 10 new skills to showcase (66→76), Infrastructure category, 7-Agent MASTER Pipeline, Animation Engineering skills |
+| **10.0.0** | 2026-05-24 | Animation Pipeline, Three.js Orchestrator, 7-Agent MASTER Pipeline, Skill Architect, ModelScope MCP Hub, Context7 Docs, Unified AI Gateway stack (96% synergy), Pre-commit hooks, 14 new skills (52→66) |
 | 8.0.0 | 2026-05-23 | Theme Marketplace (6 named themes via ?theme= URL param + switcher + share button), Your Stack Recommender (select 3-5 skills → optimal MCP stack + agent mode), Agent Mode hover tooltips (Rabbit → AI Research Lab), Featured Theme Banner, Copy Install Command button, Toast Notifications, Hero gradient animation, 2 new skills (brainstorming + composition-patterns), MCP stacks synced to stacks.json, all counts updated (50→52 skills) |
 | 7.0.0 | 2026-05-23 | Added tdd-workflow + to-prd skills (48→50 skills), dark mode with system preference detection, stats dashboard with animated counters, Agent Modes spotlight section, keyboard shortcuts (/, Esc), embed mode updates, Full Stack Designer 7-layer audit |
 | 6.0.0 | 2026-05-19 | Added MCP Servers + Agent Modes categories (38→48 skills, 8→10 categories), MCP server pairings per skill, MCP Stack Curator with Build Your Own, stacks.json (8 stacks), mcp-registry.json (127 servers), audit fixes, AGENTS.md synergy matrix |
@@ -462,4 +476,4 @@ MIT
 
 Built with **ui-ux-pro-max-v7** + **gsap-animations** + **anthropic-frontend-design** + **frontend-design**
 
-Powered by **Universal Router v1.0** + **SKILL_01-04** agent system + **145 MCP servers** + **9 pre-built stacks** + **7-agent MASTER pipeline**
+Powered by **Universal Router v1.0** + **SKILL_01-04** agent system + **145 MCP servers** + **9 pre-built stacks** + **7-agent MASTER pipeline** // v12.0.0

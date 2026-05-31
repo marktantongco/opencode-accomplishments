@@ -1,6 +1,6 @@
 # AGENTS.md — Structural Connection Map
 
-**Bridges the 66 Skills Showcase ↔ 18 Agent System Files ↔ 145 MCP Servers ↔ Animation Pipeline ↔ Three.js Orchestrator ↔ ModelScope MCP ↔ MCP Stack Curator ↔ Theme Marketplace ↔ Stack Recommender**
+**Bridges the 76 Skills Showcase ↔ 18 Agent System Files ↔ 145 MCP Servers ↔ Animation Pipeline ↔ Three.js Orchestrator ↔ ModelScope MCP ↔ MCP Stack Curator ↔ Theme Marketplace ↔ Stack Recommender**
 
 ---
 
@@ -8,7 +8,7 @@
 
 This project operates on **three complementary layers**:
 
-1. **Skills Showcase** (`docs/index.html`) — A visual, interactive catalog of 66 platform skills across 11 categories, including the Animation Pipeline (orchestrator → motion-animator / gsap-animator → auditor), Three.js Orchestrator (gates all 3D work), Skill Architect (create/optimze SKILL.md files), ModelScope MCP Hub (2300+ free Chinese MCP servers), and Context7 Docs (always-current API documentation). Neo-brutalist design with GSAP animations, Web Components, JSON-LD, MCP pairings, dark mode, stats dashboard, Agent Modes spotlight, MCP Stack Curator, Theme Marketplace, and Your Stack Recommender. Serves as both a human-facing portfolio and a machine-readable API (`?format=json`, `?format=manifest`, `?theme=cyberpunk`).
+1. **Skills Showcase** (`docs/index.html`) — A visual, interactive catalog of 76 platform skills across 11 categories, including the Animation Pipeline (orchestrator → motion-animator / gsap-animator → auditor), Three.js Orchestrator (gates all 3D work), Skill Architect (create/optimze SKILL.md files), ModelScope MCP Hub (2300+ free Chinese MCP servers), and Context7 Docs (always-current API documentation). Premium modern design (Playfair Display + Inter typography, indigo/parchment palette, soft shadows) with GSAP animations, Web Components, JSON-LD, MCP pairings, dark mode, stats dashboard, Agents spotlight, MCP Stack Curator, Theme Marketplace, and Your Stack Recommender. Serves as both a human-facing portfolio and a machine-readable API (`?format=json`, `?format=manifest`, `?theme=cyberpunk`).
 
 2. **Agent System** (`agents/`) — A production-ready AI partner system built on a Universal Router + 4 context-loaded skills (SKILL_01 through SKILL_04), with 18 comprehensive documentation files covering deployment, operations, monitoring, optimization, and evolution.
 
@@ -145,7 +145,7 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 | mcp-security-scanner | SKILL_04 | filesystem, github | Security auditing + config review |
 | modelscope-mcp-hub | SKILL_04 | modelscope-image-gen, modelscope-model-discovery, context7 | 2300+ free Chinese MCP servers with hosted deployment |
 
-### Agent Modes Category → SKILL_04 (Agentic)
+### Agents Category → SKILL_04 (Agentic)
 
 | Showcase Skill | Agent Mode | MCP Servers | Why |
 |---------------|------------|-------------|-----|
@@ -156,6 +156,37 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 | agent-dolphin | SKILL_04 | memory, sequential-thinking, filesystem | Creative memory + reasoning + concept files |
 | agent-beaver | SKILL_04 | memory, sequential-thinking, filesystem | Architecture memory + build plans + system files |
 | agent-elephant | SKILL_04 | memory, sequential-thinking, filesystem | Knowledge graph + cross-domain links + synthesis |
+
+### Infrastructure Category → SKILL_04 (Agentic)
+
+| Showcase Skill | Agent Mode | MCP Servers | Why |
+|---------------|------------|-------------|-----|
+| 9router-gateway | SKILL_04 | filesystem, github, docker | AI routing gateway + version control + containerized deploys |
+| owl-proxy-defense | SKILL_04 | filesystem, github, docker | Protocol-first proxy defense + CI/CD enforcement |
+| antigravity-proxy | SKILL_04 | filesystem, github, docker | MITM proxy bridge + multi-account rotation |
+| 4cli-unified | SKILL_04 | filesystem, github, docker | Unified meta-CLI + 9Router tier routing |
+| triune-proxy-stack | SKILL_04 | filesystem, github, docker | Maximum redundancy proxy + auto-failover |
+| secret-vault | SKILL_04 | filesystem, github, docker | Unified credential vault + age encryption |
+
+### 7-Agent MASTER Pipeline → SKILL_04 (Agentic)
+
+| Showcase Skill | Agent Mode | MCP Servers | Why |
+|---------------|------------|-------------|-----|
+| agent-master | SKILL_04 | memory, sequential-thinking, filesystem | Orchestrates all 7 agents in sequence |
+| agent-decision | SKILL_04 | memory, sequential-thinking, filesystem | Routes tasks to the right specialist |
+| agent-simulator | SKILL_04 | memory, sequential-thinking, filesystem | Dry-runs implementations |
+| agent-auditor | SKILL_04 | memory, sequential-thinking, filesystem | Validates against standards |
+| agent-profiler | SKILL_04 | memory, sequential-thinking, filesystem | Finds ACTUAL bottlenecks |
+| agent-optimizer | SKILL_04 | memory, sequential-thinking, filesystem | Applies targeted fixes |
+| agent-maintenance | SKILL_04 | memory, sequential-thinking, filesystem | Monitors production |
+
+### Animation Engineering → SKILL_02 + SKILL_03
+
+| Showcase Skill | Agent Mode | MCP Servers | Why |
+|---------------|------------|-------------|-----|
+| animation-hybrid-architect | SKILL_02 | filesystem, fetch, google-drive | Meta-skill for Motion + GSAP boundaries |
+| gsap-animation-engineer | SKILL_02 | filesystem, fetch, google-drive | GSAP v3.13+ cinematic scroll/text/SVG |
+| motion-animation-engineer | SKILL_02 | filesystem, fetch, google-drive | Motion v12 declarative UI animation |
 
 ---
 
