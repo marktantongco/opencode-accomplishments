@@ -1,0 +1,74 @@
+{
+  "name": "AI Skills Showcase",
+  "short_name": "Skills",
+  "description": "Interactive showcase of 76 AI agent skills across 11 categories",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f0eb",
+  "theme_color": "#4338ca",
+  "orientation": "any",
+  "categories": ["productivity", "developer-tools"],
+  "icons": [
+    {
+      "src": "icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "og-skills-showcase.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "AI Skills Showcase — 76 Active Skills"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Search Skills",
+      "short_name": "Search",
+      "description": "Quickly search across all 76 AI skills",
+      "url": "/?action=search"
+    },
+    {
+      "name": "MCP Stacks",
+      "short_name": "MCP",
+      "description": "Browse curated MCP server stacks",
+      "url": "/?section=mcp-stacks"
+    },
+    {
+      "name": "Agent Spotlight",
+      "short_name": "Agents",
+      "description": "Explore agent personality modes",
+      "url": "/?section=agent-spotlight"
+    }
+  ]
+}

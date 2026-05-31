@@ -8,6 +8,12 @@
 <meta name="description" content="Interactive showcase of 76 AI agent skills across 11 categories — Animation Pipeline, Three.js Orchestrator, ModelScope MCP, Premium Modern Design with Dark Mode, Theme Marketplace, Stack Recommender. Double-click any card for preview.">
 <link rel="canonical" href="https://agentskills.io/showcase">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4338ca">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="AI Skills">
+<link rel="apple-touch-icon" href="icon-192.svg">
 
 <meta property="og:title" content="AI Skills Showcase — 76 Active Skills">
 <meta property="og:description" content="Interactive showcase of 76 AI agent skills across 11 categories. Animation Pipeline, Three.js Orchestrator, ModelScope MCP, premium modern design with dark mode, theme marketplace, and stack recommender. Preview any skill in modal.">
@@ -2844,12 +2850,12 @@ body.embed-mode .skills-section {
 <!-- ===== API NOTICE ===== -->
 <div class="api-notice" id="api-notice">
 <strong>ENDPOINTS:</strong> <code>?format=json</code> raw JSON &nbsp;|&nbsp; <code>?format=manifest</code> plugin.xml &nbsp;|&nbsp; <code>?skill=gsap-animations</code> auto-filter &nbsp;|&nbsp; <code>?category=Development</code> category filter &nbsp;|&nbsp; <code>?embed=true</code> iframe-ready &nbsp;|&nbsp; <code>?palette=FF2E63</code> live theme &nbsp;|&nbsp; <code>?theme=cyberpunk</code> named theme
-  <br><strong>VERSION:</strong> <code>v12.1.0</code> &nbsp;|&nbsp; <strong>UPDATED:</strong> <code>2026-05-31</code> &nbsp;|&nbsp; Dark Mode &nbsp;|&nbsp; Theme Marketplace &nbsp;|&nbsp; Stack Recommender &nbsp;|&nbsp; Infrastructure Stack &nbsp;|&nbsp; WCAG AA contrast &nbsp;|&nbsp; JSON-LD in <code>&lt;head&gt;</code> &nbsp;|&nbsp; 76 skills &nbsp;|&nbsp; 11 categories &nbsp;|&nbsp; Preview Modal &nbsp;|&nbsp; Skip Navigation &nbsp;|&nbsp; GitHub Pages ready
+  <br><strong>VERSION:</strong> <code>v13.0.0</code> &nbsp;|&nbsp; <strong>UPDATED:</strong> <code>2026-05-31</code> &nbsp;|&nbsp; PWA Installable &nbsp;|&nbsp; Offline Support &nbsp;|&nbsp; Dark Mode &nbsp;|&nbsp; Theme Marketplace &nbsp;|&nbsp; Stack Recommender &nbsp;|&nbsp; Infrastructure Stack &nbsp;|&nbsp; WCAG AA contrast &nbsp;|&nbsp; JSON-LD in <code>&lt;head&gt;</code> &nbsp;|&nbsp; 76 skills &nbsp;|&nbsp; 11 categories &nbsp;|&nbsp; Preview Modal &nbsp;|&nbsp; Skip Navigation &nbsp;|&nbsp; GitHub Pages + Vercel
 </div>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer" id="site-footer">
-  Built with <span class="brand-lime">ui-ux-pro-max-v7</span> + <span>gsap-animations</span> + <span>anthropic-frontend-design</span> + <span>frontend-design</span> // 76 skills // 11 categories // Dark Mode // Theme Marketplace // Stack Recommender // Infrastructure Stack // Preview Modal // v12.1.0
+  Built with <span class="brand-lime">ui-ux-pro-max-v7</span> + <span>gsap-animations</span> + <span>anthropic-frontend-design</span> + <span>frontend-design</span> // 76 skills // 11 categories // PWA // Dark Mode // Theme Marketplace // Stack Recommender // Infrastructure Stack // Preview Modal // v13.0.0
 </footer>
 
 <!-- Skill Preview Modal -->
@@ -4584,6 +4590,17 @@ function initInfraSection() {
   const grid = document.getElementById('skills-grid');
   if (grid) gridObserver.observe(grid, { childList: true });
 })();
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').then(reg => {
+      console.log('SW registered:', reg.scope);
+    }).catch(err => {
+      console.log('SW registration failed:', err);
+    });
+  });
+}
 </script>
 </body>
 </html>

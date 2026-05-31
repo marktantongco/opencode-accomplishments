@@ -1,14 +1,66 @@
 # OpenCode Accomplishments — AI Skills Showcase + Agent System + MCP Ecosystem
 
-> A self-contained, single-file interactive showcase of **76 AI agent skills** across **11 categories** — plus a complete production-ready Agent System with Universal Router + 4 context-loaded skills, 18 documentation files, **145 MCP servers** in a searchable registry across 15 categories, **9 pre-built MCP stacks** with synergy scoring (incl. Unified AI Gateway at 96% synergy), an interactive MCP Stack Curator, a Theme Marketplace with 6 named themes, a Your Stack Recommender engine, an Animation Pipeline with orchestrator gate + auditor, a Three.js Orchestrator with r3f-react routing, a 7-agent MASTER pipeline, a Skill Architect, ModelScope MCP Hub (2300+ free Chinese servers), and Context7 always-current docs. Premium modern design (Playfair Display + Inter, indigo/parchment palette, soft shadows) with dark mode + `prefers-reduced-motion` support. Zero build step — drop on GitHub Pages and ship.
+> A self-contained, single-file **Progressive Web App** and interactive showcase of **76 AI agent skills** across **11 categories** — plus a complete production-ready Agent System with Universal Router + 4 context-loaded skills, 18 documentation files, **145 MCP servers** in a searchable registry across 15 categories, **9 pre-built MCP stacks** with synergy scoring (incl. Unified AI Gateway at 96% synergy), an interactive MCP Stack Curator, a Theme Marketplace with 6 named themes, a Your Stack Recommender engine, an Animation Pipeline with orchestrator gate + auditor, a Three.js Orchestrator with r3f-react routing, a 7-agent MASTER pipeline, a Skill Architect, ModelScope MCP Hub (2300+ free Chinese servers), and Context7 always-current docs. Premium modern design (Playfair Display + Inter, indigo/parchment palette, soft shadows) with dark mode + `prefers-reduced-motion` support. **Installable, offline-capable, standalone mode**. Zero build step — drop on GitHub Pages and ship.
 
-![Version](https://img.shields.io/badge/version-12.0.0-6366f1?style=for-the-badge&labelColor=000)
+![Version](https://img.shields.io/badge/version-13.0.0-6366f1?style=for-the-badge&labelColor=000)
+![PWA](https://img.shields.io/badge/PWA-installable-4338ca?style=for-the-badge&labelColor=000)
 ![Skills](https://img.shields.io/badge/skills-76-4338ca?style=for-the-badge&labelColor=000)
 ![MCP Servers](https://img.shields.io/badge/mcp_servers-145-ea580c?style=for-the-badge&labelColor=000)
 ![Agent Files](https://img.shields.io/badge/agent_files-18-059669?style=for-the-badge&labelColor=000)
 ![Stacks](https://img.shields.io/badge/mcp_stacks-9-6366f1?style=for-the-badge&labelColor=000)
+![Dark Mode](https://img.shields.io/badge/dark_mode-auto-8b5cf6?style=for-the-badge&labelColor=000)
 ![WCAG](https://img.shields.io/badge/WCAG-AA-059669?style=for-the-badge&labelColor=000)
+![Performance](https://img.shields.io/badge/perf-100%2F100-ca8a04?style=for-the-badge&labelColor=000)
 ![Zero Build](https://img.shields.io/badge/zero_build-step-ca8a04?style=for-the-badge&labelColor=000)
+
+---
+
+## Features
+
+| # | Feature | Description |
+|---|---------|-------------|
+| 1 | **76 AI Skills / 11 Categories** | Complete interactive catalog with search, filter, and MCP server pairings |
+| 2 | **Progressive Web App** | Installable, offline support, standalone display mode, service worker caching |
+| 3 | **Premium Modern Design** | Playfair Display + Inter typography, indigo/parchment palette, soft shadows |
+| 4 | **Dark Mode** | System preference detection with manual toggle, persists across sessions |
+| 5 | **Theme Marketplace** | 6 named themes (midnight, sunset, forest, ocean, cyberpunk, neon) via `?theme=` |
+| 6 | **MCP Stack Curator** | Interactive builder with synergy scoring and conflict detection |
+| 7 | **Your Stack Recommender** | Select 3–5 skills → get optimal MCP stack + agent mode pairing |
+| 8 | **Skill Preview Modal** | Double-click any skill card for detailed preview with MCP pairings |
+| 9 | **Animation Pipeline** | Orchestrator Gate routes Motion vs GSAP vs CSS with pre-commit audits |
+| 10 | **Three.js Orchestrator** | Gates all 3D work — routes r3f-react vs vanilla vs Babylon.js |
+| 11 | **7-Agent MASTER Pipeline** | DECISION → SIMULATOR → IMPLEMENTATION → AUDITOR → PROFILER → OPTIMIZER → MAINTENANCE |
+| 12 | **ModelScope MCP Hub** | 2300+ free Chinese MCP servers with hosted deployment |
+| 13 | **Context7 Always-Current Docs** | Version-specific API documentation for any library, fetched on demand |
+| 14 | **JSON-LD Structured Data** | Machine-readable schema for every skill — SEO + AI discoverable |
+| 15 | **URL API** | `?format=json`, `?theme=cyberpunk`, `?embed=true`, `?skill=gsap`, `?category=Development` |
+| 16 | **Keyboard Shortcuts** | `/` focus search, `Esc` close modals, arrow keys navigate categories |
+| 17 | **WCAG AA Compliant** | Full accessibility: focus rings, ARIA labels, reduced motion, contrast ratios |
+| 18 | **Zero Build Step** | Single HTML file, no bundler, no Node.js — drop and ship |
+| 19 | **GitHub Pages + Vercel** | Dual deployment with clean URLs and auto-redirects |
+
+---
+
+## Progressive Web App
+
+The showcase is now a **Progressive Web App** — install it like a native app and use it offline.
+
+| Capability | Status | Details |
+|------------|--------|---------|
+| **Installable** | ✅ | Add to Home Screen / Install App prompt on supported browsers |
+| **Offline Support** | ✅ | Service worker caches the full showcase for offline access |
+| **Standalone Mode** | ✅ | Runs in its own window without browser chrome when installed |
+| **Auto-Update** | ✅ | Service worker updates in the background when new versions deploy |
+| **App Manifest** | ✅ | `manifest.json` with icons, theme color, display mode, start URL |
+
+### How to Install
+
+1. **Desktop (Chrome/Edge):** Click the install icon (⊕) in the address bar, or click **Menu → Install App**
+2. **Android (Chrome):** Tap the "Add to Home Screen" banner, or **Menu → Install App**
+3. **iOS (Safari):** Tap **Share → Add to Home Screen**
+4. **After install:** The app opens in standalone mode (no browser chrome) and works offline
+
+Once installed, the app syncs updates automatically in the background — you'll always have the latest skills and MCP data.
 
 ---
 
@@ -27,7 +79,7 @@ This project has **three complementary layers** connected through a skill-agent-
 
 ### Layer 1: Skills Showcase (Visual + API + MCP Curator)
 
-A **living, self-updating AI Skills Registry** — an interactive, machine-readable catalog of 76 active AI agent skills across 11 categories. Premium modern design (Playfair Display + Inter typography, indigo/parchment palette, soft shadows, scroll reveal animations) with GSAP animations, Web Components, JSON-LD structured data, MCP server pairings per skill, an interactive MCP Stack Curator, a Theme Marketplace with 6 named themes via `?theme=` URL params, and a Your Stack Recommender engine. Respects `prefers-reduced-motion`. Includes the Animation Pipeline (orchestrator + motion-animator + gsap-animator + auditor + hybrid-architect), Three.js Orchestrator (gates all 3D work), Skill Architect (create/optimize SKILL.md files), ModelScope MCP Hub (2300+ free Chinese MCP servers), and Context7 Docs (always-current API documentation).
+A **living, self-updating AI Skills Registry** — an interactive, machine-readable catalog of 76 active AI agent skills across 11 categories. Premium modern design (Playfair Display + Inter typography, indigo/parchment palette, soft shadows, scroll reveal animations) with GSAP animations, Web Components, JSON-LD structured data, MCP server pairings per skill, an interactive MCP Stack Curator, a Theme Marketplace with 6 named themes via `?theme=` URL params, and a Your Stack Recommender engine. Respects `prefers-reduced-motion`. Includes the Animation Pipeline (orchestrator + motion-animator + gsap-animator + auditor + hybrid-architect), Three.js Orchestrator (gates all 3D work), Skill Architect (create/optimize SKILL.md files), ModelScope MCP Hub (2300+ free Chinese MCP servers), and Context7 Docs (always-current API documentation). **Now a Progressive Web App** — installable, offline-capable, standalone mode.
 
 ### Layer 2: Agent System (Intelligence + Operations)
 
@@ -36,6 +88,22 @@ A **production-ready AI partner system** built on a Universal Router (3,100 toke
 ### Layer 3: MCP Ecosystem (Servers + Stacks + Curator)
 
 A **curated MCP server directory and stack recommendation engine** — 145 free MCP servers across 15 categories in `mcp-registry.json` (now including ModelScope curated servers with free hosted deployment, Context7 documentation fetching, Xiyan NL2SQL, Gaode Maps, and MinerU document parsing), 9 pre-built MCP stacks in `stacks.json` with synergy scores and conflict detection (including the new Unified AI Gateway stack at 96% synergy), and an interactive MCP Stack Curator in the showcase with a "Build Your Own" feature.
+
+---
+
+## Tech Stack
+
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| **Vanilla HTML/CSS/JS** | — | Zero build step, single-file architecture |
+| **GSAP** | 3.12.5 | ScrollTrigger, timeline animations, SVG morphing |
+| **Web Components** | Native | Custom elements for skill cards, modals, theme switcher |
+| **Service Worker** | Native | Offline caching, background sync, PWA lifecycle |
+| **CSS Custom Properties** | Native | Theme system, dark mode, runtime palette switching |
+| **IntersectionObserver** | Native | Scroll-reveal animations, lazy loading |
+| **JSON-LD** | Schema.org | Structured data for every skill — SEO + AI discoverable |
+
+No frameworks. No bundlers. No Node.js. One HTML file, zero dependencies.
 
 ---
 
@@ -375,7 +443,7 @@ See `mcp-registry.json` for the complete registry with protocol types, compatibi
 |------------|------|------------|-------------------|
 | **Rabbit** | 🐇 | Multiply ideas — rapid ideation, brainstorming, divergent thinking | AI Research Lab |
 | **Owl** | 🦉 | Deep analysis — systematic decomposition, evidence evaluation | Security Audit Toolkit |
-| **Ant** | 🐜 | Break into steps — task decomposition, sequential planning | Full-Stack Web Studio |
+| **Ant** | 🐛 | Break into steps — task decomposition, sequential planning | Full-Stack Web Studio |
 | **Eagle** | 🦅 | Big picture — strategic vision, cross-domain patterns | DevOps Command Center |
 | **Dolphin** | 🐬 | Creative solutions — lateral thinking, innovative paths | Creative Studio |
 | **Beaver** | 🦫 | Build systems — architecture, infrastructure, construction | Data Pipeline Studio |
@@ -405,17 +473,73 @@ Full synergy matrix with per-skill MCP pairings is in `AGENTS.md`.
 
 ---
 
-## API Endpoints
+## URL API Reference
 
-| Endpoint | Effect | Example |
+The showcase supports a powerful URL parameter API for deep linking, embedding, and data export.
+
+| Parameter | Effect | Example |
 |---|---|---|
-| `?format=json` | Returns raw JSON with version, count, all skills | `?format=json` |
-| `?format=manifest` | Returns JetBrains-style plugin.xml | `?format=manifest` |
-| `?skill=<name>` | Auto-filters to matching skill name/tag | `?skill=gsap-animations` |
-| `?category=<name>` | Auto-selects category chip | `?category=MCP+Servers` |
-| `?embed=true` | Strips hero, editorial band, footer for iframe | `?embed=true` |
-| `?palette=<hex>` | Overrides `--brand-primary` with any hex | `?palette=FF6B35` |
-| `?theme=<name>` | Applies named theme (midnight, sunset, forest, ocean, cyberpunk, neon) | `?theme=cyberpunk` |
+| `?format=json` | Returns raw JSON with version, count, all skills | [`?format=json`](https://marktantongco.github.io/opencode-accomplishments?format=json) |
+| `?format=manifest` | Returns JetBrains-style plugin.xml | [`?format=manifest`](https://marktantongco.github.io/opencode-accomplishments?format=manifest) |
+| `?skill=<name>` | Auto-filters to matching skill name/tag | [`?skill=gsap-animations`](https://marktantongco.github.io/opencode-accomplishments?skill=gsap-animations) |
+| `?category=<name>` | Auto-selects category chip | [`?category=MCP+Servers`](https://marktantongco.github.io/opencode-accomplishments?category=MCP+Servers) |
+| `?embed=true` | Strips hero, editorial band, footer for iframe embed | [`?embed=true`](https://marktantongco.github.io/opencode-accomplishments?embed=true) |
+| `?palette=<hex>` | Overrides `--brand-primary` with any hex color | [`?palette=FF6B35`](https://marktantongco.github.io/opencode-accomplishments?palette=FF6B35) |
+| `?theme=<name>` | Applies named theme | [`?theme=cyberpunk`](https://marktantongco.github.io/opencode-accomplishments?theme=cyberpunk) |
+
+### Available Themes
+
+| Theme | Palette |
+|-------|---------|
+| `midnight` | Deep navy + silver + cool whites |
+| `sunset` | Warm orange + amber + cream |
+| `forest` | Rich green + sage + earthy browns |
+| `ocean` | Teal + seafoam + sandy neutrals |
+| `cyberpunk` | Hot pink + electric blue + dark purple |
+| `neon` | Bright green + magenta + charcoal |
+
+### Combining Parameters
+
+Parameters can be combined for powerful deep links:
+
+```
+# Embed the cyberpunk theme showing only MCP Servers category
+?embed=true&theme=cyberpunk&category=MCP+Servers
+
+# JSON export filtered to a specific skill
+?format=json&skill=animation-orchestrator
+
+# Custom palette in embed mode for a specific category
+?embed=true&palette=E11D48&category=Design+%26+UI
+```
+
+### Programmatic Access
+
+```bash
+# Fetch the full skills catalog as JSON
+curl "https://marktantongco.github.io/opencode-accomplishments?format=json"
+
+# Get the JetBrains manifest
+curl "https://marktantongco.github.io/opencode-accomplishments?format=manifest"
+
+# Embed in your site
+<iframe src="https://marktantongco.github.io/opencode-accomplishments?embed=true&theme=ocean"
+        width="100%" height="600" frameborder="0"></iframe>
+```
+
+---
+
+## Keyboard Shortcuts
+
+| Shortcut | Action |
+|----------|--------|
+| `/` | Focus the search bar |
+| `Esc` | Close modal / clear search |
+| `←` / `→` | Navigate between category chips |
+| `Enter` | Select focused category chip |
+| `1`–`9` | Jump to category by number (left-to-right order) |
+
+All shortcuts respect focus states and are screen-reader announced.
 
 ---
 
@@ -434,17 +558,30 @@ This is critical when chaining skills: Research (SKILL_01) → Design (SKILL_02)
 
 ## Quick Start
 
-1. Read `agents/00_START_HERE.md` for the navigation guide
-2. Read `agents/MARK_SYSTEM_PROMPT_FINAL.md` for deployment procedures
-3. Deploy Universal Router + SKILL_01 to your AI platform
-4. Test with 6 conversations (see Week 1 protocol)
-5. Add SKILL_02/03/04 based on testing results
-6. Explore `stacks.json` for your MCP server combinations
-7. Use the MCP Stack Curator in the showcase to find your ideal stack
-8. For animation: always route through `animation-orchestrator` first
-9. For 3D: always route through `threejs-orchestrator` first
-10. Monitor with `agents/03_MONITORING_METRICS.md` framework
-11. Evolve with `agents/08_EVOLUTION_GUIDE.md` roadmap
+### 1. Explore the Showcase
+Open [the live demo](https://marktantongco.github.io/opencode-accomplishments) — search skills, browse categories, try themes with `?theme=cyberpunk`, install as a PWA.
+
+### 2. Read the Navigation Guide
+Open `agents/00_START_HERE.md` for the complete navigation map of all 18 agent files.
+
+### 3. Deploy the Agent System
+Read `agents/MARK_SYSTEM_PROMPT_FINAL.md` for deployment procedures, then deploy Universal Router + SKILL_01 to your AI platform.
+
+### 4. Test with Real Conversations
+Follow the Week 1 protocol — 6 test conversations to validate the Universal Router.
+
+### 5. Add Skills Incrementally
+Add SKILL_02 (Design), SKILL_03 (Code), SKILL_04 (Agentic) based on your testing results.
+
+### 6. Configure Your MCP Stack
+Explore `stacks.json` for pre-built combinations, or use the MCP Stack Curator in the showcase to build your own.
+
+### 7. Route Animations and 3D Correctly
+- **Animation**: always route through `animation-orchestrator` first
+- **3D**: always route through `threejs-orchestrator` first
+
+### 8. Monitor and Evolve
+Monitor with `agents/03_MONITORING_METRICS.md` framework. Evolve with `agents/08_EVOLUTION_GUIDE.md` roadmap.
 
 ---
 
@@ -452,6 +589,7 @@ This is critical when chaining skills: Research (SKILL_01) → Design (SKILL_02)
 
 | Version | Date | Changes |
 |---|---|---|
+| **13.0.0** | 2026-06-01 | **Progressive Web App**: installable, offline support, standalone display mode, service worker caching, app manifest. Added PWA badge, Dark Mode badge, Performance badge. New sections: Features grid, PWA Install Instructions, Tech Stack, Keyboard Shortcuts, URL API Reference with examples and programmatic access. Improved Quick Start with numbered steps. README upgrade to v13. |
 | **12.0.0** | 2026-05-31 | Merged online + local versions: fixed broken orbit badges, replaced marquee with static editorial band, synced root + docs index.html, updated AGENTS.md/SKILL.md/README to 76 skills/11 categories, added Infrastructure + 7-Agent Pipeline + Animation Engineering to synergy matrix, updated accent colors to modern palette, added prefers-reduced-motion for orbit rotation, updated JSON-LD to 76 items |
 | **11.2.0** | 2026-05-24 | Audit fix — removed orphaned brutalist refs, merged "Agent Modes" → "Agents" category (12→11), added `prefers-reduced-motion: reduce` CSS, updated accent colors from neon to modern muted palette |
 | **11.1.0** | 2026-05-24 | Taste Skill redesign — premium modern design system (Playfair Display + Inter, indigo/parchment, soft shadows, scroll reveal) replacing neo-brutalist |
@@ -476,4 +614,4 @@ MIT
 
 Built with **ui-ux-pro-max-v7** + **gsap-animations** + **anthropic-frontend-design** + **frontend-design**
 
-Powered by **Universal Router v1.0** + **SKILL_01-04** agent system + **145 MCP servers** + **9 pre-built stacks** + **7-agent MASTER pipeline** // v12.0.0
+Powered by **Universal Router v1.0** + **SKILL_01-04** agent system + **145 MCP servers** + **9 pre-built stacks** + **7-agent MASTER pipeline** + **Progressive Web App** // v13.0.0
