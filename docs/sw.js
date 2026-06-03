@@ -1,6 +1,6 @@
 // Service Worker for AI Skills Showcase
 // Cache version — bump on deploy to invalidate old caches
-const CACHE_NAME = 'skills-showcase-v13';
+const CACHE_NAME = 'skills-showcase-v17';
 
 // Precache: core app shell
 const PRECACHE_URLS = [

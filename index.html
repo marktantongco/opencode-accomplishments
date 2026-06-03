@@ -332,7 +332,7 @@ input:focus-visible {
   background: rgba(0,0,0,0.5);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  z-index: 9000;
+  z-index: 10001;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2032,7 +2032,8 @@ body.embed-mode .mcp-curator-section,
 body.embed-mode .agent-spotlight,
 body.embed-mode .stats-dashboard,
 body.embed-mode .stack-recommender,
-body.embed-mode .featured-theme-banner {
+body.embed-mode .featured-theme-banner,
+body.embed-mode .infra-section {
   display: none !important;
 }
 
@@ -2621,7 +2622,7 @@ body.embed-mode .skills-section {
   </div>
 
   <div class="hero-orbit" id="hero-orbit" aria-hidden="true">
-    <div class="orbit-badge" id="orbit-1">&#9670; 76 SKILLS</div>
+    <div class="orbit-badge" id="orbit-1">&#9670; 81 SKILLS</div>
     <div class="orbit-badge" id="orbit-2">&#9733; 11 CATEGORIES</div>
     <div class="orbit-badge" id="orbit-3">&#9830; MCP + AGENTS</div>
   </div>
@@ -2661,7 +2662,7 @@ body.embed-mode .skills-section {
 <!-- ===== EDITORIAL BAND — static announcement ===== -->
 <div class="editorial-band" aria-hidden="true">
   <span class="editorial-band-text">
-    76 Skills <span class="sep">◆</span> 11 Categories <span class="sep">◆</span> Animation Pipeline <span class="sep">◆</span> Three.js Orchestrator <span class="sep">◆</span> ModelScope MCP <span class="sep">◆</span> 7-Agent Pipeline <span class="sep">◆</span> 145 MCP Servers <span class="sep">◆</span> Dark Mode <span class="sep">◆</span> Theme Marketplace <span class="sep">◆</span> Stack Recommender
+    81 Skills <span class="sep">◆</span> 11 Categories <span class="sep">◆</span> Animation Pipeline <span class="sep">◆</span> Three.js Orchestrator <span class="sep">◆</span> ModelScope MCP <span class="sep">◆</span> 7-Agent Pipeline <span class="sep">◆</span> 145 MCP Servers <span class="sep">◆</span> Dark Mode <span class="sep">◆</span> Theme Marketplace <span class="sep">◆</span> Stack Recommender
   </span>
 </div>
 
@@ -2718,7 +2719,7 @@ body.embed-mode .skills-section {
 <!-- ===== SKILLS GRID ===== -->
 <main class="skills-section" id="skills-section">
   <div class="section-heading" id="section-heading">
-    <h2><span class="skill-count" id="skill-count" aria-live="polite">76</span> ACTIVE SKILLS</h2>
+    <h2><span class="skill-count" id="skill-count" aria-live="polite">81</span> ACTIVE SKILLS</h2>
     <p>11 categories // design // development // reasoning // content // strategy // system // data // creative // mcp // agents // infrastructure<br><em style="font-size:0.8rem;opacity:0.7">Click to expand · Double-click for full preview</em></p>
   </div>
   <div class="skills-grid" id="skills-grid" role="list" aria-label="Skills grid">
@@ -3042,7 +3043,7 @@ function generatePluginXml(skills) {
   xml += '<!-- Version: ' + SKILLS_VERSION + ' | Updated: ' + SKILLS_LAST_UPDATED + ' -->\n';
   xml += '<plugin id="io.agentskills.showcase" version="' + SKILLS_VERSION + '">\n';
   xml += '  <name>AI Agent Skills Collection</name>\n';
-  xml += '  <description>76 active AI agent skills across 11 categories for automated workflows</description>\n';
+  xml += '  <description>81 active AI agent skills across 11 categories for automated workflows</description>\n';
   xml += '  <vendor>AgentSkills</vendor>\n';
   xml += '  <version>' + SKILLS_VERSION + '</version>\n';
   xml += '  <lastUpdated>' + SKILLS_LAST_UPDATED + '</lastUpdated>\n';
@@ -3157,6 +3158,9 @@ function applyEmbedMode() {
     const apiNotice = document.getElementById('api-notice');
     if (footer) footer.style.display = 'none';
     if (apiNotice) apiNotice.style.display = 'none';
+    // Hide infrastructure section in embed mode
+    const infraSection = document.getElementById('infra-section');
+    if (infraSection) infraSection.style.display = 'none';
   }
 }
 
@@ -3538,7 +3542,7 @@ function initTheme() {
 // ===== STATS DASHBOARD ANIMATION =====
 function initStatsDashboard() {
   const targets = [
-    { id: 'stat-skills', value: 76 },
+    { id: 'stat-skills', value: 81 },
     { id: 'stat-categories', value: 11 },
     { id: 'stat-mcp', value: 145 },
     { id: 'stat-agents', value: 7 }
