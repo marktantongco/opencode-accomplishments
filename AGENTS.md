@@ -1,6 +1,6 @@
 # AGENTS.md — Structural Connection Map
 
-**Bridges the 76 Skills Showcase ↔ 18 Agent System Files ↔ 145 MCP Servers ↔ Animation Pipeline ↔ Three.js Orchestrator ↔ ModelScope MCP ↔ MCP Stack Curator ↔ Theme Marketplace ↔ Stack Recommender**
+**Bridges the 81 Skills Showcase ↔ 18 Agent System Files ↔ 145 MCP Servers ↔ Animation Pipeline ↔ Three.js Orchestrator ↔ ModelScope MCP ↔ MCP Stack Curator ↔ Theme Marketplace ↔ Stack Recommender**
 
 ---
 
@@ -8,7 +8,7 @@
 
 This project operates on **three complementary layers**:
 
-1. **Skills Showcase** (`docs/index.html`) — A visual, interactive catalog of 76 platform skills across 11 categories, including the Animation Pipeline (orchestrator → motion-animator / gsap-animator → auditor), Three.js Orchestrator (gates all 3D work), Skill Architect (create/optimze SKILL.md files), ModelScope MCP Hub (2300+ free Chinese MCP servers), and Context7 Docs (always-current API documentation). Premium modern design (Playfair Display + Inter typography, indigo/parchment palette, soft shadows) with GSAP animations, Web Components, JSON-LD, MCP pairings, dark mode, stats dashboard, Agents spotlight, MCP Stack Curator, Theme Marketplace, and Your Stack Recommender. Serves as both a human-facing portfolio and a machine-readable API (`?format=json`, `?format=manifest`, `?theme=cyberpunk`).
+1. **Skills Showcase** (`docs/index.html`) — A visual, interactive catalog of 81 platform skills across 11 categories, including the Animation Pipeline (orchestrator → motion-animator / gsap-animator → auditor), Three.js Orchestrator (gates all 3D work), Skill Architect (create/optimize SKILL.md files), ModelScope MCP Hub (2300+ free Chinese MCP servers), Context7 Docs (always-current API documentation), and 5 new Infrastructure skills (opencode-owl-install-proxy, openhuman-owl-install-proxy, combined-proxy-billing, openrelay-go, api-gateway-skill). Premium modern design (Playfair Display + Inter typography, indigo/parchment palette, soft shadows) with GSAP animations, Web Components, JSON-LD, MCP pairings, dark mode, stats dashboard, Agents spotlight, MCP Stack Curator, Theme Marketplace, and Your Stack Recommender. Serves as both a human-facing portfolio and a machine-readable API (`?format=json`, `?format=manifest`, `?theme=cyberpunk`).
 
 2. **Agent System** (`agents/`) — A production-ready AI partner system built on a Universal Router + 4 context-loaded skills (SKILL_01 through SKILL_04), with 18 comprehensive documentation files covering deployment, operations, monitoring, optimization, and evolution.
 
@@ -167,6 +167,11 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 | 4cli-unified | SKILL_04 | filesystem, github, docker | Unified meta-CLI + 9Router tier routing |
 | triune-proxy-stack | SKILL_04 | filesystem, github, docker | Maximum redundancy proxy + auto-failover |
 | secret-vault | SKILL_04 | filesystem, github, docker | Unified credential vault + age encryption |
+| opencode-owl-install-proxy | SKILL_04 | filesystem, github, docker | OpenCode-optimized Owl proxy installer + tier routing + anti-bot |
+| openhuman-owl-install-proxy | SKILL_04 | filesystem, github, docker | OpenHuman-optimized Owl proxy + privacy-first + consent-gated |
+| combined-proxy-billing | SKILL_04 | filesystem, github, docker | Unified billing for multi-proxy stacks + budget alerts |
+| openrelay-go | SKILL_04 | filesystem, github, docker | Go-based high-performance relay + connection pooling |
+| api-gateway-skill | SKILL_04 | filesystem, github, docker | API gateway orchestration + rate limiting + auth |
 
 ### 7-Agent MASTER Pipeline → SKILL_04 (Agentic)
 
@@ -196,7 +201,7 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 
 | Stack | Emoji | Synergy | Servers | Paired Skills |
 |-------|-------|---------|---------|---------------|
-| Full-Stack Web Studio | 🌐 | 94 | filesystem, github, vercel, postgres | fullstack-dev, frontend-design, deployment-manager, mcp-builder |
+| Full-Stack Web Studio | 🌐 | 94 | filesystem, github, vercel, postgres | frontend-design, deployment-manager, mcp-builder, api-gateway-skill |
 | AI Research Lab | 🧪 | 91 | brave-search, fetch, memory, sqlite | deep-research, chain-of-thought, web-reader, context-compressor |
 | Content Engine | ✍️ | 87 | filesystem, brave-search, google-drive, slack | seo-geo, humanizer, social-media-manager, docx |
 | DevOps Command Center | 🏗️ | 92 | github, docker, kubernetes, slack | deployment-manager, audit-analyzer, feedback-loop, skill-vetter |
