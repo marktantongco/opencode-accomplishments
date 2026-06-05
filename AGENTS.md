@@ -1,6 +1,6 @@
 # AGENTS.md — Structural Connection Map
 
-**Bridges the 81 Skills Showcase ↔ 18 Agent System Files ↔ 145 MCP Servers ↔ Animation Pipeline ↔ Three.js Orchestrator ↔ ModelScope MCP ↔ MCP Stack Curator ↔ Theme Marketplace ↔ Stack Recommender**
+**Bridges the 87 Skills Showcase ↔ 18 Agent System Files ↔ 145 MCP Servers ↔ Animation Pipeline ↔ Three.js Orchestrator ↔ ModelScope MCP ↔ MCP Stack Curator ↔ Theme Marketplace ↔ Stack Recommender ↔ Design Optimization Tree ↔ Supanova Suite by uxjoseph**
 
 ---
 
@@ -8,7 +8,7 @@
 
 This project operates on **three complementary layers**:
 
-1. **Skills Showcase** (`docs/index.html`) — A visual, interactive catalog of 81 platform skills across 11 categories, including the Animation Pipeline (orchestrator → motion-animator / gsap-animator → auditor), Three.js Orchestrator (gates all 3D work), Skill Architect (create/optimize SKILL.md files), ModelScope MCP Hub (2300+ free Chinese MCP servers), Context7 Docs (always-current API documentation), and 5 new Infrastructure skills (opencode-owl-install-proxy, openhuman-owl-install-proxy, combined-proxy-billing, openrelay-go, api-gateway-skill). Premium modern design (Playfair Display + Inter typography, indigo/parchment palette, soft shadows) with GSAP animations, Web Components, JSON-LD, MCP pairings, dark mode, stats dashboard, Agents spotlight, MCP Stack Curator, Theme Marketplace, and Your Stack Recommender. Serves as both a human-facing portfolio and a machine-readable API (`?format=json`, `?format=manifest`, `?theme=cyberpunk`).
+1. **Skills Showcase** (`docs/index.html`) — A search-first interactive catalog of 87 platform skills across 11 categories, including the Design Optimization Tree (design-nested meta-skill orchestrating 19+ design skills across 4 tiers), Supanova Suite by uxjoseph (premium Korean-agency aesthetic generation from skills.sh/uxjoseph — 461 installs, 322 ★), Animation Pipeline (orchestrator → motion-animator / gsap-animator → auditor), Three.js Orchestrator (gates all 3D work), Skill Architect (create/optimize SKILL.md files), ModelScope MCP Hub (2300+ free Chinese MCP servers), Context7 Docs (always-current API documentation), and 11 Infrastructure skills. Search-oriented layout with hero search bar, search hints, and collapsible Design Optimization Tree visualization. Premium modern design (Playfair Display + Inter typography, indigo/parchment palette, soft shadows) with GSAP animations, Web Components, JSON-LD, MCP pairings, dark mode, stats dashboard, Agents spotlight, MCP Stack Curator, Theme Marketplace, and Your Stack Recommender. Serves as both a human-facing portfolio and a machine-readable API (`?format=json`, `?format=manifest`, `?theme=cyberpunk`).
 
 2. **Agent System** (`agents/`) — A production-ready AI partner system built on a Universal Router + 4 context-loaded skills (SKILL_01 through SKILL_04), with 18 comprehensive documentation files covering deployment, operations, monitoring, optimization, and evolution.
 
@@ -51,6 +51,12 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 
 | Showcase Skill | Agent Mode | MCP Servers | Why |
 |---------------|------------|-------------|-----|
+| design-nested | SKILL_02 | filesystem, fetch, google-drive | Meta-design orchestration — routes ALL design work through optimization tree |
+| supanova-premium-aesthetic | SKILL_02 | filesystem, fetch, google-drive | Premium $150k+ Korean-agency landing pages with Variance Mandate |
+| supanova-design-engine | SKILL_02 | filesystem, fetch, google-drive | Tunable aesthetic engine — DESIGN_VARIANCE:8, MOTION_INTENSITY:6 |
+| supanova-redesign-engine | SKILL_02 | filesystem, fetch, google-drive | Scan → Diagnose → Fix redesign workflow |
+| supanova-full-output | SKILL_02 | filesystem, fetch, google-drive | Zero-placeholder production output enforcement |
+| landing-page-generator | SKILL_02 | filesystem, fetch, google-drive | High-conversion product/service landing pages |
 | ui-ux-pro-max-v7 | SKILL_02 | filesystem, fetch, google-drive | Design files + asset sourcing + brand kits |
 | anthropic-frontend-design | SKILL_02 | filesystem, fetch, google-drive | AI interface design + reference retrieval |
 | gsap-animations | SKILL_02 | filesystem, fetch, google-drive | Animation code + CDN references |

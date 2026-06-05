@@ -1,7 +1,7 @@
 {
   "name": "AI Skills Showcase",
   "short_name": "Skills",
-  "description": "Interactive showcase of 81 AI agent skills across 11 categories",
+  "description": "Search-first showcase of 87 AI agent skills across 11 categories with Design Optimization Tree and Supanova Suite",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f5f0eb",
@@ -48,14 +48,14 @@
       "sizes": "1200x630",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "AI Skills Showcase — 81 Active Skills"
+      "label": "AI Skills Showcase — 87 Active Skills"
     }
   ],
   "shortcuts": [
     {
       "name": "Search Skills",
       "short_name": "Search",
-      "description": "Quickly search across all 81 AI skills",
+      "description": "Quickly search across all 87 AI skills",
       "url": "/?action=search"
     },
     {
