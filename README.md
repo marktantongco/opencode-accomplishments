@@ -1,16 +1,16 @@
 # OpenCode Accomplishments — AI Skills Showcase + Agent System + MCP Ecosystem
 
-> A self-contained, single-file **Progressive Web App** and interactive showcase of **76 AI agent skills** across **11 categories** — plus a complete production-ready Agent System with Universal Router + 4 context-loaded skills, 18 documentation files, **145 MCP servers** in a searchable registry across 15 categories, **9 pre-built MCP stacks** with synergy scoring (incl. Unified AI Gateway at 96% synergy), an interactive MCP Stack Curator, a Theme Marketplace with 6 named themes, a Your Stack Recommender engine, an Animation Pipeline with orchestrator gate + auditor, a Three.js Orchestrator with r3f-react routing, a 7-agent MASTER pipeline, a Skill Architect, ModelScope MCP Hub (2300+ free Chinese servers), and Context7 always-current docs. Premium modern design (Playfair Display + Inter, indigo/parchment palette, soft shadows) with dark mode + `prefers-reduced-motion` support. **Installable, offline-capable, standalone mode**. Zero build step — drop on GitHub Pages and ship.
+> A self-contained, single-file **Progressive Web App** and interactive showcase of **81 AI agent skills** across **11 categories** — plus a complete production-ready Agent System with Universal Router + 4 context-loaded skills, 18 documentation files, **145 MCP servers** in a searchable registry across 15 categories, **9 pre-built MCP stacks** with synergy scoring (incl. Unified AI Gateway at 96% synergy), an interactive MCP Stack Curator, a Theme Marketplace with 6 named themes, a Your Stack Recommender engine, an Animation Pipeline with orchestrator gate + auditor, a Three.js Orchestrator with r3f-react routing, a 7-agent MASTER pipeline, a Skill Architect, ModelScope MCP Hub (2300+ free Chinese servers), Context7 always-current docs, 5 Infrastructure skills (OpenCode/OpenHuman Owl proxy installers, Combined Proxy Billing, OpenRelay Go, API Gateway), and WCAG 2.1 Focus Order compliance. Premium modern design (Playfair Display + Inter, indigo/parchment palette, soft shadows) with dark mode + `prefers-reduced-motion` support. **Installable, offline-capable, standalone mode**. Zero build step — drop on GitHub Pages and ship.
 
-![Version](https://img.shields.io/badge/version-13.0.0-6366f1?style=for-the-badge&labelColor=000)
+![Version](https://img.shields.io/badge/version-17.0.0-6366f1?style=for-the-badge&labelColor=000)
 ![PWA](https://img.shields.io/badge/PWA-installable-4338ca?style=for-the-badge&labelColor=000)
-![Skills](https://img.shields.io/badge/skills-76-4338ca?style=for-the-badge&labelColor=000)
+![Skills](https://img.shields.io/badge/skills-81-4338ca?style=for-the-badge&labelColor=000)
 ![MCP Servers](https://img.shields.io/badge/mcp_servers-145-ea580c?style=for-the-badge&labelColor=000)
 ![Agent Files](https://img.shields.io/badge/agent_files-18-059669?style=for-the-badge&labelColor=000)
 ![Stacks](https://img.shields.io/badge/mcp_stacks-9-6366f1?style=for-the-badge&labelColor=000)
 ![Dark Mode](https://img.shields.io/badge/dark_mode-auto-8b5cf6?style=for-the-badge&labelColor=000)
-![WCAG](https://img.shields.io/badge/WCAG-AA-059669?style=for-the-badge&labelColor=000)
-![Performance](https://img.shields.io/badge/perf-100%2F100-ca8a04?style=for-the-badge&labelColor=000)
+![WCAG](https://img.shields.io/badge/WCAG-2.1_Focus_Order-059669?style=for-the-badge&labelColor=000)
+![JSON-LD](https://img.shields.io/badge/jsonld-synced-4338ca?style=for-the-badge&labelColor=000)
 ![Zero Build](https://img.shields.io/badge/zero_build-step-ca8a04?style=for-the-badge&labelColor=000)
 
 ---
@@ -19,7 +19,7 @@
 
 | # | Feature | Description |
 |---|---------|-------------|
-| 1 | **76 AI Skills / 11 Categories** | Complete interactive catalog with search, filter, and MCP server pairings |
+| 1 | **81 AI Skills / 11 Categories** | Complete interactive catalog with search, filter, and MCP server pairings |
 | 2 | **Progressive Web App** | Installable, offline support, standalone display mode, service worker caching |
 | 3 | **Premium Modern Design** | Playfair Display + Inter typography, indigo/parchment palette, soft shadows |
 | 4 | **Dark Mode** | System preference detection with manual toggle, persists across sessions |
@@ -35,7 +35,7 @@
 | 14 | **JSON-LD Structured Data** | Machine-readable schema for every skill — SEO + AI discoverable |
 | 15 | **URL API** | `?format=json`, `?theme=cyberpunk`, `?embed=true`, `?skill=gsap`, `?category=Development` |
 | 16 | **Keyboard Shortcuts** | `/` focus search, `Esc` close modals, arrow keys navigate categories |
-| 17 | **WCAG AA Compliant** | Full accessibility: focus rings, ARIA labels, reduced motion, contrast ratios |
+| 17 | **WCAG 2.1 Compliant** | Focus trap in modal, ARIA values on progress bar, role=status on stats, screen-reader labels on infra tiers |
 | 18 | **Zero Build Step** | Single HTML file, no bundler, no Node.js — drop and ship |
 | 19 | **GitHub Pages + Vercel** | Dual deployment with clean URLs and auto-redirects |
 
@@ -79,7 +79,7 @@ This project has **three complementary layers** connected through a skill-agent-
 
 ### Layer 1: Skills Showcase (Visual + API + MCP Curator)
 
-A **living, self-updating AI Skills Registry** — an interactive, machine-readable catalog of 76 active AI agent skills across 11 categories. Premium modern design (Playfair Display + Inter typography, indigo/parchment palette, soft shadows, scroll reveal animations) with GSAP animations, Web Components, JSON-LD structured data, MCP server pairings per skill, an interactive MCP Stack Curator, a Theme Marketplace with 6 named themes via `?theme=` URL params, and a Your Stack Recommender engine. Respects `prefers-reduced-motion`. Includes the Animation Pipeline (orchestrator + motion-animator + gsap-animator + auditor + hybrid-architect), Three.js Orchestrator (gates all 3D work), Skill Architect (create/optimize SKILL.md files), ModelScope MCP Hub (2300+ free Chinese MCP servers), and Context7 Docs (always-current API documentation). **Now a Progressive Web App** — installable, offline-capable, standalone mode.
+A **living, self-updating AI Skills Registry** — an interactive, machine-readable catalog of 81 active AI agent skills across 11 categories. Premium modern design (Playfair Display + Inter typography, indigo/parchment palette, soft shadows, scroll reveal animations) with GSAP animations, Web Components, JSON-LD structured data (fully synced with JS data — same order, same descriptions), MCP server pairings per skill, an interactive MCP Stack Curator, a Theme Marketplace with 6 named themes via `?theme=` URL params, and a Your Stack Recommender engine. Respects `prefers-reduced-motion`. Includes the Animation Pipeline (orchestrator + motion-animator + gsap-animator + auditor + hybrid-architect), Three.js Orchestrator (gates all 3D work), Skill Architect (create/optimize SKILL.md files), ModelScope MCP Hub (2300+ free Chinese MCP servers), Context7 Docs (always-current API documentation), and 5 new Infrastructure skills (opencode-owl-install-proxy, openhuman-owl-install-proxy, combined-proxy-billing, openrelay-go, api-gateway-skill). **Now a Progressive Web App** — installable, offline-capable, standalone mode. **WCAG 2.1 compliant** — modal focus trap, ARIA progress values, screen-reader stats, infra tier status labels.
 
 ### Layer 2: Agent System (Intelligence + Operations)
 
@@ -159,7 +159,7 @@ opencode-accomplishments/
 
 ---
 
-## Skills by Category (76 skills / 11 categories)
+## Skills by Category (81 skills / 11 categories)
 
 ### Design & UI (9 skills) — accent: `#4338ca`
 | Skill | Description | MCP Servers |
@@ -261,7 +261,7 @@ opencode-accomplishments/
 | `agent-beaver` | 🦫 | Build systems — architecture, infrastructure, construction | memory, sequential-thinking, filesystem |
 | `agent-elephant` | 🐘 | Cross-field connections — knowledge synthesis, interdisciplinary | memory, sequential-thinking, filesystem |
 
-### Animation Engineering + 7-Agent Pipeline + Infrastructure (16 skills) — **NEW in v11.0.0+**
+### Animation Engineering + 7-Agent Pipeline + Infrastructure (21 skills) — **NEW in v11.0.0+**
 | Skill | Description | MCP Servers |
 |---|---|---|
 | `agent-master` | Orchestrates the 7-agent pipeline — DECISION → SIMULATOR → IMPLEMENTATION → AUDITOR → PROFILER → OPTIMIZER → MAINTENANCE | memory, sequential-thinking, filesystem |
@@ -280,6 +280,11 @@ opencode-accomplishments/
 | `4cli-unified` | Unified meta-CLI wrapper for OpenCode + Claude Code + Codex + Gemini CLI | filesystem, github, docker |
 | `triune-proxy-stack` | Maximum redundancy proxy architecture with auto-failover | filesystem, github, docker |
 | `secret-vault` | Unified credential vault with age encryption | filesystem, github, docker |
+| `opencode-owl-install-proxy` | OpenCode-optimized Owl proxy installer — tier routing, anti-bot, credential vaulting | filesystem, github, docker |
+| `openhuman-owl-install-proxy` | OpenHuman-optimized Owl proxy — privacy-first, consent-gated, audit trails | filesystem, github, docker |
+| `combined-proxy-billing` | Unified billing for multi-proxy stacks — budget alerts, cost optimization | filesystem, github, docker |
+| `openrelay-go` | Go-based high-performance relay — connection pooling, load balancing, auto-discovery | filesystem, github, docker |
+| `api-gateway-skill` | API gateway orchestration — rate limiting, auth, observability for microservices | filesystem, github, docker |
 
 ---
 
@@ -589,6 +594,8 @@ Monitor with `agents/03_MONITORING_METRICS.md` framework. Evolve with `agents/08
 
 | Version | Date | Changes |
 |---|---|---|
+| **17.0.0** | 2026-06-05 | **Comprehensive Audit + 5 New Infrastructure Skills**: Added opencode-owl-install-proxy, openhuman-owl-install-proxy, combined-proxy-billing, openrelay-go, api-gateway-skill (76→81 skills). Full audit of 19 sections × 42 functions × 30 features. Fixed modal focus trap (WCAG 2.1 Focus Order), synced JSON-LD with JS data (23 position fixes + 26 description updates), added ARIA values on progress bar + stats + infra tiers, fixed MCP stack reference. Updated AGENTS.md and README to 81 skills. |
+| **16.0.0** | 2026-06-03 | **DeepResearch v5 + Skills.sh Comparative Matrix**: Integrated 5 DeepResearch findings, created Skills_Comparative_Matrix.xlsx (4 sheets × 12 analytical dimensions × 28 skills), wrote 5 new SKILL.md files following agentskills.io standard. |
 | **13.0.0** | 2026-06-01 | **Progressive Web App**: installable, offline support, standalone display mode, service worker caching, app manifest. Added PWA badge, Dark Mode badge, Performance badge. New sections: Features grid, PWA Install Instructions, Tech Stack, Keyboard Shortcuts, URL API Reference with examples and programmatic access. Improved Quick Start with numbered steps. README upgrade to v13. |
 | **12.0.0** | 2026-05-31 | Merged online + local versions: fixed broken orbit badges, replaced marquee with static editorial band, synced root + docs index.html, updated AGENTS.md/SKILL.md/README to 76 skills/11 categories, added Infrastructure + 7-Agent Pipeline + Animation Engineering to synergy matrix, updated accent colors to modern palette, added prefers-reduced-motion for orbit rotation, updated JSON-LD to 76 items |
 | **11.2.0** | 2026-05-24 | Audit fix — removed orphaned brutalist refs, merged "Agent Modes" → "Agents" category (12→11), added `prefers-reduced-motion: reduce` CSS, updated accent colors from neon to modern muted palette |
@@ -614,4 +621,4 @@ MIT
 
 Built with **ui-ux-pro-max-v7** + **gsap-animations** + **anthropic-frontend-design** + **frontend-design**
 
-Powered by **Universal Router v1.0** + **SKILL_01-04** agent system + **145 MCP servers** + **9 pre-built stacks** + **7-agent MASTER pipeline** + **Progressive Web App** // v13.0.0
+Powered by **Universal Router v1.0** + **SKILL_01-04** agent system + **145 MCP servers** + **9 pre-built stacks** + **7-agent MASTER pipeline** + **5 Infrastructure skills** + **Progressive Web App** + **WCAG 2.1 Focus Order** // v17.0.0
