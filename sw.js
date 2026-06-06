@@ -1,6 +1,6 @@
-// Service Worker for AI Skills Showcase
+// Service Worker for opencode OS — AI Agent Skills
 // Cache version — bump on deploy to invalidate old caches
-const CACHE_NAME = 'skills-showcase-v17';
+const CACHE_NAME = 'opencode-os-v20';
 
 // Precache: core app shell
 const PRECACHE_URLS = [
