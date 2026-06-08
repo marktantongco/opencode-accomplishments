@@ -9,8 +9,57 @@
    Dark cyber aesthetic, glassmorphism, 5-zone accent colors
    =================================================================== */
 
+/* ── Light Mode (default) ── */
 :root {
-  /* Dark Mode Base Colors */
+  /* Base Colors */
+  --background: #F5F5F0;
+  --foreground: #1A1A1A;
+  --card: rgba(255, 255, 255, 0.8);
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+  --primary: #08F7FE;
+  --primary-foreground: #1A1A1A;
+  --secondary: #E8E8E0;
+  --secondary-foreground: #1A1A1A;
+  --muted: #E8E8E0;
+  --muted-foreground: #6B6B80;
+  --accent: #08F7FE;
+  --accent-foreground: #1A1A1A;
+  --destructive: #FF2E63;
+  --border: rgba(0, 0, 0, 0.08);
+  --input: rgba(0, 0, 0, 0.1);
+  --ring: #08F7FE;
+  --radius: 0.75rem;
+
+  /* Light mode glassmorphism */
+  --glass-1: rgba(255, 255, 255, 0.7);
+  --glass-2: rgba(255, 255, 255, 0.8);
+  --glass-3: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-border-hover: rgba(0, 0, 0, 0.15);
+  --glass-blur-sm: 8px;
+  --glass-blur-md: 16px;
+  --glass-blur-lg: 24px;
+
+  /* Light mode utility colors */
+  --overlay: rgba(0, 0, 0, 0.4);
+  --hover-light: rgba(0, 0, 0, 0.05);
+  --selected-light: rgba(0, 0, 0, 0.08);
+  --kbd-border: rgba(0, 0, 0, 0.1);
+  --nav-indicator: rgba(0, 0, 0, 0.06);
+
+  /* Light mode shadows */
+  --shadow-glow-cyan: 0 0 20px rgba(8, 247, 254, 0.12);
+  --shadow-glow-lime: 0 0 20px rgba(191, 255, 0, 0.12);
+  --shadow-glow-magenta: 0 0 20px rgba(255, 46, 99, 0.12);
+  --shadow-glow-violet: 0 0 20px rgba(199, 125, 255, 0.12);
+  --shadow-glow-orange: 0 0 20px rgba(255, 107, 53, 0.12);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Dark Mode ── */
+.dark {
   --background: #0A0A0F;
   --foreground: #F0F0F5;
   --card: rgba(18, 18, 26, 0.6);
@@ -29,16 +78,7 @@
   --border: rgba(255, 255, 255, 0.06);
   --input: rgba(255, 255, 255, 0.1);
   --ring: #08F7FE;
-  --radius: 0.75rem;
 
-  /* Zone accent colors */
-  --zone-home: #08F7FE;
-  --zone-build: #BFFF00;
-  --zone-discover: #FF2E63;
-  --zone-playbook: #C77DFF;
-  --zone-activate: #FF6B35;
-
-  /* Glassmorphism tokens */
   --glass-1: rgba(18, 18, 26, 0.6);
   --glass-2: rgba(18, 18, 26, 0.7);
   --glass-3: rgba(18, 18, 26, 0.85);
@@ -48,13 +88,28 @@
   --glass-blur-md: 16px;
   --glass-blur-lg: 24px;
 
-  /* Shadows */
+  --overlay: rgba(0, 0, 0, 0.6);
+  --hover-light: rgba(255, 255, 255, 0.05);
+  --selected-light: rgba(255, 255, 255, 0.1);
+  --kbd-border: rgba(255, 255, 255, 0.1);
+  --nav-indicator: rgba(255, 255, 255, 0.05);
+
   --shadow-glow-cyan: 0 0 20px rgba(8, 247, 254, 0.15);
   --shadow-glow-lime: 0 0 20px rgba(191, 255, 0, 0.15);
   --shadow-glow-magenta: 0 0 20px rgba(255, 46, 99, 0.15);
   --shadow-glow-violet: 0 0 20px rgba(199, 125, 255, 0.15);
   --shadow-glow-orange: 0 0 20px rgba(255, 107, 53, 0.15);
   --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Shared Across Themes ── */
+:root, .dark {
+  /* Zone accent colors */
+  --zone-home: #08F7FE;
+  --zone-build: #BFFF00;
+  --zone-discover: #FF2E63;
+  --zone-playbook: #C77DFF;
+  --zone-activate: #FF6B35;
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -170,11 +225,11 @@
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(128, 128, 128, 0.3);
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(128, 128, 128, 0.5);
   }
 }
 
@@ -195,7 +250,7 @@
 }
 
 .shimmer {
-  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(128,128,128,0.08) 50%, transparent 100%);
   background-size: 200% 100%;
   animation: shimmer 2s infinite;
 }

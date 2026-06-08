@@ -134,7 +134,7 @@ export function CommandPalette() {
         >
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-[var(--overlay)] backdrop-blur-sm"
             onClick={() => setOpen(false)}
           />
 
@@ -157,7 +157,7 @@ export function CommandPalette() {
                 onChange={(e) => setQuery(e.target.value)}
                 className="flex-1 bg-transparent text-sm text-foreground placeholder:text-muted-foreground outline-none"
               />
-              <kbd className="hidden sm:inline-flex items-center gap-1 px-1.5 py-0.5 text-xs text-muted-foreground bg-white/5 rounded border border-white/10">
+              <kbd className="hidden sm:inline-flex items-center gap-1 px-1.5 py-0.5 text-xs text-muted-foreground bg-[var(--hover-light)] rounded border border-[var(--kbd-border)]">
                 <Command className="h-3 w-3" />
                 K
               </kbd>
@@ -177,8 +177,8 @@ export function CommandPalette() {
                   className={cn(
                     'w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-colors',
                     i === selectedIndex
-                      ? 'bg-white/10 text-foreground'
-                      : 'text-muted-foreground hover:bg-white/5 hover:text-foreground'
+                      ? 'bg-[var(--selected-light)] text-foreground'
+                      : 'text-muted-foreground hover:bg-[var(--hover-light)] hover:text-foreground'
                   )}
                 >
                   <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground shrink-0 w-12">

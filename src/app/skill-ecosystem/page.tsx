@@ -66,7 +66,7 @@ export default function SkillEcosystemPage() {
                 placeholder="Search skills..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full h-10 pl-10 pr-10 rounded-lg bg-white/5 border border-[var(--glass-border)] text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-[var(--zone-discover)] focus:ring-1 focus:ring-[var(--zone-discover)]"
+                className="w-full h-10 pl-10 pr-10 rounded-lg bg-[var(--hover-light)] border border-[var(--glass-border)] text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-[var(--zone-discover)] focus:ring-1 focus:ring-[var(--zone-discover)]"
               />
               {searchQuery && (
                 <button
@@ -86,7 +86,7 @@ export default function SkillEcosystemPage() {
                   className={`px-3 py-1.5 text-xs font-medium rounded-full border transition-all ${
                     activeCategory === cat
                       ? 'bg-[var(--zone-discover)]/15 text-[var(--zone-discover)] border-[var(--zone-discover)]/30'
-                      : 'bg-transparent text-muted-foreground border-[var(--glass-border)] hover:border-white/20'
+                      : 'bg-transparent text-muted-foreground border-[var(--glass-border)] hover:border-[var(--glass-border-hover)]'
                   }`}
                 >
                   {cat} {cat !== "All" && `(${skills.filter(s => s.category === cat).length})`}

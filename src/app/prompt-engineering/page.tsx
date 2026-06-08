@@ -94,7 +94,7 @@ export default function BuildZonePage() {
                       <div>
                         <h3 className="text-sm font-semibold text-foreground">{skill.name}</h3>
                         <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{skill.description}</p>
-                        <span className="inline-block mt-2 text-xs px-1.5 py-0.5 rounded bg-white/5 text-muted-foreground">
+                        <span className="inline-block mt-2 text-xs px-1.5 py-0.5 rounded bg-[var(--hover-light)] text-muted-foreground">
                           {cat.name}
                         </span>
                       </div>

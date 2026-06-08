@@ -45,13 +45,13 @@ export function Navbar() {
                     'relative px-3 py-2 text-sm font-medium rounded-lg transition-colors',
                     isActive
                       ? 'text-foreground'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-white/5'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-[var(--hover-light)]'
                   )}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="nav-indicator"
-                      className="absolute inset-0 rounded-lg bg-white/5"
+                      className="absolute inset-0 rounded-lg bg-[var(--nav-indicator)]"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
