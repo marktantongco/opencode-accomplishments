@@ -1,248 +1,210 @@
-# Skills Library — Audit & Status Report
+# OpenCode Accomplishments — Skills Ecosystem
 
-> Generated: 2026-05-05
-> Location: `/workspace/skills/`
-> Status: **All 34 skills spec-compliant**
+> **Kinetic Autopoiesis Design System** — A self-generating, self-maintaining AI agent skill ecosystem.
 
 ---
 
-## Executive Summary
+## Overview
 
-A full audit was conducted across the skills library and system prompt files. 14 issues were found and fixed across 5 phases:
+This directory contains **48 AI agent skills** across **10 categories**, forming the complete skill ecosystem of the OpenCode Accomplishments platform. Each skill provides specialized instructions and workflows for AI agents.
 
-| Phase | Issues Found | Issues Fixed | Status |
-|-------|-------------|--------------|--------|
-| Phase 1 — Critical | 6 | 6 | ✅ |
-| Phase 2 — Warnings | 10 | 10 | ✅ |
-| Phase 3 — Broken References | 8 | 8 | ✅ |
-| Phase 4 — MECE Violations | 10 | 10 | ✅ |
-| Phase 5 — AGENTS.md Sync | 3 | 3 | ✅ |
-| **Total** | **37** | **37** | **✅ Complete** |
-
----
-
-## Current State
+### Quick Stats
 
 | Metric | Value |
 |--------|-------|
-| Valid skills with SKILL.md | 34 |
-| Skills with YAML frontmatter | 34 (100%) |
-| Skills with valid `name` field | 34 (100%) |
-| Skills with `description` field | 34 (100%) |
-| Broken file references | 0 |
-| MECE violations | 0 |
-| Empty/duplicate directories removed | 9 |
+| Total Skills | 48 |
+| Categories | 10 |
+| Agent Modes | 7 |
+| Pre-built MCP Stacks | 8 |
+| Design Philosophy | Kinetic Autopoiesis |
+| Framework | Next.js 16.1.3 |
 
 ---
 
-## Skill Inventory
+## Skill Categories
 
-### Multi-Agent System (1 skill)
+### Design & UI (5 skills)
+Skills for visual design, UI generation, and animation:
+- `ui-ux-pro-max-v7` — AI-powered design intelligence (60 styles, 48 palettes)
+- `anthropic-frontend-design` — Bold aesthetic principles for AI-native interfaces
+- `gsap-animations` — Production-grade GSAP animation patterns
+- `frontend-design` — shadcn/ui + Tailwind + React component generation
+- `vercel-web-design-guidelines` — Accessibility-first UX rules and performance budgets
 
-| Skill | Description | Lines |
-|-------|-------------|-------|
-| `agent-roles` | Unified multi-agent role system (Builder, Coder, Council, Orchestrator, Plan, Researcher, Reviewer, Scribe) | ~60 |
+### Reasoning (4 skills)
+Skills for structured thinking and analysis:
+- `chain-of-thought` — Step-by-step reasoning framework
+- `socratic-method` — Strategic questioning to uncover assumptions
+- `devils-advocate` — Argue against premises to strengthen arguments
+- `simulation-sandbox` — Test scenarios in safe simulated environments
 
-> **Note:** Consolidated from 8 near-identical `agent-*` skills. Saves ~140 lines of duplicate content.
+### Development (7 skills)
+Skills for building, deploying, and automating:
+- `mcp-builder` — Build MCP servers with TypeScript + Python
+- `superpowers` — Spec-first development with TDD and sub-agent delegation
+- `deployment-manager` — Deploy across GitHub Pages, Vercel, Netlify
+- `browser-use` — Headful browser automation
+- `web-artifacts-builder` — Single-file HTML artifacts
+- `vercel-react-best-practices` — Production-grade React architecture
+- `explained-code` — Beginner-friendly code explanation
 
-### Reasoning & Cognitive Augmentation (6 skills)
+### Content (4 skills)
+Skills for content creation and social media:
+- `seo-content-writer` — SEO-optimized content with GEO optimization
+- `humanizer` — Anti-AI-detection rewriting
+- `social-media-manager` — Multi-platform post generation
+- `social-content-pillars` — Monthly content calendars
 
-| Skill | Description | Lines |
-|-------|-------------|-------|
-| `chain-of-thought` | Step-by-step reasoning framework for complex problems | ~140 |
-| `socratic-method` | Strategic questioning to uncover assumptions | ~140 |
-| `simulation-sandbox` | Test scenarios in safe simulated environments | ~180 |
-| `output-formatter` | Strict formatting rules for all output types | ~160 |
-| `context-compressor` | Compress long contexts preserving critical info | ~210 |
-| `devils-advocate` | Argue against user's premise to strengthen arguments | ~240 |
+### Strategy (4 skills)
+Skills for product research and strategy:
+- `jtbd-research` — Jobs to be Done research methodology
+- `gumroad-pipeline` — Lead magnet to product launch workflow
+- `feature-research` — Research before implementing features
+- `skill-finder` — Skill discovery and evaluation
 
-### Development & DevOps (5 skills)
+### System (6 skills)
+Skills for system configuration and agent management:
+- `persistent-memory` — Structured memory system for agent continuity
+- `system-prompt-sync` — Auto-sync AGENTS.md across repos
+- `feedback-loop` — Iterative improvement cycles
+- `context-compressor` — Compress long contexts preserving key info
+- `agent-roles` — Multi-agent role system
+- `sample-hello-skill` — Hello-world demo for testing
 
-| Skill | Description | Lines |
-|-------|-------------|-------|
-| `mcp-builder` | Build MCP servers (TypeScript + Python) | ~90 |
-| `web-artifacts-builder` | Single-file HTML artifacts with React + Tailwind | ~90 |
-| `deployment-manager` | Deploy, monitor, update across platforms | ~100 |
-| `superpowers` | Spec-first development with TDD and sub-agents | ~120 |
-| `browser-use` | Headful browser automation with natural language | ~80 |
+### Data & Web (5 skills)
+Skills for web research and data analysis:
+- `web-reader` — Web page extraction and crawling
+- `audit-analyzer` — Performance and accessibility audits
+- `web-design-guidelines` — Design consistency audit checklist
+- `code-research` — Open-source repository research
+- `explore` — Codebase exploration with AI
 
-### Design & UI/UX (5 skills)
+### Creative (2 skills)
+- `photography-ai` — Professional visual engineering framework
+- `output-formatter` — Strict formatting for all output types
 
-| Skill | Description | Lines |
-|-------|-------------|-------|
-| `ui-ux-pro-max-v7` | AI design intelligence (60 styles, 48 palettes, 36 fonts) | ~2860 |
-| `anthropic-frontend-design` | Bold aesthetics for AI-native interfaces, trust-forward design | ~1050 |
-| `frontend-design` | shadcn/ui + Tailwind + React component generation | ~100 |
-| `web-design-guidelines` | Quick self-audit checklist for design consistency | ~22 |
-| `vercel-web-design-guidelines` | Comprehensive accessibility-first UX rules and performance budgets | ~1045 |
+### MCP Servers (4 skills)
+MCP protocol server skills:
+- `pictoflux-ai` — Free unlimited AI image generation
+- `mcp-stack-curator` — Intelligent MCP server stack builder
+- `mcp-registry` — Curated directory of 78 free MCP servers
+- `mcp-security-scanner` — Security-first MCP installation vetting
 
-### Creative & Visual (2 skills)
-
-| Skill | Description | Lines |
-|-------|-------------|-------|
-| `photography-ai` | Professional visual engineering framework with batch processing | ~116 |
-| `gsap-animations` | Production-grade GSAP animation patterns (24 patterns) | ~1330 |
-
-### Content & Marketing (4 skills)
-
-| Skill | Description | Lines |
-|-------|-------------|-------|
-| `seo-content-writer` | SEO-optimized content creation with GEO optimization | ~900 |
-| `social-content-pillars` | Monthly content calendar for multi-brand social media | ~85 |
-| `social-media-manager` | Platform-appropriate post generation for 30 days | ~120 |
-| `humanizer` | Strip AI writing patterns for human-like copy | ~80 |
-
-### Data & Web (3 skills)
-
-| Skill | Description | Lines |
-|-------|-------------|-------|
-| `web-reader` | Web page extraction with site crawling and spidering | ~1650 |
-| `audit-analyzer` | Detect and prioritize audit issues (performance, accessibility) | ~72 |
-| `skill-finder` | Skill discovery, evaluation, and installation meta-skill | ~230 |
-
-### Strategy & Research (2 skills)
-
-| Skill | Description | Lines |
-|-------|-------------|-------|
-| `jtbd-research` | 8-step Jobs to be Done product research methodology | ~250 |
-| `gumroad-pipeline` | Lead magnet → funnel → product launch workflow | ~100 |
-
-### Meta & System (5 skills)
-
-| Skill | Description | Lines |
-|-------|-------------|-------|
-| `system-prompt-sync` | Auto-sync AGENTS.md across all git repos on version tags | ~28 |
-| `persistent-memory` | Structured memory system for agent context continuity | ~33 |
-| `feedback-loop` | Iterative improvement cycles from metrics to research | ~53 |
-| `sample-hello-skill` | Hello-world demo skill for testing skill activation | ~12 |
-| `explained-code` | Beginner-friendly code explanation with analogies | ~200 |
+### Agent Modes (7 skills)
+Cognitive thinking frameworks:
+- `rabbit-multiply-ideas`, `owl-deep-analysis`, `ant-break-into-steps`
+- `eagle-big-picture`, `dolphin-creative-solutions`, `beaver-build-systems`, `elephant-cross-field`
 
 ---
 
-## Audit Fixes Applied
+## 7 Agent Modes — Cognitive Framework
 
-### Phase 1 — Critical Fixes
-
-| # | Issue | Fix |
-|---|-------|-----|
-| 1 | `archive/`, `design-operating-system/`, `templates/` — no SKILL.md at directory level | Kept as archive/template content (contain non-standard files, not broken skills) |
-| 2 | `sample-hello-skill` — no YAML frontmatter (`---` delimiters) | Added `---` frontmatter with `name` and `description` |
-| 3 | `system-prompt-sync` — no YAML frontmatter | Added `---` frontmatter with `name` and `description` |
-| 4 | `audit-analyzer` — no YAML frontmatter | Added `---` frontmatter with `name` and `description` |
-| 5 | `feedback-loop` — no YAML frontmatter | Added `---` frontmatter with `name` and `description` |
-| 6 | `persistent-memory` — `name: Persistent Memory Manager` (invalid per spec) | Changed to `name: persistent-memory-manager` |
-
-### Phase 2 — Warning Fixes
-
-| # | Issue | Fix |
-|---|-------|-----|
-| 7 | 8 `agent-*` skills — `name` had uppercase + spaces (e.g. `Agent Builder`) | Normalized to lowercase-hyphenated (e.g. `agent-builder`) |
-| 8 | `gsap-animations` — no YAML frontmatter | Added frontmatter |
-| 9 | `anthropic-frontend-design` — no YAML frontmatter | Added frontmatter |
-| 10 | `photography-ai` — no YAML frontmatter | Added frontmatter |
-| 11 | `ui-ux-pro-max-v7` — no YAML frontmatter | Added frontmatter |
-| 12 | `vercel-react-best-practices` — no YAML frontmatter | Added frontmatter |
-| 13 | `vercel-web-design-guidelines` — no YAML frontmatter | Added frontmatter |
-| 14 | `ui-ux-pro-max-v5` — `name: UI/UX Pro Max v5.0` (invalid) | Changed to `name: ui-ux-pro-max-v5` |
-
-### Phase 3 — Broken Reference Fixes
-
-| # | Issue | Fix |
-|---|-------|-----|
-| 15 | 8 `agent-*` skills referenced `artifacts/agents-abilities.md` (broken relative path) | Changed to `../../artifacts/agents-abilities.md` |
-| 16 | `skill-finder` absolute paths in instructions | Intentional — these are operational instructions, not file references |
-
-### Phase 4 — MECE Consolidation
-
-| # | Issue | Fix |
-|---|-------|-----|
-| 17 | 8 near-identical `agent-*` skills (144 lines total, 98% duplicate) | Consolidated into single `agent-roles` skill (~60 lines) |
-| 18 | `ui-ux-pro-max-v5` and `ui-ux-pro-max-v7` — duplicate with different versions | Deleted v5 (v7 is active with 2860 lines vs 2691) |
-| 19 | `web-design-guidelines` (21 lines) and `vercel-web-design-guidelines` (1045 lines) | Complementary — kept both, added cross-reference in lightweight one |
-
-### Phase 5 — AGENTS.md Standardization
-
-| # | Issue | Fix |
-|---|-------|-----|
-| 20 | 4 different versions of system prompt across workspace | Unified to library version with Agent Skills spec references |
-| 21 | `AGENTS.md` used `###` headings instead of `##` | Changed to `##` for consistency with library |
-| 22 | Numbered steps used circled unicode (`①②③④`) | Changed to standard `1. 2. 3. 4.` |
-| 23 | Missing SKILL FORMAT section with Agent Skills spec | Added full SKILL.md format specification |
-| 24 | Missing DEPLOYMENT TRACKING section | Added GitHub/GitHub Pages/Vercel table |
-| 25 | Missing Anthropic Academy + agentskills.io references | Added to SKILL LIBRARY section |
-| 26 | Missing `skill-creator`, `skill-finder`, `skill-assessor`, `cron` in ENVIRONMENT MAP | Added 4 rows |
+| Mode | Emoji | Thinking Style | Best For |
+|------|-------|----------------|----------|
+| Rabbit | 🐇 | Multiply Ideas | Brainstorming variations |
+| Owl | 🦉 | Deep Analysis | Multi-perspective analysis |
+| Ant | 🐜 | Break Into Steps | Decomposing complex goals |
+| Eagle | 🦅 | Big Picture Strategy | Long-term thinking |
+| Dolphin | 🐬 | Creative Solutions | Breaking patterns |
+| Beaver | 🦫 | Build Systems | Practical process design |
+| Elephant | 🐘 | Cross-Field Connections | Interdisciplinary insights |
 
 ---
 
-## System Prompt File Status
+## Architecture
 
-| File | Lines | Status |
-|------|-------|--------|
-| `/workspace/AGENTS.md` | ~290 | ✅ Primary — current version |
-| `/workspace/docs/system-prompt.md` | ~290 | ✅ Mirror — synced |
-| `/workspace/ai-skill-dashboard/AGENTS.md` | ~290 | ✅ Mirror — synced |
-| `/workspace/AGENTS.md.bak` | ~274 | ⚠️ Backup — contains older version |
+The site is built with a **Kinetic Autopoiesis** design philosophy — a 4-layer spatial depth model with glassmorphic UI:
 
----
+- **Layer 1 (Atmosphere)** — Ambient particles, gradients
+- **Layer 2 (Foundation)** — Glass panels, navigation, cards
+- **Layer 3 (Interactive)** — Buttons, inputs, hover states
+- **Layer 4 (Overlay)** — Command palette, modals, tooltips
 
-## Agent Skills Spec Compliance
+### Tech Stack
 
-All 34 skills now comply with the [Agent Skills specification](https://agentskills.io/specification):
+| Component | Technology |
+|-----------|-----------|
+| Framework | Next.js 16.1.3 (Turbopack) |
+| Styling | Tailwind CSS 4 |
+| Animation | Framer Motion v12 |
+| State | Zustand (persist middleware) |
+| UI Components | shadcn/ui (base-nova) |
+| Icons | Lucide React |
+| Deployment | GitHub Pages + Vercel |
 
-- ✅ YAML frontmatter with `---` delimiters
-- ✅ `name` field: lowercase alphanumeric + hyphens, 1-64 chars, matches directory name
-- ✅ `description` field: 1-1024 chars, describes what it does AND when to use it
-- ✅ SKILL.md body with Context, Instructions, Constraints, Examples sections
-- ✅ No broken file references
-- ✅ Under 500 lines for most skills (large skills with embedded data: photography-ai, gsap-animations, ui-ux-pro-max-v7, vercel-react-best-practices, vercel-web-design-guidelines, web-reader, seo-content-writer)
+### Design Tokens
 
----
-
-## Files Changed
-
-| File | Change Type |
-|------|-------------|
-| `AGENTS.md` | Full rewrite |
-| `docs/system-prompt.md` | Full rewrite (copy) |
-| `ai-skill-dashboard/AGENTS.md` | Full rewrite (copy) |
-| `.opencode/opencode.json` | Updated in prior session (already correct) |
-| `skills/agent-roles/SKILL.md` | Created (consolidation) |
-| `skills/sample-hello-skill/SKILL.md` | Added frontmatter |
-| `skills/system-prompt-sync/SKILL.md` | Added frontmatter |
-| `skills/audit-analyzer/SKILL.md` | Added frontmatter |
-| `skills/feedback-loop/SKILL.md` | Added frontmatter |
-| `skills/persistent-memory/SKILL.md` | Fixed name field |
-| `skills/gsap-animations/SKILL.md` | Added frontmatter |
-| `skills/anthropic-frontend-design/SKILL.md` | Added frontmatter |
-| `skills/photography-ai/SKILL.md` | Added frontmatter |
-| `skills/ui-ux-pro-max-v7/SKILL.md` | Added frontmatter |
-| `skills/vercel-react-best-practices/SKILL.md` | Added frontmatter |
-| `skills/vercel-web-design-guidelines/SKILL.md` | Added frontmatter |
-| `skills/web-design-guidelines/SKILL.md` | Added frontmatter |
-| `skills/agent-*/SKILL.md` (8 files) | Fixed name fields, then deleted (consolidated) |
-| `skills/ui-ux-pro-max-v5/` | Deleted (outdated duplicate) |
+- **5 Zone Colors**: Cyan (#08F7FE), Lime (#BFFF00), Magenta (#FF2E63), Violet (#C77DFF), Orange (#FF6B35)
+- **Typography**: Plus Jakarta Sans (body), Outfit (display), JetBrains Mono (code)
+- **Glassmorphism**: 3 levels of glass with backdrop-filter blur
+- **Dark Theme**: Deep space black-blue (#0A0A0F) backdrop
 
 ---
 
-## Remaining Items (Not Fixed)
+## Development
 
-| Item | Reason |
-|------|--------|
-| `archive/SKILL-v5.0.md` | Archived content, not a skill — filename intentional |
-| `archive/MASTER-INDEX.md` | Archive index — not a skill |
-| `archive/validate-skills.sh` | Utility script for archive — not a skill |
-| `templates/api-wrapper-skill/SKILL.md` | Template for new skills — not an installed skill |
-| `templates/data-transform-skill/SKILL.md` | Template for new skills — not an installed skill |
-| `*.zip` files | Compressed archives — not skills |
-| `check-all-skills.sh`, `startup-check.sh` | Utility scripts — not skills |
-| `dashboard.html`, `GLOBAL_ACCESS.md`, `README.md` | Root-level files — not skills |
+### Prerequisites
+
+- Node.js 22+
+- npm 10+
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Static export (GitHub Pages)
+GITHUB_ACTIONS=true npx next build
+```
+
+### Build Output
+
+```
+Route (app)
+├ ○ /
+├ ○ /accomplishments
+├ ○ /agent-modes
+├ ○ /prompt-engineering
+└ ○ /skill-ecosystem
+```
 
 ---
 
-## Recommendations
+## Deployment
 
-1. **Add `constraints` and `examples` sections** to `audit-analyzer`, `feedback-loop`, and `web-reader` if time permits
-2. **Move large embedded data** from skills over 500 lines to `references/` files per Agent Skills spec (gsap-animations, ui-ux-pro-max-v7, vercel-react-best-practices, vercel-web-design-guidelines, web-reader, seo-content-writer)
-3. **Run `skills-ref validate`** (from agentskills.io) on all skills for automated validation
-4. **Add `license` and `compatibility` fields** to frontmatter for skills that will be shared externally
-5. **Consider installing trending skills**: `ai-video-generation`, `just-scrape`, `improve-codebase-architecture`, `tdd`
+### GitHub Pages
+Push to `main` branch. GitHub Actions builds and deploys automatically.
+
+### Vercel
+```bash
+npx vercel --prod
+```
+
+---
+
+## License
+
+MIT
+
+---
+
+## Version History
+
+| Version | Date | Changes |
+|---------|------|---------|
+| v7.0.0 | 2026-06-09 | Complete redesign: Next.js 16, Tailwind CSS 4, Framer Motion, glassmorphic design system, command palette, 5-zone architecture |
+| v6.0.0 | 2026-05-26 | Interactive accomplishments page, data-driven skills, GSAP animations |
+| v5.0.0 | 2026-05-19 | Added 7 Agent Modes, 41 to 48 skills |
+| v4.0.0 | 2026-05-19 | Added MCP Servers, stacks.json, mcp-registry.json |
+| v3.0.0 | 2026-05-06 | Neo-brutalist redesign, Web Components, JSON-LD |
+
+---
+
+*Built with Kinetic Autopoiesis — 48 skills, 7 agent modes, 8 MCP stacks*

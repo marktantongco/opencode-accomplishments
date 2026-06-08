@@ -1,0 +1,213 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ===================================================================
+   OPENCODE ACCOMPLISHMENTS — KINETIC AUTOPOIESIS DESIGN SYSTEM
+   Dark cyber aesthetic, glassmorphism, 5-zone accent colors
+   =================================================================== */
+
+:root {
+  /* Dark Mode Base Colors */
+  --background: #0A0A0F;
+  --foreground: #F0F0F5;
+  --card: rgba(18, 18, 26, 0.6);
+  --card-foreground: #F0F0F5;
+  --popover: #12121A;
+  --popover-foreground: #F0F0F5;
+  --primary: #08F7FE;
+  --primary-foreground: #0A0A0F;
+  --secondary: #1A1A2E;
+  --secondary-foreground: #F0F0F5;
+  --muted: #1A1A2E;
+  --muted-foreground: #8B8BA0;
+  --accent: #08F7FE;
+  --accent-foreground: #0A0A0F;
+  --destructive: #FF2E63;
+  --border: rgba(255, 255, 255, 0.06);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #08F7FE;
+  --radius: 0.75rem;
+
+  /* Zone accent colors */
+  --zone-home: #08F7FE;
+  --zone-build: #BFFF00;
+  --zone-discover: #FF2E63;
+  --zone-playbook: #C77DFF;
+  --zone-activate: #FF6B35;
+
+  /* Glassmorphism tokens */
+  --glass-1: rgba(18, 18, 26, 0.6);
+  --glass-2: rgba(18, 18, 26, 0.7);
+  --glass-3: rgba(18, 18, 26, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-border-hover: rgba(255, 255, 255, 0.12);
+  --glass-blur-sm: 8px;
+  --glass-blur-md: 16px;
+  --glass-blur-lg: 24px;
+
+  /* Shadows */
+  --shadow-glow-cyan: 0 0 20px rgba(8, 247, 254, 0.15);
+  --shadow-glow-lime: 0 0 20px rgba(191, 255, 0, 0.15);
+  --shadow-glow-magenta: 0 0 20px rgba(255, 46, 99, 0.15);
+  --shadow-glow-violet: 0 0 20px rgba(199, 125, 255, 0.15);
+  --shadow-glow-orange: 0 0 20px rgba(255, 107, 53, 0.15);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Durations */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --duration-deliberate: 600ms;
+
+  /* Easing */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+
+  /* Zone colors */
+  --color-zone-home: var(--zone-home);
+  --color-zone-build: var(--zone-build);
+  --color-zone-discover: var(--zone-discover);
+  --color-zone-playbook: var(--zone-playbook);
+  --color-zone-activate: var(--zone-activate);
+
+  /* Fonts */
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'Outfit', system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Glassmorphic base class */
+  .glass {
+    background: var(--glass-1);
+    backdrop-filter: blur(var(--glass-blur-md));
+    -webkit-backdrop-filter: blur(var(--glass-blur-md));
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-strong {
+    background: var(--glass-2);
+    backdrop-filter: blur(var(--glass-blur-lg));
+    -webkit-backdrop-filter: blur(var(--glass-blur-lg));
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-heavy {
+    background: var(--glass-3);
+    backdrop-filter: blur(var(--glass-blur-lg));
+    -webkit-backdrop-filter: blur(var(--glass-blur-lg));
+    border: 1px solid var(--glass-border);
+  }
+
+  /* Zone glow borders */
+  .glow-cyan { box-shadow: var(--shadow-glow-cyan); }
+  .glow-lime { box-shadow: var(--shadow-glow-lime); }
+  .glow-magenta { box-shadow: var(--shadow-glow-magenta); }
+  .glow-violet { box-shadow: var(--shadow-glow-violet); }
+  .glow-orange { box-shadow: var(--shadow-glow-orange); }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Motion keyframes */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Text selection */
+::selection {
+  background: rgba(8, 247, 254, 0.3);
+  color: #F0F0F5;
+}
