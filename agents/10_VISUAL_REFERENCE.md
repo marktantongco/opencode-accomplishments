@@ -1,3 +1,9 @@
+> **MIGRATED**: This content now lives in `prompts/reference/VISUAL.md`.
+>
+> This file is preserved for existing references. Update all links to point to `prompts/`.
+
+---
+
 # 🎨 VISUAL REFERENCE
 
 **Diagrams, decision trees, workflows. See the whole system.**

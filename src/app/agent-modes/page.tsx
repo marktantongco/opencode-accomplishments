@@ -1,18 +1,19 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { GlassCard } from '@/components/glass/glass-card';
 import { agentModes } from '@/lib/data/agents';
 import { Zap, Brain, Lightbulb, Eye, Route, Puzzle, Ship, TreePine } from 'lucide-react';
 
 const modeIcons = [
-  <Brain key="0" className="h-8 w-8" />,
-  <Eye key="1" className="h-8 w-8" />,
-  <Route key="2" className="h-8 w-8" />,
-  <TreePine key="3" className="h-8 w-8" />,
-  <Lightbulb key="4" className="h-8 w-8" />,
-  <Ship key="5" className="h-8 w-8" />,
-  <Puzzle key="6" className="h-8 w-8" />,
+  <Brain key="0" className="h-8 w-8" aria-hidden="true" />,
+  <Eye key="1" className="h-8 w-8" aria-hidden="true" />,
+  <Route key="2" className="h-8 w-8" aria-hidden="true" />,
+  <TreePine key="3" className="h-8 w-8" aria-hidden="true" />,
+  <Lightbulb key="4" className="h-8 w-8" aria-hidden="true" />,
+  <Ship key="5" className="h-8 w-8" aria-hidden="true" />,
+  <Puzzle key="6" className="h-8 w-8" aria-hidden="true" />,
 ];
 
 const glowMap = [
@@ -32,7 +33,7 @@ export default function AgentModesPage() {
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="p-2 rounded-lg bg-[var(--zone-activate)]/15">
-                <Zap className="h-6 w-6" style={{ color: 'var(--zone-activate)' }} />
+                <Zap className="h-6 w-6" aria-hidden="true" style={{ color: 'var(--zone-activate)' }} />
               </div>
               <h1 className="text-3xl sm:text-4xl font-display font-bold text-foreground">
                 <span style={{ color: 'var(--zone-activate)' }}>Activate</span> Zone
@@ -55,53 +56,48 @@ export default function AgentModesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
             >
-              <GlassCard glow={glowMap[i]} variant="medium" className="p-6 h-full flex flex-col">
-                {/* Header */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className="text-4xl">{mode.emoji}</div>
-                  <div
-                    className="p-2 rounded-lg"
-                    style={{ backgroundColor: `${mode.color}15` }}
-                  >
-                    {modeIcons[i]}
+              <Link href={`/agent-modes/${mode.id}`} className="block h-full">
+                <GlassCard glow={glowMap[i]} variant="medium" className="p-6 h-full flex flex-col">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="text-4xl">{mode.emoji}</div>
+                    <div
+                      className="p-2 rounded-lg"
+                      style={{ backgroundColor: `${mode.color}15` }}
+                    >
+                      {modeIcons[i]}
+                    </div>
                   </div>
-                </div>
-
-                {/* Content */}
-                <h3 className="text-xl font-semibold text-foreground">{mode.name}</h3>
-                <p className="text-sm font-medium mt-1" style={{ color: mode.color }}>
-                  {mode.thinkingStyle}
-                </p>
-                <p className="text-sm text-muted-foreground mt-3 flex-1">
-                  {mode.description}
-                </p>
-
-                {/* Best For */}
-                <div className="mt-4 pt-4 border-t border-[var(--glass-border)]">
-                  <p className="text-xs text-muted-foreground">
-                    <span className="font-medium uppercase tracking-wider" style={{ color: mode.color }}>
-                      Best For
-                    </span>
-                    <br />
-                    {mode.bestFor}
+                  <h3 className="text-xl font-semibold text-foreground">{mode.name}</h3>
+                  <p className="text-sm font-medium mt-1" style={{ color: mode.color }}>
+                    {mode.thinkingStyle}
                   </p>
-                </div>
-
-                {/* Invoke */}
-                <div className="mt-3">
-                  <code
-                    className="text-xs px-2 py-1 rounded font-mono"
-                    style={{
-                      backgroundColor: `${mode.color}10`,
-                      color: mode.color,
-                      border: `1px solid ${mode.color}20`,
-                    }}
-                  >
-                    /{mode.id}
-                  </code>
-                </div>
-              </GlassCard>
-            </motion.div>
+                  <p className="text-sm text-muted-foreground mt-3 flex-1">
+                    {mode.description}
+                  </p>
+                  <div className="mt-4 pt-4 border-t border-[var(--glass-border)]">
+                    <p className="text-xs text-muted-foreground">
+                      <span className="font-medium uppercase tracking-wider" style={{ color: mode.color }}>
+                        Best For
+                      </span>
+                      <br />
+                      {mode.bestFor}
+                    </p>
+                  </div>
+                  <div className="mt-3">
+                    <code
+                      className="text-xs px-2 py-1 rounded font-mono"
+                      style={{
+                        backgroundColor: `${mode.color}10`,
+                        color: mode.color,
+                        border: `1px solid ${mode.color}20`,
+                      }}
+                    >
+                      {mode.invokeCommand}
+                    </code>
+                  </div>
+                </GlassCard>
+              </Link>
+              </motion.div>
           ))}
         </div>
 

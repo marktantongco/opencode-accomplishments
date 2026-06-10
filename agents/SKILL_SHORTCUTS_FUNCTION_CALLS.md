@@ -1,3 +1,9 @@
+> **MIGRATED**: This content now lives in `prompts/reference/SHORTCUTS.md`.
+>
+> This file is preserved for existing references. Update all links to point to `prompts/`.
+
+---
+
 # ✨ SKILL SHORTCUTS & FUNCTION CALLS
 
 **Quick navigation between skills. Beautiful syntax. Zero friction.**

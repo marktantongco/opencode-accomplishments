@@ -1,3 +1,9 @@
+> **MIGRATED**: This content now lives in `prompts/reference/AUTOMATION.md`.
+>
+> This file is preserved for existing references. Update all links to point to `prompts/`.
+
+---
+
 # 🤖 AUTOMATION SCRIPTS
 
 **Copy, paste, run. Production-ready helpers.**

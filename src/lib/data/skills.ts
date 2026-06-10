@@ -1,3 +1,8 @@
+export interface ResourceLink {
+  label: string;
+  url: string;
+}
+
 export interface Skill {
   id: string;
   name: string;
@@ -7,20 +12,32 @@ export interface Skill {
   color: string;
   emoji: string;
   tags: string[];
+  installCommand: string;
+  tier: 'foundation' | 'interactive';
+  resourceLinks?: ResourceLink[];
+  relatedSkills?: string[];
+  synergySkills?: string[];
+  partnerStacks?: string[];
+  usage?: string;
+  skillMdContent?: string;
 }
 
 export const skills: Skill[] = [
   {
     "id": "ui-ux-pro-max-v7",
-    "name": "Ui Ux Pro Max V7",
+    "name": "UI UX Pro Max V7",
     "slug": "ui-ux-pro-max-v7",
     "description": "AI design intelligence \u2014 60 styles, 48 palettes, 36 fonts, 24 industry rules, production-grade components",
     "category": "Design & UI",
     "color": "#BFFF00",
-    "emoji": "",
-    "tags": [
-      "design-ui"
-    ]
+    "emoji": "\ud83c\udfa8",
+    "tags": ["design-ui"],
+    "installCommand": "skill(name=\"ui-ux-pro-max-v7\")",
+    "tier": "interactive",
+    "relatedSkills": ["anthropic-frontend-design", "frontend-design", "vercel-web-design-guidelines"],
+    "synergySkills": ["gsap-animations", "vercel-react-best-practices"],
+    "partnerStacks": ["creative-studio"],
+    "usage": "Load when designing UI components or full page layouts. Generates production-ready React + Tailwind code with semantic design tokens."
   },
   {
     "id": "anthropic-frontend-design",
@@ -29,22 +46,30 @@ export const skills: Skill[] = [
     "description": "Bold aesthetics for AI-native interfaces, conversational UI, trust-forward design",
     "category": "Design & UI",
     "color": "#BFFF00",
-    "emoji": "",
-    "tags": [
-      "design-ui"
-    ]
+    "emoji": "\ud83e\udd16",
+    "tags": ["design-ui"],
+    "installCommand": "skill(name=\"anthropic-frontend-design\")",
+    "tier": "foundation",
+    "relatedSkills": ["ui-ux-pro-max-v7", "frontend-design", "vercel-web-design-guidelines"],
+    "synergySkills": ["vercel-react-best-practices", "gsap-animations"],
+    "partnerStacks": ["creative-studio"],
+    "usage": "Use for AI-facing UI patterns, chatbot interfaces, trust signals, and conversational layouts."
   },
   {
     "id": "gsap-animations",
-    "name": "Gsap Animations",
+    "name": "GSAP Animations",
     "slug": "gsap-animations",
     "description": "Production-grade GSAP animation patterns \u2014 24 patterns, ScrollTrigger, Flip plugin, React integration",
     "category": "Design & UI",
     "color": "#BFFF00",
-    "emoji": "",
-    "tags": [
-      "design-ui"
-    ]
+    "emoji": "\u2728",
+    "tags": ["design-ui"],
+    "installCommand": "skill(name=\"gsap-animations\")",
+    "tier": "foundation",
+    "relatedSkills": ["anthropic-frontend-design", "ui-ux-pro-max-v7", "vercel-web-design-guidelines"],
+    "synergySkills": ["vercel-react-best-practices", "vercel-react-view-transitions"],
+    "partnerStacks": ["creative-studio"],
+    "usage": "Activate for scroll-driven animations, hero section reveals, and page transition effects."
   },
   {
     "id": "frontend-design",
@@ -53,10 +78,14 @@ export const skills: Skill[] = [
     "description": "shadcn/ui + Tailwind + React component generation for production-ready UI",
     "category": "Design & UI",
     "color": "#BFFF00",
-    "emoji": "",
-    "tags": [
-      "design-ui"
-    ]
+    "emoji": "\ud83d\udcbb",
+    "tags": ["design-ui"],
+    "installCommand": "skill(name=\"frontend-design\")",
+    "tier": "foundation",
+    "relatedSkills": ["ui-ux-pro-max-v7", "anthropic-frontend-design", "vercel-web-design-guidelines"],
+    "synergySkills": ["vercel-react-best-practices", "gsap-animations"],
+    "partnerStacks": ["fullstack-dev"],
+    "usage": "Load when building new UI components or pages from scratch. Generates consistent, accessible components."
   },
   {
     "id": "vercel-web-design-guidelines",
@@ -65,22 +94,30 @@ export const skills: Skill[] = [
     "description": "Comprehensive accessibility-first UX rules and performance budgets",
     "category": "Design & UI",
     "color": "#BFFF00",
-    "emoji": "",
-    "tags": [
-      "design-ui"
-    ]
+    "emoji": "\ud83c\udf10",
+    "tags": ["design-ui"],
+    "installCommand": "skill(name=\"vercel-web-design-guidelines\")",
+    "tier": "foundation",
+    "relatedSkills": ["frontend-design", "vercel-react-best-practices", "ui-ux-pro-max-v7"],
+    "synergySkills": ["anthropic-frontend-design", "vercel-react-best-practices"],
+    "partnerStacks": ["fullstack-dev"],
+    "usage": "Run as a design audit checklist after building UI. Ensures WCAG compliance and performance budgets."
   },
   {
     "id": "chain-of-thought",
-    "name": "Chain Of Thought",
+    "name": "Chain of Thought",
     "slug": "chain-of-thought",
     "description": "Step-by-step reasoning framework for complex problems",
     "category": "Reasoning",
     "color": "#08F7FE",
-    "emoji": "",
-    "tags": [
-      "reasoning"
-    ]
+    "emoji": "\ud83e\udde0",
+    "tags": ["reasoning"],
+    "installCommand": "skill(name=\"chain-of-thought\")",
+    "tier": "foundation",
+    "relatedSkills": ["socratic-method", "simulation-sandbox", "devils-advocate"],
+    "synergySkills": ["owl-deep-analysis", "agent-roles"],
+    "partnerStacks": ["research-engine", "agent-os"],
+    "usage": "Use before solving complex multi-step problems. Structures reasoning into verifiable steps."
   },
   {
     "id": "socratic-method",
@@ -89,10 +126,14 @@ export const skills: Skill[] = [
     "description": "Strategic questioning to uncover assumptions and guide discovery",
     "category": "Reasoning",
     "color": "#08F7FE",
-    "emoji": "",
-    "tags": [
-      "reasoning"
-    ]
+    "emoji": "\u2753",
+    "tags": ["reasoning"],
+    "installCommand": "skill(name=\"socratic-method\")",
+    "tier": "foundation",
+    "relatedSkills": ["chain-of-thought", "devils-advocate", "simulation-sandbox"],
+    "synergySkills": ["owl-deep-analysis", "elephant-cross-field"],
+    "partnerStacks": ["research-engine"],
+    "usage": "Apply during research and discovery phases to challenge assumptions and find blind spots."
   },
   {
     "id": "devils-advocate",
@@ -101,10 +142,14 @@ export const skills: Skill[] = [
     "description": "Argue against premises to strengthen arguments and prevent confirmation bias",
     "category": "Reasoning",
     "color": "#08F7FE",
-    "emoji": "",
-    "tags": [
-      "reasoning"
-    ]
+    "emoji": "\ud83d\udc81",
+    "tags": ["reasoning"],
+    "installCommand": "skill(name=\"devils-advocate\")",
+    "tier": "foundation",
+    "relatedSkills": ["socratic-method", "chain-of-thought", "simulation-sandbox"],
+    "synergySkills": ["eagle-big-picture", "elephant-cross-field"],
+    "partnerStacks": ["research-engine", "security-audit"],
+    "usage": "Use during planning and decision-making to stress-test ideas before committing."
   },
   {
     "id": "simulation-sandbox",
@@ -113,22 +158,30 @@ export const skills: Skill[] = [
     "description": "Test scenarios in safe simulated environments without real-world consequences",
     "category": "Reasoning",
     "color": "#08F7FE",
-    "emoji": "",
-    "tags": [
-      "reasoning"
-    ]
+    "emoji": "\ud83d\udfe2",
+    "tags": ["reasoning"],
+    "installCommand": "skill(name=\"simulation-sandbox\")",
+    "tier": "interactive",
+    "relatedSkills": ["chain-of-thought", "devils-advocate", "mcp-builder"],
+    "synergySkills": ["beaver-build-systems", "ant-break-into-steps"],
+    "partnerStacks": ["agent-os"],
+    "usage": "Run simulations before implementing high-risk changes. Tests edge cases safely."
   },
   {
     "id": "mcp-builder",
-    "name": "Mcp Builder",
+    "name": "MCP Builder",
     "slug": "mcp-builder",
     "description": "Build MCP servers with TypeScript + Python, full lifecycle planning",
     "category": "Development",
     "color": "#00FF9D",
-    "emoji": "",
-    "tags": [
-      "development"
-    ]
+    "emoji": "\ud83d\udd27",
+    "tags": ["development"],
+    "installCommand": "skill(name=\"mcp-builder\")",
+    "tier": "foundation",
+    "relatedSkills": ["superpowers", "web-artifacts-builder", "browser-use"],
+    "synergySkills": ["mcp-security-scanner", "mcp-stack-curator"],
+    "partnerStacks": ["fullstack-dev", "agent-os"],
+    "usage": "Load when creating new MCP servers or extending existing ones. Guides through lifecycle from planning to deployment."
   },
   {
     "id": "superpowers",
@@ -137,10 +190,14 @@ export const skills: Skill[] = [
     "description": "Spec-first development with TDD and sub-agent delegation",
     "category": "Development",
     "color": "#00FF9D",
-    "emoji": "",
-    "tags": [
-      "development"
-    ]
+    "emoji": "\u26a1",
+    "tags": ["development"],
+    "installCommand": "skill(name=\"superpowers\")",
+    "tier": "foundation",
+    "relatedSkills": ["mcp-builder", "agent-roles", "vercel-react-best-practices"],
+    "synergySkills": ["test-driven-development", "subagent-driven-development"],
+    "partnerStacks": ["fullstack-dev"],
+    "usage": "Use as your primary development workflow. Writes specs first, then delegates implementation to sub-agents."
   },
   {
     "id": "deployment-manager",
@@ -149,10 +206,14 @@ export const skills: Skill[] = [
     "description": "Deploy, monitor, update across GitHub Pages, Vercel, Netlify",
     "category": "Development",
     "color": "#00FF9D",
-    "emoji": "",
-    "tags": [
-      "development"
-    ]
+    "emoji": "\ud83d\ude80",
+    "tags": ["development"],
+    "installCommand": "skill(name=\"deployment-manager\")",
+    "tier": "foundation",
+    "relatedSkills": ["vercel-cli-with-tokens", "superpowers", "mcp-builder"],
+    "synergySkills": ["feedback-loop", "vercel-optimize"],
+    "partnerStacks": ["fullstack-dev"],
+    "usage": "Activate when deploying projects. Handles build, deploy, and post-deployment monitoring."
   },
   {
     "id": "browser-use",
@@ -161,10 +222,14 @@ export const skills: Skill[] = [
     "description": "Headful browser automation with natural language control",
     "category": "Development",
     "color": "#00FF9D",
-    "emoji": "",
-    "tags": [
-      "development"
-    ]
+    "emoji": "\ud83c\udf10",
+    "tags": ["development"],
+    "installCommand": "skill(name=\"browser-use\")",
+    "tier": "interactive",
+    "relatedSkills": ["web-reader", "code-research", "explore"],
+    "synergySkills": ["mcp-builder", "web-artifacts-builder"],
+    "partnerStacks": ["fullstack-dev", "data-pipeline"],
+    "usage": "Use for browser automation tasks: form filling, web scraping, testing, and visual verification."
   },
   {
     "id": "web-artifacts-builder",
@@ -173,10 +238,14 @@ export const skills: Skill[] = [
     "description": "Single-file HTML artifacts with React + Tailwind, zero dependencies",
     "category": "Development",
     "color": "#00FF9D",
-    "emoji": "",
-    "tags": [
-      "development"
-    ]
+    "emoji": "\ud83d\udcdc",
+    "tags": ["development"],
+    "installCommand": "skill(name=\"web-artifacts-builder\")",
+    "tier": "foundation",
+    "relatedSkills": ["superpowers", "mcp-builder", "frontend-design"],
+    "synergySkills": ["ui-ux-pro-max-v7", "gsap-animations"],
+    "partnerStacks": ["creative-studio", "fullstack-dev"],
+    "usage": "Build standalone HTML artifacts for demos, prototypes, and shareable proofs-of-concept."
   },
   {
     "id": "vercel-react-best-practices",
@@ -185,10 +254,14 @@ export const skills: Skill[] = [
     "description": "Production-grade React architecture, hooks patterns, SSR/SSG strategies",
     "category": "Development",
     "color": "#00FF9D",
-    "emoji": "",
-    "tags": [
-      "development"
-    ]
+    "emoji": "\u26a1",
+    "tags": ["development"],
+    "installCommand": "skill(name=\"vercel-react-best-practices\")",
+    "tier": "foundation",
+    "relatedSkills": ["frontend-design", "ui-ux-pro-max-v7", "superpowers"],
+    "synergySkills": ["vercel-optimize", "vercel-web-design-guidelines"],
+    "partnerStacks": ["fullstack-dev"],
+    "usage": "Reference when writing React components or Next.js pages. Ensures optimal rendering patterns."
   },
   {
     "id": "explained-code",
@@ -197,22 +270,30 @@ export const skills: Skill[] = [
     "description": "Beginner-friendly code explanation with analogies and diagrams",
     "category": "Development",
     "color": "#00FF9D",
-    "emoji": "",
-    "tags": [
-      "development"
-    ]
+    "emoji": "\ud83d\udcd6",
+    "tags": ["development"],
+    "installCommand": "skill(name=\"explained-code\")",
+    "tier": "foundation",
+    "relatedSkills": ["superpowers", "chain-of-thought", "socratic-method"],
+    "synergySkills": ["beaver-build-systems"],
+    "partnerStacks": [],
+    "usage": "Ask the skill to explain any piece of code in plain language with relatable analogies."
   },
   {
     "id": "seo-content-writer",
-    "name": "Seo Content Writer",
+    "name": "SEO Content Writer",
     "slug": "seo-content-writer",
     "description": "SEO-optimized content creation with GEO optimization for AI answer engines",
     "category": "Content",
     "color": "#FF2E63",
-    "emoji": "",
-    "tags": [
-      "content"
-    ]
+    "emoji": "\ud83d\udcc4",
+    "tags": ["content"],
+    "installCommand": "skill(name=\"seo-content-writer\")",
+    "tier": "foundation",
+    "relatedSkills": ["humanizer", "social-content-pillars", "social-media-manager"],
+    "synergySkills": ["jtbd-research", "gumroad-pipeline"],
+    "partnerStacks": ["content-machine"],
+    "usage": "Generate SEO-optimized blog posts, landing pages, and content that ranks in AI answer engines."
   },
   {
     "id": "humanizer",
@@ -221,10 +302,14 @@ export const skills: Skill[] = [
     "description": "Strip AI writing patterns for human-like copy \u2014 anti-AI-detection rewriting",
     "category": "Content",
     "color": "#FF2E63",
-    "emoji": "",
-    "tags": [
-      "content"
-    ]
+    "emoji": "\ud83d\udc4b",
+    "tags": ["content"],
+    "installCommand": "skill(name=\"humanizer\")",
+    "tier": "foundation",
+    "relatedSkills": ["seo-content-writer", "social-media-manager", "output-formatter"],
+    "synergySkills": ["seo-content-writer", "social-content-pillars"],
+    "partnerStacks": ["content-machine"],
+    "usage": "Run on any AI-generated text before publishing. Removes telltale AI patterns while preserving meaning."
   },
   {
     "id": "social-media-manager",
@@ -233,10 +318,14 @@ export const skills: Skill[] = [
     "description": "Platform-appropriate post generation for 30 days across LinkedIn, Twitter, Instagram, TikTok",
     "category": "Content",
     "color": "#FF2E63",
-    "emoji": "",
-    "tags": [
-      "content"
-    ]
+    "emoji": "\ud83d\udcf1",
+    "tags": ["content"],
+    "installCommand": "skill(name=\"social-media-manager\")",
+    "tier": "interactive",
+    "relatedSkills": ["social-content-pillars", "seo-content-writer", "humanizer"],
+    "synergySkills": ["seo-content-writer", "photography-ai"],
+    "partnerStacks": ["content-machine"],
+    "usage": "Plan and generate 30 days of platform-specific social media content in one session."
   },
   {
     "id": "social-content-pillars",
@@ -245,22 +334,30 @@ export const skills: Skill[] = [
     "description": "Monthly content calendar for multi-brand social media with 90-day editorial plan",
     "category": "Content",
     "color": "#FF2E63",
-    "emoji": "",
-    "tags": [
-      "content"
-    ]
+    "emoji": "\ud83d\udcca",
+    "tags": ["content"],
+    "installCommand": "skill(name=\"social-content-pillars\")",
+    "tier": "foundation",
+    "relatedSkills": ["social-media-manager", "seo-content-writer", "jtbd-research"],
+    "synergySkills": ["social-media-manager", "gumroad-pipeline"],
+    "partnerStacks": ["content-machine"],
+    "usage": "Use at the start of each month to define content pillars and plan the editorial calendar."
   },
   {
     "id": "jtbd-research",
-    "name": "Jtbd Research",
+    "name": "JTBD Research",
     "slug": "jtbd-research",
     "description": "8-step Jobs to be Done product research methodology",
     "category": "Strategy",
     "color": "#FFE600",
-    "emoji": "",
-    "tags": [
-      "strategy"
-    ]
+    "emoji": "\ud83d\udd0d",
+    "tags": ["strategy"],
+    "installCommand": "skill(name=\"jtbd-research\")",
+    "tier": "foundation",
+    "relatedSkills": ["feature-research", "gumroad-pipeline", "skill-finder"],
+    "synergySkills": ["eagle-big-picture", "elephant-cross-field"],
+    "partnerStacks": ["product-launch"],
+    "usage": "Run before building new products or features. Uncovers what customers actually need."
   },
   {
     "id": "gumroad-pipeline",
@@ -269,10 +366,14 @@ export const skills: Skill[] = [
     "description": "Lead magnet to funnel to product launch workflow for digital products",
     "category": "Strategy",
     "color": "#FFE600",
-    "emoji": "",
-    "tags": [
-      "strategy"
-    ]
+    "emoji": "\ud83d\udcb0",
+    "tags": ["strategy"],
+    "installCommand": "skill(name=\"gumroad-pipeline\")",
+    "tier": "interactive",
+    "relatedSkills": ["jtbd-research", "seo-content-writer", "social-media-manager"],
+    "synergySkills": ["jtbd-research", "social-content-pillars", "feedback-loop"],
+    "partnerStacks": ["product-launch"],
+    "usage": "Full product launch workflow: lead magnet \u2192 email funnel \u2192 product launch \u2192 post-launch optimization."
   },
   {
     "id": "feature-research",
@@ -281,10 +382,14 @@ export const skills: Skill[] = [
     "description": "Research existing architecture before implementing a complex feature",
     "category": "Strategy",
     "color": "#FFE600",
-    "emoji": "",
-    "tags": [
-      "strategy"
-    ]
+    "emoji": "\ud83d\udcd1",
+    "tags": ["strategy"],
+    "installCommand": "skill(name=\"feature-research\")",
+    "tier": "foundation",
+    "relatedSkills": ["code-research", "jtbd-research", "explore"],
+    "synergySkills": ["chain-of-thought", "owl-deep-analysis"],
+    "partnerStacks": ["research-engine", "fullstack-dev"],
+    "usage": "Always run before starting complex feature work. Maps existing architecture and finds patterns."
   },
   {
     "id": "skill-finder",
@@ -293,10 +398,14 @@ export const skills: Skill[] = [
     "description": "Skill discovery, evaluation, and installation meta-skill with security vetting",
     "category": "Strategy",
     "color": "#FFE600",
-    "emoji": "",
-    "tags": [
-      "strategy"
-    ]
+    "emoji": "\ud83d\udd0d",
+    "tags": ["strategy"],
+    "installCommand": "skill(name=\"skill-finder\")",
+    "tier": "interactive",
+    "relatedSkills": ["feature-research", "code-research", "mcp-security-scanner"],
+    "synergySkills": ["mcp-registry", "mcp-stack-curator"],
+    "partnerStacks": ["agent-os"],
+    "usage": "Use to discover and evaluate new skills. Handles security vetting and compatibility checking."
   },
   {
     "id": "persistent-memory",
@@ -305,10 +414,14 @@ export const skills: Skill[] = [
     "description": "Structured memory system for agent context continuity",
     "category": "System",
     "color": "#A8B2D8",
-    "emoji": "",
-    "tags": [
-      "system"
-    ]
+    "emoji": "\ud83e\udde0",
+    "tags": ["system"],
+    "installCommand": "skill(name=\"persistent-memory\")",
+    "tier": "foundation",
+    "relatedSkills": ["context-compressor", "agent-roles", "system-prompt-sync"],
+    "synergySkills": ["agent-roles", "context-compressor"],
+    "partnerStacks": ["agent-os"],
+    "usage": "Enable for any long-running agent session. Maintains context across conversations."
   },
   {
     "id": "system-prompt-sync",
@@ -317,10 +430,14 @@ export const skills: Skill[] = [
     "description": "Auto-sync AGENTS.md across all git repos on version tags",
     "category": "System",
     "color": "#A8B2D8",
-    "emoji": "",
-    "tags": [
-      "system"
-    ]
+    "emoji": "\ud83d\udd04",
+    "tags": ["system"],
+    "installCommand": "skill(name=\"system-prompt-sync\")",
+    "tier": "foundation",
+    "relatedSkills": ["persistent-memory", "agent-roles", "context-compressor"],
+    "synergySkills": ["deployment-manager", "feedback-loop"],
+    "partnerStacks": ["fullstack-dev"],
+    "usage": "Set up once. Automatically propagates system prompt changes across all repos when you create a version tag."
   },
   {
     "id": "feedback-loop",
@@ -329,10 +446,14 @@ export const skills: Skill[] = [
     "description": "Iterative improvement cycles from metrics to research",
     "category": "System",
     "color": "#A8B2D8",
-    "emoji": "",
-    "tags": [
-      "system"
-    ]
+    "emoji": "\ud83d\udd04",
+    "tags": ["system"],
+    "installCommand": "skill(name=\"feedback-loop\")",
+    "tier": "foundation",
+    "relatedSkills": ["deployment-manager", "system-prompt-sync", "vercel-optimize"],
+    "synergySkills": ["deployment-manager", "vercel-optimize"],
+    "partnerStacks": ["product-launch", "fullstack-dev"],
+    "usage": "Close the loop between deployment and improvement. Feed metrics back into the next iteration."
   },
   {
     "id": "context-compressor",
@@ -341,10 +462,14 @@ export const skills: Skill[] = [
     "description": "Compress long contexts preserving critical information",
     "category": "System",
     "color": "#A8B2D8",
-    "emoji": "",
-    "tags": [
-      "system"
-    ]
+    "emoji": "\ud83d\udce6",
+    "tags": ["system"],
+    "installCommand": "skill(name=\"context-compressor\")",
+    "tier": "foundation",
+    "relatedSkills": ["persistent-memory", "agent-roles", "explained-code"],
+    "synergySkills": ["persistent-memory", "agent-roles"],
+    "partnerStacks": ["agent-os"],
+    "usage": "Trigger when context window gets full. Preserves critical information while reducing token count."
   },
   {
     "id": "agent-roles",
@@ -353,10 +478,14 @@ export const skills: Skill[] = [
     "description": "Unified multi-agent role system \u2014 Builder, Coder, Council, Orchestrator, Plan, Researcher, Reviewer, Scribe",
     "category": "System",
     "color": "#A8B2D8",
-    "emoji": "",
-    "tags": [
-      "system"
-    ]
+    "emoji": "\ud83c\udfad",
+    "tags": ["system"],
+    "installCommand": "skill(name=\"agent-roles\")",
+    "tier": "foundation",
+    "relatedSkills": ["agent-roles", "superpowers", "persistent-memory"],
+    "synergySkills": ["superpowers", "persistent-memory", "context-compressor"],
+    "partnerStacks": ["agent-os"],
+    "usage": "Load for multi-agent coordination. Assigns roles and orchestrates parallel work across agents."
   },
   {
     "id": "sample-hello-skill",
@@ -365,10 +494,14 @@ export const skills: Skill[] = [
     "description": "Hello-world demo skill for testing skill activation and validation",
     "category": "System",
     "color": "#A8B2D8",
-    "emoji": "",
-    "tags": [
-      "system"
-    ]
+    "emoji": "\ud83d\udc4b",
+    "tags": ["system"],
+    "installCommand": "skill(name=\"sample-hello-skill\")",
+    "tier": "foundation",
+    "relatedSkills": [],
+    "synergySkills": [],
+    "partnerStacks": [],
+    "usage": "Use for testing skill activation and verifying the skill system works end-to-end."
   },
   {
     "id": "web-reader",
@@ -377,10 +510,14 @@ export const skills: Skill[] = [
     "description": "Web page extraction with site crawling and spidering capabilities",
     "category": "Data & Web",
     "color": "#64FFDA",
-    "emoji": "",
-    "tags": [
-      "data-web"
-    ]
+    "emoji": "\ud83c\udf10",
+    "tags": ["data-web"],
+    "installCommand": "skill(name=\"web-reader\")",
+    "tier": "foundation",
+    "relatedSkills": ["browser-use", "code-research", "explore"],
+    "synergySkills": ["code-research", "feature-research", "explore"],
+    "partnerStacks": ["research-engine", "data-pipeline"],
+    "usage": "Use for extracting content from web pages, documentation, and crawled sites."
   },
   {
     "id": "audit-analyzer",
@@ -389,10 +526,14 @@ export const skills: Skill[] = [
     "description": "Detect and prioritize audit issues \u2014 performance, accessibility, monitoring",
     "category": "Data & Web",
     "color": "#64FFDA",
-    "emoji": "",
-    "tags": [
-      "data-web"
-    ]
+    "emoji": "\ud83d\udd0d",
+    "tags": ["data-web"],
+    "installCommand": "skill(name=\"audit-analyzer\")",
+    "tier": "foundation",
+    "relatedSkills": ["vercel-web-design-guidelines", "web-design-guidelines", "mcp-security-scanner"],
+    "synergySkills": ["vercel-optimize", "mcp-security-scanner"],
+    "partnerStacks": ["security-audit", "data-pipeline"],
+    "usage": "Run against any deployed application to identify performance bottlenecks and accessibility issues."
   },
   {
     "id": "web-design-guidelines",
@@ -401,10 +542,14 @@ export const skills: Skill[] = [
     "description": "Quick self-audit checklist for design consistency \u2014 typography, color, spacing, accessibility",
     "category": "Data & Web",
     "color": "#64FFDA",
-    "emoji": "",
-    "tags": [
-      "data-web"
-    ]
+    "emoji": "\ud83c\udfa8",
+    "tags": ["data-web"],
+    "installCommand": "skill(name=\"web-design-guidelines\")",
+    "tier": "foundation",
+    "relatedSkills": ["vercel-web-design-guidelines", "ui-ux-pro-max-v7", "audit-analyzer"],
+    "synergySkills": ["ui-ux-pro-max-v7", "audit-analyzer"],
+    "partnerStacks": ["creative-studio", "fullstack-dev"],
+    "usage": "Quick audit after building any UI. Checks typography, color contrast, spacing, and accessibility."
   },
   {
     "id": "code-research",
@@ -413,10 +558,14 @@ export const skills: Skill[] = [
     "description": "Research open-source repositories to understand how something is built",
     "category": "Data & Web",
     "color": "#64FFDA",
-    "emoji": "",
-    "tags": [
-      "data-web"
-    ]
+    "emoji": "\ud83d\udd0d",
+    "tags": ["data-web"],
+    "installCommand": "skill(name=\"code-research\")",
+    "tier": "foundation",
+    "relatedSkills": ["explore", "feature-research", "web-reader"],
+    "synergySkills": ["feature-research", "chain-of-thought"],
+    "partnerStacks": ["research-engine", "fullstack-dev"],
+    "usage": "Research how other projects implement features. Finds patterns and best practices from OSS."
   },
   {
     "id": "explore",
@@ -425,22 +574,30 @@ export const skills: Skill[] = [
     "description": "Search a codebase using codebase_search tool \u2014 saves time and tokens over grep",
     "category": "Data & Web",
     "color": "#64FFDA",
-    "emoji": "",
-    "tags": [
-      "data-web"
-    ]
+    "emoji": "\ud83d\udd0d",
+    "tags": ["data-web"],
+    "installCommand": "skill(name=\"explore\")",
+    "tier": "foundation",
+    "relatedSkills": ["code-research", "feature-research", "web-reader"],
+    "synergySkills": ["code-research", "chain-of-thought"],
+    "partnerStacks": ["research-engine"],
+    "usage": "Use as the primary codebase search tool. More efficient than grep for structural queries."
   },
   {
     "id": "photography-ai",
-    "name": "Photography Ai",
+    "name": "Photography AI",
     "slug": "photography-ai",
     "description": "Professional visual engineering framework with batch processing, prompt engineering, cinematic sequences",
     "category": "Creative",
     "color": "#FF9FF3",
-    "emoji": "",
-    "tags": [
-      "creative"
-    ]
+    "emoji": "\ud83d\udcf7",
+    "tags": ["creative"],
+    "installCommand": "skill(name=\"photography-ai\")",
+    "tier": "interactive",
+    "relatedSkills": ["pictoflux-ai", "output-formatter"],
+    "synergySkills": ["social-media-manager", "seo-content-writer"],
+    "partnerStacks": ["creative-studio", "content-machine"],
+    "usage": "Generate professional photography and cinematic visuals with precise prompt engineering."
   },
   {
     "id": "output-formatter",
@@ -449,780 +606,177 @@ export const skills: Skill[] = [
     "description": "Strict formatting rules for all output types \u2014 JSON, tables, markdown",
     "category": "Creative",
     "color": "#FF9FF3",
-    "emoji": "",
-    "tags": [
-      "creative"
-    ]
+    "emoji": "\u270f\ufe0f",
+    "tags": ["creative"],
+    "installCommand": "skill(name=\"output-formatter\")",
+    "tier": "foundation",
+    "relatedSkills": ["superpowers", "humanizer", "explained-code"],
+    "synergySkills": ["humanizer", "superpowers"],
+    "partnerStacks": ["fullstack-dev", "content-machine"],
+    "usage": "Enable when you need structured, consistent output formatting across any data type."
   },
   {
     "id": "pictoflux-ai",
-    "name": "Pictoflux Ai",
+    "name": "PictoFlux AI",
     "slug": "pictoflux-ai",
     "description": "Free unlimited AI image generation via MCP protocol \u2014 text-to-image, style transfer, batch generation",
     "category": "MCP Servers",
     "color": "#C77DFF",
-    "emoji": "",
-    "tags": [
-      "mcp-servers"
-    ]
+    "emoji": "\ud83c\udfa8",
+    "tags": ["mcp-servers"],
+    "installCommand": "skill(name=\"pictoflux-ai\")",
+    "tier": "interactive",
+    "relatedSkills": ["photography-ai", "mcp-registry", "mcp-stack-curator"],
+    "synergySkills": ["photography-ai", "creative-studio"],
+    "partnerStacks": ["creative-studio", "content-machine", "product-launch"],
+    "usage": "Generate images on demand. Supports style transfer, batch generation, and MCP-native integration."
   },
   {
     "id": "mcp-stack-curator",
-    "name": "Mcp Stack Curator",
+    "name": "MCP Stack Curator",
     "slug": "mcp-stack-curator",
     "description": "Intelligent MCP server stack builder \u2014 recommends optimal 4-server combinations with synergy analysis",
     "category": "MCP Servers",
     "color": "#C77DFF",
-    "emoji": "",
-    "tags": [
-      "mcp-servers"
-    ]
+    "emoji": "\ud83d\udcda",
+    "tags": ["mcp-servers"],
+    "installCommand": "skill(name=\"mcp-stack-curator\")",
+    "tier": "interactive",
+    "relatedSkills": ["mcp-registry", "mcp-security-scanner", "mcp-builder"],
+    "synergySkills": ["mcp-registry", "mcp-security-scanner"],
+    "partnerStacks": ["fullstack-dev", "agent-os", "research-engine"],
+    "usage": "Use when building new MCP stacks. Gets optimal 4-server combinations with synergy analysis."
   },
   {
     "id": "mcp-registry",
-    "name": "Mcp Registry",
+    "name": "MCP Registry",
     "slug": "mcp-registry",
     "description": "Curated directory of 78 free MCP servers across 14 categories with deduplication and ratings",
     "category": "MCP Servers",
     "color": "#C77DFF",
-    "emoji": "",
-    "tags": [
-      "mcp-servers"
-    ]
+    "emoji": "\ud83d\udccb",
+    "tags": ["mcp-servers"],
+    "installCommand": "skill(name=\"mcp-registry\")",
+    "tier": "foundation",
+    "relatedSkills": ["mcp-stack-curator", "mcp-security-scanner", "mcp-builder"],
+    "synergySkills": ["mcp-stack-curator", "mcp-security-scanner"],
+    "partnerStacks": ["fullstack-dev", "agent-os", "research-engine", "security-audit"],
+    "usage": "Browse, search, and discover MCP servers. Use as the primary reference for available servers."
   },
   {
     "id": "mcp-security-scanner",
-    "name": "Mcp Security Scanner",
+    "name": "MCP Security Scanner",
     "slug": "mcp-security-scanner",
     "description": "Security-first vetting for MCP server installations \u2014 red flag detection, permission auditing, scope analysis",
     "category": "MCP Servers",
     "color": "#C77DFF",
-    "emoji": "",
-    "tags": [
-      "mcp-servers"
-    ]
+    "emoji": "\ud83d\udee1\ufe0f",
+    "tags": ["mcp-servers"],
+    "installCommand": "skill(name=\"mcp-security-scanner\")",
+    "tier": "foundation",
+    "relatedSkills": ["mcp-registry", "mcp-stack-curator", "audit-analyzer"],
+    "synergySkills": ["mcp-registry", "mcp-stack-curator"],
+    "partnerStacks": ["security-audit", "fullstack-dev"],
+    "usage": "Run against any MCP server before installation. Audits permissions, detects red flags, and analyzes scope."
   },
   {
-    "id": "rabbit-multiply-ideas",
-    "name": "Rabbit Multiply Ideas",
-    "slug": "rabbit-multiply-ideas",
-    "description": "Take an idea and multiply it into 10 different variations \u2014 change the angle, audience, and format for each",
-    "category": "Agent Modes",
-    "color": "#FF6B35",
-    "emoji": "\ud83d\udc07",
-    "tags": [
-      "agent-modes"
-    ]
+    "id": "stitch-loop",
+    "name": "Stitch Loop",
+    "slug": "stitch-loop",
+    "description": "Autonomous iterative site-building loop \u2014 baton-passing system for continuous Stitch-powered web development",
+    "category": "Design & UI",
+    "color": "#BFFF00",
+    "emoji": "\ud83d\udd04",
+    "tags": ["design-ui"],
+    "installCommand": "skill(name=\"stitch-loop\")",
+    "tier": "interactive",
+    "relatedSkills": ["ui-ux-pro-max-v7", "anthropic-frontend-design", "web-artifacts-builder"],
+    "synergySkills": ["gsap-animations", "frontend-design"],
+    "partnerStacks": ["creative-studio"],
+    "usage": "Use for autonomous site building. Starts a baton-passing loop that generates pages via Stitch, integrates them, and hands off to the next iteration."
   },
   {
-    "id": "owl-deep-analysis",
-    "name": "Owl Deep Analysis",
-    "slug": "owl-deep-analysis",
-    "description": "Think slowly and analytically \u2014 examine problems from multiple perspectives and identify hidden factors most people overlook",
-    "category": "Agent Modes",
-    "color": "#FF6B35",
-    "emoji": "\ud83e\udd89",
-    "tags": [
-      "agent-modes"
-    ]
+    "id": "framer-motion",
+    "name": "Framer Motion",
+    "slug": "framer-motion",
+    "description": "Production-grade motion design system \u2014 layout animations, gestures, scroll-driven, shared layout, enter/exit transitions",
+    "category": "Design & UI",
+    "color": "#BFFF00",
+    "emoji": "\u2728",
+    "tags": ["design-ui"],
+    "installCommand": "skill(name=\"framer-motion\")",
+    "tier": "foundation",
+    "relatedSkills": ["gsap-animations", "ui-ux-pro-max-v7", "anthropic-frontend-design"],
+    "synergySkills": ["gsap-animations", "vercel-react-view-transitions"],
+    "partnerStacks": ["creative-studio"],
+    "usage": "Activate for animation-heavy interfaces. Handles layout animations, gesture-based interactions, and seamless page transitions."
   },
   {
-    "id": "ant-break-into-steps",
-    "name": "Ant Break Into Steps",
-    "slug": "ant-break-into-steps",
-    "description": "Break goals into the smallest possible steps someone could realistically complete",
-    "category": "Agent Modes",
-    "color": "#FF6B35",
-    "emoji": "\ud83d\udc1c",
-    "tags": [
-      "agent-modes"
-    ]
+    "id": "21st-registry",
+    "name": "21st.dev Registry",
+    "slug": "21st-registry",
+    "description": "Publish and install React components in the team library \u2014 share, discover, and reuse UI components across projects",
+    "category": "Development",
+    "color": "#00FF9D",
+    "emoji": "\ud83d\udce6",
+    "tags": ["development"],
+    "installCommand": "skill(name=\"21st-registry\")",
+    "tier": "interactive",
+    "relatedSkills": ["ui-ux-pro-max-v7", "frontend-design", "mcp-builder"],
+    "synergySkills": ["vercel-react-best-practices", "superpowers"],
+    "partnerStacks": ["fullstack-dev"],
+    "usage": "Use to publish team-shared React components or install existing ones. Handles auth, publishing, versioning, and team discovery."
   },
-  {
-    "id": "eagle-big-picture",
-    "name": "Eagle Big Picture",
-    "slug": "eagle-big-picture",
-    "description": "See the long-term strategy \u2014 explain how all the pieces connect from a bird's-eye view",
-    "category": "Agent Modes",
-    "color": "#FF6B35",
-    "emoji": "\ud83e\udd85",
-    "tags": [
-      "agent-modes"
-    ]
-  },
-  {
-    "id": "dolphin-creative-solutions",
-    "name": "Dolphin Creative Solutions",
-    "slug": "dolphin-creative-solutions",
-    "description": "Generate curious, playful, and inventive solutions that most people wouldn't normally consider",
-    "category": "Agent Modes",
-    "color": "#FF6B35",
-    "emoji": "\ud83d\udc2c",
-    "tags": [
-      "agent-modes"
-    ]
-  },
-  {
-    "id": "beaver-build-systems",
-    "name": "Beaver Build Systems",
-    "slug": "beaver-build-systems",
-    "description": "Design practical systems that solve problems step by step, like a beaver building a dam",
-    "category": "Agent Modes",
-    "color": "#FF6B35",
-    "emoji": "\ud83e\uddab",
-    "tags": [
-      "agent-modes"
-    ]
-  },
-  {
-    "id": "elephant-cross-field",
-    "name": "Elephant Cross Field",
-    "slug": "elephant-cross-field",
-    "description": "Connect ideas to insights from other fields such as psychology, economics, science, or history",
-    "category": "Agent Modes",
-    "color": "#FF6B35",
-    "emoji": "\ud83d\udc18",
-    "tags": [
-      "agent-modes"
-    ]
-  }
 ];
 
 export const skillCategories = [
   {
     "name": "Design & UI",
     "color": "#BFFF00",
-    "skills": [
-      {
-        "id": "ui-ux-pro-max-v7",
-        "name": "Ui Ux Pro Max V7",
-        "slug": "ui-ux-pro-max-v7",
-        "description": "AI design intelligence \u2014 60 styles, 48 palettes, 36 fonts, 24 industry rules, production-grade components",
-        "category": "Design & UI",
-        "color": "#BFFF00",
-        "emoji": "",
-        "tags": [
-          "design-ui"
-        ]
-      },
-      {
-        "id": "anthropic-frontend-design",
-        "name": "Anthropic Frontend Design",
-        "slug": "anthropic-frontend-design",
-        "description": "Bold aesthetics for AI-native interfaces, conversational UI, trust-forward design",
-        "category": "Design & UI",
-        "color": "#BFFF00",
-        "emoji": "",
-        "tags": [
-          "design-ui"
-        ]
-      },
-      {
-        "id": "gsap-animations",
-        "name": "Gsap Animations",
-        "slug": "gsap-animations",
-        "description": "Production-grade GSAP animation patterns \u2014 24 patterns, ScrollTrigger, Flip plugin, React integration",
-        "category": "Design & UI",
-        "color": "#BFFF00",
-        "emoji": "",
-        "tags": [
-          "design-ui"
-        ]
-      },
-      {
-        "id": "frontend-design",
-        "name": "Frontend Design",
-        "slug": "frontend-design",
-        "description": "shadcn/ui + Tailwind + React component generation for production-ready UI",
-        "category": "Design & UI",
-        "color": "#BFFF00",
-        "emoji": "",
-        "tags": [
-          "design-ui"
-        ]
-      },
-      {
-        "id": "vercel-web-design-guidelines",
-        "name": "Vercel Web Design Guidelines",
-        "slug": "vercel-web-design-guidelines",
-        "description": "Comprehensive accessibility-first UX rules and performance budgets",
-        "category": "Design & UI",
-        "color": "#BFFF00",
-        "emoji": "",
-        "tags": [
-          "design-ui"
-        ]
-      }
-    ]
+    "skills": skills.filter(s => s.category === "Design & UI")
   },
   {
     "name": "Reasoning",
     "color": "#08F7FE",
-    "skills": [
-      {
-        "id": "chain-of-thought",
-        "name": "Chain Of Thought",
-        "slug": "chain-of-thought",
-        "description": "Step-by-step reasoning framework for complex problems",
-        "category": "Reasoning",
-        "color": "#08F7FE",
-        "emoji": "",
-        "tags": [
-          "reasoning"
-        ]
-      },
-      {
-        "id": "socratic-method",
-        "name": "Socratic Method",
-        "slug": "socratic-method",
-        "description": "Strategic questioning to uncover assumptions and guide discovery",
-        "category": "Reasoning",
-        "color": "#08F7FE",
-        "emoji": "",
-        "tags": [
-          "reasoning"
-        ]
-      },
-      {
-        "id": "devils-advocate",
-        "name": "Devils Advocate",
-        "slug": "devils-advocate",
-        "description": "Argue against premises to strengthen arguments and prevent confirmation bias",
-        "category": "Reasoning",
-        "color": "#08F7FE",
-        "emoji": "",
-        "tags": [
-          "reasoning"
-        ]
-      },
-      {
-        "id": "simulation-sandbox",
-        "name": "Simulation Sandbox",
-        "slug": "simulation-sandbox",
-        "description": "Test scenarios in safe simulated environments without real-world consequences",
-        "category": "Reasoning",
-        "color": "#08F7FE",
-        "emoji": "",
-        "tags": [
-          "reasoning"
-        ]
-      }
-    ]
+    "skills": skills.filter(s => s.category === "Reasoning")
   },
   {
     "name": "Development",
     "color": "#00FF9D",
-    "skills": [
-      {
-        "id": "mcp-builder",
-        "name": "Mcp Builder",
-        "slug": "mcp-builder",
-        "description": "Build MCP servers with TypeScript + Python, full lifecycle planning",
-        "category": "Development",
-        "color": "#00FF9D",
-        "emoji": "",
-        "tags": [
-          "development"
-        ]
-      },
-      {
-        "id": "superpowers",
-        "name": "Superpowers",
-        "slug": "superpowers",
-        "description": "Spec-first development with TDD and sub-agent delegation",
-        "category": "Development",
-        "color": "#00FF9D",
-        "emoji": "",
-        "tags": [
-          "development"
-        ]
-      },
-      {
-        "id": "deployment-manager",
-        "name": "Deployment Manager",
-        "slug": "deployment-manager",
-        "description": "Deploy, monitor, update across GitHub Pages, Vercel, Netlify",
-        "category": "Development",
-        "color": "#00FF9D",
-        "emoji": "",
-        "tags": [
-          "development"
-        ]
-      },
-      {
-        "id": "browser-use",
-        "name": "Browser Use",
-        "slug": "browser-use",
-        "description": "Headful browser automation with natural language control",
-        "category": "Development",
-        "color": "#00FF9D",
-        "emoji": "",
-        "tags": [
-          "development"
-        ]
-      },
-      {
-        "id": "web-artifacts-builder",
-        "name": "Web Artifacts Builder",
-        "slug": "web-artifacts-builder",
-        "description": "Single-file HTML artifacts with React + Tailwind, zero dependencies",
-        "category": "Development",
-        "color": "#00FF9D",
-        "emoji": "",
-        "tags": [
-          "development"
-        ]
-      },
-      {
-        "id": "vercel-react-best-practices",
-        "name": "Vercel React Best Practices",
-        "slug": "vercel-react-best-practices",
-        "description": "Production-grade React architecture, hooks patterns, SSR/SSG strategies",
-        "category": "Development",
-        "color": "#00FF9D",
-        "emoji": "",
-        "tags": [
-          "development"
-        ]
-      },
-      {
-        "id": "explained-code",
-        "name": "Explained Code",
-        "slug": "explained-code",
-        "description": "Beginner-friendly code explanation with analogies and diagrams",
-        "category": "Development",
-        "color": "#00FF9D",
-        "emoji": "",
-        "tags": [
-          "development"
-        ]
-      }
-    ]
+    "skills": skills.filter(s => s.category === "Development")
   },
   {
     "name": "Content",
     "color": "#FF2E63",
-    "skills": [
-      {
-        "id": "seo-content-writer",
-        "name": "Seo Content Writer",
-        "slug": "seo-content-writer",
-        "description": "SEO-optimized content creation with GEO optimization for AI answer engines",
-        "category": "Content",
-        "color": "#FF2E63",
-        "emoji": "",
-        "tags": [
-          "content"
-        ]
-      },
-      {
-        "id": "humanizer",
-        "name": "Humanizer",
-        "slug": "humanizer",
-        "description": "Strip AI writing patterns for human-like copy \u2014 anti-AI-detection rewriting",
-        "category": "Content",
-        "color": "#FF2E63",
-        "emoji": "",
-        "tags": [
-          "content"
-        ]
-      },
-      {
-        "id": "social-media-manager",
-        "name": "Social Media Manager",
-        "slug": "social-media-manager",
-        "description": "Platform-appropriate post generation for 30 days across LinkedIn, Twitter, Instagram, TikTok",
-        "category": "Content",
-        "color": "#FF2E63",
-        "emoji": "",
-        "tags": [
-          "content"
-        ]
-      },
-      {
-        "id": "social-content-pillars",
-        "name": "Social Content Pillars",
-        "slug": "social-content-pillars",
-        "description": "Monthly content calendar for multi-brand social media with 90-day editorial plan",
-        "category": "Content",
-        "color": "#FF2E63",
-        "emoji": "",
-        "tags": [
-          "content"
-        ]
-      }
-    ]
+    "skills": skills.filter(s => s.category === "Content")
   },
   {
     "name": "Strategy",
     "color": "#FFE600",
-    "skills": [
-      {
-        "id": "jtbd-research",
-        "name": "Jtbd Research",
-        "slug": "jtbd-research",
-        "description": "8-step Jobs to be Done product research methodology",
-        "category": "Strategy",
-        "color": "#FFE600",
-        "emoji": "",
-        "tags": [
-          "strategy"
-        ]
-      },
-      {
-        "id": "gumroad-pipeline",
-        "name": "Gumroad Pipeline",
-        "slug": "gumroad-pipeline",
-        "description": "Lead magnet to funnel to product launch workflow for digital products",
-        "category": "Strategy",
-        "color": "#FFE600",
-        "emoji": "",
-        "tags": [
-          "strategy"
-        ]
-      },
-      {
-        "id": "feature-research",
-        "name": "Feature Research",
-        "slug": "feature-research",
-        "description": "Research existing architecture before implementing a complex feature",
-        "category": "Strategy",
-        "color": "#FFE600",
-        "emoji": "",
-        "tags": [
-          "strategy"
-        ]
-      },
-      {
-        "id": "skill-finder",
-        "name": "Skill Finder",
-        "slug": "skill-finder",
-        "description": "Skill discovery, evaluation, and installation meta-skill with security vetting",
-        "category": "Strategy",
-        "color": "#FFE600",
-        "emoji": "",
-        "tags": [
-          "strategy"
-        ]
-      }
-    ]
+    "skills": skills.filter(s => s.category === "Strategy")
   },
   {
     "name": "System",
     "color": "#A8B2D8",
-    "skills": [
-      {
-        "id": "persistent-memory",
-        "name": "Persistent Memory",
-        "slug": "persistent-memory",
-        "description": "Structured memory system for agent context continuity",
-        "category": "System",
-        "color": "#A8B2D8",
-        "emoji": "",
-        "tags": [
-          "system"
-        ]
-      },
-      {
-        "id": "system-prompt-sync",
-        "name": "System Prompt Sync",
-        "slug": "system-prompt-sync",
-        "description": "Auto-sync AGENTS.md across all git repos on version tags",
-        "category": "System",
-        "color": "#A8B2D8",
-        "emoji": "",
-        "tags": [
-          "system"
-        ]
-      },
-      {
-        "id": "feedback-loop",
-        "name": "Feedback Loop",
-        "slug": "feedback-loop",
-        "description": "Iterative improvement cycles from metrics to research",
-        "category": "System",
-        "color": "#A8B2D8",
-        "emoji": "",
-        "tags": [
-          "system"
-        ]
-      },
-      {
-        "id": "context-compressor",
-        "name": "Context Compressor",
-        "slug": "context-compressor",
-        "description": "Compress long contexts preserving critical information",
-        "category": "System",
-        "color": "#A8B2D8",
-        "emoji": "",
-        "tags": [
-          "system"
-        ]
-      },
-      {
-        "id": "agent-roles",
-        "name": "Agent Roles",
-        "slug": "agent-roles",
-        "description": "Unified multi-agent role system \u2014 Builder, Coder, Council, Orchestrator, Plan, Researcher, Reviewer, Scribe",
-        "category": "System",
-        "color": "#A8B2D8",
-        "emoji": "",
-        "tags": [
-          "system"
-        ]
-      },
-      {
-        "id": "sample-hello-skill",
-        "name": "Sample Hello Skill",
-        "slug": "sample-hello-skill",
-        "description": "Hello-world demo skill for testing skill activation and validation",
-        "category": "System",
-        "color": "#A8B2D8",
-        "emoji": "",
-        "tags": [
-          "system"
-        ]
-      }
-    ]
+    "skills": skills.filter(s => s.category === "System")
   },
   {
     "name": "Data & Web",
     "color": "#64FFDA",
-    "skills": [
-      {
-        "id": "web-reader",
-        "name": "Web Reader",
-        "slug": "web-reader",
-        "description": "Web page extraction with site crawling and spidering capabilities",
-        "category": "Data & Web",
-        "color": "#64FFDA",
-        "emoji": "",
-        "tags": [
-          "data-web"
-        ]
-      },
-      {
-        "id": "audit-analyzer",
-        "name": "Audit Analyzer",
-        "slug": "audit-analyzer",
-        "description": "Detect and prioritize audit issues \u2014 performance, accessibility, monitoring",
-        "category": "Data & Web",
-        "color": "#64FFDA",
-        "emoji": "",
-        "tags": [
-          "data-web"
-        ]
-      },
-      {
-        "id": "web-design-guidelines",
-        "name": "Web Design Guidelines",
-        "slug": "web-design-guidelines",
-        "description": "Quick self-audit checklist for design consistency \u2014 typography, color, spacing, accessibility",
-        "category": "Data & Web",
-        "color": "#64FFDA",
-        "emoji": "",
-        "tags": [
-          "data-web"
-        ]
-      },
-      {
-        "id": "code-research",
-        "name": "Code Research",
-        "slug": "code-research",
-        "description": "Research open-source repositories to understand how something is built",
-        "category": "Data & Web",
-        "color": "#64FFDA",
-        "emoji": "",
-        "tags": [
-          "data-web"
-        ]
-      },
-      {
-        "id": "explore",
-        "name": "Explore",
-        "slug": "explore",
-        "description": "Search a codebase using codebase_search tool \u2014 saves time and tokens over grep",
-        "category": "Data & Web",
-        "color": "#64FFDA",
-        "emoji": "",
-        "tags": [
-          "data-web"
-        ]
-      }
-    ]
+    "skills": skills.filter(s => s.category === "Data & Web")
   },
   {
     "name": "Creative",
     "color": "#FF9FF3",
-    "skills": [
-      {
-        "id": "photography-ai",
-        "name": "Photography Ai",
-        "slug": "photography-ai",
-        "description": "Professional visual engineering framework with batch processing, prompt engineering, cinematic sequences",
-        "category": "Creative",
-        "color": "#FF9FF3",
-        "emoji": "",
-        "tags": [
-          "creative"
-        ]
-      },
-      {
-        "id": "output-formatter",
-        "name": "Output Formatter",
-        "slug": "output-formatter",
-        "description": "Strict formatting rules for all output types \u2014 JSON, tables, markdown",
-        "category": "Creative",
-        "color": "#FF9FF3",
-        "emoji": "",
-        "tags": [
-          "creative"
-        ]
-      }
-    ]
+    "skills": skills.filter(s => s.category === "Creative")
   },
   {
     "name": "MCP Servers",
     "color": "#C77DFF",
-    "skills": [
-      {
-        "id": "pictoflux-ai",
-        "name": "Pictoflux Ai",
-        "slug": "pictoflux-ai",
-        "description": "Free unlimited AI image generation via MCP protocol \u2014 text-to-image, style transfer, batch generation",
-        "category": "MCP Servers",
-        "color": "#C77DFF",
-        "emoji": "",
-        "tags": [
-          "mcp-servers"
-        ]
-      },
-      {
-        "id": "mcp-stack-curator",
-        "name": "Mcp Stack Curator",
-        "slug": "mcp-stack-curator",
-        "description": "Intelligent MCP server stack builder \u2014 recommends optimal 4-server combinations with synergy analysis",
-        "category": "MCP Servers",
-        "color": "#C77DFF",
-        "emoji": "",
-        "tags": [
-          "mcp-servers"
-        ]
-      },
-      {
-        "id": "mcp-registry",
-        "name": "Mcp Registry",
-        "slug": "mcp-registry",
-        "description": "Curated directory of 78 free MCP servers across 14 categories with deduplication and ratings",
-        "category": "MCP Servers",
-        "color": "#C77DFF",
-        "emoji": "",
-        "tags": [
-          "mcp-servers"
-        ]
-      },
-      {
-        "id": "mcp-security-scanner",
-        "name": "Mcp Security Scanner",
-        "slug": "mcp-security-scanner",
-        "description": "Security-first vetting for MCP server installations \u2014 red flag detection, permission auditing, scope analysis",
-        "category": "MCP Servers",
-        "color": "#C77DFF",
-        "emoji": "",
-        "tags": [
-          "mcp-servers"
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Agent Modes",
-    "color": "#FF6B35",
-    "skills": [
-      {
-        "id": "rabbit-multiply-ideas",
-        "name": "Rabbit Multiply Ideas",
-        "slug": "rabbit-multiply-ideas",
-        "description": "Take an idea and multiply it into 10 different variations \u2014 change the angle, audience, and format for each",
-        "category": "Agent Modes",
-        "color": "#FF6B35",
-        "emoji": "\ud83d\udc07",
-        "tags": [
-          "agent-modes"
-        ]
-      },
-      {
-        "id": "owl-deep-analysis",
-        "name": "Owl Deep Analysis",
-        "slug": "owl-deep-analysis",
-        "description": "Think slowly and analytically \u2014 examine problems from multiple perspectives and identify hidden factors most people overlook",
-        "category": "Agent Modes",
-        "color": "#FF6B35",
-        "emoji": "\ud83e\udd89",
-        "tags": [
-          "agent-modes"
-        ]
-      },
-      {
-        "id": "ant-break-into-steps",
-        "name": "Ant Break Into Steps",
-        "slug": "ant-break-into-steps",
-        "description": "Break goals into the smallest possible steps someone could realistically complete",
-        "category": "Agent Modes",
-        "color": "#FF6B35",
-        "emoji": "\ud83d\udc1c",
-        "tags": [
-          "agent-modes"
-        ]
-      },
-      {
-        "id": "eagle-big-picture",
-        "name": "Eagle Big Picture",
-        "slug": "eagle-big-picture",
-        "description": "See the long-term strategy \u2014 explain how all the pieces connect from a bird's-eye view",
-        "category": "Agent Modes",
-        "color": "#FF6B35",
-        "emoji": "\ud83e\udd85",
-        "tags": [
-          "agent-modes"
-        ]
-      },
-      {
-        "id": "dolphin-creative-solutions",
-        "name": "Dolphin Creative Solutions",
-        "slug": "dolphin-creative-solutions",
-        "description": "Generate curious, playful, and inventive solutions that most people wouldn't normally consider",
-        "category": "Agent Modes",
-        "color": "#FF6B35",
-        "emoji": "\ud83d\udc2c",
-        "tags": [
-          "agent-modes"
-        ]
-      },
-      {
-        "id": "beaver-build-systems",
-        "name": "Beaver Build Systems",
-        "slug": "beaver-build-systems",
-        "description": "Design practical systems that solve problems step by step, like a beaver building a dam",
-        "category": "Agent Modes",
-        "color": "#FF6B35",
-        "emoji": "\ud83e\uddab",
-        "tags": [
-          "agent-modes"
-        ]
-      },
-      {
-        "id": "elephant-cross-field",
-        "name": "Elephant Cross Field",
-        "slug": "elephant-cross-field",
-        "description": "Connect ideas to insights from other fields such as psychology, economics, science, or history",
-        "category": "Agent Modes",
-        "color": "#FF6B35",
-        "emoji": "\ud83d\udc18",
-        "tags": [
-          "agent-modes"
-        ]
-      }
-    ]
+    "skills": skills.filter(s => s.category === "MCP Servers")
   }
 ];
+
+export function getSkillInstallUrl(slugOrName: string): string {
+  return `skill(name="${slugOrName}")`;
+}

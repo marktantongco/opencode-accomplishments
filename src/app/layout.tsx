@@ -4,6 +4,8 @@ import "./globals.css";
 import { Providers } from "@/components/providers";
 import { Navbar, NavbarSpacer } from "@/components/layout/navbar";
 import { CommandPalette } from "@/components/layout/command-palette";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-sans",
@@ -45,6 +47,12 @@ export default function RootLayout({
       <body
         className={`${jakarta.variable} ${outfit.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[var(--zone-home)] focus:text-[var(--primary-foreground)] focus:text-sm focus:font-medium"
+        >
+          Skip to content
+        </a>
         <Providers>
           <Navbar />
           <NavbarSpacer />
@@ -62,6 +70,8 @@ export default function RootLayout({
             </div>
           </footer>
           <CommandPalette />
+          <Analytics />
+          <SpeedInsights />
         </Providers>
       </body>
     </html>

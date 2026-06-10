@@ -1,3 +1,9 @@
+> **MIGRATED**: This content now lives in `prompts/skills/SKILL_02_DESIGN_BUILD.md`.
+>
+> This file is preserved for existing references. Update all links to point to `prompts/`.
+
+---
+
 # SKILL_02: DESIGN + BUILD
 
 **Desktop — Visual Clarity, Iterative Refinement, Artifact Creation**

@@ -1,3 +1,9 @@
+> **MIGRATED**: This content now lives in `prompts/core/SILENT_PROTOCOL.md`.
+>
+> This file is preserved for existing references. Update all links to point to `prompts/`.
+
+---
+
 # SILENT PROTOCOL INTEGRATION ANALYSIS
 
 ## 🎯 WHERE IT FITS

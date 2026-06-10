@@ -1,3 +1,9 @@
+> **MIGRATED**: Decision tree now lives in `prompts/core/ROUTING.md`. Test cases retained here for reference.
+>
+> This file is preserved for existing references. Update all links to point to `prompts/`.
+
+---
+
 # ROUTING TEST CASES — SILENT PROTOCOL VERIFICATION
 
 Test Date: 2026-05-08

@@ -148,7 +148,7 @@ export function CommandPalette() {
           >
             {/* Search input */}
             <div className="flex items-center gap-3 px-4 py-3 border-b border-[var(--glass-border)]">
-              <Search className="h-4 w-4 text-muted-foreground shrink-0" />
+              <Search className="h-4 w-4 text-muted-foreground shrink-0" aria-hidden="true" />
               <input
                 ref={inputRef}
                 type="text"
@@ -158,7 +158,7 @@ export function CommandPalette() {
                 className="flex-1 bg-transparent text-sm text-foreground placeholder:text-muted-foreground outline-none"
               />
               <kbd className="hidden sm:inline-flex items-center gap-1 px-1.5 py-0.5 text-xs text-muted-foreground bg-[var(--hover-light)] rounded border border-[var(--kbd-border)]">
-                <Command className="h-3 w-3" />
+                <Command className="h-3 w-3" aria-hidden="true" />
                 K
               </kbd>
             </div>

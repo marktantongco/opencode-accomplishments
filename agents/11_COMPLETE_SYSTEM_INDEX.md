@@ -1,3 +1,9 @@
+> **MIGRATED**: This content now lives in `prompts/reference/SYSTEM_INDEX.md`.
+>
+> This file is preserved for existing references. Update all links to point to `prompts/`.
+
+---
+
 # 📚 COMPLETE SYSTEM INDEX
 
 **Everything you need. 17 comprehensive files. One system.**

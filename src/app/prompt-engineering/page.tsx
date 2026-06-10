@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { motion } from 'framer-motion';
 import { GlassCard } from '@/components/glass/glass-card';
 import { AnimatedContainer } from '@/components/motion/animated-container';
@@ -26,7 +28,7 @@ export default function BuildZonePage() {
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="p-2 rounded-lg bg-[var(--zone-build)]/15">
-                <Wrench className="h-6 w-6" style={{ color: 'var(--zone-build)' }} />
+                <Wrench className="h-6 w-6" aria-hidden="true" style={{ color: 'var(--zone-build)' }} />
               </div>
               <h1 className="text-3xl sm:text-4xl font-display font-bold text-foreground">
                 <span style={{ color: 'var(--zone-build)' }}>Build</span> Zone
@@ -43,7 +45,7 @@ export default function BuildZonePage() {
         {/* MCP Stacks */}
         <section>
           <h2 className="text-2xl font-display font-bold text-foreground mb-6 flex items-center gap-2">
-            <Server className="h-5 w-5" style={{ color: 'var(--zone-build)' }} />
+            <Server className="h-5 w-5" aria-hidden="true" style={{ color: 'var(--zone-build)' }} />
             Pre-Built MCP Stacks
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -54,20 +56,30 @@ export default function BuildZonePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.08 }}
               >
-                <GlassCard glow="lime" variant="light" className="p-5">
-                  <h3 className="text-lg font-semibold text-foreground">{stack.name}</h3>
-                  <p className="text-sm text-muted-foreground mt-1">{stack.description}</p>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {stack.servers.map((srv) => (
-                      <span key={srv} className="text-xs px-2 py-1 rounded-full bg-[var(--zone-build)]/10 text-[var(--zone-build)] border border-[var(--zone-build)]/20">
-                        {srv}
+                <Link href={`/stacks/${stack.id}`} className="block h-full">
+                  <GlassCard glow="lime" variant="light" className="p-5 h-full">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-lg font-semibold text-foreground">{stack.name}</h3>
+                      <span className="text-xs text-[var(--zone-build)] font-mono text-opacity-70">
+                        {stack.servers.length} servers
                       </span>
-                    ))}
-                  </div>
-                  <p className="text-xs text-muted-foreground mt-3">
-                    <span className="font-medium">Best for:</span> {stack.bestFor}
-                  </p>
-                </GlassCard>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{stack.description}</p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {stack.servers.map((srv) => (
+                        <span key={srv} className="text-xs px-2 py-1 rounded-full bg-[var(--zone-build)]/10 text-[var(--zone-build)] border border-[var(--zone-build)]/20">
+                          {srv}
+                        </span>
+                      ))}
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-3">
+                      <span className="font-medium">Best for:</span> {stack.bestFor}
+                    </p>
+                    <div className="mt-3 text-xs font-mono" style={{ color: 'var(--zone-build)' }}>
+                      View details &rarr;
+                    </div>
+                  </GlassCard>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -76,7 +88,7 @@ export default function BuildZonePage() {
         {/* Skill Categories */}
         <section>
           <h2 className="text-2xl font-display font-bold text-foreground mb-6 flex items-center gap-2">
-            <Layers className="h-5 w-5" style={{ color: 'var(--zone-build)' }} />
+            <Layers className="h-5 w-5" aria-hidden="true" style={{ color: 'var(--zone-build)' }} />
             Technical Skills
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

@@ -1,3 +1,9 @@
+> **MIGRATED**: Core behavior modules now live in `prompts/core/`. Conversational skill at `prompts/skills/SKILL_01_CONVERSATIONAL.md`.
+>
+> This file is preserved for existing references. Update all links to `prompts/`.
+
+---
+
 # UNIVERSAL SYSTEM PROMPT v1.0 + SKILL_01
 ## Expert AI Partner — Router + Context Engine
 

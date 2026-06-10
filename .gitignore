@@ -19,3 +19,9 @@ _audit2.py
 .next/
 out/
 next-env.d.ts
+
+# Agent & build artifacts
+.omo/
+.playwright-mcp/
+.session-handoff.md
+tsconfig.tsbuildinfo

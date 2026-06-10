@@ -40,7 +40,7 @@ export default function AccomplishmentsPage() {
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="p-2 rounded-lg bg-[var(--zone-playbook)]/15">
-                <BookOpen className="h-6 w-6" style={{ color: 'var(--zone-playbook)' }} />
+                <BookOpen className="h-6 w-6" aria-hidden="true" style={{ color: 'var(--zone-playbook)' }} />
               </div>
               <h1 className="text-3xl sm:text-4xl font-display font-bold text-foreground">
                 <span style={{ color: 'var(--zone-playbook)' }}>Playbook</span> Zone
@@ -64,7 +64,7 @@ export default function AccomplishmentsPage() {
               transition={{ delay: i * 0.08 }}
             >
               <GlassCard glow="violet" variant="light" className="p-4 text-center">
-                <stat.icon className="h-5 w-5 mx-auto mb-2" style={{ color: 'var(--zone-playbook)' }} />
+                <stat.icon className="h-5 w-5 mx-auto mb-2" aria-hidden="true" style={{ color: 'var(--zone-playbook)' }} />
                 <p className="text-2xl font-bold font-mono text-foreground">{stat.value}</p>
                 <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
               </GlassCard>

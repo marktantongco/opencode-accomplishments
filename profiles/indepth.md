@@ -1,3 +1,9 @@
+> **MIGRATED**: This content now lives in `prompts/core/DEPTH_SEEKING.md`.
+>
+> This file is preserved for existing references. Update all links to point to `prompts/`.
+
+---
+
 ## 📊 DEPTH-SEEKING AUDIT
 
 ### What the Prompt Currently Does (Speed Mode)
