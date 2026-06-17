@@ -1,6 +1,6 @@
 // Service Worker for opencode OS — AI Agent Skills
 // Cache version — bump on deploy to invalidate old caches
-const CACHE_NAME = 'opencode-os-v20';
+const CACHE_NAME = 'opencode-os-v23';
 
 // Precache: core app shell
 const PRECACHE_URLS = [
