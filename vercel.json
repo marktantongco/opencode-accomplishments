@@ -3,8 +3,6 @@
   "trailingSlash": false,
   "functions": {
     "api/recommend.ts": {
-      "runtime": "@vercel/edge@latest",
-      "memory": 128,
       "maxDuration": 10
     }
   },

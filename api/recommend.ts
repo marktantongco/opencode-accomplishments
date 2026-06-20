@@ -162,7 +162,7 @@ Rules:
 export default async function handler(req) {
   // CORS — allow the same origin (PWA) and localhost for dev
   const origin = req.headers.get('origin') || '';
-  const corsOrigin = origin.match(/^(https?:\/\/(localhost|127\.0\.0\.1|opencode-accomplishments\.vercel\.app|marktantongco\.github\.io)(:\d+)?))/)
+  const corsOrigin = origin.match(/^(https?:\/\/(localhost|127\.0\.0\.1|opencode-accomplishments\.vercel\.app|marktantongco\.github\.io)(:\d+)?)/)
     ? origin
     : 'https://marktantongco.github.io';
 
