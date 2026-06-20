@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -14,55 +14,6 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="opencode OS — AI Agent Skill Store">
   <meta name="twitter:description" content="Raycast-style developer tool directory with 90+ AI agent skills">
-  <link rel="canonical" href="https://marktantongco.github.io/opencode-accomplishments/">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta name="keywords" content="AI agent skills, opencode, developer tools, MCP servers, Model Context Protocol, GSAP animation, Three.js, Framer Motion, command palette, Raycast-style, AI skill store, agent system, multi-agent pipeline, PWA, installable web app, offline-first">
-  <meta name="author" content="Mark Tan Tongco">
-  <meta name="publisher" content="opencode OS">
-  <meta name="rating" content="general">
-  <meta name="distribution" content="global">
-  <meta name="revisit-after" content="3 days">
-  <meta name="language" content="English">
-  <meta name="coverage" content="Worldwide">
-
-  <!-- GEO -->
-  <meta name="geo.region" content="PH-00">
-  <meta name="geo.placename" content="Manila, Philippines">
-  <meta name="geo.position" content="14.5995;120.9842">
-  <meta name="ICBM" content="14.5995, 120.9842">
-
-  <!-- hreflang alternates -->
-  <link rel="alternate" hreflang="en" href="https://marktantongco.github.io/opencode-accomplishments/">
-  <link rel="alternate" hreflang="x-default" href="https://marktantongco.github.io/opencode-accomplishments/">
-
-  <!-- OpenGraph complete -->
-  <meta property="og:url" content="https://marktantongco.github.io/opencode-accomplishments/">
-  <meta property="og:site_name" content="opencode OS — AI Agent Skill Store">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:image" content="https://marktantongco.github.io/opencode-accomplishments/og-image.png">
-  <meta property="og:image:secure_url" content="https://marktantongco.github.io/opencode-accomplishments/og-image.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="opencode OS — AI Agent Skill Store: 90+ developer skills across 6 zones">
-
-  <!-- Twitter Card complete -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@marktantongco">
-  <meta name="twitter:creator" content="@marktantongco">
-  <meta name="twitter:image" content="https://marktantongco.github.io/opencode-accomplishments/og-image.png">
-  <meta name="twitter:image:alt" content="opencode OS — AI Agent Skill Store">
-  <meta name="twitter:dnt" content="on">
-
-  <!-- Performance hints -->
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-  <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js">
-
-  <!-- Sitemap & RSS -->
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-  <link rel="alternate" type="application/rss+xml" title="opencode OS — Skill Updates" href="/rss.xml">
-
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icon-192.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon-192.svg">
@@ -84,7 +35,6 @@
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
   </script>
-
 
   <script type="application/ld+json">
   {
@@ -207,7 +157,7 @@
       "name": "How do I install a skill from the store?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Each skill card has an install command (e.g. `opencode skill add gsap-animation-engineer`). Click the copy button on any card to copy the install command to your clipboard, then run it in your terminal."
+        "text": "Each skill card has an install command (e.g. 'opencode skill add gsap-animation-engineer'). Click the copy button on any card to copy the install command to your clipboard, then run it in your terminal."
       }
     },
     {
@@ -247,7 +197,7 @@
       "name": "Can I use opencode OS on mobile?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. The entire UI is responsive and touch-optimized. Install it as a PWA on iOS (Share \u2192 Add to Home Screen) or Android (Chrome \u2192 Install App) for a native-like experience."
+        "text": "Yes. The entire UI is responsive and touch-optimized. Install it as a PWA on iOS (Share then Add to Home Screen) or Android (Chrome then Install App) for a native-like experience."
       }
     }
   ]
@@ -279,6 +229,7 @@
   ]
 }
   </script>
+
   <style>
     /* ═══════════════════════════════════════════════
        RESET & TOKENS
@@ -1032,6 +983,9 @@
       animation: toastIn 0.18s var(--ease-out);
     }
     .toast.ok { color: var(--green); }
+    @keyframes typingBlink { 0%, 60%, 100% { opacity: 0.3; } 30% { opacity: 1; } }
+    .typing-dots { display: inline-block; margin-left: 2px; animation: typingBlink 1.2s infinite; letter-spacing: 1px; }
+    .rec-source { white-space: nowrap; }
     @keyframes toastIn {
       from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
@@ -1742,34 +1696,75 @@
 
   function toggleChat() { document.getElementById('chatPanel').classList.toggle('visible'); }
 
-  function sendChat() {
+  function renderRecommendations(reply, recs, source) {
+    let html = `<div class="chat-msg bot">${escapeHtml(reply)}`;
+    if (source) html += ` <span class="rec-source" style="opacity:0.5;font-size:10px;font-family:var(--font-mono);">· ${source}</span>`;
+    recs.forEach(r => {
+      // Find skill by slug (preferred) or name (fallback)
+      const skill = SKILLS_DATA.find(s => (s.slug || s.name.toLowerCase().replace(/\s+/g,'-')) === r.slug) ||
+                    SKILLS_DATA.find(s => s.name === r.name);
+      if (skill) {
+        const icon = skill.icon || '⚡';
+        const score = r.score ? `${r.score}%` : (r.category || '');
+        html += `<div class="rec-skill"><span class="rec-icon">${icon}</span><div class="rec-info"><div class="rec-name">${escapeHtml(skill.name)}</div><div class="rec-cmd">${escapeHtml(skill.installCommand)}</div>${r.reason ? `<div style="font-size:11px;color:var(--text-2);margin-top:2px;">${escapeHtml(r.reason)}</div>` : ''}</div><span class="rec-score">${escapeHtml(score)}</span></div>`;
+      }
+    });
+    html += `</div>`;
+    return html;
+  }
+
+  async function sendChat() {
     const input = document.getElementById('chatInput');
     const msg = input.value.trim();
     if (!msg) return;
     const msgs = document.getElementById('chatMessages');
     msgs.innerHTML += `<div class="chat-msg user">${escapeHtml(msg)}</div>`;
     input.value = '';
-    const intent = matchIntent(msg);
-    let html = '';
-    if (intent) {
-      html = `<div class="chat-msg bot">${intent.message}`;
-      intent.responses.forEach(r => {
-        const skill = SKILLS_DATA.find(s => s.name === r.name);
-        if (skill) {
-          html += `<div class="rec-skill"><span class="rec-icon">${skill.icon}</span><div class="rec-info"><div class="rec-name">${skill.name}</div><div class="rec-cmd">${skill.installCommand}</div></div><span class="rec-score">${r.score}%</span></div>`;
-        }
+
+    // Show typing indicator
+    const typingId = 'typing-' + Date.now();
+    msgs.innerHTML += `<div class="chat-msg bot" id="${typingId}" style="opacity:0.6;"><span>⚡ Thinking</span><span class="typing-dots">...</span></div>`;
+    msgs.scrollTop = msgs.scrollHeight;
+
+    // Try the AI Gateway edge function first
+    let reply = '', recs = [], source = '';
+    try {
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), 6000);
+      const res = await fetch('/api/recommend', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg }),
+        signal: ctrl.signal,
       });
-      html += `</div>`;
-    } else {
-      const defaults = {};
-      SKILLS_DATA.forEach(s => { if (!defaults[s.category]) defaults[s.category] = s; });
-      html = `<div class="chat-msg bot">I'll show you top picks from each category:`;
-      Object.values(defaults).forEach(skill => {
-        html += `<div class="rec-skill"><span class="rec-icon">${skill.icon}</span><div class="rec-info"><div class="rec-name">${skill.name}</div><div class="rec-cmd">${skill.installCommand}</div></div><span class="rec-score">${skill.category}</span></div>`;
-      });
-      html += `</div>`;
+      clearTimeout(t);
+      if (res.ok) {
+        const data = await res.json();
+        reply = data.reply || '';
+        recs = data.recommendations || [];
+        source = data.source === 'ai-gateway' ? 'AI Gateway' : (data.source || '');
+      } else {
+        throw new Error('HTTP ' + res.status);
+      }
+    } catch (err) {
+      // Network/timeout/non-OK — fall back to local INTENT_MAP
+      const intent = matchIntent(msg);
+      if (intent) {
+        reply = intent.message;
+        recs = intent.responses.map(r => ({ name: r.name, slug: r.name.toLowerCase().replace(/\s+/g,'-'), score: r.score, reason: '' }));
+        source = 'offline-rules';
+      } else {
+        const defaults = {};
+        SKILLS_DATA.forEach(s => { if (!defaults[s.category]) defaults[s.category] = s; });
+        reply = "I'll show you top picks from each category:";
+        recs = Object.values(defaults).map(s => ({ name: s.name, slug: (s.slug || s.name.toLowerCase().replace(/\s+/g,'-')), score: 0, reason: '', category: s.category }));
+        source = 'offline-defaults';
+      }
     }
-    msgs.innerHTML += html;
+
+    // Remove typing indicator, render result
+    document.getElementById(typingId)?.remove();
+    msgs.innerHTML += renderRecommendations(reply, recs, source);
     msgs.scrollTop = msgs.scrollHeight;
   }
 
