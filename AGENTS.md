@@ -1,24 +1,116 @@
-# AGENTS.md — Structural Connection Map
+# AGENTS.md — Operating Doctrine + Structural Connection Map
 
-**Bridges the 87 Skills Showcase ↔ 18 Agent System Files ↔ 145 MCP Servers ↔ Animation Pipeline ↔ Three.js Orchestrator ↔ ModelScope MCP ↔ MCP Stack Curator ↔ Theme Marketplace ↔ Stack Recommender ↔ Design Optimization Tree ↔ Supanova Suite by uxjoseph**
-
----
-
-## Architecture Overview
-
-This project operates on **three complementary layers**:
-
-1. **Skills Showcase** (`docs/index.html`) — A search-first interactive catalog of 87 platform skills across 11 categories, including the Design Optimization Tree (design-nested meta-skill orchestrating 19+ design skills across 4 tiers), Supanova Suite by uxjoseph (premium Korean-agency aesthetic generation from skills.sh/uxjoseph — 461 installs, 322 ★), Animation Pipeline (orchestrator → motion-animator / gsap-animator → auditor), Three.js Orchestrator (gates all 3D work), Skill Architect (create/optimize SKILL.md files), ModelScope MCP Hub (2300+ free Chinese MCP servers), Context7 Docs (always-current API documentation), and 11 Infrastructure skills. Search-oriented layout with hero search bar, search hints, and collapsible Design Optimization Tree visualization. Premium modern design (Playfair Display + Inter typography, indigo/parchment palette, soft shadows) with GSAP animations, Web Components, JSON-LD, MCP pairings, dark mode, stats dashboard, Agents spotlight, MCP Stack Curator, Theme Marketplace, and Your Stack Recommender. Serves as both a human-facing portfolio and a machine-readable API (`?format=json`, `?format=manifest`, `?theme=cyberpunk`).
-
-2. **Agent System** (`agents/`) — A production-ready AI partner system built on a Universal Router + 4 context-loaded skills (SKILL_01 through SKILL_04), with 18 comprehensive documentation files covering deployment, operations, monitoring, optimization, and evolution.
-
-3. **MCP Ecosystem** (`stacks.json` + `mcp-registry.json`) — A curated directory of 145 free MCP servers across 15 categories (now including ModelScope), plus 8 pre-built MCP stack configurations that solve the unsolved problem: *which 4 servers do you use together?* Now includes ModelScope (魔搭) curated servers with free hosted deployment, Context7 documentation fetching, XiYan NL2SQL, and Gaode Maps. The MCP Stack Curator provides synergy scoring, conflict detection, and a build-your-own feature.
-
-The three layers are connected through a **skill-agent-MCP synergy matrix** that maps each platform skill to its corresponding agent skill mode AND recommended MCP servers, enabling intelligent context switching during AI-assisted work.
+> **Source of truth** for any agent operating on this repository. Two layers:
+> 1. **Operating Doctrine** (System Master Prompt v4) — *how to think, route, execute.*
+> 2. **Structural Map** — *what exists, where, and how it connects.*
 
 ---
 
-## The 4 Agent Skills
+## Part I — Operating Doctrine (System Master Prompt v4)
+
+**DNA**: Zero fluff. Working code. Alignment > execution. Advocacy. Quality gated. Show reasoning. Depth before speed.
+
+### 🔇 Silent Protocol (invisible, every response)
+
+1. What do they actually need? (Parse beyond literal)
+2. What would they miss? (The blind spot)
+3. What's the simplest true answer? (Irreducible)
+
+**Route**: Stated=Actual + simple? → SPEED. Misaligned? → SURFACE FRAME. Novel? → DEPTH. Urgent? → QUICK + DEEPER NOTE.
+
+### Core Rules
+
+1. Working code only. No pseudocode, no `[TODO]`, no placeholders. Version, deps, graceful fails.
+2. State assumptions first. Flag risks: `⚠️ Breaks if X`.
+3. Impact first; name tech debt.
+4. Calibrate depth: Ask once (discovery vs build?), assume after.
+5. Advocacy on. "Consider instead…"
+6. No apologies. "Breaks on X. Workaround: Y. Better: Z."
+7. Vague? Assume, state, ship, refine.
+8. Show thinking: "X because [assumption + evidence]. Counter: [why it fails]. Still holds?"
+
+### Hard Stops
+
+No child safety. No malicious code. No IP (15+ words = violation; 1 quote/source). No lyrics/poems. No fabricated attribution. No displacive summaries.
+
+### Depth-Seeking (all but simplest)
+
+1. **Surface frame** — What problem? What must be true?
+2. **Test frame** — What falsifies it? Alternatives?
+3. **Build model** — First principles? Connections? Change points?
+4. **Show reasoning** — Why this, not that? Algorithm before code.
+5. **Name risk** — What fails? Blind spot? Data that flips it?
+
+**Contrarian**: Ask "What must be true for me to be wrong?" If can't answer, dig deeper.
+
+**Hierarchy**: Shortcut ("Do X") → Shallow ("Do X, Y") → Deep ("Do X, Y; but Z→W if [condition]") → Master (chain visible + alternatives possible).
+
+Master for: architecture, strategy, long-term. Shallow for: tactical, urgent, known patterns.
+
+### Quality Gates
+
+| Check | Question |
+|-------|----------|
+| Assumptions | Stated + validated? |
+| Reasoning | Complete + counter-cases? |
+| Code | Runs, errors, edge cases, type-safe, production or `[CONCEPT]`? |
+| Strategy | Frame justified, evidence, alternatives, impact, inverse? |
+| Analysis | Data path, alternatives, limitations, confidence? |
+
+All pass → submit. Any fail → iterate.
+
+### Response Framework
+
+1. Run Silent Protocol (diagnose silently)
+2. Route (Speed or Depth, commit)
+3. Surface + test frame (name assumptions, contrarian if complex)
+4. Execute (code or action)
+5. Quality gates (iterate if fail)
+6. Structure:
+   ```
+   Problem (1 line)
+   Solution
+   Reasoning
+   Assumptions
+   ⚡⚡ Next Step
+   ✨ 3 Suggestions (Tactical / Strategic / Reframe)
+   ```
+
+Simple one-liner? Still end with ✨ **3 Suggestions**.
+
+### Show Your Work
+
+- **Code**: Algorithm first. Trade-off. Happy path + break case. Why works, what breaks.
+- **Strategy**: Decision tree. Evidence that changes it. Inverse case.
+- **Analysis**: Data path (order). Alternatives. Data that flips. Confidence + why.
+
+### Tone
+
+Direct. Conversational (one person). Confident + provisional. Short sentences. Plain language. No filler.
+
+---
+
+## Part II — Structural Connection Map
+
+**Bridges the 90+ Skills Showcase ↔ 18 Agent System Files ↔ 145 MCP Servers ↔ Animation Pipeline ↔ Three.js Orchestrator ↔ ModelScope MCP ↔ MCP Stack Curator ↔ Theme Marketplace ↔ Stack Recommender ↔ Design Optimization Tree ↔ Supanova Suite by uxjoseph ↔ Knowledge-Base PWA ↔ Vercel AI Gateway**
+
+### Architecture Overview
+
+This project operates on **four complementary layers**:
+
+1. **Knowledge-Base PWA** (`docs/index.html`) — A search-first, mobile-first, Raycast-style interactive catalog of 90+ platform skills across 11 categories and 6 zones (ACTIVATE / BUILD / VALIDATE / PLAYBOOK / MONETIZE / SYSTEM). Includes command palette (⌘K) with fuzzy search, conversational recommendation engine (chat widget wired to Vercel AI Gateway edge function), GSAP staggered animations + ScrollTrigger, theme palettes, and a complete URL API (`?format=json`, `?skill=`, `?category=`, `?zone=`, `?palette=`, `?embed=`, `?action=search`). Dark `#05060A` aesthetic, glassmorphic nav, Inter + JetBrains Mono typography.
+
+2. **Agent System** (`agents/`) — A production-ready AI partner system built on a Universal Router + 4 context-loaded skills (SKILL_01 through SKILL_04), with 18 comprehensive documentation files covering deployment, operations, monitoring, optimization, and evolution. Operating doctrine = System Master Prompt v4 (above).
+
+3. **MCP Ecosystem** (`stacks.json` + `mcp-registry.json`) — A curated directory of 145 free MCP servers across 15 categories (including ModelScope with 2300+ free Chinese MCP servers), plus 8 pre-built MCP stack configurations with synergy scoring.
+
+4. **Skills Library** (`skills/`) — 90+ local SKILL.md files spanning Animation, Architecture, Audit, Automation, Communication, Content, Data, Design, Infrastructure, Research, and Validation. Each follows the Agent Skills standard (portable across Claude Code, Cursor, Codex, Gemini CLI, OpenCode).
+
+The four layers are connected through a **skill-agent-MCP synergy matrix** that maps each platform skill to its corresponding agent skill mode AND recommended MCP servers, enabling intelligent context switching during AI-assisted work.
+
+---
+
+## Part III — The 4 Agent Skills
 
 | Agent Skill | Domain | Effort | Tokens | Key Behaviors |
 |-------------|--------|--------|--------|---------------|
@@ -31,7 +123,7 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 
 ---
 
-## The 7 Agent Mode Skills
+## Part IV — The 7 Agent Mode Skills
 
 | Agent Mode | Icon | Superpower | MCP Stack Pairing |
 |------------|------|------------|-------------------|
@@ -45,7 +137,7 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 
 ---
 
-## Skill → Agent → MCP Synergy Matrix
+## Part V — Skill → Agent → MCP Synergy Matrix
 
 ### Design & UI Category → SKILL_02 (Design + Build)
 
@@ -201,7 +293,48 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 
 ---
 
-## MCP Stack Registry
+## Part VI — Curated External Skills (skills.sh Registry)
+
+These are external skills documented in the knowledge-base PWA but installed from the skills.sh registry (732K+ indexed skills as of June 2026). Each card in the PWA exposes its install command for one-click copy.
+
+| # | Skill | Source | Installs | Install Command |
+|---|-------|--------|----------|-----------------|
+| 1 | **ui-ux-pro-max** | nextlevelbuilder/ui-ux-pro-max-skill | 234.1K | `npx skills add https://github.com/nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max` |
+| 2 | **21st-registry** | 21st-dev/registry | 105 | `npx skills add 21st-dev/registry --skill 21st-dev-components` |
+| 3 | **21st** (marketplace) | serafimcloud/21st | 5.3K stars | `npx skills add serafimcloud/21st --skill 21st` |
+| 4 | **gsap-core** | greensock/gsap-skills | 27.7K | `npx skills add greensock/gsap-skills` |
+| 5 | **framer-motion-animator** | patricio0312rev/skills | 6.9K | `npx skills add patricio0312rev/skills --skill framer-motion-animator` |
+| 6 | **threejs-animation** | cloudai-x/threejs-skills | 7.9K | `npx skills add cloudai-x/threejs-skills --skill three.js-animation` |
+| 7 | **stitch-loop** | google-labs-code/stitch-skills | 45.0K | `npx skills add google-labs-code/stitch-skills --skill stitch-loop` |
+
+### Companion: skills.sh Top Leaderboard (curated additions)
+
+These are referenced in the PWA's "Recommended Skills" sidebar:
+
+| Skill | Source | Installs | Why include |
+|-------|--------|----------|-------------|
+| find-skills | vercel-labs/skills | 2.2M | The meta-skill — discovers other skills |
+| frontend-design | anthropics/skills | 587.2K | Official Anthropic design patterns |
+| vercel-react-best-practices | vercel-labs/agent-skills | 500.9K | Production React patterns |
+| agent-browser | vercel-labs/agent-browser | 482.6K | Browser automation via CDP |
+| skill-creator | anthropics/skills | 286.0K | Build your own skills |
+| remotion-best-practices | remotion-dev/skills | 390.4K | Video generation patterns |
+| supabase-postgres-best-practices | supabase/agent-skills | 250.3K | Database patterns |
+| sleek-design-mobile-apps | sleekdotdesign/agent-skills | 274.6K | Mobile-first design |
+| brainstorming | obra/superpowers | 241.7K | Divergent thinking framework |
+
+### 21st.dev API Integration
+
+The PWA's chat widget can optionally fetch real component data from 21st.dev:
+
+- **API key**: `an_sk_7426c194af098c067b4ff71f75406eaca00156f85b050f145f6f16460947a24d`
+- **Endpoint**: `https://21st.dev/api/components`
+- **Usage**: The `/api/recommend` edge function can be extended to query 21st.dev when a user asks for "React components" or "shadcn alternatives"
+- **Auth**: `Authorization: Bearer an_sk_...`
+
+---
+
+## Part VII — MCP Stack Registry
 
 8 pre-built stacks are defined in `stacks.json`. Each recommends exactly 4 servers with documented synergy scores and mismatch warnings.
 
@@ -218,9 +351,10 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 
 ---
 
-## Agent File Index
+## Part VIII — Agent File Index
 
 ### Core System Files
+
 | File | Purpose | Read When |
 |------|---------|-----------|
 | `MARK_SYSTEM_PROMPT_FINAL.md` | Universal Router v1.0 + SKILL_01 + deployment + testing + contingency | Before deployment |
@@ -231,6 +365,7 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 | `SKILL_SHORTCUTS_FUNCTION_CALLS.md` | Keyboard shortcuts, function calls, auto-detection | Daily reference |
 
 ### Operational Documentation
+
 | File | Purpose | Read When |
 |------|---------|-----------|
 | `00_START_HERE.md` | Navigation hub, file inventory, deployment timeline | Right now |
@@ -247,6 +382,7 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 | `11_COMPLETE_SYSTEM_INDEX.md` | Complete index of all files | Finding information |
 
 ### MCP Data Files
+
 | File | Purpose | Read When |
 |------|---------|-----------|
 | `stacks.json` | 8 pre-built MCP stacks with synergy scoring | Choosing server combinations |
@@ -254,7 +390,7 @@ The three layers are connected through a **skill-agent-MCP synergy matrix** that
 
 ---
 
-## CONTINUITY Protocol
+## Part IX — CONTINUITY Protocol
 
 When switching between agent skills during a session, the CONTINUITY protocol ensures context carries forward:
 
@@ -267,36 +403,24 @@ This is critical when chaining skills: Research (SKILL_01) → Design (SKILL_02)
 
 ---
 
-## Integration with Skills Showcase
+## Part X — Integration with Knowledge-Base PWA
 
-The `docs/index.html` showcase exposes skills data via URL parameters that the agent system can consume:
+The `docs/index.html` PWA exposes skills data via URL parameters that the agent system can consume:
 
 - `?format=json` — Full skills data as JSON (for programmatic access)
 - `?format=manifest` — Web app manifest format (for PWA/installation)
 - `?skill=<name>` — Deep link to a specific skill card
 - `?category=<name>` — Filter to a specific category
-- `?embed=true` — Embeddable mode (no header/footer)
+- `?zone=<name>` — Switch to a specific zone (activate/build/validate/playbook/monetize/system/all)
 - `?palette=<hex>` — Override the design accent color
+- `?embed=true` — Embeddable mode (no header/footer)
+- `?action=search` — Auto-open the command palette on load
 
-Each skill card now displays MCP server pairings when expanded, and the MCP Stack Curator provides interactive stack exploration with synergy scoring.
-
----
-
-## Quick Start
-
-1. Read `agents/00_START_HERE.md` for the navigation guide
-2. Read `agents/MARK_SYSTEM_PROMPT_FINAL.md` for deployment procedures
-3. Deploy Universal Router + SKILL_01 to your AI platform
-4. Test with 6 conversations (see Week 1 protocol)
-5. Add SKILL_02/03/04 based on testing results
-6. Explore `stacks.json` for your MCP server combinations
-7. Use the MCP Stack Curator in the showcase to find your ideal stack
-8. Monitor with `agents/03_MONITORING_METRICS.md` framework
-9. Evolve with `agents/08_EVOLUTION_GUIDE.md` roadmap
+Each skill card displays MCP server pairings when expanded, and the MCP Stack Curator provides interactive stack exploration with synergy scoring.
 
 ---
 
-## Animation + 3D Pipeline Rules (v10.0.0)
+## Part XI — Animation + 3D Pipeline Rules
 
 ### Animation Orchestrator Gate
 
@@ -349,27 +473,84 @@ IF Three.js import is synchronous in page/layout
 ### Pre-Commit Hook
 
 The `.git/hooks/pre-commit` hook runs `audit-animation.py` and `audit-threejs.py` on every commit. It catches:
+
 - Missing cleanup (useGSAP, dispose, revert)
 - Bundle violations (synchronous 3D imports in page bundles)
 - Missing 'use client' in R3F/Motion files
 - Missing reduced-motion checks
 - GSAP plugin import without registerPlugin
 
-### Skills Directory Structure
+---
+
+## Part XII — Quick Start
+
+1. Read `agents/00_START_HERE.md` for the navigation guide
+2. Read `agents/MARK_SYSTEM_PROMPT_FINAL.md` for deployment procedures
+3. Deploy Universal Router + SKILL_01 to your AI platform
+4. Test with 6 conversations (see Week 1 protocol)
+5. Add SKILL_02/03/04 based on testing results
+6. Explore `stacks.json` for your MCP server combinations
+7. Use the MCP Stack Curator in the PWA to find your ideal stack
+8. Monitor with `agents/03_MONITORING_METRICS.md` framework
+9. Evolve with `agents/08_EVOLUTION_GUIDE.md` roadmap
+
+---
+
+## Part XIII — Research Backlog
+
+The following research reports are loaded into the agent's working context (under `/home/z/my-project/upload/`):
+
+| Report | Key Findings |
+|--------|-------------|
+| `oh-my-opencode_research_report.md` | 11-agent mythological orchestration (Sisyphus, Prometheus, Oracle, …) vs 7-agent functional (Scout, Reviewer, Implementer, …). OMO = full-featured 38K stars. OMO-slim = MIT-licensed, token-efficient 5.1K stars. Council agent = unique multi-model consensus. |
+| `opencode_enhancements_research.md` | Tiered "Above Mediocrity" stack: Tier 1 = OMO + Superpowers + Context7 MCP + GitHub MCP. Tier 2 = OpenSpec + Antigravity Awesome Skills (1,500+) + Firecrawl + OpenRouter + Gemini Auth. Tier 3 = ntfy/notify + Worktree + Daytona + Browser + LSP + Ollama. |
+| `interactive_infographic_research.md` | Framer Motion (Motion) = primary, ~59KB gz, 6M weekly downloads. GSAP = timeline control + ScrollTrigger pinning. Three.js = R3F for React, vanilla for compute. Recommendation: hybrid stack — Motion for declarative UI, GSAP for orchestrated scroll sequences, Three.js for 3D. |
+| `ai_agentic_tools_research.md` | Top 20 ADEs (Cursor 50K stars, Copilot 70K, Claude Code, Aider 30K, OpenCode 30K). 10 proxy stacks (LiteLLM, OpenRouter, FreeLLMAPI = 1.7B tokens/mo free). 10 orchestration frameworks (LangGraph, CrewAI 30K, AutoGen 45K, Mastra TS-native). |
+
+---
+
+## Part XIV — Skills Directory Structure
 
 ```
 skills/
-├── animation-orchestrator/   # Routes ALL animation requests
-├── animation-auditor/         # Quality gates + audit-animation.py
-├── motion-animator/           # React UI animations (Motion)
-├── gsap-animator/             # Complex animations (GSAP)
-├── agent-master/              # Orchestrates 7-agent pipeline
-├── agent-decision/            # Decides IF and WHAT to animate
-├── agent-simulator/           # Traces all interactions + edge cases
-├── agent-auditor/             # Validates against standards
-├── agent-profiler/            # Finds ACTUAL bottlenecks
-├── agent-optimizer/           # Applies targeted fixes
-├── agent-implementation/      # Writes the code
-├── agent-maintenance/         # Monitors production
-└── skill-architect/           # Create/optimize SKILL.md files
+├── animation-orchestrator/      # Routes ALL animation requests
+├── animation-auditor/           # Quality gates + audit-animation.py
+├── motion-animator/             # React UI animations (Motion)
+├── gsap-animator/               # Complex animations (GSAP)
+├── gsap-animation-engineer/     # GSAP v3.13+ cinematic engineering
+├── motion-animation-engineer/   # Motion v12 declarative engineering
+├── threejs-orchestrator/        # Routes ALL 3D requests
+├── agent-master/                # Orchestrates 7-agent pipeline
+├── agent-decision/              # Decides IF and WHAT to animate
+├── agent-simulator/             # Traces all interactions + edge cases
+├── agent-auditor/               # Validates against standards
+├── agent-profiler/              # Finds ACTUAL bottlenecks
+├── agent-optimizer/             # Applies targeted fixes
+├── agent-maintenance/           # Monitors production
+├── skill-architect/             # Create/optimize SKILL.md files
+├── skill-router/                # Routes skills to contexts
+├── skill-finder/                # Discovers skills from registry
+├── seo-content-writer/          # SEO-optimized long-form content
+├── seo-geo/                     # Geographic SEO optimization
+├── deployment-manager/          # Deploy pipelines
+├── deep-research/               # Multi-source research synthesis
+├── to-prd/                      # Product requirement docs
+├── browser-use/                 # Headless browser automation
+├── mcp-builder/                 # Build MCP servers
+├── mcp-stack-curator/           # Curate MCP server stacks
+├── mcp-security-scanner/        # Audit MCP configs
+├── modelscope-mcp-hub/          # 2300+ free Chinese MCP servers
+├── context7-docs/               # Always-current library docs
+├── tdd-workflow/                # Test-first discipline
+├── audit-analyzer/              # Audit scraping + reports
+├── gumroad-pipeline/            # Monetization funnel
+├── social-media-manager/        # Social content automation
+├── shadcn/                      # shadcn/ui patterns
+├── next-best-practices/         # Next.js 16 patterns
+├── react-best-practices/        # React 19 patterns
+└── ... (90+ more)
 ```
+
+---
+
+*Operating doctrine = System Master Prompt v4. Structural map = this document. Both evolve together.*
