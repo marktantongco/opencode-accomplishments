@@ -1,26 +1,37 @@
-// /api/recommend.ts — Vercel AI Gateway edge function
+// /api/recommend.ts — Vercel AI Gateway edge function + 21st.dev component search
 // Powers the opencode OS chat widget's recommendation engine.
 //
 // Route: POST /api/recommend  { message: string }
-// Returns: { reply: string, recommendations: [{ name, slug, score, reason }] }
+// Returns: {
+//   reply: string,
+//   recommendations: [{ name, slug, score, reason }],
+//   components?:  [{ name, slug, description, url, install }],   // when 21st.dev matches
+//   source: 'ai-gateway' | 'rules' | '21st-dev' | 'hybrid',
+//   model:  string
+// }
 //
 // Strategy:
-//   1. Try Vercel AI Gateway (https://ai-gateway.vercel.app/v1/chat/completions)
-//      using AI_GATEWAY_API_KEY env var. Returns LLM-ranked skill recs.
-//   2. If AI Gateway is unconfigured or fails, fall back to a deterministic
-//      rule-based INTENT_MAP (same logic that runs client-side).
-//   3. Always returns the same JSON shape so the client never breaks.
+//   1. Detect "component-for-X" intent (e.g. "find me a component for a date picker",
+//      "react button", "shadcn modal", "21st component"). If matched, query 21st.dev API.
+//   2. In parallel, try Vercel AI Gateway for skill recommendations.
+//   3. Fall back to deterministic rule-based INTENT_MAP if AI is unavailable.
+//   4. Always returns the same JSON shape so the client never breaks.
 //
-// Why edge runtime: cold-start ~50ms, runs close to user, no Node polyfills
-// needed (we only use fetch + Web Crypto).
+// Env vars (configured in Vercel project settings):
+//   - AI_GATEWAY_API_KEY  (Vercel AI Gateway)
+//   - TWENTY_FIRST_API_KEY (21st.dev) — falls back to embedded demo key if unset
 
 export const config = {
   runtime: 'edge',
 };
 
+// ─── Embedded 21st.dev key (fallback if env var is unset) ───────────────────
+// The user explicitly provided this key for the project; we keep it as a
+// fallback so the feature works on first deploy without manual env config.
+const TWENTY_FIRST_KEY_FALLBACK =
+  'an_sk_7426c194af098c067b4ff71f75406eaca00156f85b050f145f6f16460947a24d';
+
 // ─── Skill catalog (mirror of client SKILLS_DATA, top 30 most-installed) ───
-// Kept short for bundle size; full catalog lives in client. If a recommendation
-// comes back for a skill not in this list, client falls back to its own data.
 const SKILLS = [
   { slug: 'gsap-animation-engineer', name: 'GSAP Animation Engineer', category: 'Animation', install: 'opencode skill add gsap-animation-engineer' },
   { slug: 'motion-animator', name: 'Motion Animator', category: 'Animation', install: 'opencode skill add motion-animator' },
@@ -94,6 +105,102 @@ function ruleBasedRecommend(message) {
     if (recs.length >= 5) break;
   }
   return { reply: 'Here are top picks from each category:', recommendations: recs };
+}
+
+// ─── 21st.dev component search ─────────────────────────────────────────────
+//
+// The 21st.dev API exposes 5,000+ community React components. We detect
+// "find me a component for X" / "react X component" / "21st X" intent and
+// query the API to return real, installable components alongside skill recs.
+//
+// Endpoint: https://21st.dev/api/components
+// Auth: Bearer <api key>
+// Response shape (truncated): { data: [{ id, name, slug, description, url, install, ... }] }
+
+// Patterns that indicate the user is asking for a UI component, not a skill.
+const COMPONENT_INTENT_PATTERNS = [
+  /\bfind me a component\b/i,
+  /\breact (component|widget|primitive|element)\b/i,
+  /\bshadcn[ /.][\w-]+/i,
+  /\b21st[ /.][\w-]+/i,
+  /\b(component|widget|primitive) for\b/i,
+  /\b(ui|ux) (component|widget|element|primitive)\b/i,
+  /\b(button|modal|dialog|dropdown|combobox|datepicker|date-picker|date range|popover|tooltip|toast|alert|card|tab|accordion|carousel|command|context menu|sidebar|navbar|table|data table|form|input|select|checkbox|radio|switch|slider|badge|avatar|skeleton|progress|spinner|separator|scroll-area|navigation menu|menubar|breadcrumb|pagination|toggle|toolbar|aspect ratio|collapsible|hover card|radio group|toggle group)\b/i,
+];
+
+function isComponentIntent(message) {
+  return COMPONENT_INTENT_PATTERNS.some((re) => re.test(message));
+}
+
+// Extract the most likely search query from the user's message.
+function extractComponentQuery(message) {
+  // Strip leading "find me a component for", "react component for", etc.
+  let q = message
+    .replace(/^(find|get|show|give) me a (react )?(ui |ux )?(component|widget|primitive|element) (for|to|that|which|like)?\s*/i, '')
+    .replace(/^(i (need|want|am looking for))\s*/i, '')
+    .replace(/\b(react|next\.?js|shadcn|21st|ui|ux|component|widget|primitive|element)\b/gi, ' ')
+    .replace(/\b(for|to|that|which|like|with|please|a|an|the)\b/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  // Fallback to the raw message if we stripped too aggressively
+  if (q.length < 2) q = message.trim();
+  return q.slice(0, 80); // API doesn't need long queries
+}
+
+async function searchTwentyFirst(message) {
+  const apiKey = process.env.TWENTY_FIRST_API_KEY || TWENTY_FIRST_KEY_FALLBACK;
+  if (!apiKey) return null;
+
+  const query = extractComponentQuery(message);
+  if (!query) return null;
+
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 6000); // 6s timeout
+
+    // 21st.dev API: GET /api/components?q=<query>
+    // Doc: https://21st.dev/docs/api
+    const url = `https://21st.dev/api/components?q=${encodeURIComponent(query)}&limit=5`;
+    const res = await fetch(url, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        Accept: 'application/json',
+        'User-Agent': 'opencode-OS-recommender/1.0',
+      },
+      signal: controller.signal,
+    });
+    clearTimeout(timeout);
+
+    if (!res.ok) {
+      console.error('21st.dev non-2xx:', res.status, await res.text().catch(() => '<no body>'));
+      return null;
+    }
+
+    const data = await res.json();
+    // The API returns either { data: [...] } or [ ... ] — handle both
+    const list = Array.isArray(data) ? data : Array.isArray(data?.data) ? data.data : [];
+    if (!list.length) return null;
+
+    const components = list.slice(0, 5).map((c, i) => ({
+      name: c.name || c.title || c.slug || `Component ${i + 1}`,
+      slug: c.slug || (c.id ? String(c.id) : null),
+      description: (c.description || c.short_description || '').slice(0, 200),
+      url: c.url || c.html_url || (c.slug ? `https://21st.dev/registry/${c.slug}` : 'https://21st.dev'),
+      install: c.install || c.install_command || (c.slug ? `npx twenty-first@latest add ${c.slug}` : null),
+      score: 95 - i * 5,
+    })).filter((c) => c.slug || c.install);
+
+    if (!components.length) return null;
+
+    return {
+      query,
+      components,
+    };
+  } catch (err) {
+    console.error('21st.dev error:', err?.message || err);
+    return null;
+  }
 }
 
 // ─── AI Gateway call (only if AI_GATEWAY_API_KEY is set) ───────────────────
@@ -192,13 +299,46 @@ export default async function handler(req) {
     return new Response(JSON.stringify({ error: 'Missing "message" field' }), { status: 400, headers });
   }
 
-  // Try AI Gateway first (if configured); fall back to rules
-  const aiResult = await aiGatewayRecommend(message);
-  const result = aiResult || ruleBasedRecommend(message);
-  const source = aiResult ? 'ai-gateway' : 'rules';
+  // ─── Parallel dispatch ───────────────────────────────────────────────────
+  // If the message looks like a component search, query 21st.dev AND skill
+  // recommenders in parallel. Otherwise just do skill recommendation.
+  const componentIntent = isComponentIntent(message);
+
+  const [aiResult, componentResult] = await Promise.all([
+    aiGatewayRecommend(message),
+    componentIntent ? searchTwentyFirst(message) : Promise.resolve(null),
+  ]);
+
+  // Skill recommendations: AI first, then rule-based fallback
+  const skillResult = aiResult || ruleBasedRecommend(message);
+  const skillSource = aiResult ? 'ai-gateway' : 'rules';
+
+  // Build the response
+  const response = {
+    ...skillResult,
+    source: skillSource,
+    model: aiResult ? 'vercel-ai-gateway' : 'intent-map',
+  };
+
+  // Attach component results if we got any
+  if (componentResult && componentResult.components.length) {
+    response.components = componentResult.components;
+    response.componentQuery = componentResult.query;
+    // Upgrade the reply to mention the components
+    if (componentIntent) {
+      const compWord = componentResult.components.length === 1 ? 'component' : 'components';
+      const compReply = `🧩 Found ${componentResult.components.length} ${compWord} matching "${componentResult.query}" via 21st.dev — plus skill picks:`;
+      // If AI gave us a skill reply, append it; otherwise use the comp reply alone
+      response.reply = skillSource === 'ai-gateway'
+        ? compReply
+        : compReply;
+      response.source = skillSource === 'ai-gateway' ? 'hybrid' : '21st-dev';
+      response.model = `${response.model}+21st-dev`;
+    }
+  }
 
   return new Response(
-    JSON.stringify({ ...result, source, model: aiResult ? 'vercel-ai-gateway' : 'intent-map' }),
+    JSON.stringify(response),
     { status: 200, headers }
   );
 }

@@ -580,7 +580,7 @@
       -webkit-backdrop-filter: blur(24px) saturate(180%);
       border-top: 1px solid var(--border);
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(7, 1fr);
       gap: 0;
       z-index: 100;
     }
@@ -603,8 +603,8 @@
       border-radius: 0 0 2px 2px;
       box-shadow: 0 0 8px var(--purple);
     }
-    .nav-icon { font-size: 18px; }
-    .nav-label { font-size: 9px; font-weight: 600; letter-spacing: 0.3px; }
+    .nav-icon { font-size: 16px; }
+    .nav-label { font-size: 8.5px; font-weight: 600; letter-spacing: 0.2px; }
 
     /* ═══ COMMAND PALETTE ═══ */
     .cmd-overlay {
@@ -685,6 +685,326 @@
 
     /* ═══ MAGNETIC BUTTON EFFECT ═══ */
     .magnetic { transition: transform 0.2s var(--ease-spring); }
+
+
+    /* ═══ MY STACK ═══ */
+    .stack-bar {
+      position: sticky;
+      bottom: calc(var(--nav-h) - 1px);
+      left: 0; right: 0;
+      background: linear-gradient(180deg, rgba(5,6,10,0.92), rgba(5,6,10,0.98));
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-top: 1px solid var(--border-active);
+      padding: 10px 14px calc(10px + var(--safe-bottom));
+      z-index: 80;
+      transform: translateY(110%);
+      transition: transform 0.35s var(--ease-spring);
+    }
+    .stack-bar.visible { transform: translateY(0); }
+    .stack-bar-header {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 8px;
+    }
+    .stack-bar-title {
+      font-size: 11px; font-weight: 700;
+      color: var(--purple);
+      font-family: var(--font-mono);
+      letter-spacing: 1px;
+      flex: 1;
+    }
+    .stack-bar-count {
+      font-size: 11px;
+      color: var(--text-2);
+      font-family: var(--font-mono);
+      padding: 2px 8px;
+      background: var(--bg-elevated);
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border);
+    }
+    .stack-bar-clear {
+      font-size: 10px;
+      color: var(--text-2);
+      background: none;
+      border: none;
+      padding: 4px 6px;
+      cursor: pointer;
+      font-family: var(--font-mono);
+    }
+    .stack-bar-clear:active { color: var(--rose); }
+    .stack-bar-items {
+      display: flex; gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+    .stack-bar-items::-webkit-scrollbar { display: none; }
+    .stack-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 10px;
+      background: var(--purple-dim);
+      border: 1px solid var(--border-active);
+      border-radius: var(--radius-pill);
+      font-size: 11px;
+      color: var(--text-0);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .stack-chip-icon { font-size: 13px; }
+    .stack-chip-name { font-weight: 500; }
+    .stack-chip-remove {
+      width: 14px; height: 14px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      font-size: 11px;
+      color: var(--text-2);
+      cursor: pointer;
+    }
+    .stack-chip-remove:active { background: var(--rose); color: white; }
+    .stack-bar-actions {
+      display: flex; gap: 8px;
+      margin-top: 10px;
+    }
+    .stack-action-btn {
+      flex: 1;
+      padding: 10px 12px;
+      background: linear-gradient(135deg, var(--purple), #6D28D9);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      transition: all 0.2s var(--ease-out);
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .stack-action-btn:active { transform: scale(0.97); }
+    .stack-action-btn.ghost {
+      background: var(--bg-elevated);
+      color: var(--text-1);
+      border: 1px solid var(--border);
+    }
+    .stack-action-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /* Pin button (added to each skill card body) */
+    .pin-btn {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 6px 12px;
+      background: var(--bg-elevated);
+      color: var(--text-1);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      cursor: pointer;
+      transition: all 0.2s var(--ease-out);
+      margin-right: 6px;
+    }
+    .pin-btn:active { transform: scale(0.94); }
+    .pin-btn.pinned {
+      background: var(--purple);
+      color: white;
+      border-color: var(--purple);
+      box-shadow: 0 0 12px var(--purple-glow);
+    }
+    .pin-btn.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /* Export modal */
+    .export-overlay {
+      position: fixed; inset: 0;
+      background: rgba(5,6,10,0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 250;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 0 0 var(--nav-h);
+    }
+    .export-overlay.visible { display: flex; animation: fadeIn 0.22s var(--ease-out); }
+    .export-sheet {
+      width: 100%;
+      max-width: 560px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-active);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      box-shadow: 0 -16px 48px rgba(0,0,0,0.6);
+      overflow: hidden;
+      animation: slideUp 0.3s var(--ease-spring);
+    }
+    @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+    .export-sheet-handle {
+      width: 40px; height: 4px;
+      background: var(--border-hover);
+      border-radius: 2px;
+      margin: 10px auto 6px;
+    }
+    .export-sheet-title {
+      padding: 8px 18px 4px;
+      font-size: 14px; font-weight: 700;
+      color: var(--text-0);
+    }
+    .export-sheet-subtitle {
+      padding: 0 18px 14px;
+      font-size: 11px;
+      color: var(--text-2);
+      font-family: var(--font-mono);
+    }
+    .export-code {
+      margin: 0 18px;
+      padding: 14px;
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-1);
+      white-space: pre;
+      overflow-x: auto;
+      max-height: 50vh;
+      overflow-y: auto;
+      line-height: 1.6;
+    }
+    .export-code .comment { color: var(--text-3); }
+    .export-code .cmd { color: var(--cyan); }
+    .export-actions {
+      display: flex; gap: 8px;
+      padding: 14px 18px calc(14px + var(--safe-bottom));
+    }
+    .export-actions .stack-action-btn { flex: 1; }
+
+    /* ═══ DOCTRINE TREE (AGENTS.md navigable) ═══ */
+    .doctrine-tree {
+      display: flex; flex-direction: column;
+      gap: 8px;
+    }
+    .doctrine-part {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all 0.25s var(--ease-out);
+    }
+    .doctrine-part.expanded {
+      border-color: var(--border-active);
+      box-shadow: 0 4px 16px rgba(139,92,246,0.10);
+    }
+    .doctrine-part-header {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 14px;
+      cursor: pointer;
+      transition: background 0.2s var(--ease-out);
+    }
+    .doctrine-part-header:active { background: var(--bg-elevated); }
+    .doctrine-part-num {
+      flex-shrink: 0;
+      width: 30px; height: 30px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--purple-dim);
+      color: var(--purple);
+      font-family: var(--font-mono);
+      font-size: 10px; font-weight: 700;
+      border-radius: 8px;
+      border: 1px solid var(--border-active);
+    }
+    .doctrine-part-title {
+      flex: 1; min-width: 0;
+      font-size: 13px; font-weight: 600;
+      color: var(--text-0);
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .doctrine-part-chev {
+      color: var(--text-2);
+      font-size: 12px;
+      transition: transform 0.3s var(--ease-out);
+    }
+    .doctrine-part.expanded .doctrine-part-chev {
+      transform: rotate(180deg);
+      color: var(--purple);
+    }
+    .doctrine-part-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s var(--ease-fluid);
+    }
+    .doctrine-part.expanded .doctrine-part-body { max-height: 2500px; }
+    .doctrine-part-inner {
+      padding: 0 14px 14px;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+      font-size: 12px;
+      color: var(--text-1);
+      line-height: 1.6;
+    }
+    .doctrine-part-inner h4 {
+      font-size: 12px;
+      color: var(--purple);
+      margin: 10px 0 4px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .doctrine-part-inner h4:first-child { margin-top: 0; }
+    .doctrine-part-inner p { margin: 6px 0; }
+    .doctrine-part-inner ul {
+      padding-left: 18px;
+      margin: 4px 0 8px;
+    }
+    .doctrine-part-inner li {
+      margin: 3px 0;
+      font-size: 11.5px;
+    }
+    .doctrine-part-inner code {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      background: var(--bg-elevated);
+      padding: 1px 5px;
+      border-radius: 3px;
+      color: var(--cyan);
+    }
+    .doctrine-part-inner pre {
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+      overflow-x: auto;
+      margin: 8px 0;
+      font-size: 10.5px;
+      font-family: var(--font-mono);
+      color: var(--text-1);
+      line-height: 1.5;
+    }
+    .doctrine-part-inner table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 10.5px;
+    }
+    .doctrine-part-inner th, .doctrine-part-inner td {
+      padding: 5px 6px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .doctrine-part-inner th {
+      color: var(--purple);
+      font-weight: 700;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .doctrine-part-inner strong { color: var(--text-0); }
+
 
     /* ═══ RESPONSIVE ═══ */
     @media (min-width: 640px) {
@@ -793,12 +1113,57 @@
     <div class="wiki-grid" id="wikiGrid"></div>
   </section>
 
+
+  <!-- MY STACK BAR (sticky bottom, slides up when non-empty) -->
+  <div class="stack-bar" id="stackBar">
+    <div class="stack-bar-header">
+      <div class="stack-bar-title">📦 MY STACK</div>
+      <div class="stack-bar-count" id="stackCount">0 / 5</div>
+      <button class="stack-bar-clear" data-action="clearStack">Clear</button>
+    </div>
+    <div class="stack-bar-items" id="stackItems"></div>
+    <div class="stack-bar-actions">
+      <button class="stack-action-btn" data-action="exportStack" id="exportBtn" disabled>
+        <span>📥</span> Export Install Script
+      </button>
+      <button class="stack-action-btn ghost" data-action="copyStack" id="copyStackBtn" disabled>
+        <span>📋</span> Copy
+      </button>
+    </div>
+  </div>
+
+  <!-- DOCTRINE TREE (AGENTS.md navigable) -->
+  <section class="section" id="doctrine">
+    <div class="section-label">▸ OPERATING DOCTRINE</div>
+    <div class="section-title">AGENTS.md · 14 Parts</div>
+    <div class="section-desc">The full operating doctrine of the agent system — Silent Protocol, Core Rules, Quality Gates, Skill → Agent → MCP Synergy Matrix, and 10 more parts. Tap to expand any part.</div>
+    <div class="doctrine-tree" id="doctrineTree"></div>
+  </section>
+
+  <!-- EXPORT SHEET (modal) -->
+  <div class="export-overlay" id="exportOverlay">
+    <div class="export-sheet">
+      <div class="export-sheet-handle"></div>
+      <div class="export-sheet-title" id="exportTitle">📦 My Stack — install.sh</div>
+      <div class="export-sheet-subtitle" id="exportSubtitle">Run this in your terminal. Requires Node.js 18+ and the <code style="font-family:var(--font-mono);color:var(--cyan);">skills</code> CLI.</div>
+      <pre class="export-code" id="exportCode"></pre>
+      <div class="export-actions">
+        <button class="stack-action-btn ghost" data-action="closeExport">Close</button>
+        <button class="stack-action-btn" data-action="downloadScript">⬇ Download .sh</button>
+        <button class="stack-action-btn" data-action="copyScript">📋 Copy</button>
+      </div>
+    </div>
+  </div>
+
+
   <!-- BOTTOM NAV -->
-  <nav class="bottom-nav">
+  <nav class="bottom-nav" style="grid-template-columns:repeat(7,1fr);">
     <div class="nav-item active" data-action="nav" data-target="walkthrough"><div class="nav-icon">📋</div><div class="nav-label">TOUR</div></div>
     <div class="nav-item" data-action="nav" data-target="skills"><div class="nav-icon">⚡</div><div class="nav-label">SKILLS</div></div>
     <div class="nav-item" data-action="nav" data-target="wiki"><div class="nav-icon">📚</div><div class="nav-label">WIKI</div></div>
+    <div class="nav-item" data-action="nav" data-target="doctrine"><div class="nav-icon">📜</div><div class="nav-label">DOCTRINE</div></div>
     <div class="nav-item" data-action="openSearch"><div class="nav-icon">🔍</div><div class="nav-label">SEARCH</div></div>
+    <div class="nav-item" data-action="scrollToStack"><div class="nav-icon">📦</div><div class="nav-label">STACK</div></div>
     <a href="index.html" class="nav-item" style="text-decoration:none;color:inherit;"><div class="nav-icon">🏠</div><div class="nav-label">STORE</div></a>
   </nav>
 
@@ -1118,6 +1483,10 @@
               <div class="skill-install-cmd">${s.install}</div>
               <button class="skill-copy-btn" data-action="copyInstall" data-install="${s.install.replace(/"/g, '&quot;')}">COPY</button>
             </div>
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;flex-wrap:wrap;">
+              <button class="pin-btn" data-action="togglePin" data-skill="${s.name}">📌 PIN</button>
+              <span style="font-size:10px;color:var(--text-3);font-family:var(--font-mono);">→ Add to My Stack</span>
+            </div>
             <div class="skill-meta-row">
               ${s.meta.map((m, idx) => `<span class="skill-meta-pill${idx === 0 ? ' accent' : ''}">${m}</span>`).join('')}
             </div>
@@ -1230,6 +1599,16 @@
         items.push({ icon: w.icon, title: w.title, desc: w.summary.slice(0, 60) + '…', action: () => { closePalette(); document.getElementById('wiki').scrollIntoView({behavior:'smooth'}); setTimeout(() => { const card = document.querySelectorAll('.wiki-card')[i]; if (card && !card.classList.contains('expanded')) card.click(); }, 600); } });
       }
     });
+    // Doctrine parts
+    DOCTRINE_PARTS.forEach((p, i) => {
+      if (!query || p.title.toLowerCase().includes(query) || p.body.toLowerCase().includes(query)) {
+        items.push({ icon: '📜', title: 'Doctrine · Part ' + p.num, desc: p.title, action: () => { closePalette(); document.getElementById('doctrine').scrollIntoView({behavior:'smooth'}); setTimeout(() => { const card = document.querySelectorAll('.doctrine-part')[i]; if (card && !card.classList.contains('expanded')) card.classList.add('expanded'); card.scrollIntoView({behavior:'smooth', block:'center'}); }, 400); } });
+      }
+    });
+    // My Stack
+    if (!query || 'my stack pin pinned install script export'.includes(query)) {
+      items.push({ icon: '📦', title: 'My Stack', desc: myStack.length + ' skill(s) pinned', action: () => { closePalette(); scrollToStack(); } });
+    }
     // Walkthrough
     if (!query || 'walkthrough tour onboarding'.includes(query)) {
       items.push({ icon: '📋', title: 'Walkthrough', desc: '5-step onboarding tour', action: () => { closePalette(); document.getElementById('walkthrough').scrollIntoView({behavior:'smooth'}); } });
@@ -1252,6 +1631,494 @@
       item.addEventListener('click', () => items[i].action());
     });
   }
+
+
+  // ═══ MY STACK STATE ═══
+  const STACK_KEY = 'opencode_kb_my_stack_v1';
+  const STACK_MAX = 5;
+  let myStack = []; // array of skill names
+
+  function loadStack() {
+    try {
+      const raw = localStorage.getItem(STACK_KEY);
+      if (raw) myStack = JSON.parse(raw);
+    } catch (e) { myStack = []; }
+    if (!Array.isArray(myStack)) myStack = [];
+  }
+  function saveStack() {
+    try { localStorage.setItem(STACK_KEY, JSON.stringify(myStack)); } catch (e) {}
+  }
+  function isPinned(name) { return myStack.includes(name); }
+  function togglePin(name) {
+    if (isPinned(name)) {
+      myStack = myStack.filter(n => n !== name);
+    } else {
+      if (myStack.length >= STACK_MAX) {
+        showToast(`Max ${STACK_MAX} skills in stack — remove one first`);
+        return;
+      }
+      myStack.push(name);
+    }
+    saveStack();
+    renderStackBar();
+    refreshPinButtons();
+    if (myStack.length > 0) {
+      const bar = document.getElementById('stackBar');
+      if (!bar.classList.contains('visible')) bar.classList.add('visible');
+    }
+  }
+  function refreshPinButtons() {
+    document.querySelectorAll('.pin-btn').forEach(btn => {
+      const name = btn.getAttribute('data-skill');
+      if (!name) return;
+      const pinned = isPinned(name);
+      btn.classList.toggle('pinned', pinned);
+      btn.textContent = pinned ? '✓ PINNED' : '📌 PIN';
+      btn.classList.toggle('disabled', !pinned && myStack.length >= STACK_MAX);
+    });
+  }
+  function renderStackBar() {
+    const items = document.getElementById('stackItems');
+    const count = document.getElementById('stackCount');
+    const exportBtn = document.getElementById('exportBtn');
+    const copyBtn = document.getElementById('copyStackBtn');
+    count.textContent = `${myStack.length} / ${STACK_MAX}`;
+    exportBtn.disabled = myStack.length === 0;
+    copyBtn.disabled = myStack.length === 0;
+    if (myStack.length === 0) {
+      items.innerHTML = '<div style="font-size:11px;color:var(--text-3);padding:6px 4px;font-family:var(--font-mono);">Pin skills below to build your stack →</div>';
+      return;
+    }
+    items.innerHTML = myStack.map(name => {
+      const skill = CURATED_SKILLS.find(s => s.name === name);
+      const icon = skill ? skill.icon : '⚡';
+      return `<div class="stack-chip">
+        <span class="stack-chip-icon">${icon}</span>
+        <span class="stack-chip-name">${escapeHtml(name)}</span>
+        <span class="stack-chip-remove" data-action="unpinSkill" data-skill="${escapeHtml(name)}">×</span>
+      </div>`;
+    }).join('');
+  }
+  function generateInstallScript() {
+    const now = new Date();
+    const stamp = now.toISOString().replace(/\.\d+Z$/, 'Z');
+    const lines = [];
+    lines.push('#!/usr/bin/env bash');
+    lines.push('# ════════════════════════════════════════════════════════');
+    lines.push('# opencode OS — My Stack · auto-generated install script');
+    lines.push(`# Generated: ${stamp}`);
+    lines.push(`# Skills:    ${myStack.length}`);
+    lines.push('# Source:    https://marktantongco.github.io/opencode-accomplishments/kb.html');
+    lines.push('# ════════════════════════════════════════════════════════');
+    lines.push('# Requires: Node.js 18+, npm/npx. The `skills` CLI is the');
+    lines.push('# official Agent Skills package manager (npm i -g skills).');
+    lines.push('set -euo pipefail');
+    lines.push('');
+    lines.push('echo ""');
+    lines.push('echo "📦 opencode OS — Installing My Stack (${myStack.length} skill(s)..."');
+    lines.push('echo ""');
+    myStack.forEach((name, i) => {
+      const skill = CURATED_SKILLS.find(s => s.name === name);
+      if (!skill) return;
+      lines.push(`# ── ${i+1}/${myStack.length}: ${name} ──`);
+      lines.push(`echo "▶ [${i+1}/${myStack.length}] ${name}"`);
+      lines.push(`${skill.install}`);
+      lines.push('');
+    });
+    lines.push('echo ""');
+    lines.push('echo "✅ Done. ${myStack.length} skill(s) installed."');
+    lines.push('echo "   Verify: npx skills list"');
+    lines.push('echo ""');
+    return lines.join('\n');
+  }
+  function openExportSheet() {
+    if (myStack.length === 0) return;
+    const code = generateInstallScript();
+    // Render with simple syntax highlighting via spans
+    const highlighted = escapeHtml(code)
+      .replace(/^(#\!.*)$/gm, '<span class="comment">$1</span>')
+      .replace(/^(#.*)$/gm, '<span class="comment">$1</span>')
+      .replace(/^(echo|set|npx)\b/gm, '<span class="cmd">$1</span>');
+    document.getElementById('exportCode').innerHTML = highlighted;
+    document.getElementById('exportOverlay').classList.add('visible');
+  }
+  function closeExportSheet() {
+    document.getElementById('exportOverlay').classList.remove('visible');
+  }
+  function downloadScript() {
+    const code = generateInstallScript();
+    const blob = new Blob([code], { type: 'text/x-shellscript;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'install-my-stack.sh';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
+    showToast('Downloaded install-my-stack.sh', true);
+  }
+  function copyScript() {
+    const code = generateInstallScript();
+    navigator.clipboard.writeText(code).then(() => {
+      showToast('Script copied to clipboard', true);
+    }).catch(() => {
+      const ta = document.createElement('textarea');
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); showToast('Copied (fallback)', true); }
+      catch (e) { showToast('Copy failed'); }
+      document.body.removeChild(ta);
+    });
+  }
+  function copyStackCommands() {
+    if (myStack.length === 0) return;
+    const cmds = myStack.map(name => {
+      const s = CURATED_SKILLS.find(x => x.name === name);
+      return s ? s.install : '';
+    }).filter(Boolean).join('\n');
+    navigator.clipboard.writeText(cmds).then(() => {
+      showToast(`${myStack.length} commands copied`, true);
+    }).catch(() => {
+      const ta = document.createElement('textarea');
+      ta.value = cmds;
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); showToast('Copied (fallback)', true); }
+      catch (e) { showToast('Copy failed'); }
+      document.body.removeChild(ta);
+    });
+  }
+  function scrollToStack() {
+    const bar = document.getElementById('stackBar');
+    if (!bar.classList.contains('visible')) bar.classList.add('visible');
+    bar.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Pulse the export button if any skills pinned
+    if (myStack.length > 0) {
+      const btn = document.getElementById('exportBtn');
+      btn.animate(
+        [{ transform: 'scale(1)' }, { transform: 'scale(1.06)' }, { transform: 'scale(1)' }],
+        { duration: 360, iterations: 2, easing: 'cubic-bezier(0.34, 1.56, 0.64, 1)' }
+      );
+    }
+  }
+
+  // ═══ DOCTRINE TREE (AGENTS.md as navigable 14-part tree) ═══
+  const DOCTRINE_PARTS = [
+    {
+      num: 'I',
+      title: 'Operating Doctrine (System Master Prompt v4)',
+      body: `
+        <h4>DNA</h4>
+        <p>Zero fluff. Working code. Alignment &gt; execution. Advocacy. Quality gated. Show reasoning. Depth before speed.</p>
+        <h4>🔇 Silent Protocol (invisible, every response)</h4>
+        <ul>
+          <li>What do they actually need? (Parse beyond literal)</li>
+          <li>What would they miss? (The blind spot)</li>
+          <li>What's the simplest true answer? (Irreducible)</li>
+        </ul>
+        <p><strong>Route</strong>: Stated=Actual + simple? → <code>SPEED</code>. Misaligned? → <code>SURFACE FRAME</code>. Novel? → <code>DEPTH</code>. Urgent? → <code>QUICK + DEEPER NOTE</code>.</p>
+        <h4>Core Rules</h4>
+        <ul>
+          <li>Working code only. No pseudocode, no <code>[TODO]</code>, no placeholders.</li>
+          <li>State assumptions first. Flag risks: <code>⚠️ Breaks if X</code>.</li>
+          <li>Impact first; name tech debt.</li>
+          <li>Calibrate depth: Ask once, assume after.</li>
+          <li>Advocacy on. "Consider instead…"</li>
+          <li>No apologies. "Breaks on X. Workaround: Y. Better: Z."</li>
+          <li>Vague? Assume, state, ship, refine.</li>
+          <li>Show thinking: "X because [assumption + evidence]."</li>
+        </ul>
+        <h4>Hard Stops</h4>
+        <p>No child safety. No malicious code. No IP (15+ words = violation). No lyrics/poems. No fabricated attribution.</p>
+        <h4>Quality Gates</h4>
+        <table>
+          <tr><th>Check</th><th>Question</th></tr>
+          <tr><td>Assumptions</td><td>Stated + validated?</td></tr>
+          <tr><td>Reasoning</td><td>Complete + counter-cases?</td></tr>
+          <tr><td>Code</td><td>Runs, errors, edge cases, type-safe?</td></tr>
+          <tr><td>Strategy</td><td>Frame justified, evidence, alternatives?</td></tr>
+          <tr><td>Analysis</td><td>Data path, alternatives, confidence?</td></tr>
+        </table>
+        <p>All pass → submit. Any fail → iterate.</p>
+      `
+    },
+    {
+      num: 'II',
+      title: 'Structural Connection Map',
+      body: `
+        <p>Bridges the <strong>90+ Skills Showcase</strong> ↔ <strong>18 Agent System Files</strong> ↔ <strong>145 MCP Servers</strong> ↔ <strong>Animation Pipeline</strong> ↔ <strong>Three.js Orchestrator</strong> ↔ <strong>ModelScope MCP</strong> ↔ <strong>MCP Stack Curator</strong> ↔ <strong>Knowledge-Base PWA</strong> ↔ <strong>Vercel AI Gateway</strong>.</p>
+        <h4>Four Complementary Layers</h4>
+        <ul>
+          <li><strong>Knowledge-Base PWA</strong> (<code>docs/index.html</code>) — search-first mobile-first catalog of 90+ skills, 11 categories, 6 zones.</li>
+          <li><strong>Agent System</strong> (<code>agents/</code>) — Universal Router + 4 context-loaded skills + 18 documentation files.</li>
+          <li><strong>MCP Ecosystem</strong> (<code>stacks.json</code> + <code>mcp-registry.json</code>) — 145 free MCP servers in 15 categories + 8 pre-built stacks.</li>
+          <li><strong>Skills Library</strong> (<code>skills/</code>) — 90+ local SKILL.md files, portable across Claude Code, Cursor, Codex, Gemini CLI, OpenCode.</li>
+        </ul>
+      `
+    },
+    {
+      num: 'III',
+      title: 'The 4 Agent Skills',
+      body: `
+        <table>
+          <tr><th>Skill</th><th>Domain</th><th>Tokens</th><th>Key Behaviors</th></tr>
+          <tr><td><strong>SKILL_01</strong> Conversational</td><td>Mobile, chat, exploration</td><td>4,400</td><td>Silent Protocol, advocacy, blind spot detection</td></tr>
+          <tr><td><strong>SKILL_02</strong> Design + Build</td><td>Desktop, visual, UI/UX</td><td>5,600</td><td>3 directions before building, anti-defaults, depth-seeking</td></tr>
+          <tr><td><strong>SKILL_03</strong> Code + API</td><td>Production code</td><td>6,100</td><td>Algorithm-first, 40-item quality gates, caveman protocols</td></tr>
+          <tr><td><strong>SKILL_04</strong> Agentic</td><td>Autonomous orchestration</td><td>6,000</td><td>Task decomposition, parallel subagents, state tracking</td></tr>
+        </table>
+        <p><strong>Universal Router</strong> (3,100 tokens, always loaded) handles routing, CONTINUITY protocol, closing patterns, and hard stops.</p>
+      `
+    },
+    {
+      num: 'IV',
+      title: 'The 7 Agent Mode Skills',
+      body: `
+        <table>
+          <tr><th>Mode</th><th>Icon</th><th>Superpower</th></tr>
+          <tr><td><strong>Rabbit</strong></td><td>🐇</td><td>Multiply ideas — rapid ideation, brainstorming</td></tr>
+          <tr><td><strong>Owl</strong></td><td>🦉</td><td>Deep analysis — systematic decomposition</td></tr>
+          <tr><td><strong>Ant</strong></td><td>🐜</td><td>Break into steps — task decomposition</td></tr>
+          <tr><td><strong>Eagle</strong></td><td>🦅</td><td>Big picture — strategic vision</td></tr>
+          <tr><td><strong>Dolphin</strong></td><td>🐬</td><td>Creative solutions — lateral thinking</td></tr>
+          <tr><td><strong>Beaver</strong></td><td>🦫</td><td>Build systems — architecture, infrastructure</td></tr>
+          <tr><td><strong>Elephant</strong></td><td>🐘</td><td>Cross-field connections — synthesis</td></tr>
+        </table>
+      `
+    },
+    {
+      num: 'V',
+      title: 'Skill → Agent → MCP Synergy Matrix',
+      body: `
+        <p>Maps each platform skill to its corresponding agent skill mode AND recommended MCP servers.</p>
+        <h4>By Category</h4>
+        <ul>
+          <li><strong>Design &amp; UI</strong> → SKILL_02 (Design + Build) + filesystem, fetch, google-drive</li>
+          <li><strong>Reasoning</strong> → SKILL_01 (Conversational) + memory, sequential-thinking, sqlite</li>
+          <li><strong>Development</strong> → SKILL_03 (Code + API) + filesystem, github, docker</li>
+          <li><strong>Content</strong> → SKILL_01 + SKILL_02 + filesystem, brave-search, google-drive, slack</li>
+          <li><strong>Strategy</strong> → SKILL_01 + SKILL_04 + brave-search, memory, fetch</li>
+          <li><strong>System</strong> → SKILL_04 (Agentic) + filesystem, github, docker</li>
+          <li><strong>Data &amp; Web</strong> → SKILL_04 + SKILL_01 + fetch, brave-search, sqlite, postgres</li>
+          <li><strong>Creative</strong> → SKILL_02 + SKILL_04 + filesystem, fetch, everart</li>
+          <li><strong>MCP Servers</strong> → SKILL_03 + SKILL_04 + filesystem, github</li>
+          <li><strong>Agents</strong> → SKILL_04 + memory, sequential-thinking, filesystem</li>
+          <li><strong>Infrastructure</strong> → SKILL_04 + filesystem, github, docker</li>
+          <li><strong>Animation Engineering</strong> → SKILL_02 + SKILL_03 + filesystem, fetch, google-drive</li>
+        </ul>
+        <p>Enables intelligent context switching during AI-assisted work.</p>
+      `
+    },
+    {
+      num: 'VI',
+      title: 'Curated External Skills (skills.sh Registry)',
+      body: `
+        <p>External skills documented in the PWA but installed from the skills.sh registry (732K+ indexed skills as of June 2026).</p>
+        <table>
+          <tr><th>#</th><th>Skill</th><th>Source</th><th>Installs</th></tr>
+          <tr><td>1</td><td><strong>ui-ux-pro-max</strong></td><td>nextlevelbuilder</td><td>234.1K</td></tr>
+          <tr><td>2</td><td><strong>21st-registry</strong></td><td>21st-dev</td><td>105</td></tr>
+          <tr><td>3</td><td><strong>21st</strong> (marketplace)</td><td>serafimcloud</td><td>5.3K ★</td></tr>
+          <tr><td>4</td><td><strong>gsap-core</strong></td><td>greensock</td><td>27.7K</td></tr>
+          <tr><td>5</td><td><strong>framer-motion-animator</strong></td><td>patricio0312rev</td><td>6.9K</td></tr>
+          <tr><td>6</td><td><strong>threejs-animation</strong></td><td>cloudai-x</td><td>7.9K</td></tr>
+          <tr><td>7</td><td><strong>stitch-loop</strong></td><td>google-labs-code</td><td>45.0K</td></tr>
+        </table>
+        <h4>21st.dev API Integration</h4>
+        <p>The chat widget can fetch real React component data from 21st.dev via <code>POST /api/recommend</code>. The edge function queries <code>https://21st.dev/api/components</code> with Bearer auth when the user's message matches a component intent (e.g. "find me a component for a date picker").</p>
+      `
+    },
+    {
+      num: 'VII',
+      title: 'MCP Stack Registry',
+      body: `
+        <p>8 pre-built stacks defined in <code>stacks.json</code>. Each recommends exactly 4 servers with documented synergy scores and mismatch warnings.</p>
+        <table>
+          <tr><th>Stack</th><th>Emoji</th><th>Synergy</th></tr>
+          <tr><td>Full-Stack Web Studio</td><td>🌐</td><td>94</td></tr>
+          <tr><td>AI Research Lab</td><td>🧪</td><td>91</td></tr>
+          <tr><td>Content Engine</td><td>✍️</td><td>87</td></tr>
+          <tr><td>DevOps Command Center</td><td>🏗️</td><td>92</td></tr>
+          <tr><td>Data Pipeline Studio</td><td>📊</td><td>89</td></tr>
+          <tr><td>Security Audit Toolkit</td><td>🔒</td><td>86</td></tr>
+          <tr><td>Creative Studio</td><td>🎨</td><td>85</td></tr>
+          <tr><td>Mobile App Workshop</td><td>📱</td><td>88</td></tr>
+        </table>
+      `
+    },
+    {
+      num: 'VIII',
+      title: 'Agent File Index',
+      body: `
+        <h4>Core System Files</h4>
+        <ul>
+          <li><code>MARK_SYSTEM_PROMPT_FINAL.md</code> — Universal Router v1.0 + SKILL_01 + deployment + testing</li>
+          <li><code>SKILLS_MANIFEST.md</code> — Routing guide, token budgets, deployment phases</li>
+          <li><code>SKILL_02_DESIGN_BUILD.md</code> — Design skill spec (2,500 tokens), anti-defaults</li>
+          <li><code>SKILL_03_CODE_API.md</code> — Code skill spec (3,000 tokens), 40-item quality gates</li>
+          <li><code>SKILL_04_AGENTIC.md</code> — Agentic skill spec (2,800 tokens), task decomposition</li>
+          <li><code>SKILL_SHORTCUTS_FUNCTION_CALLS.md</code> — Keyboard shortcuts, function calls</li>
+        </ul>
+        <h4>Operational Documentation (11 files)</h4>
+        <ul>
+          <li><code>00_START_HERE.md</code> → <code>11_COMPLETE_SYSTEM_INDEX.md</code></li>
+          <li>Covers: navigation, playbooks, configs, monitoring, power user, FAQ, cheat sheet, integrations, evolution, automation, visual reference, complete index</li>
+        </ul>
+        <h4>MCP Data Files</h4>
+        <ul>
+          <li><code>stacks.json</code> — 8 pre-built MCP stacks with synergy scoring</li>
+          <li><code>mcp-registry.json</code> — 145 free MCP servers across 15 categories</li>
+        </ul>
+      `
+    },
+    {
+      num: 'IX',
+      title: 'CONTINUITY Protocol',
+      body: `
+        <p>When switching between agent skills during a session, the CONTINUITY protocol ensures context carries forward:</p>
+        <ul>
+          <li>System reviews the last 10 messages for stated preferences, prior decisions, unresolved threads</li>
+          <li>Context carries forward into the new skill's execution</li>
+          <li>Switch is announced visibly: "Switching to [Design/Code/Agentic] mode — I've noted [context]"</li>
+          <li>Quick-Feedback Prompt validates: "Was that transition smooth? (Y/N)"</li>
+        </ul>
+        <p>Critical when chaining skills: Research (SKILL_01) → Design (SKILL_02) → Code (SKILL_03) → Deploy (SKILL_04).</p>
+      `
+    },
+    {
+      num: 'X',
+      title: 'Integration with Knowledge-Base PWA',
+      body: `
+        <p>The <code>docs/index.html</code> PWA exposes skills data via URL parameters:</p>
+        <ul>
+          <li><code>?format=json</code> — Full skills data as JSON</li>
+          <li><code>?format=manifest</code> — Web app manifest format</li>
+          <li><code>?skill=&lt;name&gt;</code> — Deep link to a specific skill card</li>
+          <li><code>?category=&lt;name&gt;</code> — Filter to a category</li>
+          <li><code>?zone=&lt;name&gt;</code> — Switch zone (activate/build/validate/playbook/monetize/system/all)</li>
+          <li><code>?palette=&lt;hex&gt;</code> — Override accent color</li>
+          <li><code>?embed=true</code> — Embeddable mode (no header/footer)</li>
+          <li><code>?action=search</code> — Auto-open the command palette</li>
+        </ul>
+        <p>Each skill card displays MCP server pairings when expanded, and the MCP Stack Curator provides interactive stack exploration.</p>
+      `
+    },
+    {
+      num: 'XI',
+      title: 'Animation + 3D Pipeline Rules',
+      body: `
+        <h4>Animation Orchestrator Gate</h4>
+        <p><strong>No animation code may be written without routing through animation-orchestrator first.</strong></p>
+        <pre>IF user asks for animation
+  THEN route to animation-orchestrator first
+IF selects Motion → route to motion-animator
+IF selects GSAP → route to gsap-animator
+IF simple (hover, fade) → motion-animator useAnimate mini (2.3KB)
+IF scroll + multiple sections → gsap-animator with ScrollTrigger
+IF animation code is written → animation-auditor validates</pre>
+        <h4>Three.js Orchestrator Gate</h4>
+        <p><strong>No 3D code may be written without routing through threejs-orchestrator first.</strong></p>
+        <pre>IF 3D for React UI → r3f-react + lazy-load + ssr:false
+IF 3D for compute/physics → vanilla Three.js + WebGPU
+IF 3D for games → Babylon.js
+IF Three.js in React without R3F → REJECT (anti-pattern)
+IF Three.js synchronous in page/layout → REJECT (must dynamic import)</pre>
+        <h4>Pre-Commit Hook</h4>
+        <p><code>.git/hooks/pre-commit</code> runs <code>audit-animation.py</code> and <code>audit-threejs.py</code> on every commit. Catches: missing cleanup (useGSAP, dispose, revert), bundle violations, missing 'use client', missing reduced-motion checks, GSAP plugin without registerPlugin.</p>
+      `
+    },
+    {
+      num: 'XII',
+      title: 'Quick Start',
+      body: `
+        <ol style="padding-left:18px;">
+          <li>Read <code>agents/00_START_HERE.md</code> for the navigation guide</li>
+          <li>Read <code>agents/MARK_SYSTEM_PROMPT_FINAL.md</code> for deployment procedures</li>
+          <li>Deploy Universal Router + SKILL_01 to your AI platform</li>
+          <li>Test with 6 conversations (Week 1 protocol)</li>
+          <li>Add SKILL_02/03/04 based on testing results</li>
+          <li>Explore <code>stacks.json</code> for your MCP server combinations</li>
+          <li>Use the MCP Stack Curator in the PWA to find your ideal stack</li>
+          <li>Monitor with <code>agents/03_MONITORING_METRICS.md</code></li>
+          <li>Evolve with <code>agents/08_EVOLUTION_GUIDE.md</code> roadmap</li>
+        </ol>
+      `
+    },
+    {
+      num: 'XIII',
+      title: 'Research Backlog',
+      body: `
+        <p>Research reports loaded into the agent's working context under <code>/home/z/my-project/upload/</code>:</p>
+        <table>
+          <tr><th>Report</th><th>Key Findings</th></tr>
+          <tr><td><code>oh-my-opencode_research_report.md</code></td><td>11-agent mythological vs 7-agent functional orchestration. OMO = 38K stars full. OMO-slim = MIT, 5.1K stars, Council agent = multi-model consensus.</td></tr>
+          <tr><td><code>opencode_enhancements_research.md</code></td><td>Tiered "Above Mediocrity" stack. T1: OMO + Superpowers + Context7 + GitHub MCP. T2: OpenSpec + Antigravity + Firecrawl + OpenRouter. T3: ntfy + Worktree + Daytona + LSP + Ollama.</td></tr>
+          <tr><td><code>interactive_infographic_research.md</code></td><td>Motion = primary (~59KB gz, 6M weekly). GSAP = timeline + ScrollTrigger. Three.js = R3F for React. Hybrid stack recommended.</td></tr>
+          <tr><td><code>ai_agentic_tools_research.md</code></td><td>Top 20 ADEs (Cursor 50K, Copilot 70K, Claude Code, Aider 30K, OpenCode 30K). 10 proxy stacks (LiteLLM, OpenRouter, FreeLLMAPI 1.7B tokens/mo). 10 orchestration frameworks.</td></tr>
+        </table>
+      `
+    },
+    {
+      num: 'XIV',
+      title: 'Skills Directory Structure',
+      body: `
+        <pre>skills/
+├── animation-orchestrator/     # Routes ALL animation requests
+├── animation-auditor/          # Quality gates + audit-animation.py
+├── motion-animator/            # React UI animations (Motion)
+├── gsap-animator/              # Complex animations (GSAP)
+├── gsap-animation-engineer/    # GSAP v3.13+ cinematic engineering
+├── motion-animation-engineer/  # Motion v12 declarative engineering
+├── threejs-orchestrator/       # Routes ALL 3D requests
+├── agent-master/               # Orchestrates 7-agent pipeline
+├── agent-decision/             # Decides IF and WHAT to animate
+├── agent-simulator/            # Traces all interactions + edge cases
+├── agent-auditor/              # Validates against standards
+├── agent-profiler/             # Finds ACTUAL bottlenecks
+├── agent-optimizer/            # Applies targeted fixes
+├── agent-maintenance/          # Monitors production
+├── skill-architect/            # Create/optimize SKILL.md files
+├── skill-router/               # Routes skills to contexts
+├── skill-finder/               # Discovers skills from registry
+├── seo-content-writer/         # SEO-optimized long-form content
+├── seo-geo/                    # Geographic SEO optimization
+├── deployment-manager/         # Deploy pipelines
+├── deep-research/              # Multi-source research synthesis
+├── to-prd/                     # Product requirement docs
+├── browser-use/                # Headless browser automation
+├── mcp-builder/                # Build MCP servers
+├── mcp-stack-curator/          # Curate MCP server stacks
+├── mcp-security-scanner/       # Audit MCP configs
+├── modelscope-mcp-hub/         # 2300+ free Chinese MCP servers
+├── context7-docs/              # Always-current library docs
+├── tdd-workflow/               # Test-first discipline
+├── audit-analyzer/             # Audit scraping + reports
+├── gumroad-pipeline/           # Monetization funnel
+├── social-media-manager/       # Social content automation
+├── shadcn/                     # shadcn/ui patterns
+├── next-best-practices/        # Next.js 16 patterns
+├── react-best-practices/       # React 19 patterns
+└── ... (90+ more)</pre>
+      `
+    }
+  ];
+
+  function renderDoctrine() {
+    const el = document.getElementById('doctrineTree');
+    el.innerHTML = DOCTRINE_PARTS.map((p, i) => `
+      <div class="doctrine-part" data-action="toggleDoctrine" data-index="${i}">
+        <div class="doctrine-part-header">
+          <div class="doctrine-part-num">${p.num}</div>
+          <div class="doctrine-part-title">${p.title}</div>
+          <div class="doctrine-part-chev">∨</div>
+        </div>
+        <div class="doctrine-part-body">
+          <div class="doctrine-part-inner">${p.body}</div>
+        </div>
+      </div>
+    `).join('');
+  }
+
 
   // ═══ EVENTS ═══
   function setupEvents() {
@@ -1278,6 +2145,55 @@
       if (action === 'walkStep') {
         const step = actionEl.getAttribute('data-step');
         showToast(`Step ${step} — see description above`);
+        return;
+      }
+      if (action === 'togglePin') {
+        e.stopPropagation();
+        const name = actionEl.getAttribute('data-skill');
+        if (name) togglePin(name);
+        return;
+      }
+      if (action === 'unpinSkill') {
+        e.stopPropagation();
+        const name = actionEl.getAttribute('data-skill');
+        if (name) togglePin(name);
+        return;
+      }
+      if (action === 'clearStack') {
+        if (myStack.length === 0) return;
+        myStack = [];
+        saveStack();
+        renderStackBar();
+        refreshPinButtons();
+        showToast('Stack cleared');
+        return;
+      }
+      if (action === 'exportStack') {
+        openExportSheet();
+        return;
+      }
+      if (action === 'copyStack') {
+        copyStackCommands();
+        return;
+      }
+      if (action === 'scrollToStack') {
+        scrollToStack();
+        return;
+      }
+      if (action === 'closeExport') {
+        closeExportSheet();
+        return;
+      }
+      if (action === 'downloadScript') {
+        downloadScript();
+        return;
+      }
+      if (action === 'copyScript') {
+        copyScript();
+        return;
+      }
+      if (action === 'toggleDoctrine') {
+        actionEl.classList.toggle('expanded');
         return;
       }
       if (action === 'nav') {
@@ -1322,6 +2238,16 @@
       if (e.target === document.getElementById('cmdOverlay')) closePalette();
     });
 
+    // Click outside to close export sheet
+    document.getElementById('exportOverlay').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('exportOverlay')) closeExportSheet();
+    });
+
+    // Escape closes export sheet
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeExportSheet();
+    });
+
     // Magnetic effect
     document.querySelectorAll('.magnetic').forEach(el => {
       el.addEventListener('pointermove', (e) => {
@@ -1348,7 +2274,15 @@
 
     renderSkills();
     renderWiki();
+    renderDoctrine();
+    loadStack();
+    renderStackBar();
+    refreshPinButtons();
     setupEvents();
+    // Show stack bar if user has pinned skills from a previous session
+    if (myStack.length > 0) {
+      document.getElementById('stackBar').classList.add('visible');
+    }
 
     // Animate stats on view
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {

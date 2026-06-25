@@ -1502,6 +1502,20 @@
     document.querySelectorAll('.zone-content').forEach(e => e.classList.remove('active'));
     if (targetEl) targetEl.classList.add('active');
 
+    // Hero visibility: ONLY show on ACTIVATE zone (default landing).
+    // Hidden on BUILD, VALIDATE, PLAYBOOK, MONETIZE, SYSTEM, and the "all skills" view.
+    const heroEl = document.getElementById('heroSection');
+    if (heroEl) {
+      const shouldShow = zoneKey === 'activate';
+      heroEl.style.display = shouldShow ? '' : 'none';
+      // Optional subtle fade for elegance
+      try {
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && typeof gsap !== 'undefined' && shouldShow) {
+          gsap.fromTo(heroEl, { opacity: 0, y: -6 }, { opacity: 1, y: 0, duration: 0.28, ease: 'power2.out', overwrite: true });
+        }
+      } catch (e) { /* no-op */ }
+    }
+
     try { renderZoneContent(zoneKey); } catch(e) { console.error('renderZoneContent:', e); }
     try { renderSubNav(zoneKey); } catch(e) { console.error('renderSubNav:', e); }
 
@@ -1559,6 +1573,9 @@
   function showAllSkillsFn() {
     currentZone = 'system';
     showingAllSkills = true;
+    // Hero is hidden outside the ACTIVATE zone — hide on Browse All too
+    const heroEl = document.getElementById('heroSection');
+    if (heroEl) heroEl.style.display = 'none';
     document.querySelectorAll('.zone-tab').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.zone-content').forEach(e => e.classList.remove('active'));
     const zoneEl = document.getElementById('zone-system');
@@ -1697,7 +1714,7 @@
 
   function toggleChat() { document.getElementById('chatPanel').classList.toggle('visible'); }
 
-  function renderRecommendations(reply, recs, source) {
+  function renderRecommendations(reply, recs, source, components) {
     let html = `<div class="chat-msg bot">${escapeHtml(reply)}`;
     if (source) html += ` <span class="rec-source" style="opacity:0.5;font-size:10px;font-family:var(--font-mono);">· ${source}</span>`;
     recs.forEach(r => {
@@ -1710,6 +1727,15 @@
         html += `<div class="rec-skill"><span class="rec-icon">${icon}</span><div class="rec-info"><div class="rec-name">${escapeHtml(skill.name)}</div><div class="rec-cmd">${escapeHtml(skill.installCommand)}</div>${r.reason ? `<div style="font-size:11px;color:var(--text-2);margin-top:2px;">${escapeHtml(r.reason)}</div>` : ''}</div><span class="rec-score">${escapeHtml(score)}</span></div>`;
       }
     });
+    // 21st.dev components (if returned)
+    if (components && components.length) {
+      html += `<div style="margin-top:10px;font-size:11px;color:var(--text-2);font-family:var(--font-mono);letter-spacing:0.5px;">🧩 21ST.DEV COMPONENTS</div>`;
+      components.forEach(c => {
+        const compScore = c.score ? `${c.score}%` : '';
+        const installCmd = c.install || `npx twenty-first@latest add ${c.slug}`;
+        html += `<div class="rec-skill" style="border-color:rgba(6,182,212,0.25);"><span class="rec-icon">🧩</span><div class="rec-info"><div class="rec-name">${escapeHtml(c.name)}</div><div class="rec-cmd">${escapeHtml(installCmd)}</div>${c.description ? `<div style="font-size:11px;color:var(--text-2);margin-top:2px;">${escapeHtml(c.description.slice(0, 120))}${c.description.length > 120 ? '…' : ''}</div>` : ''}${c.url ? `<a href="${escapeHtml(c.url)}" target="_blank" rel="noopener" style="font-size:11px;color:var(--cyan);text-decoration:none;display:inline-block;margin-top:2px;">↗ View on 21st.dev</a>` : ''}</div><span class="rec-score" style="color:var(--cyan);">${escapeHtml(compScore)}</span></div>`;
+      });
+    }
     html += `</div>`;
     return html;
   }
@@ -1728,10 +1754,10 @@
     msgs.scrollTop = msgs.scrollHeight;
 
     // Try the AI Gateway edge function first
-    let reply = '', recs = [], source = '';
+    let reply = '', recs = [], source = '', components = null;
     try {
       const ctrl = new AbortController();
-      const t = setTimeout(() => ctrl.abort(), 6000);
+      const t = setTimeout(() => ctrl.abort(), 8000);
       const res = await fetch('/api/recommend', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -1743,7 +1769,12 @@
         const data = await res.json();
         reply = data.reply || '';
         recs = data.recommendations || [];
-        source = data.source === 'ai-gateway' ? 'AI Gateway' : (data.source || '');
+        components = data.components || null;
+        // Source badge: show both layers when hybrid
+        if (data.source === 'hybrid') source = 'AI Gateway + 21st.dev';
+        else if (data.source === '21st-dev') source = '21st.dev + Rules';
+        else if (data.source === 'ai-gateway') source = 'AI Gateway';
+        else source = (data.source || '');
       } else {
         throw new Error('HTTP ' + res.status);
       }
@@ -1765,7 +1796,7 @@
 
     // Remove typing indicator, render result
     document.getElementById(typingId)?.remove();
-    msgs.innerHTML += renderRecommendations(reply, recs, source);
+    msgs.innerHTML += renderRecommendations(reply, recs, source, components);
     msgs.scrollTop = msgs.scrollHeight;
   }
 
