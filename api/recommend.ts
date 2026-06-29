@@ -18,8 +18,11 @@
 //   4. Always returns the same JSON shape so the client never breaks.
 //
 // Env vars (configured in Vercel project settings):
-//   - AI_GATEWAY_API_KEY  (Vercel AI Gateway)
-//   - TWENTY_FIRST_API_KEY (21st.dev) — falls back to embedded demo key if unset
+//   - AI_GATEWAY_API_KEY   (Vercel AI Gateway)
+//   - TWENTYFIRST_API_KEY   (21st.dev) — falls back to embedded demo key if unset.
+//     NOTE: canonical env var name is TWENTYFIRST_API_KEY (no underscore between
+//     TWENTY and FIRST). The 21st.dev SDK auto-resolves this name; do not use
+//     TWENTY_FIRST_API_KEY (the SDK will not find it).
 
 export const config = {
   runtime: 'edge',
@@ -28,7 +31,8 @@ export const config = {
 // ─── Embedded 21st.dev key (fallback if env var is unset) ───────────────────
 // The user explicitly provided this key for the project; we keep it as a
 // fallback so the feature works on first deploy without manual env config.
-const TWENTY_FIRST_KEY_FALLBACK =
+// Production: set TWENTYFIRST_API_KEY in Vercel Project → Settings → Env Vars.
+const TWENTYFIRST_KEY_FALLBACK =
   'an_sk_7426c194af098c067b4ff71f75406eaca00156f85b050f145f6f16460947a24d';
 
 // ─── Skill catalog (mirror of client SKILLS_DATA, top 30 most-installed) ───
@@ -148,7 +152,7 @@ function extractComponentQuery(message) {
 }
 
 async function searchTwentyFirst(message) {
-  const apiKey = process.env.TWENTY_FIRST_API_KEY || TWENTY_FIRST_KEY_FALLBACK;
+  const apiKey = process.env.TWENTYFIRST_API_KEY || TWENTYFIRST_KEY_FALLBACK;
   if (!apiKey) return null;
 
   const query = extractComponentQuery(message);

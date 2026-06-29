@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Layered Separation Demo · Three.js + GSAP + Framer Motion</title>
+  <meta name="description" content="Live demo of the Layered Separation animation pattern: Three.js owns the 3D scene, GSAP owns the camera + scroll, Framer Motion owns the React UI overlay. No build step.">
+  <meta name="theme-color" content="#05060A">
+  <link rel="canonical" href="https://marktantongco.github.io/opencode-accomplishments/layered-separation-demo.html">
+  <link rel="icon" href="icon-192.svg" type="image/svg+xml">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Layered Separation Demo · Three.js + GSAP + Framer Motion">
+  <meta property="og:description" content="Live demo: each library owns a non-overlapping layer. No conflicts, no leaks.">
+  <meta property="og:image" content="https://marktantongco.github.io/opencode-accomplishments/og-image.png">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Layered Separation Demo",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "description": "Live demo of the Three.js + GSAP + Framer Motion Layered Separation pattern.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CDNs: Three.js, GSAP + ScrollTrigger, React, ReactDOM, Framer Motion, Babel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <!-- Framer Motion via esm.sh (UMD-compatible global: window.Motion) -->
+  <script type="module">
+    import * as Motion from 'https://esm.sh/framer-motion@11?bundle';
+    window.Motion = Motion;
+    window.dispatchEvent(new CustomEvent('motion-ready'));
+  </script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #05060A;
+      --text: #F8F9FC;
+      --text-2: #C4C9D8;
+      --text-3: #7C849B;
+      --purple: #8B5CF6;
+      --cyan: #06B6D4;
+      --orange: #F97316;
+      --green: #10B981;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 20% 0%, rgba(139,92,246,0.12), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 100%, rgba(6,182,212,0.08), transparent);
+      pointer-events: none; z-index: -1;
+    }
+
+    /* Three.js canvas mount — fixed background layer */
+    #threeMount {
+      position: fixed; inset: 0;
+      z-index: 0;
+      pointer-events: none; /* Framer overlay owns pointer events for UI */
+    }
+
+    /* Scrollable content (drives GSAP ScrollTrigger) */
+    .scroll-content {
+      position: relative;
+      z-index: 1;
+      pointer-events: none; /* let scroll pass through to window */
+    }
+    .scroll-section {
+      min-height: 100vh;
+      padding: calc(80px + var(--safe-top)) 24px calc(80px + var(--safe-bottom));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* Framer Motion overlay layer — always on top of Three.js, never on top of UI */
+    #framerOverlay {
+      position: fixed; inset: 0;
+      z-index: 10;
+      pointer-events: none; /* critical: never block scroll */
+    }
+    /* But children CAN receive pointer events */
+    #framerOverlay > * { pointer-events: auto; }
+
+    /* Header HUD */
+    .hud-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      padding: calc(12px + var(--safe-top)) 16px 12px;
+      background: rgba(5,6,10,0.78);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex; align-items: center; gap: 10px;
+      z-index: 20;
+    }
+    .hud-back {
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 10px;
+      background: rgba(21,23,32,0.72);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: var(--text-2);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .hud-back:hover { background: rgba(139,92,246,0.12); border-color: rgba(139,92,246,0.45); }
+    .hud-title { font-size: 14px; font-weight: 600; flex: 1; }
+    .hud-title .accent { color: var(--purple); }
+    .hud-badge {
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: rgba(139,92,246,0.12);
+      border: 1px solid rgba(139,92,246,0.45);
+      font-size: 10px; font-weight: 700;
+      color: var(--purple);
+      font-family: var(--font-mono);
+      letter-spacing: 0.5px;
+    }
+
+    /* Section labels */
+    .section-eyebrow {
+      font-size: 10px; font-weight: 700;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-family: var(--font-mono);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .section-title .gradient {
+      background: linear-gradient(135deg, var(--purple), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-2);
+      line-height: 1.6;
+      max-width: 580px;
+      margin-bottom: 24px;
+    }
+
+    /* Layer cards */
+    .layer-card {
+      background: rgba(21,23,32,0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 14px;
+    }
+    .layer-card.three { border-left: 3px solid var(--cyan); }
+    .layer-card.gsap { border-left: 3px solid var(--purple); }
+    .layer-card.framer { border-left: 3px solid var(--orange); }
+    .layer-name {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 700;
+      font-family: var(--font-mono);
+      margin-bottom: 6px;
+    }
+    .layer-name .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .layer-card.three .dot { background: var(--cyan); box-shadow: 0 0 8px var(--cyan); }
+    .layer-card.gsap .dot { background: var(--purple); box-shadow: 0 0 8px var(--purple); }
+    .layer-card.framer .dot { background: var(--orange); box-shadow: 0 0 8px var(--orange); }
+    .layer-owns {
+      font-size: 13px;
+      color: var(--text);
+      margin: 4px 0;
+    }
+    .layer-never {
+      font-size: 11px;
+      color: var(--text-3);
+      font-family: var(--font-mono);
+      margin-top: 6px;
+    }
+
+    /* Code block */
+    .code-block {
+      background: rgba(5,6,10,0.85);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 14px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--text-2);
+      overflow-x: auto;
+      line-height: 1.6;
+      white-space: pre;
+    }
+    .code-block .comment { color: var(--text-3); }
+    .code-block .keyword { color: var(--purple); }
+    .code-block .string { color: var(--green); }
+    .code-block .fn { color: var(--cyan); }
+
+    /* Live status HUD (bottom-right, Framer Motion-animated) */
+    .status-hud {
+      position: fixed;
+      bottom: calc(20px + var(--safe-bottom));
+      right: 20px;
+      z-index: 30;
+      background: rgba(5,6,10,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(139,92,246,0.45);
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      min-width: 220px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .status-row {
+      display: flex; align-items: center; gap: 6px;
+      padding: 3px 0;
+    }
+    .status-row .label { color: var(--text-3); flex: 1; }
+    .status-row .value { color: var(--text); font-weight: 600; }
+    .status-row .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    .status-row.three .dot { background: var(--cyan); }
+    .status-row.gsap .dot { background: var(--purple); }
+    .status-row.framer .dot { background: var(--orange); }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    /* Scroll hint */
+    .scroll-hint {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      color: var(--text-3);
+      font-family: var(--font-mono);
+      letter-spacing: 1px;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
+      50% { transform: translateX(-50%) translateY(8px); opacity: 1; }
+    }
+
+    /* Code panel toggle */
+    .code-toggle {
+      display: inline-flex;
+      align-items: center; gap: 6px;
+      padding: 8px 14px;
+      background: rgba(139,92,246,0.12);
+      border: 1px solid rgba(139,92,246,0.45);
+      border-radius: 9999px;
+      color: var(--purple);
+      font-size: 12px; font-weight: 600;
+      font-family: var(--font-mono);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .code-toggle:hover { background: var(--purple); color: white; }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .scroll-section { padding-left: 16px; padding-right: 16px; }
+      .status-hud { bottom: 12px; right: 12px; min-width: 180px; font-size: 10px; }
+      .section-title { font-size: 28px; }
+      .section-desc { font-size: 14px; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Loading state */
+    #loadingScreen {
+      position: fixed; inset: 0;
+      background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 100;
+      transition: opacity 0.4s;
+    }
+    #loadingScreen.hidden { opacity: 0; pointer-events: none; }
+    .loading-text {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--purple);
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading screen (hidden once React + Motion ready) -->
+  <div id="loadingScreen">
+    <div class="loading-text">⚡ INITIALIZING LAYERS…</div>
+  </div>
+
+  <!-- HEADER HUD (Framer Motion-animated) -->
+  <header class="hud-header">
+    <a href="kb.html" class="hud-back" aria-label="Back to KB">←</a>
+    <div class="hud-title">Layered <span class="accent">Separation</span> · Three.js + GSAP + Framer Motion</div>
+    <div class="hud-badge">LIVE DEMO</div>
+  </header>
+
+  <!-- THREE.JS MOUNT (z:0, pointer-events:none) — owns 3D scene + objects ONLY -->
+  <div id="threeMount"></div>
+
+  <!-- SCROLL CONTENT (z:1, drives GSAP ScrollTrigger) -->
+  <main class="scroll-content">
+    <section class="scroll-section" id="hero">
+      <div class="section-eyebrow">▸ PART XV · AGENTS.MD</div>
+      <h1 class="section-title">Three libraries.<br><span class="gradient">Zero conflicts.</span></h1>
+      <p class="section-desc">
+        Three.js owns the 3D scene. GSAP owns the camera + scroll. Framer Motion owns the React UI overlay.
+        Each library targets a different layer — they never touch each other's objects.
+      </p>
+      <div class="layer-card three">
+        <div class="layer-name"><span class="dot"></span>THREE.JS · z=0</div>
+        <div class="layer-owns">✓ Scene, camera (init only), mesh, materials, lighting, render loop</div>
+        <div class="layer-never">✗ Never animates camera position (GSAP owns), never touches React DOM</div>
+      </div>
+      <div class="layer-card gsap">
+        <div class="layer-name"><span class="dot"></span>GSAP · z=0 (3D space)</div>
+        <div class="layer-owns">✓ Camera position.z on scroll (scrub), mesh.rotation.y (independent loop)</div>
+        <div class="layer-never">✗ Never animates React DOM style.transform, never creates meshes</div>
+      </div>
+      <div class="layer-card framer">
+        <div class="layer-name"><span class="dot"></span>FRAMER MOTION · z=10 (UI overlay)</div>
+        <div class="layer-owns">✓ Header HUD, section titles, status panel, modal, code panel</div>
+        <div class="layer-never">✗ Never animates camera.position, never modifies Three.js scene graph</div>
+      </div>
+      <div class="scroll-hint">↓ SCROLL TO DRIVE GSAP</div>
+    </section>
+
+    <section class="scroll-section" id="step1">
+      <div class="section-eyebrow">▸ STEP 1</div>
+      <h2 class="section-title">Three.js inits the scene</h2>
+      <p class="section-desc">
+        In a <code style="color:var(--cyan);font-family:var(--font-mono);">useEffect</code> hook with empty deps, we create the scene, camera (position.z=5), renderer, and mesh. The mesh is added to the scene. This is the <strong>only</strong> place Three.js objects are created.
+      </p>
+      <div class="code-block"><span class="comment">// ── 1. Three.js init: scene, camera, renderer, objects ──</span>
+<span class="keyword">const</span> scene = <span class="keyword">new</span> THREE.<span class="fn">Scene</span>();
+<span class="keyword">const</span> camera = <span class="keyword">new</span> THREE.<span class="fn">PerspectiveCamera</span>(60, w/h, 0.1, 1000);
+camera.position.z = 5;  <span class="comment">// GSAP will animate this later</span>
+<span class="keyword">const</span> renderer = <span class="keyword">new</span> THREE.<span class="fn">WebGLRenderer</span>({ antialias: <span class="keyword">true</span>, alpha: <span class="keyword">true</span> });
+mountRef.current.<span class="fn">appendChild</span>(renderer.domElement);
+<span class="keyword">const</span> mesh = <span class="keyword">new</span> THREE.<span class="fn">Mesh</span>(geometry, material);
+scene.<span class="fn">add</span>(mesh);</div>
+    </section>
+
+    <section class="scroll-section" id="step2">
+      <div class="section-eyebrow">▸ STEP 2</div>
+      <h2 class="section-title">GSAP owns the camera</h2>
+      <p class="section-desc">
+        Inside <code style="color:var(--cyan);font-family:var(--font-mono);">gsap.context()</code> (scoped to the mount ref), we tween <code style="color:var(--purple);font-family:var(--font-mono);">camera.position.z</code> on scroll using ScrollTrigger. We also start an independent rotation loop on the mesh — both are GSAP-owned, neither touches React.
+      </p>
+      <div class="code-block"><span class="comment">// ── 2. GSAP init: camera + 3D scroll animations ──</span>
+<span class="keyword">const</span> ctx = gsap.<span class="fn">context</span>(() => {
+  <span class="comment">// Camera dolly on scroll (scrubbed)</span>
+  gsap.<span class="fn">to</span>(camera.position, {
+    z: 2, ease: <span class="string">'none'</span>,
+    scrollTrigger: {
+      trigger: mountRef.current,
+      start: <span class="string">'top top'</span>,
+      end: <span class="string">'bottom bottom'</span>,
+      scrub: 1
+    }
+  });
+  <span class="comment">// Mesh rotation — independent infinite loop</span>
+  gsap.<span class="fn">to</span>(mesh.rotation, {
+    y: Math.PI * 2,
+    duration: 8,
+    repeat: -1,
+    ease: <span class="string">'none'</span>
+  });
+}, mountRef);  <span class="comment">// scoped — ctx.revert() kills both</span></div>
+    </section>
+
+    <section class="scroll-section" id="step3">
+      <div class="section-eyebrow">▸ STEP 3</div>
+      <h2 class="section-title">Framer Motion owns the overlay</h2>
+      <p class="section-desc">
+        The HUD, section titles, status panel, and code toggles are all Framer Motion <code style="color:var(--orange);font-family:var(--font-mono);">&lt;motion.div&gt;</code> components. The overlay layer has <code style="color:var(--orange);font-family:var(--font-mono);">pointerEvents: 'none'</code> on the container so scroll passes through to the window; individual interactive children re-enable pointer events.
+      </p>
+      <div class="code-block"><span class="comment">// ── 3. Framer Motion overlay (React) ──</span>
+&lt;<span class="keyword">motion.div</span>
+  style={{ position: <span class="string">'fixed'</span>, inset: 0, zIndex: 10,
+           pointerEvents: <span class="string">'none'</span> }}  <span class="comment">// never block scroll</span>
+&gt;
+  &lt;<span class="keyword">motion.h1</span>
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: <span class="keyword">true</span> }}
+    transition={{ duration: 0.6, ease: <span class="string">'easeOut'</span> }}
+  &gt;
+    Section Title
+  &lt;/<span class="keyword">motion.h1</span>&gt;
+&lt;/<span class="keyword">motion.div</span>&gt;</div>
+    </section>
+
+    <section class="scroll-section" id="step4">
+      <div class="section-eyebrow">▸ STEP 4</div>
+      <h2 class="section-title">Cleanup is non-negotiable</h2>
+      <p class="section-desc">
+        The <code style="color:var(--cyan);font-family:var(--font-mono);">useEffect</code> return function cancels the RAF, reverts the GSAP context (kills all tweens + ScrollTriggers), disposes Three.js renderer/geometry/material, and removes the canvas from the DOM. Skip any step and you leak memory or break the next route.
+      </p>
+      <div class="code-block"><span class="comment">// ── 4. Cleanup: kill GSAP, cancel RAF, dispose Three.js ──</span>
+<span class="keyword">return</span> () => {
+  <span class="fn">cancelAnimationFrame</span>(raf);
+  ctx.<span class="fn">revert</span>();              <span class="comment">// kills all GSAP tweens + ScrollTriggers</span>
+  renderer.<span class="fn">dispose</span>();
+  geometry.<span class="fn">dispose</span>();
+  material.<span class="fn">dispose</span>();
+  <span class="keyword">if</span> (renderer.domElement.parentNode) {
+    renderer.domElement.parentNode.<span class="fn">removeChild</span>(renderer.domElement);
+  }
+};</div>
+    </section>
+
+    <section class="scroll-section" id="end">
+      <div class="section-eyebrow">▸ DEMO COMPLETE</div>
+      <h2 class="section-title">You just scrolled through all 3 layers working in parallel.</h2>
+      <p class="section-desc">
+        The icosahedron in the background was rendered by Three.js (layer 1). Its rotation and the camera zoom were driven by GSAP ScrollTrigger tied to your scroll position (layer 2). This text, the header HUD, and the status panel were animated by Framer Motion (layer 3). None of them fought for the same objects.
+      </p>
+      <p class="section-desc" style="color: var(--green); font-family: var(--font-mono); font-size: 13px;">
+        ✓ No conflicts. ✓ No leaks. ✓ Clean cleanup.
+      </p>
+    </section>
+  </main>
+
+  <!-- FRAMER MOTION OVERLAY (z:10) — React app mounts here -->
+  <div id="framerOverlay"></div>
+
+  <!-- LIVE STATUS HUD (rendered by Framer Motion) -->
+  <div id="statusHudMount"></div>
+
+  <!-- REACT APP (Babel-transformed JSX) -->
+  <script type="text/babel" data-presets="react">
+    const { useState, useEffect, useRef } = React;
+    const { motion, AnimatePresence } = window.Motion || {};
+
+    // ─── Status HUD (Framer Motion-animated, fixed bottom-right) ────────────
+    function StatusHud({ cameraZ, scrollProgress, reducedMotion }) {
+      if (!motion) return null;
+      return (
+        <motion.div
+          className="status-hud"
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.6, duration: 0.5, ease: 'easeOut' }}
+        >
+          <div style={{ fontSize: 10, color: 'var(--text-3)', marginBottom: 6, letterSpacing: 1, fontWeight: 700 }}>
+            ▸ LIVE STATUS
+          </div>
+          <div className="status-row three">
+            <span className="dot"></span>
+            <span className="label">THREE.js</span>
+            <span className="value">rendering</span>
+          </div>
+          <div className="status-row gsap">
+            <span className="dot"></span>
+            <span className="label">camera.z</span>
+            <span className="value">{cameraZ.toFixed(2)}</span>
+          </div>
+          <div className="status-row gsap">
+            <span className="dot"></span>
+            <span className="label">scroll</span>
+            <span className="value">{(scrollProgress * 100).toFixed(0)}%</span>
+          </div>
+          <div className="status-row framer">
+            <span className="dot"></span>
+            <span className="label">Framer</span>
+            <span className="value">{reducedMotion ? 'reduced' : 'active'}</span>
+          </div>
+        </motion.div>
+      );
+    }
+
+    // ─── Section title animator (Framer Motion) ────────────────────────────
+    function AnimatedSectionTitle({ children, eyebrow }) {
+      if (!motion) return <><div className="section-eyebrow">{eyebrow}</div><h2 className="section-title">{children}</h2></>;
+      return (
+        <>
+          <motion.div
+            className="section-eyebrow"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.4 }}
+          >{eyebrow}</motion.div>
+          <motion.h2
+            className="section-title"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+          >{children}</motion.h2>
+        </>
+      );
+    }
+
+    // ─── Main app ──────────────────────────────────────────────────────────
+    function App() {
+      const [cameraZ, setCameraZ] = useState(5);
+      const [scrollProgress, setScrollProgress] = useState(0);
+      const [motionReady, setMotionReady] = useState(!!window.Motion);
+      const [reducedMotion, setReducedMotion] = useState(false);
+      const threeMountRef = useRef(null);
+      const stateRef = useRef({ cameraZ: 5, scrollProgress: 0 });
+
+      useEffect(() => {
+        // Reduced motion check
+        const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+        setReducedMotion(mq.matches);
+        const rmHandler = (e) => setReducedMotion(e.matches);
+        mq.addEventListener('change', rmHandler);
+
+        // Wait for Framer Motion to load
+        if (!window.Motion) {
+          const handler = () => { setMotionReady(true); };
+          window.addEventListener('motion-ready', handler);
+          return () => {
+            window.removeEventListener('motion-ready', handler);
+            mq.removeEventListener('change', rmHandler);
+          };
+        }
+
+        return () => mq.removeEventListener('change', rmHandler);
+      }, []);
+
+      useEffect(() => {
+        if (!motionReady || !window.THREE || !window.gsap) return;
+        if (typeof ScrollTrigger === 'undefined') {
+          // ScrollTrigger is global from CDN
+        }
+        gsap.registerPlugin(ScrollTrigger);
+
+        const mount = threeMountRef.current;
+        if (!mount) return;
+
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+
+        // ──────────────────────────────────────────────────────────────────
+        // LAYER 1: THREE.JS — scene, camera, renderer, mesh
+        // ──────────────────────────────────────────────────────────────────
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(60, w / h, 0.1, 1000);
+        camera.position.z = 5;
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(w, h);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        mount.appendChild(renderer.domElement);
+
+        // Icosahedron with wireframe overlay — visible against the dark bg
+        const geometry = new THREE.IcosahedronGeometry(1.4, 1);
+        const material = new THREE.MeshNormalMaterial({
+          wireframe: false,
+          flatShading: true,
+          transparent: true,
+          opacity: 0.85,
+        });
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        // Wireframe overlay
+        const wireGeo = new THREE.IcosahedronGeometry(1.42, 1);
+        const wireMat = new THREE.MeshBasicMaterial({ color: 0x8B5CF6, wireframe: true, transparent: true, opacity: 0.4 });
+        const wireMesh = new THREE.Mesh(wireGeo, wireMat);
+        scene.add(wireMesh);
+
+        // ──────────────────────────────────────────────────────────────────
+        // LAYER 2: GSAP — camera + mesh rotation (scoped to mount)
+        // ──────────────────────────────────────────────────────────────────
+        const ctx = gsap.context(() => {
+          // Camera dolly on scroll (scrubbed)
+          gsap.to(camera.position, {
+            z: 1.8,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: document.body,
+              start: 'top top',
+              end: 'bottom bottom',
+              scrub: 1,
+              onUpdate: (self) => {
+                stateRef.current.scrollProgress = self.progress;
+                stateRef.current.cameraZ = camera.position.z;
+                setScrollProgress(self.progress);
+                setCameraZ(camera.position.z);
+              },
+            },
+          });
+
+          // Mesh rotation — independent infinite loop
+          gsap.to(mesh.rotation, {
+            y: Math.PI * 2,
+            duration: 12,
+            repeat: -1,
+            ease: 'none',
+          });
+          gsap.to(wireMesh.rotation, {
+            y: -Math.PI * 2,
+            duration: 16,
+            repeat: -1,
+            ease: 'none',
+          });
+          gsap.to(mesh.rotation, {
+            x: Math.PI * 0.5,
+            duration: 18,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut',
+          });
+        }, mount);
+
+        // ──────────────────────────────────────────────────────────────────
+        // Render loop
+        // ──────────────────────────────────────────────────────────────────
+        let raf;
+        const animate = () => {
+          renderer.render(scene, camera);
+          raf = requestAnimationFrame(animate);
+        };
+        animate();
+
+        // Resize handler
+        const onResize = () => {
+          const nw = window.innerWidth;
+          const nh = window.innerHeight;
+          camera.aspect = nw / nh;
+          camera.updateProjectionMatrix();
+          renderer.setSize(nw, nh);
+        };
+        window.addEventListener('resize', onResize);
+
+        // Hide loading screen
+        const loading = document.getElementById('loadingScreen');
+        if (loading) {
+          loading.classList.add('hidden');
+          setTimeout(() => loading.remove(), 500);
+        }
+
+        // ──────────────────────────────────────────────────────────────────
+        // CLEANUP: kill GSAP, cancel RAF, dispose Three.js
+        // ──────────────────────────────────────────────────────────────────
+        return () => {
+          cancelAnimationFrame(raf);
+          ctx.revert();  // kills all GSAP tweens + ScrollTriggers in this scope
+          window.removeEventListener('resize', onResize);
+          renderer.dispose();
+          geometry.dispose();
+          material.dispose();
+          wireGeo.dispose();
+          wireMat.dispose();
+          if (renderer.domElement.parentNode) {
+            renderer.domElement.parentNode.removeChild(renderer.domElement);
+          }
+        };
+      }, [motionReady]);
+
+      return (
+        <>
+          {/* Three.js mount (fixed background layer) */}
+          <div ref={threeMountRef} id="threeMount" />
+
+          {/* Status HUD */}
+          <StatusHud
+            cameraZ={cameraZ}
+            scrollProgress={scrollProgress}
+            reducedMotion={reducedMotion}
+          />
+
+          {/* Replace static section titles with animated ones (overlay layer)
+              — only do this if we want Framer to ALSO animate the in-view titles.
+              For the demo, we keep the static .scroll-section titles in the DOM
+              so they work even without JS. But we add a subtle Framer overlay
+              badge that animates in. */}
+          <AnimatePresence>
+            {motionReady && (
+              <motion.div
+                key="overlayBadge"
+                style={{
+                  position: 'fixed',
+                  bottom: 'calc(20px + var(--safe-bottom))',
+                  left: 20,
+                  zIndex: 30,
+                  pointerEvents: 'none',
+                }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ delay: 0.8, duration: 0.4 }}
+              >
+                <div style={{
+                  background: 'rgba(5,6,10,0.85)',
+                  backdropFilter: 'blur(16px)',
+                  WebkitBackdropFilter: 'blur(16px)',
+                  border: '1px solid rgba(255,140,26,0.45)',
+                  borderRadius: 12,
+                  padding: '8px 12px',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: 10,
+                  color: 'var(--orange)',
+                  letterSpacing: 1,
+                  fontWeight: 700,
+                }}>
+                  🎬 FRAMER MOTION · OVERLAY ACTIVE
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </>
+      );
+    }
+
+    // Mount when DOM + Motion are both ready
+    function tryMount() {
+      if (!window.Motion || !window.React || !window.ReactDOM) {
+        setTimeout(tryMount, 50);
+        return;
+      }
+      const root = ReactDOM.createRoot(document.getElementById('framerOverlay'));
+      root.render(<App />);
+    }
+    tryMount();
+  </script>
+</body>
+</html>

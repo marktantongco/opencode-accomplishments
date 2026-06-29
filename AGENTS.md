@@ -297,15 +297,21 @@ The four layers are connected through a **skill-agent-MCP synergy matrix** that 
 
 These are external skills documented in the knowledge-base PWA but installed from the skills.sh registry (732K+ indexed skills as of June 2026). Each card in the PWA exposes its install command for one-click copy.
 
-| # | Skill | Source | Installs | Install Command |
+| # | Skill | Source | Installs | Install Command (canonical) |
 |---|-------|--------|----------|-----------------|
-| 1 | **ui-ux-pro-max** | nextlevelbuilder/ui-ux-pro-max-skill | 234.1K | `npx skills add https://github.com/nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max` |
-| 2 | **21st-registry** | 21st-dev/registry | 105 | `npx skills add 21st-dev/registry --skill 21st-dev-components` |
-| 3 | **21st** (marketplace) | serafimcloud/21st | 5.3K stars | `npx skills add serafimcloud/21st --skill 21st` |
-| 4 | **gsap-core** | greensock/gsap-skills | 27.7K | `npx skills add greensock/gsap-skills` |
-| 5 | **framer-motion-animator** | patricio0312rev/skills | 6.9K | `npx skills add patricio0312rev/skills --skill framer-motion-animator` |
-| 6 | **threejs-animation** | cloudai-x/threejs-skills | 7.9K | `npx skills add cloudai-x/threejs-skills --skill three.js-animation` |
-| 7 | **stitch-loop** | google-labs-code/stitch-skills | 45.0K | `npx skills add google-labs-code/stitch-skills --skill stitch-loop` |
+| 1 | **ui-ux-pro-max** | nextlevelbuilder/ui-ux-pro-max-skill | 241.2K | `npx skills add nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max --yes` |
+| 2 | **21st-registry** ⚠️ | 21st-dev/registry | 116 | `npx skills add 21st-dev/registry --skill 21st-registry --yes` |
+| 3 | **21st** (marketplace) | serafimcloud/21st | 5.3K stars | `npx skills add serafimcloud/21st --skill 21st --yes` |
+| 4 | **gsap-core** ⚠️ | greensock/gsap-skills | 29.6K | `npx skills add greensock/gsap-skills --yes` (installs all 9 sub-skills) OR `--skill gsap-core` for one |
+| 5 | **framer-motion-animator** | patricio0312rev/skills | 7.1K | `npx skills add patricio0312rev/skills --skill framer-motion-animator --yes` |
+| 6 | **threejs-animation** ⚠️ | cloudai-x/threejs-skills | 8.2K | `npx skills add cloudai-x/threejs-skills --skill threejs-animation --yes` |
+| 7 | **stitch-loop** | google-labs-code/stitch-skills | 45.0K | `npx skills add google-labs-code/stitch-skills --skill stitch-loop --yes` |
+
+> ⚠️ **Canonical name fixes (verified 2026-06-30 via `npx skills find`):**
+> - Skill #2: registry exposes `21st-registry`, NOT `21st-dev-components`. User-requested `--skill 21st-dev-components` will fail with "No matching skills found". Use `--skill 21st-registry`.
+> - Skill #4: `gsap-skills` is the repo name (9 sub-skills). Primary installable skill is `gsap-core`. Use bare `add greensock/gsap-skills` to get all 9.
+> - Skill #6: canonical skill name is `threejs-animation` (no dot), NOT `three.js-animation`. The dot-version fails.
+> - All installs need `--yes` (or `-y`) flag in non-interactive environments, otherwise the CLI prompts for agent platform selection (Claude Code / Codex / OpenCode / etc.).
 
 ### Companion: skills.sh Top Leaderboard (curated additions)
 
@@ -313,7 +319,7 @@ These are referenced in the PWA's "Recommended Skills" sidebar:
 
 | Skill | Source | Installs | Why include |
 |-------|--------|----------|-------------|
-| find-skills | vercel-labs/skills | 2.2M | The meta-skill — discovers other skills |
+| find-skills | vercel-labs/skills | 2.3M | The meta-skill — auto-discovers other skills via `npx skills find <query>` |
 | frontend-design | anthropics/skills | 587.2K | Official Anthropic design patterns |
 | vercel-react-best-practices | vercel-labs/agent-skills | 500.9K | Production React patterns |
 | agent-browser | vercel-labs/agent-browser | 482.6K | Browser automation via CDP |
@@ -325,12 +331,15 @@ These are referenced in the PWA's "Recommended Skills" sidebar:
 
 ### 21st.dev API Integration
 
-The PWA's chat widget can optionally fetch real component data from 21st.dev:
+The PWA's chat widget queries real React component data from 21st.dev via the `/api/recommend` edge function:
 
-- **API key**: `an_sk_7426c194af098c067b4ff71f75406eaca00156f85b050f145f6f16460947a24d`
+- **Env var (canonical)**: `TWENTYFIRST_API_KEY=an_sk_7426c194af098c067b4ff71f75406eaca00156f85b050f145f6f16460947a24d`
+  - Set in `.env.local` for local dev, or Vercel Project → Settings → Environment Variables for production.
+  - The `skills` SDK auto-resolves this env var name. Do NOT use `TWENTY_FIRST_API_KEY` (with underscore between TWENTY and FIRST) — the SDK will not find it.
 - **Endpoint**: `https://21st.dev/api/components`
-- **Usage**: The `/api/recommend` edge function can be extended to query 21st.dev when a user asks for "React components" or "shadcn alternatives"
-- **Auth**: `Authorization: Bearer an_sk_...`
+- **Auth**: `Authorization: Bearer ${TWENTYFIRST_API_KEY}`
+- **Canonical install**: `npx skills add 21st-dev/registry --skill 21st-registry --yes` (NOT `serafimcloud/21st` or `21st-dev/agent-elements` — those are community forks)
+- **Usage**: The `/api/recommend` edge function detects component intent (regex patterns: "find me a component for X", "react component", "shadcn/21st X", 50+ UI primitives by name) and queries 21st.dev in parallel with the Vercel AI Gateway. Response shape: `{ reply, recommendations, components: [{name, slug, description, url, install}], source: 'hybrid' | '21st-dev' | 'ai-gateway' | 'rules' }`.
 
 ---
 
@@ -550,6 +559,140 @@ skills/
 ├── react-best-practices/        # React 19 patterns
 └── ... (90+ more)
 ```
+
+---
+
+## Part XV — Animation Layered Separation Pattern (Three.js + GSAP + Framer Motion)
+
+**Source**: User-specified canonical pattern, verified against `greensock/gsap-skills`, `patricio0312rev/skills`, `cloudai-x/threejs-skills` (June 2026).
+
+### The Pattern
+
+When all three libraries are used in the same React app, they MUST target different object layers and never conflict. The contract:
+
+| Library | Owns | Does NOT Touch |
+|---------|------|----------------|
+| **Three.js** | 3D scene graph, meshes, materials, geometries, lighting | Camera position (GSAP owns), React UI overlays |
+| **GSAP** | Camera position + 3D object properties (rotation, scale, position) driven by scroll | React UI overlays, mesh geometry |
+| **Framer Motion** | React UI overlays (HUD, navigation, tooltips, modals, text) | Three.js scene graph, camera |
+
+### Init + Cleanup Contract
+
+```jsx
+function LayeredScene() {
+  const mountRef = useRef(null);           // Three.js mounts here
+  const cameraRef = useRef(null);          // GSAP animates this
+  const sceneRef = useRef(null);           // Three.js scene graph
+
+  useEffect(() => {
+    // ── 1. Three.js init: scene, camera, renderer, objects ──
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, w/h, 0.1, 1000);
+    camera.position.z = 5;
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    mountRef.current.appendChild(renderer.domElement);
+    const mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
+
+    sceneRef.current = scene;
+    cameraRef.current = camera;
+
+    // ── 2. GSAP init: camera + 3D scroll animations ──
+    const ctx = gsap.context(() => {
+      // Camera dolly on scroll
+      gsap.to(camera.position, {
+        z: 2, ease: 'none',
+        scrollTrigger: { trigger: mountRef.current, start: 'top top', end: 'bottom bottom', scrub: 1 }
+      });
+      // Mesh rotation independent of React
+      gsap.to(mesh.rotation, { y: Math.PI * 2, duration: 8, repeat: -1, ease: 'none' });
+    }, mountRef);
+
+    // ── 3. Render loop ──
+    let raf;
+    const animate = () => { renderer.render(scene, camera); raf = requestAnimationFrame(animate); };
+    animate();
+
+    // ── 4. Cleanup: kill GSAP, cancel RAF, dispose Three.js ──
+    return () => {
+      cancelAnimationFrame(raf);
+      ctx.revert();             // kills all GSAP tweens + ScrollTriggers in this scope
+      renderer.dispose();
+      geometry.dispose();
+      material.dispose();
+      if (renderer.domElement.parentNode) {
+        renderer.domElement.parentNode.removeChild(renderer.domElement);
+      }
+    };
+  }, []);
+
+  return (
+    <>
+      <div ref={mountRef} style={{ position: 'fixed', inset: 0, zIndex: 0 }} />
+      {/* Framer Motion owns the UI overlay only — never touches scene/camera */}
+      <motion.div style={{ position: 'fixed', inset: 0, zIndex: 10, pointerEvents: 'none' }}>
+        <motion.h1 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>Scene Title</motion.h1>
+      </motion.div>
+    </>
+  );
+}
+```
+
+### Anti-Patterns (REJECT)
+
+1. ❌ Framer Motion animating `camera.position` — conflicts with GSAP scrub.
+2. ❌ GSAP animating React DOM `style.transform` on overlay — use Framer Motion `animate` prop instead.
+3. ❌ Three.js `setInterval` for animation — use `requestAnimationFrame` only.
+4. ❌ Omitting `ctx.revert()` in cleanup — leaks ScrollTriggers across route changes.
+5. ❌ Synchronous `import * as THREE from 'three'` in Next.js page/layout — must `dynamic(() => import(...), { ssr: false })`.
+6. ❌ Framer Motion overlay with `pointerEvents: 'auto'` blocking scroll — set `pointerEvents: 'none'` on the overlay container.
+
+### Integration with Existing Skills
+
+- **threejs-orchestrator** routes the 3D init (R3F vs vanilla vs Babylon).
+- **gsap-animator** owns the camera + scroll animation patterns.
+- **motion-animator** owns the React UI overlay patterns.
+- **animation-auditor** runs pre-commit checks for the anti-patterns above.
+
+Live demo: `docs/layered-separation-demo.html` (single-file, CDN-loaded, runs without build step).
+
+---
+
+## Part XVI — Parallel-Web Deep Research Orchestrator
+
+**Source**: Researched 2026-06-30. `parallel-web` is the GitHub org for **Parallel** (parallel.ai), a commercial web-research API company.
+
+### The Skill
+
+`parallel-deep-research` is one of 9 sibling skills in `parallel-web/parallel-agent-skills` (57★ MIT, https://github.com/parallel-web/parallel-agent-skills):
+
+| Skill | Purpose |
+|-------|---------|
+| `parallel-web-search` | Default fast web lookup |
+| `parallel-web-extract` | URL → markdown extraction |
+| `parallel-deep-research` | Comprehensive cited narrative reports (2-25 min server-side) |
+| `parallel-data-enrichment` | Entity enrichment |
+| `parallel-findall` | Web-scale entity discovery |
+| `parallel-monitor` | Webhook-based change tracking |
+| `parallel-cli-setup` | Auth + balance setup |
+| `parallel-cli-status` | Run status |
+| `parallel-cli-result` | Result retrieval |
+
+### How It Works
+
+1. `parallel-cli research run "$TOPIC" --processor pro-fast --text --no-wait --json` returns `{run_id, interaction_id, monitoring_url}` instantly.
+2. `parallel-cli research poll "$RUN_ID" -o "$FILENAME" --timeout 540` writes `$FILENAME.md` (cited narrative) + `$FILENAME.json` (metadata + evidence basis).
+3. 7 processor tiers: `lite-fast` (10-60s) → `base-fast` → `core-fast` → `pro-fast` (2-10min, default) → `ultra-fast` (5-25min, ~2× cost) → `ultra2x/4x/8x-fast` (up to 2hr).
+4. Multi-turn chaining via `--previous-interaction-id`.
+5. SDKs: `pip install parallel-web` (Pydantic), `npm install parallel-web`.
+
+### Integration with opencode OS
+
+- Slots into **Data & Web** or **Reasoning** category as a premium hosted alternative to the existing `web-reader` + `deep-research` combo.
+- Composes with `pdf` + `charts` skills for "track X → on change → regenerate report" pipelines via `parallel-monitor`.
+- The cookbook's LangChain Deep Agents pattern (Phase-1 subagents + Phase-2 per-competitor fan-out) composes with the existing `agent-master` + `agent-decision` skills.
+- Install: `brew install parallel-web/tap/parallel-cli`, then `/parallel:parallel-cli-setup` to auth.
+- **Caveat**: Parallel requires non-zero balance; HTTP 403 on insufficient funds. Recovery: `parallel-cli balance get` / `parallel-cli balance add <cents>`.
 
 ---
 

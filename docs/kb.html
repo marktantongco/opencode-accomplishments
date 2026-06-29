@@ -1457,6 +1457,64 @@
         </ul>
         <p>Source: <code>ai_agentic_tools_research.md</code></p>
       `
+    },
+    {
+      icon: '🌐',
+      title: 'Parallel-Web Orchestrator',
+      summary: 'parallel.ai\'s parallel-deep-research skill — cited narrative reports in 2-25 min via parallel-cli. 9 sibling skills, MIT, 57★.',
+      accent: '#06B6D4',
+      body: `
+        <h4>What It Is</h4>
+        <ul>
+          <li>GitHub org: <code>parallel-web</code> (parallel.ai) — commercial web-research API</li>
+          <li>Repo: <code>parallel-web/parallel-agent-skills</code> (57★ MIT)</li>
+          <li>9 sibling skills: parallel-web-search, parallel-web-extract, <strong>parallel-deep-research</strong>, parallel-data-enrichment, parallel-findall, parallel-monitor, parallel-cli-setup/status/result</li>
+        </ul>
+        <h4>How It Works</h4>
+        <ul>
+          <li><code>parallel-cli research run "$TOPIC" --processor pro-fast --no-wait --json</code> → returns <code>run_id</code> instantly</li>
+          <li><code>parallel-cli research poll "$RUN_ID" -o report.md --timeout 540</code> → writes cited narrative + JSON</li>
+          <li>7 processor tiers: lite-fast (10-60s) → pro-fast (2-10min default) → ultra8x-fast (2hr)</li>
+          <li>Multi-turn chaining via <code>--previous-interaction-id</code></li>
+        </ul>
+        <h4>Integration with opencode OS</h4>
+        <ul>
+          <li>Slots into Data &amp; Web category as premium alternative to <code>web-reader</code> + <code>deep-research</code></li>
+          <li>Composes with <code>pdf</code> + <code>charts</code> for monitor → regenerate pipelines</li>
+          <li>LangChain Deep Agents fan-out pattern composes with <code>agent-master</code> + <code>agent-decision</code></li>
+        </ul>
+        <p>Source: <code>github.com/parallel-web/parallel-agent-skills</code></p>
+      `
+    },
+    {
+      icon: '🎬',
+      title: 'Layered Separation Pattern',
+      summary: 'Three.js + GSAP + Framer Motion coexistence contract: each library owns a non-overlapping layer. Demo at docs/layered-separation-demo.html.',
+      accent: '#F97316',
+      body: `
+        <h4>The Contract</h4>
+        <ul>
+          <li><strong>Three.js</strong> → 3D scene, meshes, materials, lighting ONLY</li>
+          <li><strong>GSAP</strong> → camera position + 3D object properties (scroll-driven) ONLY</li>
+          <li><strong>Framer Motion</strong> → React UI overlays (HUD, nav, modals) ONLY</li>
+        </ul>
+        <h4>Init + Cleanup (useEffect)</h4>
+        <ul>
+          <li>1. Three.js init: scene, camera, renderer, mesh</li>
+          <li>2. GSAP init: <code>gsap.context()</code> with ScrollTrigger on camera + mesh.rotation</li>
+          <li>3. Render loop: <code>requestAnimationFrame</code> only (never setInterval)</li>
+          <li>4. Cleanup: cancel RAF → <code>ctx.revert()</code> → <code>renderer.dispose()</code> → geometry/material.dispose()</li>
+        </ul>
+        <h4>Anti-Patterns (REJECT)</h4>
+        <ul>
+          <li>Framer Motion animating <code>camera.position</code> (conflicts with GSAP scrub)</li>
+          <li>GSAP animating React DOM <code>style.transform</code> (use Framer Motion instead)</li>
+          <li>Missing <code>ctx.revert()</code> → ScrollTrigger leaks across routes</li>
+          <li>Synchronous <code>import * as THREE</code> in Next.js page → must dynamic import with ssr:false</li>
+          <li>Framer overlay with <code>pointerEvents:'auto'</code> blocking scroll</li>
+        </ul>
+        <p>Source: AGENTS.md Part XV · Demo: <code>docs/layered-separation-demo.html</code></p>
+      `
     }
   ];
 
