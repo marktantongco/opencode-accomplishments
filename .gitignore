@@ -1,1 +1,21 @@
+# Vercel
 .vercel
+
+# Secrets — never commit
+.env
+.env.local
+.env.*.local
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local skills install cache (created by `npx skills add`)
+# The canonical curated skill docs live in /skills/ and ARE committed.
+.agents/
+agent/
