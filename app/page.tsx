@@ -10,7 +10,12 @@
  * stacks.json, mcp-registry.json, og-image.png, rss.xml, sitemap.xml,
  * robots.txt) live in /public and are served at the root path, so existing
  * URLs and service-worker caches keep working.
+ *
+ * 'use client' is required because DemoCard uses onMouseEnter/onMouseLeave
+ * for hover effects. Route metadata for / is inherited from app/layout.tsx.
  */
+
+'use client';
 
 import Link from 'next/link';
 

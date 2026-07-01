@@ -1,27 +1,17 @@
 /**
  * app/demo/page.tsx — live demo route for the 3-Layer Animation Stack.
  *
- * The LayeredAnimationStack component uses Three.js (WebGL), GSAP
- * ScrollTrigger, and Framer Motion — none of which can run on the server.
- * We lazy-load it with next/dynamic and `ssr: false` so the component is
- * only ever imported in the browser, avoiding:
- *   - "window is not defined" / "document is not defined" SSR errors
- *   - WebGL context creation on the server (which would crash Node)
- *   - hydration mismatches (Three.js generates random IDs per mount)
+ * This file is a Server Component so it can export route metadata.
+ * The actual component mount happens in DemoClient.tsx (Client Component)
+ * because Next.js 15 forbids `next/dynamic` with `ssr: false` in Server
+ * Components, and the LayeredAnimationStack needs `ssr: false` to avoid
+ * WebGL/window/document SSR errors.
  *
- * While the client bundle loads, a static placeholder is shown.
- *
- * The component itself enforces the 3-Layer Separation doctrine documented
- * in skills/animation-3d-layered-architect/SKILL.md:
- *   - Layer 1 (Three.js): scene + objects + render loop. NEVER animates camera.
- *   - Layer 2 (GSAP): camera + scroll-linked animation only. NEVER creates
- *                     Three.js objects, NEVER calls renderer.render().
- *   - Layer 3 (Framer Motion): React UI overlays only. NEVER touches canvas.
- * Cross-layer communication: refs only. Per-layer cleanup.
+ * See app/demo/DemoClient.tsx for the full doctrine commentary.
  */
 
-import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
+import DemoClient from './DemoClient';
 
 export const metadata: Metadata = {
   title: '3-Layer Animation Stack — Live Demo · opencode OS',
@@ -29,70 +19,10 @@ export const metadata: Metadata = {
     'Live reference implementation of the 3-Layer Animation Separation doctrine: Three.js (scene), GSAP (camera + scroll), Framer Motion (UI overlays).',
 };
 
-// Lazy-load the component with SSR disabled.
-// next/dynamic with `ssr: false` returns a component that renders the
-// `loading` placeholder on the server and during client hydration, then
-// swaps in the real component once the browser has fetched the chunk.
-const LayeredAnimationStack = dynamic(
-  () =>
-    import(
-      '@/components/layered-animation-stack/LayeredAnimationStack'
-    ).then((mod) => mod.LayeredAnimationStack),
-  {
-    ssr: false,
-    loading: () => <DemoPlaceholder />,
-  }
-);
-
 export default function DemoPage() {
   return (
     <main>
-      {/* The canvas is fixed-to-viewport inside the component, so this
-          wrapper just needs to provide a scrollable height. The component
-          itself renders a spacer div of height `scrollDistance` to drive
-          the GSAP ScrollTrigger. */}
-      <LayeredAnimationStack scrollDistance={2400} />
+      <DemoClient scrollDistance={2400} />
     </main>
-  );
-}
-
-/**
- * Placeholder shown while the Three.js + GSAP + Framer Motion chunk loads.
- * Kept intentionally lightweight — pure CSS animation, no JS deps — so it
- * paints instantly on first paint.
- */
-function DemoPlaceholder() {
-  return (
-    <div
-      style={{
-        position: 'fixed',
-        inset: 0,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background:
-          'radial-gradient(800px 400px at 50% 50%, rgba(80,120,255,0.18), transparent 60%), #05060a',
-        color: '#9198ad',
-        fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
-        fontSize: '0.875rem',
-        letterSpacing: '0.08em',
-      }}
-    >
-      <div style={{ textAlign: 'center' }}>
-        <div
-          style={{
-            width: 48,
-            height: 48,
-            margin: '0 auto 1rem',
-            border: '2px solid rgba(255,255,255,0.12)',
-            borderTopColor: '#8ab4ff',
-            borderRadius: '50%',
-            animation: 'las-spin 0.8s linear infinite',
-          }}
-        />
-        <style>{`@keyframes las-spin { to { transform: rotate(360deg); } }`}</style>
-        Loading 3-Layer Animation Stack…
-      </div>
-    </div>
   );
 }

@@ -85,7 +85,7 @@ const INTENT_MAP = [
   { patterns: ['proxy','routing','gateway','api key','credential','security'], skills: ['mcp-security-scanner','skill-router'], message: '🛡️ Your infrastructure security stack:' },
 ];
 
-function ruleBasedRecommend(message) {
+function ruleBasedRecommend(message: string) {
   const q = message.toLowerCase();
   for (const intent of INTENT_MAP) {
     if (intent.patterns.some((p) => q.includes(p))) {
@@ -132,12 +132,12 @@ const COMPONENT_INTENT_PATTERNS = [
   /\b(button|modal|dialog|dropdown|combobox|datepicker|date-picker|date range|popover|tooltip|toast|alert|card|tab|accordion|carousel|command|context menu|sidebar|navbar|table|data table|form|input|select|checkbox|radio|switch|slider|badge|avatar|skeleton|progress|spinner|separator|scroll-area|navigation menu|menubar|breadcrumb|pagination|toggle|toolbar|aspect ratio|collapsible|hover card|radio group|toggle group)\b/i,
 ];
 
-function isComponentIntent(message) {
+function isComponentIntent(message: string) {
   return COMPONENT_INTENT_PATTERNS.some((re) => re.test(message));
 }
 
 // Extract the most likely search query from the user's message.
-function extractComponentQuery(message) {
+function extractComponentQuery(message: string) {
   // Strip leading "find me a component for", "react component for", etc.
   let q = message
     .replace(/^(find|get|show|give) me a (react )?(ui |ux )?(component|widget|primitive|element) (for|to|that|which|like)?\s*/i, '')
@@ -151,7 +151,7 @@ function extractComponentQuery(message) {
   return q.slice(0, 80); // API doesn't need long queries
 }
 
-async function searchTwentyFirst(message) {
+async function searchTwentyFirst(message: string) {
   const apiKey = process.env.TWENTYFIRST_API_KEY || TWENTYFIRST_KEY_FALLBACK;
   if (!apiKey) return null;
 
@@ -186,14 +186,14 @@ async function searchTwentyFirst(message) {
     const list = Array.isArray(data) ? data : Array.isArray(data?.data) ? data.data : [];
     if (!list.length) return null;
 
-    const components = list.slice(0, 5).map((c, i) => ({
+    const components = list.slice(0, 5).map((c: any, i: number) => ({
       name: c.name || c.title || c.slug || `Component ${i + 1}`,
       slug: c.slug || (c.id ? String(c.id) : null),
       description: (c.description || c.short_description || '').slice(0, 200),
       url: c.url || c.html_url || (c.slug ? `https://21st.dev/registry/${c.slug}` : 'https://21st.dev'),
       install: c.install || c.install_command || (c.slug ? `npx twenty-first@latest add ${c.slug}` : null),
       score: 95 - i * 5,
-    })).filter((c) => c.slug || c.install);
+    })).filter((c: any) => c.slug || c.install);
 
     if (!components.length) return null;
 
@@ -202,13 +202,13 @@ async function searchTwentyFirst(message) {
       components,
     };
   } catch (err) {
-    console.error('21st.dev error:', err?.message || err);
+    console.error('21st.dev error:', (err as Error)?.message || err);
     return null;
   }
 }
 
 // ─── AI Gateway call (only if AI_GATEWAY_API_KEY is set) ───────────────────
-async function aiGatewayRecommend(message) {
+async function aiGatewayRecommend(message: string) {
   const apiKey = process.env.AI_GATEWAY_API_KEY;
   if (!apiKey) return null; // not configured → use rule-based
 
@@ -260,17 +260,17 @@ Rules:
     if (!parsed.reply || !Array.isArray(parsed.recommendations)) return null;
     // Filter to skills actually in catalog (defense in depth)
     const validSlugs = new Set(SKILLS.map((s) => s.slug));
-    parsed.recommendations = parsed.recommendations.filter((r) => validSlugs.has(r.slug));
+    parsed.recommendations = parsed.recommendations.filter((r: any) => validSlugs.has(r.slug));
     if (parsed.recommendations.length === 0) return null;
     return parsed;
   } catch (err) {
-    console.error('AI Gateway error:', err?.message || err);
+    console.error('AI Gateway error:', (err as Error)?.message || err);
     return null;
   }
 }
 
 // ─── Handler ───────────────────────────────────────────────────────────────
-export default async function handler(req) {
+export default async function handler(req: Request) {
   // CORS — allow the same origin (PWA) and localhost for dev
   const origin = req.headers.get('origin') || '';
   const corsOrigin = origin.match(/^(https?:\/\/(localhost|127\.0\.0\.1|opencode-accomplishments\.vercel\.app|marktantongco\.github\.io)(:\d+)?)/)

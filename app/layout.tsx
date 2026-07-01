@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   applicationName: 'opencode OS',
   authors: [{ name: 'marktantongco' }],
   keywords: ['opencode', 'skills', 'registry', 'threejs', 'gsap', 'framer-motion', 'animation', 'pwa'],
+  metadataBase: new URL('https://opencode-accomplishments.vercel.app'),
   openGraph: {
     title: 'opencode OS — Skills Registry & Live Demos',
     description: '90+ curated skills, MCP stacks, and live 3-Layer Animation Stack demo.',
