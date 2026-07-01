@@ -7,6 +7,12 @@
       "skillPath": "skills/21st-registry/SKILL.md",
       "computedHash": "b6240ab445dab2773bb57f7884dc81056e8cf2729983ea6c36797c170d3e1484"
     },
+    "animation-3d-layered-architect": {
+      "source": "marktantongco/opencode-accomplishments",
+      "sourceType": "github",
+      "skillPath": "skills/animation-3d-layered-architect/SKILL.md",
+      "computedHash": "020ec4a61e7da1c016e0fd070e9511bcc355d5cabfeef85048a980f379b7a43d"
+    },
     "framer-motion-animator": {
       "source": "patricio0312rev/skills",
       "sourceType": "github",
@@ -66,6 +72,12 @@
       "sourceType": "github",
       "skillPath": "skills/threejs-animation/SKILL.md",
       "computedHash": "8c50b1493812bd88f3ed0637c0c3c5d846afdb322157b67b2ffba4ce8e552835"
+    },
+    "parallel-deep-research-orchestrator": {
+      "source": "marktantongco/opencode-accomplishments",
+      "sourceType": "github",
+      "skillPath": "skills/parallel-deep-research-orchestrator/SKILL.md",
+      "computedHash": "44841400fe246ef8654a62391489a04e28e3acf0563bb8caaa4729184e79d8bc"
     }
   }
 }
