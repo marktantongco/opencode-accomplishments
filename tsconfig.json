@@ -20,5 +20,20 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "docs", "agent", ".agents"]
+  "exclude": [
+    "node_modules",
+    "docs",
+    "agent",
+    ".agents",
+    "legacy",
+    "download",
+    "upload",
+    "research_2a",
+    "research_6",
+    "tool-results",
+    "workspace",
+    "mini-services",
+    "examples",
+    "scripts"
+  ]
 }
